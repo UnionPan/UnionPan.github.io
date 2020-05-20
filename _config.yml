@@ -3,7 +3,9 @@ author: ps
   name: 	
   email: yp1170@nyu.com
 description: > # this means to ignore newlines until "show_excerpts:"
-  
+
+disqus:
+    shortname: Union
 
 show_excerpts: false # set to true to show excerpts on the homepage
 
@@ -11,7 +13,7 @@ show_excerpts: false # set to true to show excerpts on the homepage
 # refer to https://shopify.github.io/liquid/filters/date/ if you want to customize this
 minima:
   date_format: "%b %-d, %Y"
-
+  skin: solarized
   # generate social links in footer
   social_links:
     twitter: https://twitter.com/Union54572322
@@ -56,3 +58,5 @@ theme: minima
 plugins:
  - jekyll-feed
  - jekyll-seo-tag
+
+
