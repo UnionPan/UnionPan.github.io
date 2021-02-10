@@ -13,8 +13,8 @@ minima:
   skin: solarized
   # generate social links in footer
   social_links:
-    twitter: https://twitter.com/Union54572322
-    github:  https://github.com/UnionPan
+    twitter: Union54572322
+    github:  UnionPan
     # devto: jekyll
     # dribbble: jekyll
     # facebook: jekyll
