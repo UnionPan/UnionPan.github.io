@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Game Theory on union&#39;s blog</title>
+    <link>https://unionpan.github.io/categories/game-theory/</link>
+    <description>Recent content in Game Theory on union&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 30 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://unionpan.github.io/categories/game-theory/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Wardrop Equilibrium</title>
+      <link>https://unionpan.github.io/2023/2023-01-31-wardropequilibrium/</link>
+      <pubDate>Mon, 30 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://unionpan.github.io/2023/2023-01-31-wardropequilibrium/</guid>
+      <description>I remember having those unpleasant lines in our high school canteen, flooded by the starving students queeing for their lunch, I would always pick a window with fewer people waiting, compromising myself with awful food. Another similar thought that always stricked me was the odds that tourists always pick the same time to travel, there&amp;rsquo;s almost always traffic congestion everywhere during holiday seasons. Yeah, lives have been always so hard.</description>
+    </item>
+    
+  </channel>
+</rss>

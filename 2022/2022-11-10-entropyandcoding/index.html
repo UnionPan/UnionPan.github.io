@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  
+  
+  
+  
+  
+  <link rel="prev" href="https://unionpan.github.io/1/about/" />
+  <link rel="next" href="https://unionpan.github.io/2022/2022-11-15-nesterovaccerleration/" />
+  <link rel="canonical" href="https://unionpan.github.io/2022/2022-11-10-entropyandcoding/" />
+  <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           The Capacity of Deception | union&#39;s blog
+       
+  </title>
+  <meta name="title" content="The Capacity of Deception | union&#39;s blog">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="The Capacity of Deception"/>
+<meta name="twitter:description" content="Entropy and Optimal Coding Alice wants to communicate with Bob about a sequence of \(n\) independent random outcomes sampled from a known distribution \(Q\). They use binary code agreed in advance to limit the message length. The entropy of \(Q\) is the expected number of bits necessary per random variable using the optimal code as \(n\) goes to \(\infty\). The relative entropy between distributions $P$ and $Q$ can be interpreted as the price in terms of expected message length that Alice and Bob have to pay if they believe the random variables are sampled from $P$ when in fact they are sampled from $Q$."/>
+
+  <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "headline": "The Capacity of Deception",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https:\/\/unionpan.github.io\/2022\/2022-11-10-entropyandcoding\/"
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "https:\/\/unionpan.github.io\/cover.png",
+    "width":  800 ,
+    "height":  600 
+  },
+  "genre": "posts",
+  
+  "wordcount":  1448 ,
+  "url": "https:\/\/unionpan.github.io\/2022\/2022-11-10-entropyandcoding\/",
+  "datePublished": "2022-11-10T00:00:00\u002b00:00",
+  "dateModified": "2022-11-10T00:00:00\u002b00:00",
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "union",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https:\/\/unionpan.github.io\/logo.png",
+      "width":  127 ,
+      "height":  40 
+    }
+  },
+  "author": {
+    "@type": "Person",
+    "name": "[Yunian Pan]"
+  },
+  "description": ""
+}
+</script>
+  <!DOCTYPE html>
+
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"
+        integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
+
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"
+        integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8"
+        crossorigin="anonymous"></script>
+
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+        integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+</head>
+...
+
+</html>
+</head>
+
+  
+
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="https://unionpan.github.io">union&#39;s blog</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="about" title="">About</a>
+                
+                <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;<a href="https://unionpan.github.io">union&#39;s blog</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="about" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp">
+    <header class="post-header">
+        <h1 class="post-title">The Capacity of Deception</h1>
+        <div class="post-meta">
+            
+                <span class="post-time">
+                    on <time datetime=2022-11-10 >10 November 2022</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://unionpan.github.io/categories/statistics/"> Statistics </a>
+                        
+                </span>
+                <i class="iconfont icon-timer"></i>
+                7 min
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <h2 id="entropy-and-optimal-coding">Entropy and Optimal Coding</h2>
+<!-- raw HTML omitted -->
+<p>Alice wants to communicate with Bob about a sequence of \(n\) independent random outcomes sampled from a known distribution \(Q\).
+They use binary code agreed in advance to limit the message length.
+The <strong>entropy</strong> of \(Q\) is the expected number of bits necessary per random variable using the optimal code as \(n\) goes to \(\infty\). The <strong>relative entropy</strong> between distributions $P$ and $Q$ can be interpreted as the price in terms of expected message length that Alice and Bob have to pay if they believe the random variables are sampled from $P$ when in fact they are sampled from $Q$.</p>
+<p>Let $P$ be a measure on $[N]$ with $\sigma$-algebra $$2^{[N]}$$ and $X: [N] \to [N]$ be the identity random variable, i.e., $X(\omega) =X$. Since binary code is used to convey the message, they might code each $X$ as a <strong>binary code</strong> function $c: [N] \to \{0,1\}^* $ where $$\{0,1\}^{*} $ is the set of finite sequence of zeros and ones. $c$ must be <strong>injective</strong> (so it won&rsquo;t cause amibiguity between different random variables), and <strong>prefix free</strong> (so it won&rsquo;t cause ambiguity between any two codes). This is simply because Bob needs to know where one symbol starts and ends for multiple samples.</p>
+<p>We know that the easiest choice is to use $\lceil \log (N) \rceil$ bits no matter what value of $X$ is, but if $X$ is far from uniform, let&rsquo;s say $P(X = 1) = 0.99$, and then no matter what the rest of them look like, it&rsquo;s preferreable to use shorter code for $X = 1$ than $\lceil \log (N) \rceil$. A natural objective formulated is</p>
+<p>$$
+c^* = \arg\min_c \mathbb{E}_{i \sim P } [ length(c(i)) ].
+$$</p>
+<p>It is well known that this optimization problem can be solved by <strong>Huffman Coding</strong>, thus the optimal value satisfies:</p>
+<p>$$
+H_2(P) \leq \sum_{i=1}^N p_i length(c^*(i)) \leq H_2(P) + 1,
+$$</p>
+<p>where $H_2(P)$ is the entropy of $P$</p>
+<p>$$
+H_2(P) = \sum_{i=1, p_i &gt; 0}^N - p_i \log(p_i) .
+$$</p>
+<p>The naive idea of using a code of uniform length is only recovered when $P$ is uniformly distributed. Why $p_i &gt; 0$? Think about $\lim_{x \to 0^+} x\log(x) = 0$, or think about $H_2(P)$ as kind of an expectation, which should not change under the perturbation of measure $0$ set.</p>
+<p>The entropy $H_2(P)$ is a fundamental quantity. It&rsquo;s based on $\log_2$ since we are talking about binary code, sometimes it&rsquo;s more convenient to scale it with natural logarithm. <strong>Shannon Source Coding Theorem</strong> tells us (informal) that any $P$ compressed to fewer than $N H_2(P)$ will inevitably result in information lost, so any coding that results average bits cost $H_2(P)$ is unimprovable.</p>
+<h2 id="relative-entropy">Relative Entropy</h2>
+<p>Suppose Alice and Bob agree to use a code that is optimal for $X$ sampled from distribution $Q$, but actually $X$ is sampled from $P$. Here comes the terminology of related entropy between $P$ and $Q$, it measures how much longer the messages are expected to be using the optimal code for $Q$ than what is obtained from using optimal code for $P$. Let $p_i = P(X= i)$ and $q_i = Q(X= i)$, assuming Shannon&rsquo;s coding, the definition of relative entropy can be written as</p>
+<p>$$
+D(P,Q) = \sum_{i \in [N]: p_i &gt; 0} - p_i \log(q_i) - (\sum_{i \in [N]: p_i &gt; 0} - p_i \log(p_i)) = \sum_{i \in [N]: p_i &gt; 0} p_i \log(\frac{p_i}{q_i})
+$$</p>
+<p>From Jensen&rsquo;s inequality ($\log$ is concave so using the fact that $\mathbb{E}_p \{\log(\frac{q_i}{p_i})\} \leq \log( \mathbb{E}_p ( \frac{q_i}{p_i})))$ or the optimality of coding, $D(P,Q) \geq 0$. Actually this is also called <strong>KL divergence</strong> just in some other contexts. Question remains that what if $p_i $ and $ q_i = 0$ for some $i \in [N]$? Well, it means that $i$ is not neccessary for consideration since by both $P$ and $Q$, $i$ is in a measure zero set. Also, the sufficient and necessary condition for $D(P,Q)$ to be finite is that whenver $q_i = 0$, $p_i = 0$. Using measure-theoretic language, this condition means that $P$ is absolutely continuous with respect to $Q$.</p>
+<p>Now we jump out of the story and consider arbitrary measurable space $(\Omega, \mathcal{F})$. Support of $P$ might not be finite, or even countable. Defining entropy through the same path is pretty hard as the symbols needed have to be infinite. This fundamental difficulty is automatically resolved if we directly consider relative entropy.</p>
+<p>Formally, if we do a discretization over the sample space $\Omega$, i.e., find a measurable map $X : \Omega \to [N]$. Then, the relative entropy can be defined as
+$$
+D(P,Q) = \sup_{N \in \mathbb{N}^+} \sup_{X} D(P_X, Q_X),
+$$
+$P_X$ and $Q_X$ are pushforwards, i.e., they measure, say, $\forall \mathcal{I} \in 2^{[N]}$, by $P( X^{-1}(\mathcal{I}))$. In other words, the relative entropy here actually measures the capacity of Bob distinguishing between $P$ and $Q$ by receiving the &lsquo;&lsquo;codes&rsquo;&rsquo; $\mathcal{I}$, however the encrpytion is done by Alice. This measurement has profound meanings in a ton of applications.</p>
+<h4 id="theorem-1">Theorem 1</h4>
+<blockquote>
+<p>Let $(\Omega, \mathcal{F})$ be a measurable space, also let $P$ and $Q$ be measures on this space. Then</p>
+<p>$$ D(P,Q) =  \begin{cases} \int \log(\frac{dP}{dQ}(\omega)) dP(\omega) ,\ \ &amp;\text{if} P \ll Q; \\\ \infty, \quad &amp;\text{otherwise}  \end{cases} \label{thm1} \tag{1}$$</p>
+</blockquote>
+<p>When calculating the relative entropy the densities are always used. If $\lambda$ is a $\sigma$-finite measure dominating both $P$ and $Q$, let $p = \frac{dP}{d\lambda}$ and $q = \frac{dQ}{d\lambda}$, if $P \ll Q$, by chain rule we write</p>
+<p>$$
+D(P,Q) = \int p \log(\frac{p}{q}) d\lambda  \label{eq2} \tag{2}
+$$</p>
+<p>Such a $\lambda$ can always be found, for example $\lambda = P+Q$ always dominate $P$ and $Q$.</p>
+<p>Note that relative entropy measures the distance from $P$ to $Q$ but it can never be treated as a metric since there are some properties unsatisfied such as triangular inequality and commutability. However, it serves the same purpose.</p>
+<h3 id="examples">Examples</h3>
+<p>Consider two Gaussian variables with means $\mu_1$ and $\mu_2$ and variance $\sigma^2$:</p>
+<p>$$
+D(\mathcal{N}(\mu_1 , \sigma^2), \mathcal{N}(\mu_2 , \sigma^2)) = \frac{(\mu_1 - \mu_2)^2}{2\sigma^2}.
+$$</p>
+<p>The quadratic term matches our intuition about such a &lsquo;&lsquo;distance&rsquo;&rsquo;.</p>
+<p>Consider two Bernouli random variables with means $p, q \in [0,1]$, then:</p>
+<p>$$
+D(\mathcal{B}(p), \mathcal{B}(q)) = p\log(\frac{p}{q}) + (1-p)\log(\frac{1-p}{1-q}),
+$$</p>
+<p>and we have to let $0 \log(\cdot) = 0$.</p>
+<h2 id="an-important-inequality">An Important Inequality</h2>
+<p>We show this inequality that Connects the relative entropy to the hardness of hypothesis testing in the following theorem</p>
+<h4 id="theorem-2-bretagnolle-huber-inequality">Theorem 2 (Bretagnolle-Huber Inequality)</h4>
+<blockquote>
+<p>Let $P$ and $Q$ be probability measures on the same measurable spcae $(\Omega, \mathcal{F})$, and let $A \in \mathcal{F}$ be an arbitrary event. Then</p>
+<p>$$ P(A) + Q(A^c) \geq \frac{1}{2} \exp (-D(P,Q)) $$</p>
+<p>where $A^c = \Omega \backslash A$ is the complement of A.</p>
+</blockquote>
+<h4 id="proof">Proof</h4>
+<p>For reals $a, b$, abbreviate $a \vee b: = \max\{ a, b\}$, and $a \wedge b := \min\{a,b\}$.
+If $D(P,Q) = \infty$, then the inequality holds trivially true. If it&rsquo;s not, then $P \ll Q$ by Theorem $\eqref{thm1}$. Let $\nu = P+Q$, and the Radon-Nikodym derivatives $p =\frac{ dP }{d\nu}$, $q =\frac{ dQ }{d\nu}$. By $\eqref{eq2}$, the relative entropy</p>
+<p>$$
+D(P,Q) = \int p \log(\frac{p}{q}) d\nu
+$$</p>
+<p>Sometimes we drop $\nu$ for brevity, writtin it as  $\int p \log(\frac{p}{q})$. It turns out a stronger result is sufficient:</p>
+<p>$$
+\int p\wedge q \geq \frac{1}{2} \exp(-D(P,Q)).
+$$</p>
+<p>Why? Because $\int p \wedge q = \int_A  p\wedge q + \int_{A^c} p \wedge q \leq \int_A p + \int_{A^c} q = P(A) + Q(A^c)$.
+We firstly have to utilize the Cauchy-Schwarz inequality and identity $pq = (p\wedge q) (p\vee q)$,</p>
+<p>$$
+\left( \int \sqrt{pq}\right)^2  = \left( \sqrt{(p\wedge q) (p\wedge q)} \right) \leq \left( \int p \wedge q\right) \left( \int p \vee q\right).
+$$</p>
+<p>Also, using identity $p\wedge q + p \vee q = p + q$, we have $\int p\wedge q = 2 - \int p \vee q \leq 2$, so for both $p \vee q$ and $p \wedge q$ we have them lower bounded by $\left(\int \sqrt{pq}\right)^2$.
+Now, using Jensen&rsquo;s inequality we arrive at some elementry manipulation:</p>
+<p>$$\begin{align} \left(\int \sqrt{pq}\right)^2 &amp; =  \exp(2 \log \int \sqrt{pq}) = \exp(2 \log\int_{p&gt; 0} p \sqrt{\frac{q}{p}}) .  \nonumber \\\
+&amp; \geq \exp(2\int_{p &gt; 0} p \frac{1}{2} \log(\frac{q}{p})) = \exp(-\int_{pq &gt; 0} p \log(\frac{p}{q}))  \nonumber \\\
+&amp; = \exp(-\int p \log (\frac{p}{q})) = \exp(-D(P,Q)). \end{align}$$</p>
+<p>Since $P\ll Q$, $q = 0$ implies $p = 0$, so $p&gt;0$ implies $q &gt; 0$, therefore $pq &gt; 0$. Divide both sides by $2$ concludes the proof.</p>
+<p>Now it&rsquo;s a little bit intuition. If $P$ and $Q$ are close, we expect $P(A) + Q(A^c)$ to be large to be close enough to $1$, and how large it is is just quantified by this theorem. Also the result is symmetric and we can always replace $D(P,Q)$ by $D(Q,P)$, yet $D(P,Q)$ is not symmetric, therefore sometimes stronger inequality is obtained.</p>
+
+    </div>
+
+    <div class="post-copyright">
+            
+           
+            
+
+            <p class="copyright-item">
+                
+            </p>
+
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();">Back</a></span> · 
+                <span><a href="https://unionpan.github.io">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://unionpan.github.io/1/about/" class="prev" rel="prev" title="About Me"><i class="iconfont icon-dajiantou"></i>&nbsp;About Me</a>
+         
+        
+        <a href="https://unionpan.github.io/2022/2022-11-15-nesterovaccerleration/" class="next" rel="next" title="Nesterov">Nesterov&nbsp;<i class="iconfont icon-xiaojiantou"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+          
+    <script src="https://utteranc.es/client.js"
+            repo="unionpan/"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+ 
+
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2021 - 2023</span>
+        
+         
+
+		  
+          <span> Regret has been lower bounded since. </span>
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+
+
+
+
+     </div>
+  </body>
+</html>

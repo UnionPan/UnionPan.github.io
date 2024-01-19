@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Statistics on union&#39;s blog</title>
+    <link>https://unionpan.github.io/categories/statistics/</link>
+    <description>Recent content in Statistics on union&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 11 Oct 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://unionpan.github.io/categories/statistics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Some Thoughts on Dueling Bandits</title>
+      <link>https://unionpan.github.io/2023/2023-10-11-thoughts-on-dueling-bandits/</link>
+      <pubDate>Wed, 11 Oct 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://unionpan.github.io/2023/2023-10-11-thoughts-on-dueling-bandits/</guid>
+      <description>The dueling bandit problem natrually fits the description of a variety of recommendation systems that require learning on the fly&amp;quot;, yet have no explicit access to a reward&amp;rsquo;&amp;rsquo; model. Instead, the ``human&amp;rsquo;&amp;rsquo; part is</description>
+    </item>
+    
+    <item>
+      <title>Small Ball Revisit</title>
+      <link>https://unionpan.github.io/2023/2023-02-05-smallballrevisit/</link>
+      <pubDate>Sun, 05 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://unionpan.github.io/2023/2023-02-05-smallballrevisit/</guid>
+      <description>We basically reviewed the techniques of proving the efficiency of Empirical Risk Minimization using local Rademacher complexity, and why it is not sufficient when the problem setting, and introduced a new assumption called small ball condition and its usage. Here are the slides.</description>
+    </item>
+    
+    <item>
+      <title>Talagrand Concentration</title>
+      <link>https://unionpan.github.io/2022/2022-12-12-talagrandconcentration/</link>
+      <pubDate>Mon, 12 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://unionpan.github.io/2022/2022-12-12-talagrandconcentration/</guid>
+      <description>Hey.</description>
+    </item>
+    
+    <item>
+      <title>The Capacity of Deception</title>
+      <link>https://unionpan.github.io/2022/2022-11-10-entropyandcoding/</link>
+      <pubDate>Thu, 10 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://unionpan.github.io/2022/2022-11-10-entropyandcoding/</guid>
+      <description>Entropy and Optimal Coding Alice wants to communicate with Bob about a sequence of \(n\) independent random outcomes sampled from a known distribution \(Q\). They use binary code agreed in advance to limit the message length. The entropy of \(Q\) is the expected number of bits necessary per random variable using the optimal code as \(n\) goes to \(\infty\). The relative entropy between distributions $P$ and $Q$ can be interpreted as the price in terms of expected message length that Alice and Bob have to pay if they believe the random variables are sampled from $P$ when in fact they are sampled from $Q$.</description>
+    </item>
+    
+  </channel>
+</rss>
