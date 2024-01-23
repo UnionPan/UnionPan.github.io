@@ -1,149 +1,181 @@
+
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-  <meta http-equiv="content-type" content="text/html;charset=utf-8">
-  <meta http-equiv="X-UA-Compatible" content="chrome=1">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="noodp"/>
-  
-  
-  
-  
-  
-  
-  
-  <link rel="canonical" href="https://unionpan.github.io/categories/optimization/" />
-  <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-  <meta name="msapplication-TileColor" content="#da532c">
-  <meta name="theme-color" content="#ffffff">
-  <title>
-       
-       
-           Optimization | union&#39;s blog
-       
-  </title>
-  <meta name="title" content="Optimization | union&#39;s blog">
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Optimization | union&#39;s blog</title>
+    <meta name="description"
+        content="Regret has been lower bounded">
+    <link rel="canonical" href="https://unionpan.github.io/categories/optimization/" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
     
-  
-  <link rel="stylesheet" href="/font/iconfont.css">
-  <link rel="stylesheet" href="/css/main.min.css">
+    <link rel="stylesheet" href="https://unionpan.github.io/scss/style.min.aa7209164f013c6883aa54384ea45a46e582eacf9a17e9565badebd557dd1059.css">
+    <meta property="og:title" content="Optimization" />
+<meta property="og:description" content="Regret has been lower bounded" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://unionpan.github.io/categories/optimization/" /><meta property="og:site_name" content="union&#39;s blog" />
 
 
-  <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Optimization"/>
-<meta name="twitter:description" content=""/>
+    <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Optimization"/>
+<meta name="twitter:description" content="Regret has been lower bounded"/>
 
-  
-  
-</head>
-
-  
-
-
-
-  <body class="">
-    <div class="wrapper">
-        <nav class="navbar">
+    
+    
+    
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    { left: "$$", right: "$$", display: true },
+                    { left: "$", right: "$", display: false }
+                ]
+            });
+        });
+    </script>
+    
+</head><body><nav class="navbar is-light" role="navigation">
     <div class="container">
-        <div class="navbar-header header-logo">
-        	<a href="https://unionpan.github.io">union&#39;s blog</a>
+        <div class="navbar-brand">
+            <a href="/" title="home" class="navbar-item">
+                <span class="logo">
+                    <h1>union&#39;s blog</h1>
+                </span>
+            </a>
+
+            
+            <a id="theme-toggle" class="theme-toggle" href="#">
+                <img src="https://unionpan.github.io/svg/sun.svg" alt="sun icon" class="theme-icon" />
+            </a>
+
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
         </div>
-        <div class="menu navbar-right">
+
+        <div class="navbar-menu">
+            <div class="navbar-start">
                 
+                <a href="/about" class="navbar-item">About</a>
                 
-                <a class="menu-item" href="/posts/" title="">Blog</a>
+                <a href="/post" class="navbar-item">Blog</a>
                 
-                <a class="menu-item" href="/categories/" title="">Categories</a>
+                <a href="/categories" class="navbar-item">Categories</a>
                 
-                <a class="menu-item" href="about" title="">About</a>
-                
-                <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;
-        </div>
-    </div>
-</nav>
-<nav class="navbar-mobile" id="nav-mobile" style="display: none">
-     <div class="container">
-        <div class="navbar-header">
-            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;<a href="https://unionpan.github.io">union&#39;s blog</a></div>
-            <div class="menu-toggle">
-                <span></span><span></span><span></span>
             </div>
+
         </div>
-     
-          <div class="menu" id="mobile-menu">
-                
-                
-                <a class="menu-item" href="/posts/" title="">Blog</a>
-                
-                <a class="menu-item" href="/categories/" title="">Categories</a>
-                
-                <a class="menu-item" href="about" title="">About</a>
-                
+        <div class="search">
+            <div id="fastSearch">
+                <input id="searchInput" tabindex="0" placeholder="Search..">
+                <ul id="searchResults">
+
+                </ul>
+            </div>
+            <a id="search-btn" style="display: inline-block;" href="# ">
+                <div class="icon-search"><svg class="search-svg" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
+            </a>
         </div>
+
+        <script src="/js/fuse.min.js"></script> 
+        <script src="/js/fastsearch.js"></script>
+
     </div>
 </nav>
 
-    	 <main class="main">
-          <div class="container">
-      		
-
-<div class="post-warp archive">
-    <h2 class="post-title" style="text-align:right;padding-bottom:2em">&nbsp;Optimization&nbsp;</h2>
+<script>
     
-    <h3>2022</h3>
+    document.addEventListener('DOMContentLoaded', function() {
+        var burger = document.querySelector('.navbar-burger');
+        burger.addEventListener('click', function() {
+            burger.classList.toggle('is-active');
+            document.querySelector('.navbar-menu').classList.toggle('is-active');
+        });
+    });
 
     
-    <article class="archive-item">
-        <a href="/2022/2022-11-15-nesterovaccerleration/" class="archive-item-link">Nesterov</a>
-        <span class="archive-item-date">
-            15 November 2022
-        </span>
-    </article>
-     
+    function setTheme(theme) {
+        let body = document.body;
+        let themeIcon = document.querySelector(".theme-icon");
+        if (theme === "dark") {
+            body.classList.add("dark-mode");
+            themeIcon.src = "https:\/\/unionpan.github.io\/svg/moon.svg";
+            themeIcon.alt = "moon icon";
+        } else {
+            body.classList.remove("dark-mode");
+            themeIcon.src = "https:\/\/unionpan.github.io\/svg/sun.svg";
+            themeIcon.alt = "sun icon";
+        }
+        
+        localStorage.setItem("theme", theme);
+    }
+
+    
+    let theme = localStorage.getItem("theme") || "light";
+    const isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (isDarkMode) {
+        
+        setTheme('dark');
+
+    } else {
+        
+        setTheme('light');
+    }
+    setTheme(theme);
+
+    
+    document.getElementById("theme-toggle").addEventListener("click", function() {
+        if (theme === "light") {
+            theme = "dark";
+        } else {
+            theme = "light";
+        }
+        setTheme(theme);
+    });
+
+
+
+</script>
+
+
+
+</header><main>
+<div class="container">
+    <div class="section">
+        <h2 class="archive-title">Category: Optimization</h2>
+</div>
+</div>
+<div class="each-category column is-centered">
+
+
     
 
+        <article class="archive-item">
+            <a href="https://unionpan.github.io/post/nesterov/" class="archive-item-link hover-underline-animation">Nesterov</a>
+            <span class="archive-item-date">
+                November 15, 2022
+            </span>
+
+        </article>
+
+    
 
 </div>
 
-          </div>
-		   </main>
-      <footer class="footer">
-    <div class="copyright">
-        &copy;
-        
-        <span itemprop="copyrightYear">2021 - 2023</span>
-        
-         
-
-		  
-          <span> Regret has been lower bounded since. </span>
+        </main><footer class="footer">
+    <div class="content has-text-centered">
+    <span>&copy; 2024 </span>
+    <span>
+        only in chaos are we conceivable.
+    </span>
     </div>
-</footer>
 
 
+  </footer>
 
-
-
-
-
-
-
-
-
-    
-    <script src="/js/vendor_main.min.js" async=""></script>
-
-
-
-
-
-
-
-     </div>
   </body>
 </html>
+

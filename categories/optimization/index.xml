@@ -5,17 +5,15 @@
     <link>https://unionpan.github.io/categories/optimization/</link>
     <description>Recent content in Optimization on union&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Tue, 15 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://unionpan.github.io/categories/optimization/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Tue, 15 Nov 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://unionpan.github.io/categories/optimization/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Nesterov</title>
-      <link>https://unionpan.github.io/2022/2022-11-15-nesterovaccerleration/</link>
+      <link>https://unionpan.github.io/post/nesterov/</link>
       <pubDate>Tue, 15 Nov 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://unionpan.github.io/2022/2022-11-15-nesterovaccerleration/</guid>
-      <description>We briefly reviewed the lower complexity bound of first-order convex optimization and how Nesterov proceed to match the lower bound using the estimation sequence, the slides are here.
-Consider an unconstrained optimization problem: [ \min_{x \in \mathbb{R}^n} f(x) . ] Here, $f \in \mathcal{C}^1$ is a convex, $L$-Lipschitz smooth function. Everybody knows we can solve this problem by using first-order method.</description>
+      <guid>https://unionpan.github.io/post/nesterov/</guid>
+      <description>We briefly reviewed the lower complexity bound of first-order convex optimization and how Nesterov proceed to match the lower bound using the estimation sequence, the slides are here.&#xA;Consider an unconstrained optimization problem: \[ \min_{x \in \mathbb{R}^n} f(x) . \] Here, \(f \in \mathcal{C}^1\) is a convex, $L$-Lipschitz smooth function. Obviously we can solve this problem by using first-order methods, the question is how fast they are.</description>
     </item>
-    
   </channel>
 </rss>

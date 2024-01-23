@@ -1,324 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
-    <url>
-      <loc>https://unionpan.github.io/categories/</loc>
-      
-      <lastmod>2023-10-11T00:00:00+00:00</lastmod>
-      
-      
-      <changefreq>monthly</changefreq>
-      
-      
-      <priority>0.5</priority>
-      
-      
-    </url>
-  
-    <url>
-      <loc>https://unionpan.github.io/posts/</loc>
-      
-      <lastmod>2023-10-11T00:00:00+00:00</lastmod>
-      
-      
-      <changefreq>monthly</changefreq>
-      
-      
-      <priority>0.5</priority>
-      
-      
-    </url>
-  
-    <url>
-      <loc>https://unionpan.github.io/2023/2023-10-11-thoughts-on-dueling-bandits/</loc>
-      
-      <lastmod>2023-10-11T00:00:00+00:00</lastmod>
-      
-      
-      <changefreq>monthly</changefreq>
-      
-      
-      <priority>0.5</priority>
-      
-      
-    </url>
-  
-    <url>
-      <loc>https://unionpan.github.io/categories/statistics/</loc>
-      
-      <lastmod>2023-10-11T00:00:00+00:00</lastmod>
-      
-      
-      <changefreq>monthly</changefreq>
-      
-      
-      <priority>0.5</priority>
-      
-      
-    </url>
-  
-    <url>
-      <loc>https://unionpan.github.io/</loc>
-      
-      <lastmod>2023-10-11T00:00:00+00:00</lastmod>
-      
-      
-      <changefreq>monthly</changefreq>
-      
-      
-      <priority>0.5</priority>
-      
-      
-    </url>
-  
-    <url>
-      <loc>https://unionpan.github.io/tags/machine-learning/</loc>
-      
-      <lastmod>2023-02-05T00:00:00+00:00</lastmod>
-      
-      
-      <changefreq>monthly</changefreq>
-      
-      
-      <priority>0.5</priority>
-      
-      
-    </url>
-  
-    <url>
-      <loc>https://unionpan.github.io/tags/probability/</loc>
-      
-      <lastmod>2023-02-05T00:00:00+00:00</lastmod>
-      
-      
-      <changefreq>monthly</changefreq>
-      
-      
-      <priority>0.5</priority>
-      
-      
-    </url>
-  
-    <url>
-      <loc>https://unionpan.github.io/2023/2023-02-05-smallballrevisit/</loc>
-      
-      <lastmod>2023-02-05T00:00:00+00:00</lastmod>
-      
-      
-      <changefreq>monthly</changefreq>
-      
-      
-      <priority>0.5</priority>
-      
-      
-    </url>
-  
-    <url>
-      <loc>https://unionpan.github.io/tags/statistics/</loc>
-      
-      <lastmod>2023-02-05T00:00:00+00:00</lastmod>
-      
-      
-      <changefreq>monthly</changefreq>
-      
-      
-      <priority>0.5</priority>
-      
-      
-    </url>
-  
-    <url>
-      <loc>https://unionpan.github.io/tags/</loc>
-      
-      <lastmod>2023-02-05T00:00:00+00:00</lastmod>
-      
-      
-      <changefreq>monthly</changefreq>
-      
-      
-      <priority>0.5</priority>
-      
-      
-    </url>
-  
-    <url>
-      <loc>https://unionpan.github.io/categories/game-theory/</loc>
-      
-      <lastmod>2023-01-30T00:00:00+00:00</lastmod>
-      
-      
-      <changefreq>monthly</changefreq>
-      
-      
-      <priority>0.5</priority>
-      
-      
-    </url>
-  
-    <url>
-      <loc>https://unionpan.github.io/2023/2023-01-31-wardropequilibrium/</loc>
-      
-      <lastmod>2023-01-30T00:00:00+00:00</lastmod>
-      
-      
-      <changefreq>monthly</changefreq>
-      
-      
-      <priority>0.5</priority>
-      
-      
-    </url>
-  
-    <url>
-      <loc>https://unionpan.github.io/2023/2023-01-16-hpbound/</loc>
-      
-      <lastmod>2023-01-16T00:00:00+00:00</lastmod>
-      
-      
-      <changefreq>monthly</changefreq>
-      
-      
-      <priority>0.5</priority>
-      
-      
-    </url>
-  
-    <url>
-      <loc>https://unionpan.github.io/tags/concentration/</loc>
-      
-      <lastmod>2023-01-16T00:00:00+00:00</lastmod>
-      
-      
-      <changefreq>monthly</changefreq>
-      
-      
-      <priority>0.5</priority>
-      
-      
-    </url>
-  
-    <url>
-      <loc>https://unionpan.github.io/categories/learning/</loc>
-      
-      <lastmod>2023-01-16T00:00:00+00:00</lastmod>
-      
-      
-      <changefreq>monthly</changefreq>
-      
-      
-      <priority>0.5</priority>
-      
-      
-    </url>
-  
-    <url>
-      <loc>https://unionpan.github.io/tags/optimization/</loc>
-      
-      <lastmod>2023-01-16T00:00:00+00:00</lastmod>
-      
-      
-      <changefreq>monthly</changefreq>
-      
-      
-      <priority>0.5</priority>
-      
-      
-    </url>
-  
-    <url>
-      <loc>https://unionpan.github.io/2022/2022-12-12-talagrandconcentration/</loc>
-      
-      <lastmod>2022-12-12T00:00:00+00:00</lastmod>
-      
-      
-      <changefreq>monthly</changefreq>
-      
-      
-      <priority>0.5</priority>
-      
-      
-    </url>
-  
-    <url>
-      <loc>https://unionpan.github.io/tags/gradient-methods/</loc>
-      
-      <lastmod>2022-11-15T00:00:00+00:00</lastmod>
-      
-      
-      <changefreq>monthly</changefreq>
-      
-      
-      <priority>0.5</priority>
-      
-      
-    </url>
-  
-    <url>
-      <loc>https://unionpan.github.io/2022/2022-11-15-nesterovaccerleration/</loc>
-      
-      <lastmod>2022-11-15T00:00:00+00:00</lastmod>
-      
-      
-      <changefreq>monthly</changefreq>
-      
-      
-      <priority>0.5</priority>
-      
-      
-    </url>
-  
-    <url>
-      <loc>https://unionpan.github.io/tags/nesterov-acceleration/</loc>
-      
-      <lastmod>2022-11-15T00:00:00+00:00</lastmod>
-      
-      
-      <changefreq>monthly</changefreq>
-      
-      
-      <priority>0.5</priority>
-      
-      
-    </url>
-  
-    <url>
-      <loc>https://unionpan.github.io/categories/optimization/</loc>
-      
-      <lastmod>2022-11-15T00:00:00+00:00</lastmod>
-      
-      
-      <changefreq>monthly</changefreq>
-      
-      
-      <priority>0.5</priority>
-      
-      
-    </url>
-  
-    <url>
-      <loc>https://unionpan.github.io/2022/2022-11-10-entropyandcoding/</loc>
-      
-      <lastmod>2022-11-10T00:00:00+00:00</lastmod>
-      
-      
-      <changefreq>monthly</changefreq>
-      
-      
-      <priority>0.5</priority>
-      
-      
-    </url>
-  
-    <url>
-      <loc>https://unionpan.github.io/1/about/</loc>
-      
-      
-      <changefreq>monthly</changefreq>
-      
-      
-      <priority>0.5</priority>
-      
-      
-    </url>
-  
+  <url>
+    <loc>https://unionpan.github.io/post/dueling_bandits/</loc>
+    <lastmod>2023-10-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://unionpan.github.io/categories/</loc>
+    <lastmod>2023-10-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://unionpan.github.io/post/</loc>
+    <lastmod>2023-10-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://unionpan.github.io/categories/statistics/</loc>
+    <lastmod>2023-10-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://unionpan.github.io/</loc>
+    <lastmod>2023-10-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://unionpan.github.io/categories/game-theory/</loc>
+    <lastmod>2023-01-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://unionpan.github.io/post/wardrop_equilibirum/</loc>
+    <lastmod>2023-01-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://unionpan.github.io/post/the_capacity_of_deception/</loc>
+    <lastmod>2022-11-16T18:58:11+08:00</lastmod>
+  </url><url>
+    <loc>https://unionpan.github.io/post/nesterov/</loc>
+    <lastmod>2022-11-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://unionpan.github.io/categories/optimization/</loc>
+    <lastmod>2022-11-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://unionpan.github.io/about/</loc>
+    <lastmod>2020-04-26T20:18:54+03:00</lastmod>
+  </url><url>
+    <loc>https://unionpan.github.io/tags/</loc>
+  </url>
 </urlset>
