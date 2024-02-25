@@ -23,13 +23,6 @@
       <description>I remember having those unpleasant lines in our high school canteen, flooded by the starving students queeing for their lunch, I would always pick a window with fewer people waiting, compromising myself with awful food. Another similar thought that always stricked me was the odds that tourists always pick the same time to travel, there&amp;rsquo;s almost always traffic congestion everywhere during holiday seasons. Yeah, lives have been always so hard.</description>
     </item>
     <item>
-      <title>A Cryptographic Conundrum</title>
-      <link>https://unionpan.github.io/post/the_capacity_of_deception/</link>
-      <pubDate>Wed, 16 Nov 2022 18:58:11 +0800</pubDate>
-      <guid>https://unionpan.github.io/post/the_capacity_of_deception/</guid>
-      <description>The Quest for Optimal Communication Let there be Alice and Bob, whose mission this time is to navigate the labyrinth of random outcomes and communicate in the most efficient way possible.&#xA;Alice wants to communicate with Bob about a sequence of \(n\) independent random outcomes sampled from a known distribution \(Q\). To keep things concise, they&amp;rsquo;ve agreed on a secret binary language. Now, the plot thickens with the concept of entropy.</description>
-    </item>
-    <item>
       <title>Nesterov</title>
       <link>https://unionpan.github.io/post/nesterov/</link>
       <pubDate>Tue, 15 Nov 2022 00:00:00 +0000</pubDate>
@@ -37,11 +30,18 @@
       <description>We briefly reviewed the lower complexity bound of first-order convex optimization and how Nesterov proceed to match the lower bound using the estimation sequence, the slides are here.&#xA;Consider an unconstrained optimization problem: \[ \min_{x \in \mathbb{R}^n} f(x) . \] Here, \(f \in \mathcal{C}^1\) is a convex, $L$-Lipschitz smooth function. Obviously we can solve this problem by using first-order methods, the question is how fast they are.</description>
     </item>
     <item>
+      <title>The Capacity of Deception</title>
+      <link>https://unionpan.github.io/post/capacity-deception/</link>
+      <pubDate>Thu, 10 Nov 2022 00:00:00 +0000</pubDate>
+      <guid>https://unionpan.github.io/post/capacity-deception/</guid>
+      <description>Entropy and Optimal Coding Alice wants to communicate with Bob about a sequence of \(n\) independent random outcomes sampled from a known distribution \(Q\). They use binary code agreed in advance to limit the message length. The entropy of \(Q\) is the expected number of bits necessary per random variable using the optimal code as \(n\) goes to \(\infty\). The relative entropy between distributions $P$ and $Q$ can be interpreted as the price in terms of expected message length that Alice and Bob have to pay if they believe the random variables are sampled from $P$ when in fact they are sampled from $Q$.</description>
+    </item>
+    <item>
       <title>About Me</title>
       <link>https://unionpan.github.io/about/</link>
       <pubDate>Sun, 26 Apr 2020 20:18:54 +0300</pubDate>
       <guid>https://unionpan.github.io/about/</guid>
-      <description>I am PhD candidate at NYU Tandon. My primary interest lies in statistical/reinforcement learning and applied game theory. Recently I&amp;rsquo;ve been working on macroscopic traffic assignment problems and Non-equilibrium learning in games.&#xA;I love basketball and boxing, I play mildly competitive games of basketball and do some sparring occasionally, you can also find me doing other outdoorsy stuff (like slacklining :))&#xA;What I&amp;rsquo;ve been reading recently: East of Eden, The Savage Detective, (revisiting since it&amp;rsquo;s the key to 2666, I am a big Bolano fan!</description>
+      <description>I am a PhD candidate at NYU Tandon. My primary interest lies in statistical/reinforcement learning and applied game theory. Recently I&amp;rsquo;ve been working on macroscopic traffic assignment problems and Non-equilibrium learning in games.&#xA;I love basketball and boxing, I play mildly competitive games of basketball and do some sparring occasionally, you can also find me doing other outdoorsy stuff (like slacklining :))&#xA;I&amp;rsquo;ve recently just finished East of Eden, now I&amp;rsquo;m on my way reading Aumulet, Woes of the True Policeman, (still revisiting the key to 2666) and revisiting Gatsby.</description>
     </item>
   </channel>
 </rss>

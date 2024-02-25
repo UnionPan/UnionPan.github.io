@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Statistics on union&#39;s blog</title>
+    <title> Statistics  on union&#39;s blog</title>
     <link>https://unionpan.github.io/categories/statistics/</link>
-    <description>Recent content in Statistics on union&#39;s blog</description>
+    <description>Recent content in  Statistics  on union&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 11 Oct 2023 00:00:00 +0000</lastBuildDate>
@@ -16,11 +16,11 @@
       <description>The dueling bandit problem natrually fits the description of a variety of recommendation systems that require &amp;lsquo;&amp;rsquo;learning on the fly&amp;rsquo;&amp;rsquo;, yet have no explicit access to a &amp;lsquo;&amp;lsquo;reward&amp;rsquo;&amp;rsquo; model. Instead, the &amp;lsquo;&amp;lsquo;human&amp;rsquo;&amp;rsquo; feedback part takes the form of &amp;lsquo;&amp;lsquo;choices&amp;rsquo;&amp;rsquo;, &amp;lsquo;&amp;lsquo;votes&amp;rsquo;&amp;rsquo;, or some discrete forms. Hence, oftentimes a learning protocol proceeds at time steps \(t = 1, \ldots, T\):&#xA;The algorithm chooses a pair of arms \( a_i, a_j \) from \(K\) available ones; The oracle/human feedback/nature reveals the winner arm \( a_i \), with probability \( P(a_i \succ a_j)\), \( P(a_i \prec a_j) = 1 - P(a_i \succ a_j) \) So the feedback is either \(a_i\) or \( a_j \), the preferences forms a matrix \(P \in \mathbb{R}^{K \times K}\) such that \( P + P^{\top} = I\) which defines the hidden information of the dueling bandit problem.</description>
     </item>
     <item>
-      <title>A Cryptographic Conundrum</title>
-      <link>https://unionpan.github.io/post/the_capacity_of_deception/</link>
-      <pubDate>Wed, 16 Nov 2022 18:58:11 +0800</pubDate>
-      <guid>https://unionpan.github.io/post/the_capacity_of_deception/</guid>
-      <description>The Quest for Optimal Communication Let there be Alice and Bob, whose mission this time is to navigate the labyrinth of random outcomes and communicate in the most efficient way possible.&#xA;Alice wants to communicate with Bob about a sequence of \(n\) independent random outcomes sampled from a known distribution \(Q\). To keep things concise, they&amp;rsquo;ve agreed on a secret binary language. Now, the plot thickens with the concept of entropy.</description>
+      <title>The Capacity of Deception</title>
+      <link>https://unionpan.github.io/post/capacity-deception/</link>
+      <pubDate>Thu, 10 Nov 2022 00:00:00 +0000</pubDate>
+      <guid>https://unionpan.github.io/post/capacity-deception/</guid>
+      <description>Entropy and Optimal Coding Alice wants to communicate with Bob about a sequence of \(n\) independent random outcomes sampled from a known distribution \(Q\). They use binary code agreed in advance to limit the message length. The entropy of \(Q\) is the expected number of bits necessary per random variable using the optimal code as \(n\) goes to \(\infty\). The relative entropy between distributions $P$ and $Q$ can be interpreted as the price in terms of expected message length that Alice and Bob have to pay if they believe the random variables are sampled from $P$ when in fact they are sampled from $Q$.</description>
     </item>
   </channel>
 </rss>
