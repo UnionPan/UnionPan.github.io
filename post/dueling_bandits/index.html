@@ -197,6 +197,7 @@ The algorithm chooses a pair of arms \( a_i, a_j \) from \(K\) available ones; T
         <li><a href="#interleaved-filter-if-and-beat-the-mean-btm">Interleaved Filter (IF) and Beat the Mean (BtM)</a></li>
         <li><a href="#sensitivity-analysis--of-variables-of-generic-exploration-savage-and-doubler">Sensitivity Analysis  of VAriables of Generic Exploration (SAVAGE) and Doubler</a></li>
         <li><a href="#rmed-and-sparring">RMED and Sparring</a></li>
+        <li><a href="#a-bit-thoughts">A bit thoughts</a></li>
       </ul>
     </li>
   </ul>
@@ -369,6 +370,11 @@ symmetric game is one where the payoffs for playing a particular strategy depend
 This is intuitively understandable because you can always view the dueling recommendations as actions played by two players and the eventual goal is to come up with a &ldquo;draw&rdquo; that no one wants to deviate.</p>
 <p>Therefore, any no-regret dynamics would lead to the empirical convergence to the equilibrium of such a game, oftentimes the regret has the form of \( \mathcal{O}(\sqrt{T}) \), I&rsquo;m going to write a post to discuss the adversarial bandit problems later to talk about my understandings. What was surprising is that empirical experiments show that adversarial algorithms seem to have a logaritmic regret rate despite the proven bound.</p>
 <p>In general, given an algorithm \( \mathcal{A} \) that solves the adversarial bandit problem, we can use it to sovle the dueling bandits problem by placing a row player and a column player, both sparring with each other by giving out his bet of best action, one gets reward \(1\) if he wins, otherwise \(0\). As the comparisons have been carried out, the player uses \(\mathcal{A}\) to update their strategies. In this fashion, we are sort of obtaining a sampling estimate of the preference matrix, or at least getting some information of this preference matrix through sparring, it is just this sampling procedure is <em>symmetric</em>.</p>
+<h3 id="a-bit-thoughts">A bit thoughts</h3>
+<p>Dueling bandits, as a variant of the multi-armed bandit problem has its relevance in that the preference feedback nowadays are way more easier to obtain.
+It sort of gave rises to the concept of Reinforcement Learning with Human Feedback and I believe chatgpt has been significantly benefiting from that.
+I personally think the whole RLHF thing don&rsquo;t really quite need a theoretical fundation unless it is really instructive. Entertainment-wise, I love the advancement of dueling bandits in that it gives a theoretical formalism for how we can deal with discrete type of data.
+We&rsquo;ll see where it leads us to.</p>
 <div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>

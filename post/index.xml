@@ -23,18 +23,18 @@
       <description>I remember having those unpleasant lines in our high school canteen, flooded by the starving students queeing for their lunch, I would always pick a window with fewer people waiting, compromising myself with awful food. Another similar thought that always stricked me was the odds that tourists always pick the same time to travel, there&amp;rsquo;s almost always traffic congestion everywhere during holiday seasons. Yeah, lives have been always so hard.</description>
     </item>
     <item>
+      <title>A Cryptographic Conundrum</title>
+      <link>https://unionpan.github.io/post/the_capacity_of_deception/</link>
+      <pubDate>Wed, 16 Nov 2022 18:58:11 +0800</pubDate>
+      <guid>https://unionpan.github.io/post/the_capacity_of_deception/</guid>
+      <description>The Quest for Optimal Communication Let there be Alice and Bob, whose mission this time is to navigate the labyrinth of random outcomes and communicate in the most efficient way possible.&#xA;Alice wants to communicate with Bob about a sequence of \(n\) independent random outcomes sampled from a known distribution \(Q\). To keep things concise, they&amp;rsquo;ve agreed on a secret binary language. Now, the plot thickens with the concept of entropy.</description>
+    </item>
+    <item>
       <title>Nesterov</title>
       <link>https://unionpan.github.io/post/nesterov/</link>
       <pubDate>Tue, 15 Nov 2022 00:00:00 +0000</pubDate>
       <guid>https://unionpan.github.io/post/nesterov/</guid>
       <description>We briefly reviewed the lower complexity bound of first-order convex optimization and how Nesterov proceed to match the lower bound using the estimation sequence, the slides are here.&#xA;Consider an unconstrained optimization problem: \[ \min_{x \in \mathbb{R}^n} f(x) . \] Here, \(f \in \mathcal{C}^1\) is a convex, $L$-Lipschitz smooth function. Obviously we can solve this problem by using first-order methods, the question is how fast they are.</description>
-    </item>
-    <item>
-      <title>The Capacity of Deception</title>
-      <link>https://unionpan.github.io/post/capacity-deception/</link>
-      <pubDate>Thu, 10 Nov 2022 00:00:00 +0000</pubDate>
-      <guid>https://unionpan.github.io/post/capacity-deception/</guid>
-      <description>Entropy and Optimal Coding Alice wants to communicate with Bob about a sequence of \(n\) independent random outcomes sampled from a known distribution \(Q\). They use binary code agreed in advance to limit the message length. The entropy of \(Q\) is the expected number of bits necessary per random variable using the optimal code as \(n\) goes to \(\infty\). The relative entropy between distributions $P$ and $Q$ can be interpreted as the price in terms of expected message length that Alice and Bob have to pay if they believe the random variables are sampled from $P$ when in fact they are sampled from $Q$.</description>
     </item>
   </channel>
 </rss>
