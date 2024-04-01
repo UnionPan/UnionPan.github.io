@@ -4,25 +4,25 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <title>Nesterov | union&#39;s blog</title>
+    <title>A Variational Perspective On Gradient Descent | union&#39;s blog</title>
     <meta name="description"
-        content="We briefly reviewed the lower complexity bound of first-order convex optimization and how Nesterov proceed to match the lower bound using the estimation sequence, the slides are here.
-Consider an unconstrained optimization problem: \[ \min_{x \in \mathbb{R}^n} f(x) . \] Here, \(f \in \mathcal{C}^1\) is a convex, $L$-Lipschitz smooth function. Obviously we can solve this problem by using first-order methods, the question is how fast they are.">
-    <link rel="canonical" href="https://unionpan.github.io/post/nesterov/" />
+        content="In this post I just want to share a simple and elegant idea from a Control System Letter paper written by Maxim Raginsky et al.1. This idea largely inspired my recent work on multi-agent learning in (monotone) games2, which I might devote another post to talk about if I happen to get some interesting results out of it.
+The idea starts from here: we all know that the archetype of solving convex optimization problem is through gradient descent: $$ x_{k&#43;1} = x_k - \nabla f(x_k), $$ which, in continuous time, corresponds to an autonomous dynamical system: $$ \dot{x} = - \nabla f (x) , \quad x(0) = x_0.">
+    <link rel="canonical" href="https://unionpan.github.io/post/variational_perspective/" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
     
     <link rel="stylesheet" href="https://unionpan.github.io/scss/style.min.fd03f00c6cceb36e9051ed7a5f050822f69766d1ebc4b0a9eaf818a01fbcb591.css">
-    <meta property="og:title" content="Nesterov" />
-<meta property="og:description" content="We briefly reviewed the lower complexity bound of first-order convex optimization and how Nesterov proceed to match the lower bound using the estimation sequence, the slides are here.
-Consider an unconstrained optimization problem: \[ \min_{x \in \mathbb{R}^n} f(x) . \] Here, \(f \in \mathcal{C}^1\) is a convex, $L$-Lipschitz smooth function. Obviously we can solve this problem by using first-order methods, the question is how fast they are." />
+    <meta property="og:title" content="A Variational Perspective On Gradient Descent" />
+<meta property="og:description" content="In this post I just want to share a simple and elegant idea from a Control System Letter paper written by Maxim Raginsky et al.1. This idea largely inspired my recent work on multi-agent learning in (monotone) games2, which I might devote another post to talk about if I happen to get some interesting results out of it.
+The idea starts from here: we all know that the archetype of solving convex optimization problem is through gradient descent: $$ x_{k&#43;1} = x_k - \nabla f(x_k), $$ which, in continuous time, corresponds to an autonomous dynamical system: $$ \dot{x} = - \nabla f (x) , \quad x(0) = x_0." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://unionpan.github.io/post/nesterov/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2022-11-15T00:00:00+00:00" />
-<meta property="article:modified_time" content="2022-11-15T00:00:00+00:00" /><meta property="og:site_name" content="union&#39;s blog" />
+<meta property="og:url" content="https://unionpan.github.io/post/variational_perspective/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2024-02-11T00:00:00+00:00" />
+<meta property="article:modified_time" content="2024-02-11T00:00:00+00:00" /><meta property="og:site_name" content="union&#39;s blog" />
 
-    <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Nesterov"/>
-<meta name="twitter:description" content="We briefly reviewed the lower complexity bound of first-order convex optimization and how Nesterov proceed to match the lower bound using the estimation sequence, the slides are here.
-Consider an unconstrained optimization problem: \[ \min_{x \in \mathbb{R}^n} f(x) . \] Here, \(f \in \mathcal{C}^1\) is a convex, $L$-Lipschitz smooth function. Obviously we can solve this problem by using first-order methods, the question is how fast they are."/>
+    <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="A Variational Perspective On Gradient Descent"/>
+<meta name="twitter:description" content="In this post I just want to share a simple and elegant idea from a Control System Letter paper written by Maxim Raginsky et al.1. This idea largely inspired my recent work on multi-agent learning in (monotone) games2, which I might devote another post to talk about if I happen to get some interesting results out of it.
+The idea starts from here: we all know that the archetype of solving convex optimization problem is through gradient descent: $$ x_{k&#43;1} = x_k - \nabla f(x_k), $$ which, in continuous time, corresponds to an autonomous dynamical system: $$ \dot{x} = - \nabla f (x) , \quad x(0) = x_0."/>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"
     integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
@@ -160,7 +160,7 @@ Consider an unconstrained optimization problem: \[ \min_{x \in \mathbb{R}^n} f(x
 </header><main>
 <div class="single-container">
     <div class="archive">
-        <h1 class="title is-1">Nesterov</h1>
+        <h1 class="title is-1">A Variational Perspective On Gradient Descent</h1>
         <div class="title subtitle heading is-6">
             <div class="author-info columns is-vcentered">
                 <div class="column">
@@ -172,7 +172,7 @@ Consider an unconstrained optimization problem: \[ \min_{x \in \mathbb{R}^n} f(x
                         
                         <div class="column">
                             <p>union</p>
-                            <p><time>November 15, 2022</time>
+                            <p><time>February 11, 2024</time>
                             </p>
                         </div>
                     </div>
@@ -186,6 +186,11 @@ Consider an unconstrained optimization problem: \[ \min_{x \in \mathbb{R}^n} f(x
             <div class="toc-container">
                 
     <div class="post-toc">
+        
+            <aside>
+                <button id="tocButton" ><h4 id="contents" style="margin-left: 1vw;color:rgb(96, 134, 180);margin-bottom: 0;">CONTENTS</h4></button>
+                <div id="hide"><nav id="TableOfContents"></nav></div>
+            </aside>
         
     </div><script>
     
@@ -207,13 +212,49 @@ Consider an unconstrained optimization problem: \[ \min_{x \in \mathbb{R}^n} f(x
 
 </script>
             </div>
-            <p>We briefly reviewed the lower complexity bound of first-order convex optimization and how Nesterov proceed to match the lower bound using the estimation sequence, <a href="https://drive.google.com/file/d/1EynpHsGDV-UObuT9tYwNmkAesYSN5GiY/view?usp=sharing">the slides are here</a>.</p>
-<p>Consider an unconstrained optimization problem:
-\[
-\min_{x \in \mathbb{R}^n} f(x) .
-\]
-Here, \(f \in \mathcal{C}^1\) is a convex, $L$-Lipschitz smooth function.
-Obviously we can solve this problem by using first-order methods, the question is how fast they are.</p>
+            <p>In this post I just want to share a simple and elegant idea from a Control System Letter paper written by Maxim Raginsky et al.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>. This idea largely inspired my recent work on multi-agent learning in (monotone) games<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>, which I might devote another post to talk about if I happen to get some interesting results out of it.</p>
+<p>The idea starts from here: we all know that the archetype of solving convex optimization problem is through gradient descent:
+$$
+x_{k+1} =  x_k  - \nabla f(x_k),
+$$
+which, in continuous time, corresponds to an autonomous dynamical system:
+$$
+\dot{x} =  - \nabla f (x) , \quad x(0) = x_0.
+$$
+A natural question to ask is what are the hidden objectives being achieved along the gradient flow. This question was approached in a &ldquo;inverse optimal control&rdquo; fashion, i.e., given an autonomous dynamical system, identify the close-loop control and its corresponding optimal control problem. In this approach, the Fenchel-Young inequality played a crucial role to formulate the optimal control problem, as was extensively used in the variational principles introduced by Brezis and Ekeland<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>.</p>
+<p>For any function \(f\) defined over primal space \( \mathcal{X}\), denote its Fenchel conjugate as \(f^* (y) =  \sup_{x \in \mathcal{X}} \{  \langle x,y \rangle  - f(x)\} \), we have the Fenchel coupling:
+$$
+\mathcal{FC}_{f} (x, y) =  f(x ) + f^*(y) - \langle x, y \rangle  \geq 0
+$$</p>
+<p>with the equality holds if.f. $ y \in \partial f(x)$, or $x \in \partial f^* (y)$ if $f$ is convex.</p>
+<p>Now we can try constructing the optimal control problem, we have:
+$$
+\begin{align*}
+\inf_{ u \in \mathcal{U} } J(x_0) &amp; \triangleq \int_{t=0}^{\infty} f(x(t)) + f^* (-u(t)) + \langle u(t), \bar{x}  \rangle  \mathrm{d}t \\
+\text{s.t. } \quad \quad \quad &amp; \dot{x} = u , \quad x(0) = x_0
+\end{align*}
+$$
+where $\bar{x} \in \arg\min_{x\in\mathcal{X} }f(x) $ is an optimal solution. Intuitively, solving this optimal control problem should also lead to an optimal solution to the original problem $\min_{x \in \mathcal{X}} f$. This can be actually verified by, let&rsquo;s say, put $u^* (t)$ to be a close-loop control $-\nabla f(x(t))$, we know it eventually leads to $\bar{x}$, and by Fenchel-young inequality, $f(\bar{x}(t)) + f^* (-u^* (t)) + \langle u^* (t), \bar{x}  \rangle = 0$, meaning that the stage cost of the optimal control problem also goes to $0$, we have enough reason to believe that $u^*(t)$ is actually the optimal control.</p>
+<p>This result is nearly trivial as we just need to construct a Lyapunov function $V(x) =  \frac{1}{2} \|x - \bar{x}\|^2$.
+We have, by Fenchel-Young inequality,
+\begin{equation}
+\dot{V} (x) + f(x) + f^* ( - u) + \langle  \bar{x}, u \rangle \geq 0 ,
+\end{equation} which simply imply that $V(x)$ is actually a value function and the optimal control should be whatever makes the equality holds, i.e., the close-loop control $ - \nabla f(x(t)) $.
+The benefit we can gain from this is the availablity of an entire analytical toolbag for differential equations, even stochastic differential equations if we consider the stochastic case.</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>Tzen, B., Raj, A., Raginsky, M. and Bach, F., 2023. Variational principles for mirror descent and mirror langevin dynamics. IEEE Control Systems Letters.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>Pan, Y., Li, T. and Zhu, Q., 2024. On the Variational Interpretation of Mirror Play in Monotone Games. arXiv preprint arXiv:2403.15636.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3">
+<p>Brézis, H. and Ekeland, I., 1976. Un principe variationnel associéa certaines equations paraboliques. Le cas independant du temps. CR Acad. Sci. Paris Sér. AB, 282(17), pp.971-974.&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
 
         </div>
     </div>
@@ -233,11 +274,11 @@ Obviously we can solve this problem by using first-order methods, the question i
         <section class="pre-and-post">
             <div class="has-text-left">
                 
+                <p>Previous post</p>
+                <a href="https://unionpan.github.io/post/dueling_bandits/"> Some Notes on Dueling Bandits</a>
+                
             </div>
             <div class="has-text-right">
-                
-                <p>Next post</p>
-                <a href="https://unionpan.github.io/post/the_capacity_of_deception/">A Cryptographic Conundrum</a>
                 
             </div>
         </section>
