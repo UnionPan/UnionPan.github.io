@@ -6,8 +6,15 @@
     <description>Recent content in Statistics on union&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 11 Oct 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 26 Mar 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://unionpan.github.io/categories/statistics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Talagrand&#39;s Isoperimetry inequality</title>
+      <link>https://unionpan.github.io/post/talagrand/</link>
+      <pubDate>Tue, 26 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>https://unionpan.github.io/post/talagrand/</guid>
+      <description>This post is in celebration of Michel Talagrand winning Abel prize. Not to overly romanticize this but this is pretty much a come back story because back in the days of last century, “The type of mathematics I do was not fashionable at all when I started. It was considered inferior mathematics.” &amp;ndash;Michel Talagrand.&#xA;Now we&amp;rsquo;ve seen significance of his contribution to the concentration of measure, suprema of stochastic processes and spin glass, all partially owing to his celebrated isoperimetry inequality in product probability space.</description>
+    </item>
     <item>
       <title> Some Notes on Dueling Bandits</title>
       <link>https://unionpan.github.io/post/dueling_bandits/</link>

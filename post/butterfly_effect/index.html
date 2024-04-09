@@ -1,0 +1,327 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>The Lorenz dynamics and Butterfly Effect | union&#39;s blog</title>
+    <meta name="description"
+        content="Chaotic behavior can emerge even in simple dynamics such as replicator, and Rock-Paper-Scissor oscillators, depending on the game settings. To begin with, we first define what is chaos qualitatively: &ldquo;Chaos can be described as long term, aperiodic behaviour that exhibits sensitive dependence on initial conditions. Sensitive dependence on initial conditions implies that nearby trajectories diverge exponentially fast over time.&rdquo; Or, by Edward Lorenz, when the present determines the future but the approximate present does not approximately determine the future.">
+    <link rel="canonical" href="https://unionpan.github.io/post/butterfly_effect/" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+    
+    <link rel="stylesheet" href="https://unionpan.github.io/scss/style.min.fd03f00c6cceb36e9051ed7a5f050822f69766d1ebc4b0a9eaf818a01fbcb591.css">
+    <meta property="og:title" content="The Lorenz dynamics and Butterfly Effect" />
+<meta property="og:description" content="Chaotic behavior can emerge even in simple dynamics such as replicator, and Rock-Paper-Scissor oscillators, depending on the game settings. To begin with, we first define what is chaos qualitatively: &ldquo;Chaos can be described as long term, aperiodic behaviour that exhibits sensitive dependence on initial conditions. Sensitive dependence on initial conditions implies that nearby trajectories diverge exponentially fast over time.&rdquo; Or, by Edward Lorenz, when the present determines the future but the approximate present does not approximately determine the future." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://unionpan.github.io/post/butterfly_effect/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2024-04-08T00:00:00+00:00" />
+<meta property="article:modified_time" content="2024-04-08T00:00:00+00:00" /><meta property="og:site_name" content="union&#39;s blog" />
+
+    <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="The Lorenz dynamics and Butterfly Effect"/>
+<meta name="twitter:description" content="Chaotic behavior can emerge even in simple dynamics such as replicator, and Rock-Paper-Scissor oscillators, depending on the game settings. To begin with, we first define what is chaos qualitatively: &ldquo;Chaos can be described as long term, aperiodic behaviour that exhibits sensitive dependence on initial conditions. Sensitive dependence on initial conditions implies that nearby trajectories diverge exponentially fast over time.&rdquo; Or, by Edward Lorenz, when the present determines the future but the approximate present does not approximately determine the future."/>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"
+    integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"
+    integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8"
+    crossorigin="anonymous"></script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+    
+    
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    { left: "$$", right: "$$", display: true },
+                    { left: "$", right: "$", display: false }
+                ]
+            });
+        });
+    </script>
+    
+</head><body><nav class="navbar is-light" role="navigation">
+    <div class="container">
+        <div class="navbar-brand">
+            <a href="/" title="home" class="navbar-item">
+                <span class="logo">
+                    <h1>union&#39;s blog</h1>
+                </span>
+            </a>
+
+            
+            <a id="theme-toggle" class="theme-toggle" href="#">
+                <img src="https://unionpan.github.io/svg/sun.svg" alt="sun icon" class="theme-icon" />
+            </a>
+
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <div class="navbar-menu">
+            <div class="navbar-start">
+                
+                <a href="/about" class="navbar-item">About</a>
+                
+                <a href="/post" class="navbar-item">Blog</a>
+                
+                <a href="/categories" class="navbar-item">Categories</a>
+                
+            </div>
+
+        </div>
+        <div class="search">
+            <div id="fastSearch">
+                <input id="searchInput" tabindex="0" placeholder="Search..">
+                <ul id="searchResults">
+
+                </ul>
+            </div>
+            <a id="search-btn" style="display: inline-block;" href="# ">
+                <div class="icon-search"><svg class="search-svg" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
+            </a>
+        </div>
+
+        <script src="/js/fuse.min.js"></script> 
+        <script src="/js/fastsearch.js"></script>
+
+    </div>
+</nav>
+
+<script>
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        var burger = document.querySelector('.navbar-burger');
+        burger.addEventListener('click', function() {
+            burger.classList.toggle('is-active');
+            document.querySelector('.navbar-menu').classList.toggle('is-active');
+        });
+    });
+
+    
+    function setTheme(theme) {
+        let body = document.body;
+        let themeIcon = document.querySelector(".theme-icon");
+        if (theme === "dark") {
+            body.classList.add("dark-mode");
+            themeIcon.src = "https:\/\/unionpan.github.io\/svg/moon.svg";
+            themeIcon.alt = "moon icon";
+        } else {
+            body.classList.remove("dark-mode");
+            themeIcon.src = "https:\/\/unionpan.github.io\/svg/sun.svg";
+            themeIcon.alt = "sun icon";
+        }
+        
+        localStorage.setItem("theme", theme);
+    }
+
+    
+    let theme = localStorage.getItem("theme") || "light";
+    const isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (isDarkMode) {
+        
+        setTheme('dark');
+
+    } else {
+        
+        setTheme('light');
+    }
+    setTheme(theme);
+
+    
+    document.getElementById("theme-toggle").addEventListener("click", function() {
+        if (theme === "light") {
+            theme = "dark";
+        } else {
+            theme = "light";
+        }
+        setTheme(theme);
+    });
+
+
+
+</script>
+
+
+
+</header><main>
+<div class="single-container">
+    <div class="archive">
+        <h1 class="title is-1">The Lorenz dynamics and Butterfly Effect</h1>
+        <div class="title subtitle heading is-6">
+            <div class="author-info columns is-vcentered">
+                <div class="column">
+                    <div class="columns is-vcentered is-mobile">
+                        
+                        <div class="column is-narrow">
+                            <img src="/images/me/avatar.jpeg" class="author-image">
+                        </div>
+                        
+                        <div class="column">
+                            <p>union</p>
+                            <p><time>April 8, 2024</time>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="small-categories-container">
+                    <a href="/categories/dynamical-system">Dynamical System</a>
+                </div>
+            </div>
+        </div>
+        <div class="content article-content">
+            <div class="toc-container">
+                
+    <div class="post-toc">
+        
+            <aside>
+                <button id="tocButton" ><h4 id="contents" style="margin-left: 1vw;color:rgb(96, 134, 180);margin-bottom: 0;">CONTENTS</h4></button>
+                <div id="hide"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </aside>
+        
+    </div><script>
+    
+        let button = document.getElementById('tocButton');
+        let hide = document.getElementById("hide");
+        let contents=document.getElementById("contents");
+        button.addEventListener("click", function() {
+        if (hide.style.display!='block') {
+            hide.style.display='block'
+        } else {
+            hide.style.display='none'
+            contents.style.color='rgb(96, 134, 180)'
+        }
+        });
+    
+
+
+
+
+</script>
+            </div>
+            <p>Chaotic behavior can emerge even in simple dynamics such as replicator, and Rock-Paper-Scissor oscillators, depending on the game settings. To begin with, we first define what is chaos qualitatively: <em>&ldquo;Chaos can be described as long term, aperiodic behaviour that exhibits sensitive dependence on initial conditions. Sensitive dependence on initial conditions implies that nearby trajectories diverge exponentially fast over time.&rdquo;</em> Or, by Edward Lorenz, <em>when the present determines the future but the approximate present does not approximately determine the future.</em></p>
+<p>Edward Norton Lorenz (1918-2008), American mathematician and meteorologist, established the basis of weather and climate predictability. He studied mathematics at Dartmouth and Harvard, before breaking from his work to serve as a weather forecaster for the Air Force during World War II. As the war concluded, he entered the Massachusetts Institute of Technology (MIT), where he earned a doctoral degree in meteorology.</p>
+<p>In the mid-1900s, the field of meteorology was still very much in its infancy. Lorenz programmed an existing computer, the Royal McBee, to aide in his research of atmosphere equations and forecasting. His program allowed him control the initial conditions of a weather system based on 12 differential equations. And the idea naturally came to him in 1961, when he was running a program with data rounded off from previous experiment, he found &ldquo;chaos&rdquo;: the fact that two weather conditions, which differ by less than $0.1%$, can produce significantly different results. So he wrote the paper &ldquo;ordinary differential equations whose solutions afford the simplest example of deterministic non periodic flow and finite amplitude convection&rdquo;, where he found that when applying Fourier series to one of Rayleigh&rsquo;s convection equations, all except three variables tended to zero, which were used to construct a simple model based on the 2-dimensional representation of the earth&rsquo;s atmosphere, the <em>Lorenz Equation</em>:
+$$
+\begin{aligned}\frac{d x}{d t}=\dot{x}=\sigma(y-x) \\ \frac{d y}{d t}=\dot{y}=\rho x-y-x z \\ \frac{d z}{d t}=\dot{z}=x y-\beta z .
+\end{aligned}
+$$</p>
+<p>Here, $x$ represents the convective overturning on the plane, $y$ and $z$ represent horizontal and vertical temperature variation respectively.</p>
+<p>The parameters in the Lorenz system—sigma ($\sigma$), rho ($\rho$), and beta ($\beta$)—have specific physical interpretations in the context of atmospheric convection, but they also have broader implications for the system&rsquo;s behavior in mathematical and physical systems modeling. Here&rsquo;s what each parameter represents:</p>
+<ol>
+<li>$\sigma$ is
+the Prandtl number, which is a dimensionless number expressing the ratio of momentum diffusivity (viscosity) to thermal diffusivity. In the context of the Lorenz attractor, it represents the rate of heat transfer (convection) versus the rate of temperature change. A higher sigma increases the rate at which the system diverges along the $x$-axis relative to the $y$-axis, influencing the system&rsquo;s tendency toward chaotic behavior.</li>
+<li>$\rho$ is
+the Rayleigh number divided by its critical value for the onset of convection. It is a measure of the buoyancy-driven flow (thermal instability within the fluid), which is a result of temperature differences. In the Lorenz equations, it directly influences the nonlinearity of the system and is critical for the emergence of chaos. When $\rho$ is larger than a certain threshold (in the standard Lorenz system, $\rho$ &gt; 24.74), the system exhibits chaotic behavior.</li>
+<li>$\beta$ is a dimensionless parameter related to the geometry of the problem, specifically the aspect ratio of the convective cells. It can be thought of as influencing the vertical temperature profile within the system. Beta affects the dissipation rate of the vertical velocity component, influencing how the system&rsquo;s trajectories contract towards the $z$-axis.</li>
+</ol>
+<p>Specific parameter settings will lead to chaos.
+By setting $\dot{x}, \dot{y},$ and $\dot{z}$ to $0$ we get three equilibrium points:
+$$
+\begin{aligned}
+&amp; k_0 = (0, 0, 0) \\
+&amp; k_1 = (-\sqrt{\beta ( \rho - 1 )}, \sqrt{\beta ( \rho - 1 )}, \rho - 1  ) \\
+&amp; k_2 = (\sqrt{\beta ( \rho - 1 )},  - \sqrt{\beta ( \rho - 1 )}, \rho - 1  )
+\end{aligned}
+$$</p>
+<p>Linearizing the ODE around these equilibrium points to check the stability we get:
+$$
+\left[\begin{array}{c}\dot{x} \ \dot{y} \ \dot{z}\end{array}\right]=\left[\begin{array}{ccc}-\sigma &amp; \sigma &amp; 0 \ \rho-\bar{z} &amp; -1 &amp; \bar{x} \ \bar{y} &amp; \bar{x} &amp; -\beta\end{array}\right]\left[\begin{array}{l}x \ y \ z\end{array}\right]
+$$</p>
+<p>if we take $(\bar{x}, \bar{y}, \bar{z})$ to be $k_0$ we get eigenvalue equation:
+$$
+\lambda^{3}+(\beta+\sigma+1) \lambda^{2}+(\beta+\beta \sigma+\sigma-\rho \sigma) \lambda+\beta \sigma(1-\rho)=0
+$$
+and $-\beta$ is one solution, so we get
+$$
+(\lambda+\beta)\left(\lambda^{2}+(\sigma+1) \lambda+\sigma(1-\rho)\right)=0
+$$
+and the eigenvalues:
+$$
+\lambda_{1}, \lambda_{2}=\frac{-\sigma-1 \pm \sqrt{(\sigma+1)^{2}+4 \sigma(\rho-1)}}{2}, \lambda_{3}=-\beta .
+$$</p>
+<p>If we take $k_1$ or $k_2$, we end up with eigenvalues satisfying:
+$$
+\mu^{3}+(\beta+\sigma+1) \mu^{2}+(\sigma+\rho) \beta \mu+(1-\rho) 2 \sigma \beta=0
+$$
+where all the three eigenvalues are negative when
+$$
+\rho&lt;\frac{\sigma(\sigma+\beta+3)}{\sigma-\beta-1}=\rho_{c}
+$$</p>
+<p>$\rho_c \approx 24.74$ when $\sigma = 10$ and $\beta = 8/3$.</p>
+<p>Therefore, at $\rho &gt; \rho_c$, there are no fixed points. The flow will enter an invariance region around the origin where we see chaotic behavior.
+$$
+\begin{array}{|l|l|}\hline \rho &amp; \text { Fixed Points } \ \hline[0-1] &amp; (0,0,0) \ \hline(1,24.74) &amp; k_{1}, k_{2} \ \hline[24.74-30.1) &amp; \text { None, chaos occurs } \ \hline[30.1-\infty) &amp; \text { intermittency (not proven) } \ \hline\end{array}
+$$</p>
+<h4 id="the-butterfly-effect">The Butterfly Effect</h4>
+<p>Picking initial conditions $(0,1,0)$ $(1,0,1)$ we will get two distinct paths, shown in the following picture.
+<img src="/images/posts/Lorenz_trajectories.png" alt=""></p>
+<p>It sort of resembles a butterfly, hence the chaotic effects in general are referred to as the Butterfly Effect. This draws upon Lorenz&rsquo;s findings that two seemingly identical weather
+systems could produce two very different weather systems in the near future. Thus, a butterfly flapping
+its wings could alter the atmosphere ever so slightly, so as to deviate from the initial conditions, and
+accordingly alter the course of weather forever. Lorenz first used the example of a seagull&rsquo;s wings, though
+the analogy has morphed into using a butterfly.</p>
+<p>The buutterfly effect can be helpful to explain a lot of phenomenons in engineering, geography, and particularly stock market, where the linear financial models have failed many times. Just like Lorenz&rsquo;s conclusion about weather conditions, the long run economic forecast is not feasible beyond a short time frame.</p>
+
+        </div>
+    </div>
+    <a href="#" id="scrollToTopButton">
+        <svg t="1686753152588" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+            p-id="3988" width="48" height="48">
+            <path
+                d="M518.5 360.3c-3.2-4.4-9.7-4.4-12.9 0l-178 246c-3.8 5.3 0 12.7 6.5 12.7H381c10.2 0 19.9-4.9 25.9-13.2L512 460.4l105.2 145.4c6 8.3 15.6 13.2 25.9 13.2H690c6.5 0 10.3-7.4 6.5-12.7l-178-246z"
+                p-id="3989" fill="#363636"></path>
+            <path
+                d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64z m0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
+                p-id="3990" fill="#363636"></path>
+        </svg>
+    </a>
+
+<div class="pp-container">
+        <section class="pre-and-post">
+            <div class="has-text-left">
+                
+                <p>Previous post</p>
+                <a href="https://unionpan.github.io/post/talagrand/">Talagrand&#39;s Isoperimetry inequality</a>
+                
+            </div>
+            <div class="has-text-right">
+                
+            </div>
+        </section>
+    </div>
+
+</div>
+
+        </main><footer class="footer">
+    <div class="content has-text-centered">
+    <span>&copy; 2024 </span>
+    <span>
+        only in chaos are we conceivable.
+    </span>
+    </div>
+
+
+  </footer>
+
+  </body>
+</html>
+

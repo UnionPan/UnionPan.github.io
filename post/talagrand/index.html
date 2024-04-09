@@ -1,0 +1,388 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Talagrand&#39;s Isoperimetry inequality | union&#39;s blog</title>
+    <meta name="description"
+        content="This post is in celebration of Michel Talagrand winning Abel prize. Not to overly romanticize this but this is pretty much a come back story because back in the days of last century, “The type of mathematics I do was not fashionable at all when I started. It was considered inferior mathematics.” &ndash;Michel Talagrand.
+Now we&rsquo;ve seen significance of his contribution to the concentration of measure, suprema of stochastic processes and spin glass, all partially owing to his celebrated isoperimetry inequality in product probability space.">
+    <link rel="canonical" href="https://unionpan.github.io/post/talagrand/" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+    
+    <link rel="stylesheet" href="https://unionpan.github.io/scss/style.min.fd03f00c6cceb36e9051ed7a5f050822f69766d1ebc4b0a9eaf818a01fbcb591.css">
+    <meta property="og:title" content="Talagrand&#39;s Isoperimetry inequality" />
+<meta property="og:description" content="This post is in celebration of Michel Talagrand winning Abel prize. Not to overly romanticize this but this is pretty much a come back story because back in the days of last century, “The type of mathematics I do was not fashionable at all when I started. It was considered inferior mathematics.” &ndash;Michel Talagrand.
+Now we&rsquo;ve seen significance of his contribution to the concentration of measure, suprema of stochastic processes and spin glass, all partially owing to his celebrated isoperimetry inequality in product probability space." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://unionpan.github.io/post/talagrand/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2024-03-26T00:00:00+00:00" />
+<meta property="article:modified_time" content="2024-03-26T00:00:00+00:00" /><meta property="og:site_name" content="union&#39;s blog" />
+
+    <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Talagrand&#39;s Isoperimetry inequality"/>
+<meta name="twitter:description" content="This post is in celebration of Michel Talagrand winning Abel prize. Not to overly romanticize this but this is pretty much a come back story because back in the days of last century, “The type of mathematics I do was not fashionable at all when I started. It was considered inferior mathematics.” &ndash;Michel Talagrand.
+Now we&rsquo;ve seen significance of his contribution to the concentration of measure, suprema of stochastic processes and spin glass, all partially owing to his celebrated isoperimetry inequality in product probability space."/>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"
+    integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"
+    integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8"
+    crossorigin="anonymous"></script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+    
+    
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    { left: "$$", right: "$$", display: true },
+                    { left: "$", right: "$", display: false }
+                ]
+            });
+        });
+    </script>
+    
+</head><body><nav class="navbar is-light" role="navigation">
+    <div class="container">
+        <div class="navbar-brand">
+            <a href="/" title="home" class="navbar-item">
+                <span class="logo">
+                    <h1>union&#39;s blog</h1>
+                </span>
+            </a>
+
+            
+            <a id="theme-toggle" class="theme-toggle" href="#">
+                <img src="https://unionpan.github.io/svg/sun.svg" alt="sun icon" class="theme-icon" />
+            </a>
+
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <div class="navbar-menu">
+            <div class="navbar-start">
+                
+                <a href="/about" class="navbar-item">About</a>
+                
+                <a href="/post" class="navbar-item">Blog</a>
+                
+                <a href="/categories" class="navbar-item">Categories</a>
+                
+            </div>
+
+        </div>
+        <div class="search">
+            <div id="fastSearch">
+                <input id="searchInput" tabindex="0" placeholder="Search..">
+                <ul id="searchResults">
+
+                </ul>
+            </div>
+            <a id="search-btn" style="display: inline-block;" href="# ">
+                <div class="icon-search"><svg class="search-svg" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
+            </a>
+        </div>
+
+        <script src="/js/fuse.min.js"></script> 
+        <script src="/js/fastsearch.js"></script>
+
+    </div>
+</nav>
+
+<script>
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        var burger = document.querySelector('.navbar-burger');
+        burger.addEventListener('click', function() {
+            burger.classList.toggle('is-active');
+            document.querySelector('.navbar-menu').classList.toggle('is-active');
+        });
+    });
+
+    
+    function setTheme(theme) {
+        let body = document.body;
+        let themeIcon = document.querySelector(".theme-icon");
+        if (theme === "dark") {
+            body.classList.add("dark-mode");
+            themeIcon.src = "https:\/\/unionpan.github.io\/svg/moon.svg";
+            themeIcon.alt = "moon icon";
+        } else {
+            body.classList.remove("dark-mode");
+            themeIcon.src = "https:\/\/unionpan.github.io\/svg/sun.svg";
+            themeIcon.alt = "sun icon";
+        }
+        
+        localStorage.setItem("theme", theme);
+    }
+
+    
+    let theme = localStorage.getItem("theme") || "light";
+    const isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (isDarkMode) {
+        
+        setTheme('dark');
+
+    } else {
+        
+        setTheme('light');
+    }
+    setTheme(theme);
+
+    
+    document.getElementById("theme-toggle").addEventListener("click", function() {
+        if (theme === "light") {
+            theme = "dark";
+        } else {
+            theme = "light";
+        }
+        setTheme(theme);
+    });
+
+
+
+</script>
+
+
+
+</header><main>
+<div class="single-container">
+    <div class="archive">
+        <h1 class="title is-1">Talagrand&#39;s Isoperimetry inequality</h1>
+        <div class="title subtitle heading is-6">
+            <div class="author-info columns is-vcentered">
+                <div class="column">
+                    <div class="columns is-vcentered is-mobile">
+                        
+                        <div class="column is-narrow">
+                            <img src="/images/me/avatar.jpeg" class="author-image">
+                        </div>
+                        
+                        <div class="column">
+                            <p>union</p>
+                            <p><time>March 26, 2024</time>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="small-categories-container">
+                    <a href="/categories/statistics">Statistics</a>
+                </div>
+            </div>
+        </div>
+        <div class="content article-content">
+            <div class="toc-container">
+                
+    <div class="post-toc">
+        
+            <aside>
+                <button id="tocButton" ><h4 id="contents" style="margin-left: 1vw;color:rgb(96, 134, 180);margin-bottom: 0;">CONTENTS</h4></button>
+                <div id="hide"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </aside>
+        
+    </div><script>
+    
+        let button = document.getElementById('tocButton');
+        let hide = document.getElementById("hide");
+        let contents=document.getElementById("contents");
+        button.addEventListener("click", function() {
+        if (hide.style.display!='block') {
+            hide.style.display='block'
+        } else {
+            hide.style.display='none'
+            contents.style.color='rgb(96, 134, 180)'
+        }
+        });
+    
+
+
+
+
+</script>
+            </div>
+            <p>This post is in celebration of Michel Talagrand winning Abel prize. Not to overly romanticize this but this is pretty much a come back story because back in the days of last century, <em>“The type of mathematics I do was not fashionable at all when I started. It was considered inferior mathematics.”</em> &ndash;Michel Talagrand.</p>
+<p>Now we&rsquo;ve seen significance of his contribution to the concentration of measure, suprema of stochastic processes and spin glass, all partially owing to his celebrated isoperimetry inequality in product probability space.
+What is an isoperimetry inequality? It is a concept in mathematics, particularly in the field of geometry and geometric analysis, that compares the length (or perimeter) of a closed curve to the area of the region it encloses, establishing that among all shapes with the same perimeter, the circle has the maximum area.
+For example:
+$$
+4 \pi A \leq L^2
+$$
+where the equality holds if.f. the curve is a circle. In a more general sense, the isoperimetric inequality relates the volume of an $n$-dimensional domain to the surface area of its boundary, with the sphere in $n$-dimensional space providing the optimal (maximum volume for a given surface area) ratio.
+Applying this concept to probability space, Talagrand was able to prove the following:</p>
+<h4 id="theorem">Theorem</h4>
+<blockquote>
+<p>For a product probability space $\Omega = \prod_{i=1}^n \Omega_i$ endowed with a produdct measure and $A \subseteq \Omega$
+$$
+\mathbb{P}[A] \cdot \mathbb{P}\left[A_{t}^{c}\right] \leq e^{-t^{2} / 4}
+$$
+for any $t &gt; 0$, where $A^c_t = {  w \in \Omega, d(A, \omega) \leq t }$ is an event defined by convex distance:
+$$
+d(A, \omega) = \max_{\alpha, |\alpha|_2 \leq 1} \min_{y \in A} \sum_{ i: \omega_i \neq y_i} \alpha_i.
+$$</p>
+</blockquote>
+<p>To prove the inequality we need a little bit of preparation.
+Given set $A$, $x \in \Omega$: $\mathcal{D}_{A}^{c}(x)=\sup_{a \in \mathcal{R}_{+}^{n}} \left( d_{a}(x, A)=\inf_{y \in A} d_{a}(x, y) \right)$.
+Let
+$$
+V_{A}(x) = \text{ Convex-hull }\left( U_{A}(x) \right) = \left\{\sum_{s \in U_{A} (x) } \alpha_{s} S: \sum \alpha_{s}=1, \alpha_{s} \geq 0 \text{ for all } s \in U_{A}(x) \right\}.
+$$
+Thus,
+$$
+x \in A \Leftrightarrow \mathbf{1}(x \neq x)=0 \in U_{A}(x) \Leftrightarrow 0 \in V_{A}(x).
+$$</p>
+<h4 id="lemma">Lemma</h4>
+<blockquote>
+<p>We have the following
+$$
+\mathcal{D}_{A}^{c}(x)=d \left(0, V_{A}(x) \right) \equiv \inf_{y \in V_{A}(x)}|y|
+$$</p>
+</blockquote>
+<h5 id="proof">Proof</h5>
+<p>We proceed by proving (i) $\mathcal{D}_{A}^{c}(x) \leq \inf_{y \in V_{A}(x)}|y|$ and (ii) $\mathcal{D}_{A}^{c}(x) \geq \inf_{y \in V_{A}(x)}|y|$.</p>
+<p>(i): since $\inf_{y \in V_{A}(x)}|y|$ is achieved, let $Z$ be such that $|Z| = \inf_{y \in V_{A}(x)}|y| $. For any $a \in \mathbb{R}^n_+$ $|a| = 1$:
+$$
+\inf_{y \in V_{A}(x)} a \cdot y \leq a \cdot z \leq|a||z|=|z|.
+$$
+Since $ \inf_{y \in V_{A}(x)} a \cdot y$ is linear programming, the minimum is achieved at an extreme point. That is, there exists $s \in U_A(x)$ such that $$
+\inf_{y \in V_{A}(x)} a \cdot y=\inf_{s \in U_{A}(x)} a \cdot s=\inf_{y \in A} d_{a}(x, y) \text { for some } y \in A . $$which is true for all
+$$
+\sup_{|a|=1, a \in \mathbb{R}_{+}^{n}} \inf_{y \in A} d_{a}(x, y) \leq|z| \equiv \inf_{y \in V_{A}(x)}|y|.
+$$</p>
+<p>(ii): Let $z$ be the one achieving minimum in $V_A(x)$. Then due to convexity of the objective (equivalently $|y|^2 = \sum y^2_i = f(y)$) and of the domain, we have for any
+$ y \in V_A (x), \langle \nabla f(z), y -z \rangle \geq 0$ for any $y \in V_A(x)$. $\nabla f(z) = \nabla (z \dot z) = 2 z$. Therefore the condition implies:
+$$
+(y-z) z \geq 0 \Leftrightarrow y \cdot z \geq z \cdot z=|z|^{2} \Rightarrow y \cdot \frac{z}{|z|} \geq|z|.
+$$</p>
+<p>Thus, for $a = \frac{z}{|z|} \in \mathbb{R}^n_+ $, $|a| = 1$, we have that
+$$
+\inf_{y \in V_A(x)} a \dot y \geq |z| .
+$$
+But for any given $a$, $\inf_{y \in V_A(x)} a \cdot y = \inf_{s \in U_A (x)} a \cdot s = d_a (x,A)$ as explained before. That is, $\sup_{a: |a| = 1} d_a (x, A) \geq |z| = \inf_{ y \in V_A(x)} |y|$.</p>
+<p>$\quad\quad\quad \quad\quad\quad \quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad \quad\quad\quad \quad\quad\quad \quad\quad\quad \quad\quad\quad \quad\quad\quad \square$</p>
+<h5 id="proof-of-isoperimetry-inequality">Proof of Isoperimetry inequality</h5>
+<p>We prove by induction. Consider $n=1$, given $A$,
+$$
+\mathcal{D}_{A}^{c}(x)=\sup_{a \in \mathbb{R}_{+}^{n},|a|=1} \inf_{y \in A} d_{a}(x, y)=\inf_{y \in A} \mathbf{1}(x \neq y)=\left\{ \begin{array}{ll}0, &amp; \text{ for } x \in A \\ 1, &amp; \text { for } x \notin A \end{array} \right.
+$$</p>
+<p>Then
+$$
+\begin{aligned}
+\int \exp \left (D^{2} / 4\right ) d P &amp; =\int_{A} \exp (0) d P+ \int_{A^{c}} \exp (1 / 4) d P \\ &amp; =P(A)+e^{1 / 4}(1-P(A)) \\ &amp; =e^{1 / 4}-\left(e^{1 / 4}-1 \right ) P(A) \\ &amp; \leq \frac{1}{P(A)}.
+\end{aligned}
+$$</p>
+<p>Let $f(x) = e^{1/4} - (e^{1/4} - 1) x$ and $g(x)= \frac{1}{x}$. Because $f(x)$ is a decreasing function of $x$, $g(x)$ is a decreasing convex function, hence the result holds for $n=1$.</p>
+<p>Now let&rsquo;s assume it holds for $n$, let $A  \subset \Omega^{n+1}$, and $B$ be its projections on $\Omega^n$. Let $A(\omega)$ be section of $A$ along $\omega$: if $x \in \Omega^n$, $\omega \in \Omega$, then $z = (x, \omega) \in \Omega^{n+1}$.
+The key observation is that:</p>
+<ol>
+<li>if $s \in U_{A(\omega)} (x)$, then $(s, 0) \in U_{A}(z)$</li>
+<li>if $t \in U_{B}(x)$, then $(t, 1) \in U_{A}(z)$.</li>
+<li>if $\xi \in V_{A(\omega)}(x), \zeta \in V_{B}(x)$, and $\theta \in [0,1]$, then $((\theta \xi+(1-\theta) \zeta), 1-\theta) \in V_{A}(z)$.
+Recall
+$$
+\begin{aligned}
+\mathcal{D}_{A}^{c}(z)^{2} &amp; =\inf_{y \in V_{A}(z)}|y|^{2} \leq(1-\theta)^{2}+|\theta \xi+(1-\theta) \zeta|^{2} \\
+&amp; \leq(1-\theta)^{2}+\theta|\xi|^{2}+(1-\theta)|\zeta|^{2} \\
+&amp; \leq(1-\theta)^{2}+\theta \inf_{\xi \in V_{A(\omega)}(x)}|\xi|^{2}+(1-\theta) \inf_{\zeta \in V_{B}(x)}|\zeta|^{2} \\
+&amp;  =(1-\theta)^{2}+\theta \mathcal{D}_{A(\omega)}^{c}(x)^{2}+(1-\theta) \mathcal{D}_{B}^{c}(x)^{2}
+\end{aligned}
+$$</li>
+</ol>
+<p>By Holder&rsquo;s inequality, and the induction hypothesis, $\forall \omega \in \Omega$,
+$$
+\begin{aligned}
+&amp; \int_{\Omega^{n}} e^{\mathcal{D}_{A}^{c}(x, \omega)^{2} / 4} d P(x) \\
+&amp; \leq \int_{\Omega^{n}} \exp \left(\frac{(1-\theta)^{2}+\theta \mathcal{D}_{A(\omega)}^{c}(x)^{2}+(1-\theta) \mathcal{D}_{B}^{c}(x)}{4} \right) d P(x) \\
+&amp; \leq \exp \left ( \frac{(1-\theta)^{2}}{4} \right ) \int_{\Omega^{n}} \underbrace{\exp \left(\frac{\theta \mathcal{D}_{A(\omega)}^{c}(x)^{2}}{4}\right)}_{X} \underbrace{\exp \left(\frac{(1-\theta) \mathcal{D}_{B}^{c}(x)^{2}}{4}\right)}_{Y} d P(x) \\
+&amp;  =\exp \left(\frac{(1-\theta)^{2}}{4}\right) \mathbb{E}[X \cdot Y]
+\\
+&amp; \leq \exp \left(\frac{(1-\theta)^{2}}{4}\right) \mathbb{E}\left[X^{p}\right]^{1 / p} \mathbb{E}\left[Y^{q}\right]^{1 / q},\left(\text{ for } p=\frac{1}{\theta}, q=\frac{1}{1-\theta}: \theta \in[0,1]\right)
+\\
+&amp;  =\exp \left ( \frac{(1-\theta)^{2}}{4} \right )\left(\int_{\Omega^{n}} \exp \left(\mathcal{D}_{A(\omega)}^{c}(x)^{2} / 4\right) d P(x)\right)^{\theta}\left(\int_{\Omega^{n}} \exp \left(\mathcal{D}_{B}^{c}(x)^{2} / 4\right) d P(x)\right)^{1-\theta} \\
+&amp; \leq \exp \left(\frac{(1-\theta)^{2}}{4}\right)\left(\frac{1}{P(A(\omega))}\right)^{\theta}\left(\frac{1}{P(B)}\right)^{1-\theta} \text{ by induction hypothesis. }
+\\
+&amp;  =\exp \left ( \frac{(1-\theta)^{2}}{4} \right ) \frac{1}{P(B)}\left(\frac{P(A(\omega))}{P(B)}\right)^{-\theta} .
+\end{aligned}
+$$</p>
+<p>Now we optimize $\theta$, simply by construction: for any $ u \in [0,1]$ $\inf_{\theta \in[0,1]} \exp \left(\frac{(1-\theta)^{2}}{4}\right) u^{-\theta} \leq 2-u$.
+Therefore, the R.H.S.
+$$
+\leq \frac{1}{P(B)}\left(2-\frac{P(A(\omega))}{P(B)}\right) ,
+$$
+and thus
+$$
+\begin{aligned}
+&amp; \int_{\Omega^{n+1}} \exp \left(\frac{\mathcal{D}_{A}^{c}(x, \omega)^{2}}{4}\right) d P(x) d \mu(\omega) \\
+&amp;  \leq \frac{1}{\mathbb{P}(B)} \int_{\Omega}\left(2-\frac{\mathbb{P}(A(\omega))}{\mathbb{P}(B)}\right) d \mu(\omega) \\
+&amp; \leq \frac{1}{\mathbb{P}(B)}\left(2-\frac{(P \bigotimes \mu)(A)}{\mathbb{P}(B)}\right) \\
+&amp;  \leq \frac{1}{(\mathbb{P} \bigotimes \mu)(A)},(\text{ since } u(2-u) \leq 1 \text{ for all } u \in \mathbb{R}) .
+\end{aligned}
+$$</p>
+<p>$ \quad \quad \quad\quad \quad \quad\quad \quad \quad\quad \quad \quad\quad \quad \quad\quad \quad \quad\quad \quad \quad\quad \quad \quad \quad \quad \quad\quad \quad \quad\quad \quad \quad\quad \quad \quad\quad \square$</p>
+
+        </div>
+    </div>
+    <a href="#" id="scrollToTopButton">
+        <svg t="1686753152588" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+            p-id="3988" width="48" height="48">
+            <path
+                d="M518.5 360.3c-3.2-4.4-9.7-4.4-12.9 0l-178 246c-3.8 5.3 0 12.7 6.5 12.7H381c10.2 0 19.9-4.9 25.9-13.2L512 460.4l105.2 145.4c6 8.3 15.6 13.2 25.9 13.2H690c6.5 0 10.3-7.4 6.5-12.7l-178-246z"
+                p-id="3989" fill="#363636"></path>
+            <path
+                d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64z m0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
+                p-id="3990" fill="#363636"></path>
+        </svg>
+    </a>
+
+<div class="pp-container">
+        <section class="pre-and-post">
+            <div class="has-text-left">
+                
+                <p>Previous post</p>
+                <a href="https://unionpan.github.io/post/variational_perspective/">A Variational Perspective On Gradient Descent</a>
+                
+            </div>
+            <div class="has-text-right">
+                
+                <p>Next post</p>
+                <a href="https://unionpan.github.io/post/butterfly_effect/">The Lorenz dynamics and Butterfly Effect</a>
+                
+            </div>
+        </section>
+    </div>
+
+</div>
+
+        </main><footer class="footer">
+    <div class="content has-text-centered">
+    <span>&copy; 2024 </span>
+    <span>
+        only in chaos are we conceivable.
+    </span>
+    </div>
+
+
+  </footer>
+
+  </body>
+</html>
+
