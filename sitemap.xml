@@ -2,51 +2,51 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:54232/categories/</loc>
+    <loc>https://unionpan.github.io/categories/</loc>
     <lastmod>2024-04-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:54232/categories/dynamical-system/</loc>
+    <loc>https://unionpan.github.io/categories/dynamical-system/</loc>
     <lastmod>2024-04-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:54232/post/</loc>
+    <loc>https://unionpan.github.io/post/</loc>
     <lastmod>2024-04-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:54232/post/butterfly_effect/</loc>
+    <loc>https://unionpan.github.io/post/butterfly_effect/</loc>
     <lastmod>2024-04-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:54232/</loc>
+    <loc>https://unionpan.github.io/</loc>
     <lastmod>2024-04-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:54232/categories/statistics/</loc>
+    <loc>https://unionpan.github.io/categories/statistics/</loc>
     <lastmod>2024-03-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:54232/post/talagrand/</loc>
+    <loc>https://unionpan.github.io/post/talagrand/</loc>
     <lastmod>2024-03-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:54232/post/variational_perspective/</loc>
+    <loc>https://unionpan.github.io/post/variational_perspective/</loc>
     <lastmod>2024-02-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:54232/categories/optimization/</loc>
+    <loc>https://unionpan.github.io/categories/optimization/</loc>
     <lastmod>2024-02-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:54232/post/dueling_bandits/</loc>
+    <loc>https://unionpan.github.io/post/dueling_bandits/</loc>
     <lastmod>2023-10-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:54232/categories/game-theory/</loc>
+    <loc>https://unionpan.github.io/categories/game-theory/</loc>
     <lastmod>2023-01-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:54232/post/wardrop_equilibirum/</loc>
+    <loc>https://unionpan.github.io/post/wardrop_equilibirum/</loc>
     <lastmod>2023-01-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:54232/post/the_capacity_of_deception/</loc>
+    <loc>https://unionpan.github.io/post/the_capacity_of_deception/</loc>
     <lastmod>2022-11-16T18:58:11+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:54232/post/nesterov/</loc>
+    <loc>https://unionpan.github.io/post/nesterov/</loc>
     <lastmod>2022-11-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:54232/about/</loc>
+    <loc>https://unionpan.github.io/about/</loc>
     <lastmod>2020-04-26T20:18:54+03:00</lastmod>
   </url><url>
-    <loc>http://localhost:54232/tags/</loc>
+    <loc>https://unionpan.github.io/tags/</loc>
   </url>
 </urlset>

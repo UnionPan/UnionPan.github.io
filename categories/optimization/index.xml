@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Optimization on union&#39;s blog</title>
-    <link>http://localhost:54232/categories/optimization/</link>
+    <link>https://unionpan.github.io/categories/optimization/</link>
     <description>Recent content in Optimization on union&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 11 Feb 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:54232/categories/optimization/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://unionpan.github.io/categories/optimization/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>A Variational Perspective On Gradient Descent</title>
-      <link>http://localhost:54232/post/variational_perspective/</link>
+      <link>https://unionpan.github.io/post/variational_perspective/</link>
       <pubDate>Sun, 11 Feb 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:54232/post/variational_perspective/</guid>
+      <guid>https://unionpan.github.io/post/variational_perspective/</guid>
       <description>In this post I just want to share a simple and elegant idea from a Control System Letter paper written by Maxim Raginsky et al.1. This idea largely inspired my recent work on multi-agent learning in (monotone) games2, which I might devote another post to talk about if I happen to get some interesting results out of it.&#xA;The idea starts from here: we all know that the archetype of solving convex optimization problem is through gradient descent: $$ x_{k+1} = x_k - \nabla f(x_k), $$ which, in continuous time, corresponds to an autonomous dynamical system: $$ \dot{x} = - \nabla f (x) , \quad x(0) = x_0.</description>
     </item>
     <item>
       <title>Nesterov</title>
-      <link>http://localhost:54232/post/nesterov/</link>
+      <link>https://unionpan.github.io/post/nesterov/</link>
       <pubDate>Tue, 15 Nov 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:54232/post/nesterov/</guid>
+      <guid>https://unionpan.github.io/post/nesterov/</guid>
       <description>We briefly reviewed the lower complexity bound of first-order convex optimization and how Nesterov proceed to match the lower bound using the estimation sequence, the slides are here.&#xA;Consider an unconstrained optimization problem: \[ \min_{x \in \mathbb{R}^n} f(x) . \] Here, \(f \in \mathcal{C}^1\) is a convex, $L$-Lipschitz smooth function. Obviously we can solve this problem by using first-order methods, the question is how fast they are.</description>
     </item>
   </channel>
