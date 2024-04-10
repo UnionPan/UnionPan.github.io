@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Game Theory on union&#39;s blog</title>
-    <link>https://unionpan.github.io/categories/game-theory/</link>
+    <link>http://localhost:54232/categories/game-theory/</link>
     <description>Recent content in Game Theory on union&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 30 Jan 2023 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://unionpan.github.io/categories/game-theory/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:54232/categories/game-theory/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Wardrop Equilibrium</title>
-      <link>https://unionpan.github.io/post/wardrop_equilibirum/</link>
+      <link>http://localhost:54232/post/wardrop_equilibirum/</link>
       <pubDate>Mon, 30 Jan 2023 00:00:00 +0000</pubDate>
-      <guid>https://unionpan.github.io/post/wardrop_equilibirum/</guid>
+      <guid>http://localhost:54232/post/wardrop_equilibirum/</guid>
       <description>I remember having those unpleasant lines in our high school canteen, flooded by the starving students queeing for their lunch, I would always pick a window with fewer people waiting, compromising myself with awful food. Another similar thought that always stricked me was the odds that tourists always pick the same time to travel, there&amp;rsquo;s almost always traffic congestion everywhere during holiday seasons. Yeah, lives have been always so hard.</description>
     </item>
   </channel>
