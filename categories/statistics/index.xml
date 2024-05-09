@@ -4,7 +4,7 @@
     <title>Statistics on union&#39;s blog</title>
     <link>https://unionpan.github.io/categories/statistics/</link>
     <description>Recent content in Statistics on union&#39;s blog</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 28 Apr 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://unionpan.github.io/categories/statistics/index.xml" rel="self" type="application/rss+xml" />
@@ -13,7 +13,7 @@
       <link>https://unionpan.github.io/post/what_are_sufficient_statistics/</link>
       <pubDate>Sun, 28 Apr 2024 00:00:00 +0000</pubDate>
       <guid>https://unionpan.github.io/post/what_are_sufficient_statistics/</guid>
-      <description>It sometimes drives me insane when I hear engineering/economics people talking about sufficient statistics in their workshops/papers. Their presentation can be fluent their logic can be immaculate, but when it comes to certain (establish) terminologies, can we please stop being sloppy.&#xA;The idea of sufficient statistics, as many people will understand it correctly, is that this function summarizes the information from the data, but it comes with a very rigorous definition.</description>
+      <description>It sometimes drives me insane to hear about engineering or economics people using the word &amp;ldquo;sufficient statistics&amp;rdquo; in the seminars. The idea of it, as many people will understand it correctly, is that this function summarizes the information from the data, impeccable, alright. But the terminology itself comes with a very rigorous definition. I would very much prefer if you do not plan to give the rigorous description about why it is sufficient in the statistical sense, use some other words like sufficient information or sufficient signaling if necessary.</description>
     </item>
     <item>
       <title>Talagrand&#39;s Isoperimetry inequality</title>
@@ -34,7 +34,7 @@
       <link>https://unionpan.github.io/post/the_capacity_of_deception/</link>
       <pubDate>Wed, 16 Nov 2022 18:58:11 +0800</pubDate>
       <guid>https://unionpan.github.io/post/the_capacity_of_deception/</guid>
-      <description>The Quest for Optimal Communication Let there be Alice and Bob, whose mission this time is to navigate the labyrinth of random outcomes and communicate in the most efficient way possible.&#xA;Alice wants to communicate with Bob about a sequence of \(n\) independent random outcomes sampled from a known distribution \(Q\). To keep things concise, they&amp;rsquo;ve agreed on a secret binary language. Now, the plot thickens with the concept of entropy.</description>
+      <description>Optimal Communication Let there be Alice and Bob, whose mission this time is to and communicate in the most efficient way possible, while Alice is given a bunch of random outcomes.&#xA;Alice wants to tell with Bob about a sequence of \(n\) independent random outcomes sampled from a known distribution \(Q\). To keep things concise, they&amp;rsquo;ve agreed on a secret binary language. Now, the plot thickens with the concept of entropy.</description>
     </item>
   </channel>
 </rss>

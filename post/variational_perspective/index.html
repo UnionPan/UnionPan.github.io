@@ -12,17 +12,20 @@ The idea starts from here: we all know that the archetype of solving convex opti
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
     
     <link rel="stylesheet" href="https://unionpan.github.io/scss/style.min.fd03f00c6cceb36e9051ed7a5f050822f69766d1ebc4b0a9eaf818a01fbcb591.css">
-    <meta property="og:title" content="A Variational Perspective On Gradient Descent" />
-<meta property="og:description" content="In this post I just want to share a simple and elegant idea from a Control System Letter paper written by Maxim Raginsky et al.1. This idea largely inspired my recent work on multi-agent learning in (monotone) games2, which I might devote another post to talk about if I happen to get some interesting results out of it.
-The idea starts from here: we all know that the archetype of solving convex optimization problem is through gradient descent: $$ x_{k&#43;1} = x_k - \nabla f(x_k), $$ which, in continuous time, corresponds to an autonomous dynamical system: $$ \dot{x} = - \nabla f (x) , \quad x(0) = x_0." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://unionpan.github.io/post/variational_perspective/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2024-02-11T00:00:00+00:00" />
-<meta property="article:modified_time" content="2024-02-11T00:00:00+00:00" /><meta property="og:site_name" content="union&#39;s blog" />
+    <meta property="og:url" content="https://unionpan.github.io/post/variational_perspective/">
+  <meta property="og:site_name" content="union&#39;s blog">
+  <meta property="og:title" content="A Variational Perspective On Gradient Descent">
+  <meta property="og:description" content="In this post I just want to share a simple and elegant idea from a Control System Letter paper written by Maxim Raginsky et al.1. This idea largely inspired my recent work on multi-agent learning in (monotone) games2, which I might devote another post to talk about if I happen to get some interesting results out of it.
+The idea starts from here: we all know that the archetype of solving convex optimization problem is through gradient descent: $$ x_{k&#43;1} = x_k - \nabla f(x_k), $$ which, in continuous time, corresponds to an autonomous dynamical system: $$ \dot{x} = - \nabla f (x) , \quad x(0) = x_0.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2024-02-11T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-02-11T00:00:00+00:00">
 
-    <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="A Variational Perspective On Gradient Descent"/>
+    <meta name="twitter:card" content="summary"><meta name="twitter:title" content="A Variational Perspective On Gradient Descent">
 <meta name="twitter:description" content="In this post I just want to share a simple and elegant idea from a Control System Letter paper written by Maxim Raginsky et al.1. This idea largely inspired my recent work on multi-agent learning in (monotone) games2, which I might devote another post to talk about if I happen to get some interesting results out of it.
-The idea starts from here: we all know that the archetype of solving convex optimization problem is through gradient descent: $$ x_{k&#43;1} = x_k - \nabla f(x_k), $$ which, in continuous time, corresponds to an autonomous dynamical system: $$ \dot{x} = - \nabla f (x) , \quad x(0) = x_0."/>
+The idea starts from here: we all know that the archetype of solving convex optimization problem is through gradient descent: $$ x_{k&#43;1} = x_k - \nabla f(x_k), $$ which, in continuous time, corresponds to an autonomous dynamical system: $$ \dot{x} = - \nabla f (x) , \quad x(0) = x_0.">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"
     integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
@@ -38,6 +41,13 @@ The idea starts from here: we all know that the archetype of solving convex opti
     onload="renderMathInElement(document.body);"></script>
     
     
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P8CZD2GL8F"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-P8CZD2GL8F');
+    </script>
     
     <script>
         document.addEventListener("DOMContentLoaded", function () {
@@ -169,7 +179,7 @@ The idea starts from here: we all know that the archetype of solving convex opti
                     <div class="columns is-vcentered is-mobile">
                         
                         <div class="column is-narrow">
-                            <img src="/images/me/avatar.jpeg" class="author-image">
+                            <img src="/images/me/elenadrew.PNG" class="author-image">
                         </div>
                         
                         <div class="column">

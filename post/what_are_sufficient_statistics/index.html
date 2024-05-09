@@ -6,23 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>What (on earth) is a Sufficient Statistic? | union&#39;s blog</title>
     <meta name="description"
-        content="It sometimes drives me insane when I hear engineering/economics people talking about sufficient statistics in their workshops/papers. Their presentation can be fluent their logic can be immaculate, but when it comes to certain (establish) terminologies, can we please stop being sloppy.
-The idea of sufficient statistics, as many people will understand it correctly, is that this function summarizes the information from the data, but it comes with a very rigorous definition.">
+        content="It sometimes drives me insane to hear about engineering or economics people using the word &ldquo;sufficient statistics&rdquo; in the seminars. The idea of it, as many people will understand it correctly, is that this function summarizes the information from the data, impeccable, alright. But the terminology itself comes with a very rigorous definition. I would very much prefer if you do not plan to give the rigorous description about why it is sufficient in the statistical sense, use some other words like sufficient information or sufficient signaling if necessary.">
     <link rel="canonical" href="https://unionpan.github.io/post/what_are_sufficient_statistics/" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
     
     <link rel="stylesheet" href="https://unionpan.github.io/scss/style.min.fd03f00c6cceb36e9051ed7a5f050822f69766d1ebc4b0a9eaf818a01fbcb591.css">
-    <meta property="og:title" content="What (on earth) is a Sufficient Statistic?" />
-<meta property="og:description" content="It sometimes drives me insane when I hear engineering/economics people talking about sufficient statistics in their workshops/papers. Their presentation can be fluent their logic can be immaculate, but when it comes to certain (establish) terminologies, can we please stop being sloppy.
-The idea of sufficient statistics, as many people will understand it correctly, is that this function summarizes the information from the data, but it comes with a very rigorous definition." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://unionpan.github.io/post/what_are_sufficient_statistics/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2024-04-28T00:00:00+00:00" />
-<meta property="article:modified_time" content="2024-04-28T00:00:00+00:00" /><meta property="og:site_name" content="union&#39;s blog" />
+    <meta property="og:url" content="https://unionpan.github.io/post/what_are_sufficient_statistics/">
+  <meta property="og:site_name" content="union&#39;s blog">
+  <meta property="og:title" content="What (on earth) is a Sufficient Statistic?">
+  <meta property="og:description" content="It sometimes drives me insane to hear about engineering or economics people using the word “sufficient statistics” in the seminars. The idea of it, as many people will understand it correctly, is that this function summarizes the information from the data, impeccable, alright. But the terminology itself comes with a very rigorous definition. I would very much prefer if you do not plan to give the rigorous description about why it is sufficient in the statistical sense, use some other words like sufficient information or sufficient signaling if necessary.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2024-04-28T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-04-28T00:00:00+00:00">
 
-    <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="What (on earth) is a Sufficient Statistic?"/>
-<meta name="twitter:description" content="It sometimes drives me insane when I hear engineering/economics people talking about sufficient statistics in their workshops/papers. Their presentation can be fluent their logic can be immaculate, but when it comes to certain (establish) terminologies, can we please stop being sloppy.
-The idea of sufficient statistics, as many people will understand it correctly, is that this function summarizes the information from the data, but it comes with a very rigorous definition."/>
+    <meta name="twitter:card" content="summary"><meta name="twitter:title" content="What (on earth) is a Sufficient Statistic?">
+<meta name="twitter:description" content="It sometimes drives me insane to hear about engineering or economics people using the word &ldquo;sufficient statistics&rdquo; in the seminars. The idea of it, as many people will understand it correctly, is that this function summarizes the information from the data, impeccable, alright. But the terminology itself comes with a very rigorous definition. I would very much prefer if you do not plan to give the rigorous description about why it is sufficient in the statistical sense, use some other words like sufficient information or sufficient signaling if necessary.">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"
     integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
@@ -38,6 +38,13 @@ The idea of sufficient statistics, as many people will understand it correctly, 
     onload="renderMathInElement(document.body);"></script>
     
     
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P8CZD2GL8F"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-P8CZD2GL8F');
+    </script>
     
     <script>
         document.addEventListener("DOMContentLoaded", function () {
@@ -169,7 +176,7 @@ The idea of sufficient statistics, as many people will understand it correctly, 
                     <div class="columns is-vcentered is-mobile">
                         
                         <div class="column is-narrow">
-                            <img src="/images/me/avatar.jpeg" class="author-image">
+                            <img src="/images/me/elenadrew.PNG" class="author-image">
                         </div>
                         
                         <div class="column">
@@ -222,10 +229,11 @@ The idea of sufficient statistics, as many people will understand it correctly, 
 
 </script>
             </div>
-            <p>It sometimes drives me insane when I hear engineering/economics people talking about sufficient statistics in their workshops/papers. Their presentation can be fluent their logic can be immaculate, but when it comes to certain (establish) terminologies, can we please stop being sloppy.</p>
-<p>The idea of sufficient statistics, as many people will understand it correctly, is that this function summarizes the information from the data, but it comes with a very rigorous definition.
-I would largely prefer if you do not plan to give the rigorous proof, use some other words like sufficient information or sufficient signaling, for blahblahblah, if necessary.</p>
-<p>Anyhow, let&rsquo;s talk about what a sufficient statistic is.
+            <p>It sometimes drives me insane to hear about engineering or economics people using the word &ldquo;sufficient statistics&rdquo; in the seminars.
+The idea of it, as many people will understand it correctly, is that this function summarizes the information from the data, impeccable, alright.
+But the terminology itself comes with a very rigorous definition.
+I would very much prefer if you do not plan to give the rigorous description about why it is sufficient in the statistical sense, use some other words like sufficient information or sufficient signaling if necessary.</p>
+<p>Anyhow, in case we are really gonna use it, let&rsquo;s talk about what a sufficient statistic is.
 Given a probability space $(\Omega, \mathbb{P}, \mathcal{F})$, where the parameter space $\Omega$ that labels all the possible statistical models ${P_\theta}$, we call a function, often denoted as $T$, that maps from data $X \sim P_\theta(\cdot) \in \Delta (\mathcal{X})$ to some &lsquo;&lsquo;coonclusion&rsquo;&rsquo; a statistic.
 E.g., from the Boston housing prices data we get the average price, and that is a statistic, we can also calculate the emprical variance, now that&rsquo;s also a statistic. To be more general, we restrict the data to be in a measurable space $(\mathcal{X}, \mathcal{B})$ and the statistical outcome to be in a measurable space $(\mathcal{T}, \mathcal{C})$.</p>
 <h5 id="definition-1">Definition 1</h5>
@@ -291,6 +299,7 @@ $\quad \quad \quad \quad \quad \quad \quad  \quad \quad \quad \quad \quad \quad 
 $$
 f_{X \mid \Theta}(x \mid \theta) = \underbrace{h(x)}_{h(x)} \underbrace{c(\theta) \exp \bigg( { \sum_{i=1}^{d} \theta_{i} t_{i}(x) \bigg) }}_{g(\theta, T(x))}.
 $$</p>
+<p>To summarize, a statistic is a function, when we say it is sufficient we have to tell people what (statistical) model, and what parameters it is sufficient to, even though sometimes it is intuitive and does not need all the fuss.</p>
 
         </div>
     </div>
