@@ -410,6 +410,7 @@ the analogy has morphed into using a butterfly.</p>
             
             function toggleBlogMenu(event) {
                 event.preventDefault();
+                event.stopPropagation(); 
                 const submenu = document.getElementById('blog-submenu');
                 const arrow = document.querySelector('.dropdown-arrow');
                 
@@ -449,12 +450,14 @@ the analogy has morphed into using a butterfly.</p>
 
             
             document.querySelectorAll('.sidebar .nav-link, .sidebar .submenu-link').forEach(link => {
-                link.addEventListener('click', function() {
-                    const sidebar = document.getElementById('sidebar');
-                    const toggleButton = document.getElementById('mobile-menu-toggle');
-                    sidebar.classList.remove('open');
-                    toggleButton.classList.remove('active');
-                });
+                if (!link.classList.contains('blog-toggle')) {
+                    link.addEventListener('click', function() {
+                        const sidebar = document.getElementById('sidebar');
+                        const toggleButton = document.getElementById('mobile-menu-toggle');
+                        sidebar.classList.remove('open');
+                        toggleButton.classList.remove('active');
+                    });
+                }
             });
         </script>
     </body>

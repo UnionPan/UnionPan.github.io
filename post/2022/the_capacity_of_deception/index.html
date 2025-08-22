@@ -435,6 +435,7 @@ Now, using Jensen&rsquo;s inequality we arrive at some elementry manipulation:</
             
             function toggleBlogMenu(event) {
                 event.preventDefault();
+                event.stopPropagation(); 
                 const submenu = document.getElementById('blog-submenu');
                 const arrow = document.querySelector('.dropdown-arrow');
                 
@@ -474,12 +475,14 @@ Now, using Jensen&rsquo;s inequality we arrive at some elementry manipulation:</
 
             
             document.querySelectorAll('.sidebar .nav-link, .sidebar .submenu-link').forEach(link => {
-                link.addEventListener('click', function() {
-                    const sidebar = document.getElementById('sidebar');
-                    const toggleButton = document.getElementById('mobile-menu-toggle');
-                    sidebar.classList.remove('open');
-                    toggleButton.classList.remove('active');
-                });
+                if (!link.classList.contains('blog-toggle')) {
+                    link.addEventListener('click', function() {
+                        const sidebar = document.getElementById('sidebar');
+                        const toggleButton = document.getElementById('mobile-menu-toggle');
+                        sidebar.classList.remove('open');
+                        toggleButton.classList.remove('active');
+                    });
+                }
             });
         </script>
     </body>

@@ -245,6 +245,7 @@ But, if you think from Shannon&rsquo;s perspective, wasn&rsquo;t he also just do
             
             function toggleBlogMenu(event) {
                 event.preventDefault();
+                event.stopPropagation(); 
                 const submenu = document.getElementById('blog-submenu');
                 const arrow = document.querySelector('.dropdown-arrow');
                 
@@ -284,12 +285,14 @@ But, if you think from Shannon&rsquo;s perspective, wasn&rsquo;t he also just do
 
             
             document.querySelectorAll('.sidebar .nav-link, .sidebar .submenu-link').forEach(link => {
-                link.addEventListener('click', function() {
-                    const sidebar = document.getElementById('sidebar');
-                    const toggleButton = document.getElementById('mobile-menu-toggle');
-                    sidebar.classList.remove('open');
-                    toggleButton.classList.remove('active');
-                });
+                if (!link.classList.contains('blog-toggle')) {
+                    link.addEventListener('click', function() {
+                        const sidebar = document.getElementById('sidebar');
+                        const toggleButton = document.getElementById('mobile-menu-toggle');
+                        sidebar.classList.remove('open');
+                        toggleButton.classList.remove('active');
+                    });
+                }
             });
         </script>
     </body>
