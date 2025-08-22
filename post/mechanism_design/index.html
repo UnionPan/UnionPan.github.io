@@ -1,0 +1,435 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=63227&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Bayesian games, mechanism design, and so on | union&#39;s blog</title>
+    <meta name="description"
+        content="This past year I suffered a lot mentally and financially, my funding was paused and my girlfriend Sam (check out her spotify here!) lost her boojee A.P.C. job, so I haven&rsquo;t posted for a while. It&rsquo;s really a leisure and effort to write stuff consistently (because wtf am I supposed to write?!!?). But the coding agents (Claude, Gemini etc..) really revolutionarized my efficiency, and shamelessly I have to admit that I use them a lot to &ldquo;vibe code&rdquo; and even do research, with sufficient human surveillance.
+So hopefully, I will resume writing for my own sanity.">
+    <link rel="canonical" href="http://localhost:63227/post/mechanism_design/" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+    
+    <link rel="stylesheet" href="http://localhost:63227/scss/style.min.7f52dae63704e9b4aa0b8a6f2fa1672c98aaedcc9998a665166733014e85bb99.css">
+    <meta property="og:url" content="http://localhost:63227/post/mechanism_design/">
+  <meta property="og:site_name" content="union&#39;s blog">
+  <meta property="og:title" content="Bayesian games, mechanism design, and so on">
+  <meta property="og:description" content="This past year I suffered a lot mentally and financially, my funding was paused and my girlfriend Sam (check out her spotify here!) lost her boojee A.P.C. job, so I haven’t posted for a while. It’s really a leisure and effort to write stuff consistently (because wtf am I supposed to write?!!?). But the coding agents (Claude, Gemini etc..) really revolutionarized my efficiency, and shamelessly I have to admit that I use them a lot to “vibe code” and even do research, with sufficient human surveillance. So hopefully, I will resume writing for my own sanity.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2025-08-18T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-08-18T00:00:00+00:00">
+
+    
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Bayesian games, mechanism design, and so on">
+  <meta name="twitter:description" content="This past year I suffered a lot mentally and financially, my funding was paused and my girlfriend Sam (check out her spotify here!) lost her boojee A.P.C. job, so I haven’t posted for a while. It’s really a leisure and effort to write stuff consistently (because wtf am I supposed to write?!!?). But the coding agents (Claude, Gemini etc..) really revolutionarized my efficiency, and shamelessly I have to admit that I use them a lot to “vibe code” and even do research, with sufficient human surveillance. So hopefully, I will resume writing for my own sanity.">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"
+    integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"
+    integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8"
+    crossorigin="anonymous"></script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    { left: "$$", right: "$$", display: true },
+                    { left: "$", right: "$", display: false }
+                ]
+            });
+        });
+    </script>
+    
+</head><body>
+        <div class="theme-toggle-container">
+            <a id="theme-toggle" class="theme-toggle" href="#">
+                <img src="http://localhost:63227/svg/sun.svg" alt="sun icon" class="theme-icon" />
+            </a>
+        </div>
+        
+        <div class="layout-container">
+            <aside class="sidebar">
+                <div class="sidebar-content">
+                    <div class="sidebar-header">
+                        <h1 class="site-title">
+                            <a href="/" class="site-title-link">Yunian Pan</a>
+                        </h1>
+                    </div>
+                    <nav class="sidebar-nav">
+                        <div class="nav-item-container">
+                            <a href="#" class="nav-link blog-toggle active" onclick="toggleBlogMenu(event)">
+                                Blog <span class="dropdown-arrow">▼</span>
+                            </a>
+                            <div class="submenu" id="blog-submenu">
+                                <a href="/post/about" class="submenu-link">About Me</a>
+                                
+                                <a href="/post/2022" class="submenu-link">2022</a>
+                                
+                                <a href="/post/2023" class="submenu-link">2023</a>
+                                
+                                <a href="/post/2024" class="submenu-link">2024</a>
+                                
+                                <a href="/post/2025" class="submenu-link">2025</a>
+                                
+                            </div>
+                        </div>
+                        <a href="/statement" class="nav-link ">Statement/CV</a>
+                        <a href="/contact" class="nav-link ">Contact</a>
+                        <a href="/photos" class="nav-link ">Photos</a>
+                    </nav>
+                    <div class="sidebar-footer">
+                        <div class="copyright">
+                            © 2022-2025 all rights reserved
+                        </div>
+                        <div class="social-icons">
+                            
+                            <a href="https://www.linkedin.com/in/unionpan/" title="Linkedin" class="social-link">
+                                <svg height="32px" width="32px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+    <rect x="2" y="9" width="4" height="12"></rect>
+    <circle cx="4" cy="4" r="2"></circle>
+</svg>
+                            </a>
+                            
+                            <a href="https://github.com/UnionPan" title="Github" class="social-link">
+                                <svg height="32px" width="32px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+    </path>
+</svg>
+                            </a>
+                            
+                            <a href="https://twitter.com/Union54572322" title="twitter" class="social-link">
+                                <svg height="32px" width="32px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
+    </path>
+</svg>
+                            </a>
+                            
+                            <a href="https://www.instagram.com/pyn_rodcutter/?hl=en" title="instagram" class="social-link">
+                                <svg height="32px" width="32px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+    <line x1="17.5" y1="6.5" x2="17.5" y2="6.5"></line>
+</svg>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </aside>
+            <main class="main-content">
+<div class="single-container">
+    <div class="archive">
+        <h1 class="title is-1">Bayesian games, mechanism design, and so on</h1>
+        <div class="title subtitle heading is-6">
+            <div class="author-info columns is-vcentered">
+                <div class="column">
+                    <div class="columns is-vcentered is-mobile">
+                        
+                        <div class="column is-narrow">
+                            <img src="/images/me/elenadrew.PNG" class="author-image">
+                        </div>
+                        
+                        <div class="column">
+                            <p>union</p>
+                            <p><time>August 18, 2025</time>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="small-categories-container">
+                    <a href="/categories/some-random-math">Some random math</a>
+                </div>
+            </div>
+        </div>
+        <div class="content article-content">
+            <div class="toc-container">
+                
+    <div class="post-toc">
+        
+            <aside>
+                <button id="tocButton" ><h4 id="contents" style="margin-left: 1vw;color:rgb(96, 134, 180);margin-bottom: 0;">CONTENTS</h4></button>
+                <div id="hide"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#holonic-risk">&ldquo;Holonic Risk&rdquo;</a>
+      <ul>
+        <li><a href="#bayesian-equilibrium-analysis">Bayesian Equilibrium Analysis</a></li>
+        <li><a href="#the-fixed-point-problem">The Fixed-Point Problem</a></li>
+        <li><a href="#existence-and-uniqueness-of-equilibria">Existence and Uniqueness of Equilibria</a></li>
+        <li><a href="#whats-actually-novel-spoiler-not-much">What&rsquo;s Actually Novel (Spoiler: Not Much)</a></li>
+        <li><a href="#the-computational-reality-check">The Computational Reality Check</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </aside>
+        
+    </div><script>
+    
+        let button = document.getElementById('tocButton');
+        let hide = document.getElementById("hide");
+        let contents=document.getElementById("contents");
+        button.addEventListener("click", function() {
+        if (hide.style.display!='block') {
+            hide.style.display='block'
+        } else {
+            hide.style.display='none'
+            contents.style.color='rgb(96, 134, 180)'
+        }
+        });
+    
+
+
+
+
+</script>
+            </div>
+            <p>This past year I suffered a lot mentally and financially, my funding was paused and my girlfriend Sam (check out her <a href="https://open.spotify.com/artist/3qo9BlnVduy6nW0pY1kmTQ">spotify</a> here!) lost her boojee A.P.C. job, so I haven&rsquo;t posted for a while. It&rsquo;s really a leisure and effort to write stuff consistently (because wtf am I supposed to write?!!?). But the coding agents (Claude, Gemini etc..) really revolutionarized my efficiency, and shamelessly I have to admit that I use them a lot to &ldquo;vibe code&rdquo; and even do research, with sufficient human surveillance.
+So hopefully, I will resume writing for my own sanity.</p>
+<p>Maybe I am being hypocritical here&hellip;a lot of people love giving an existing/trivial phenomenon/methodology a new name, and hence proposing a new &lsquo;&lsquo;framework&rsquo;&rsquo;. The underlying mathematical or engineering contribution is often minimal, or sometimes even worse, wrong.
+Throughout the years I find this widely exists in academia, or even industry. Don&rsquo;t get me wrong—I totally understand why this happens. Coming up with genuinely novel ideas is <em>hard</em>, especially when you&rsquo;re under constant pressure to publish, get grants, and prove your worth to reviewers who might be having a bad day. Sometimes you gotta work with what you&rsquo;ve got, rebrand it nicely, and hope people buy into your &ldquo;innovative framework.&rdquo;</p>
+<p>I guess the real problem is there&rsquo;s no objective bar for what counts as &ldquo;innovative enough.&rdquo; One reviewer&rsquo;s &ldquo;trivial extension&rdquo; is another&rsquo;s &ldquo;groundbreaking contribution.&rdquo; This ambiguity, combined with the sheer volume of papers flooding the system, has caused troubles. Overworked reviewers sometimes delegate to grad students or (God help us) undergrads who may not catch when the emperor has no clothes.</p>
+<h2 id="holonic-risk">&ldquo;Holonic Risk&rdquo;</h2>
+<p>So my advisor has been writing a paper called &ldquo;Holonic Risk&rdquo;, using ChatGPT (the reason I know this is because I tracked his Overleaf editing history and code style, a lot of &lsquo;&rsquo;_\( _\)&rsquo;&rsquo; for equations,) the core idea is that he imagined that there exists a  networked chunks of players that interact with each other through the specific network structured utility functions.
+A &ldquo;holons&rdquo; is a &ldquo;chunk of players&rdquo;, and the Nash equilibrium, as you may upgrade it into Bayesian, is a &ldquo;Holonic equilibrium&rdquo;.</p>
+<p>Here&rsquo;s a global game<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> example &ldquo;holonic Bayesian game&rdquo;:</p>
+<p><strong>Players</strong>: Set of voters $N = \bigcup_{i \in I} N_i$ where $I$ indexes committees (holons) and $N_i$ are voters in committee $i$.</p>
+<p><strong>Types</strong>: Each voter $k \in N_i$ has private type $\xi_k^i \in \{0,1\}$ drawn from Bernoulli$(p)$, representing their preference strength.</p>
+<p><strong>Actions</strong>: Binary voting decision $x_k^i \in \{0,1\}$.</p>
+<p><strong>Information Structure</strong>: Each voter observes only their own type $\xi_k^i$ but knows the type distribution $p$ is common across all voters.</p>
+<p><strong>Payoff Structure</strong>: For voter $k$ in committee $i$, the utility function is:
+$$U_k^i(x_k^i, x_{-k}^i, \omega_{-i}; \xi_k^i) = \mathbf{1}_{{ \omega^i = 0}}(c_0 + c_1 x_k^i) + \mathbf{1}_{ { \omega^i = 1 } } c_2 \cdot \mathbf{1}_{ { x_k^i \neq \xi_k^i }}$$</p>
+<p>where $\omega^i \in {0,1}$ is the committee outcome and $\omega_{-i}$ represents other committees&rsquo; outcomes.</p>
+<p>The &ldquo;holonic&rdquo; aspect reduces to this coupling mechanism:</p>
+<p>$$ \omega^i = \mathbf{1}_{\left\{   \sum_{k \in N_i} x_k^i \geq \theta + \gamma \sum_{j \neq i} \right\}}$$</p>
+<p>So committee $i$ succeeds if its vote total exceeds a threshold that increases linearly with the number of failed external committees. The parameter $\gamma \geq 0$ controls coupling strength.</p>
+<h3 id="bayesian-equilibrium-analysis">Bayesian Equilibrium Analysis</h3>
+<p>In a Bayesian Nash equilibrium, each voter chooses a strategy $\sigma_k^i: {0,1} \rightarrow {0,1}$ that maximizes expected utility given their beliefs about others&rsquo; strategies and external outcomes.</p>
+<p><strong>Truth-telling strategy</strong>: $\sigma_k^i(\xi_k^i) = \xi_k^i$ (vote your type).</p>
+<p><strong>Equilibrium condition</strong>: For truth-telling to be a Bayesian Nash equilibrium, we need:
+$$\mathbb{E}[U_k^i(\xi_k^i, \sigma_{-k}^i(\xi_{-k}^i), \omega_{-i}; \xi_k^i)] \geq \mathbb{E}[U_k^i(1-\xi_k^i, \sigma_{-k}^i(\xi_{-k}^i), \omega_{-i}; \xi_k^i)]$$</p>
+<p>for all $k, i$ and both values of $\xi_k^i$.</p>
+<p>This reduces to the incentive compatibility constraint:
+$$\mathbb{P}(\omega^i = 1) \geq \frac{c_1}{c_1 + c_2}$$</p>
+<h3 id="the-fixed-point-problem">The Fixed-Point Problem</h3>
+<p>Under symmetric truth-telling strategies, all committees have the same success probability $q$. The number of external failures follows $\text{Binomial}(|I|-1, 1-q)$, leading to the fixed-point equation:</p>
+<p>$$q = \sum_{z=0}^{|I|-1} \binom{|I|-1}{z} (1-q)^z q^{|I|-1-z} \cdot \mathbb{P}\left(\text{Binomial}(n,p) \geq \theta + \gamma z\right)$$</p>
+<p>For large $n$, using the normal approximation:
+$$q = \sum_{z=0}^{|I|-1} \binom{|I|-1}{z} (1-q)^z q^{|I|-1-z} \cdot \Phi\left(\frac{np - \theta - \gamma z}{\sqrt{np(1-p)}}\right)$$</p>
+<p>In the limit $|I| \rightarrow \infty$ with $\delta = \gamma |I|$ fixed, this becomes:
+$$q = \Phi\left(\frac{np - \theta - \delta(1-q)}{\sqrt{np(1-p)}}\right)$$</p>
+<h3 id="existence-and-uniqueness-of-equilibria">Existence and Uniqueness of Equilibria</h3>
+<p>The key mathematical questions become:</p>
+<ol>
+<li><strong>Existence</strong>: When does a solution $q^* \in [0,1]$ exist?</li>
+<li><strong>Uniqueness</strong>: When is the solution unique?</li>
+<li><strong>Stability</strong>: When are equilibria robust to perturbations?</li>
+</ol>
+<p><strong>Uniqueness condition</strong>: The mapping $T(q) = \Phi\left(\frac{np - \theta - \delta(1-q)}{\sqrt{np(1-p)}}\right)$ is a contraction when:
+$$\frac{\delta \phi\left(\frac{np - \theta - \delta(1-q)}{\sqrt{np(1-p)}}\right)}{\sqrt{np(1-p)}} &lt; 1$$</p>
+<p>where $\phi$ is the standard normal density. This is guaranteed when $\delta$ is sufficiently small relative to $\sqrt{np(1-p)}$.</p>
+<p><strong>Multiple equilibria</strong>: For large $\delta$, the system can exhibit bistability with equilibria near $q = 0$ and $q = 1$, separated by an unstable interior equilibrium.</p>
+<h3 id="whats-actually-novel-spoiler-not-much">What&rsquo;s Actually Novel (Spoiler: Not Much)</h3>
+<p>From a game theory perspective, this is:</p>
+<ul>
+<li>A <strong>global game</strong> with strategic complementarities</li>
+<li><strong>Threshold models</strong> with network effects</li>
+<li><strong>Coordination games</strong> with incomplete information</li>
+</ul>
+<p>The specific linear coupling $\theta + \gamma z$ is new, but the mathematical framework is entirely standard. The &ldquo;holonic equilibrium&rdquo; concepts are just rebranded Bayesian Nash equilibria with particular structure.</p>
+<h3 id="the-computational-reality-check">The Computational Reality Check</h3>
+<p>Here&rsquo;s where theory meets practice. The beautiful fixed-point equation only works when:</p>
+<ol>
+<li><strong>$n$ is large</strong>: Need CLT for normal approximation</li>
+<li><strong>$\gamma$ is small</strong>: Need contraction for uniqueness</li>
+<li><strong>Truth-telling holds</strong>: Need incentive compatibility</li>
+</ol>
+<p>When any of these fail, you&rsquo;re stuck with a discrete Boolean satisfiability problem:
+$$\omega^i = \mathbf{1}<em>{{X^i \geq \theta + \gamma \sum</em>{j \neq i}(1-\omega^j)}}$$</p>
+<p>for vote totals $X^i$. This system can have:</p>
+<ul>
+<li><strong>No solutions</strong> (contradictory constraints)</li>
+<li><strong>Multiple solutions</strong> (coordination failures)</li>
+<li><strong>Exponential complexity</strong> (need to check $2^{|I|}$ configurations)</li>
+</ul>
+<p>So the &ldquo;elegant&rdquo; theory only applies in limiting regimes that wash out the interesting discrete dynamics.</p>
+<p>Look, I get it. Academic survival sometimes requires creative packaging. And there&rsquo;s value in applying standard tools to new domains, even if the mathematical innovation is limited.</p>
+<p>But let&rsquo;s be honest about what we&rsquo;re doing. This is Bayesian game theory with a specific payoff structure, not a revolutionary new framework. The insights come from computational implementation and parameter exploration, not from theoretical breakthroughs.</p>
+<p>Maybe that&rsquo;s enough. Maybe we don&rsquo;t need every paper to prove new theorems. Sometimes the contribution is showing how existing theory applies to practical problems, or developing computational tools that make complex models tractable.</p>
+<p>But we should call it what it is.</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>Morris, Stephen, and Hyun Song Shin. &ldquo;Global games: Theory and applications.&rdquo; (2001).&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+        </div>
+    </div>
+    <a href="#" id="scrollToTopButton">
+        <svg t="1686753152588" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+            p-id="3988" width="48" height="48">
+            <path
+                d="M518.5 360.3c-3.2-4.4-9.7-4.4-12.9 0l-178 246c-3.8 5.3 0 12.7 6.5 12.7H381c10.2 0 19.9-4.9 25.9-13.2L512 460.4l105.2 145.4c6 8.3 15.6 13.2 25.9 13.2H690c6.5 0 10.3-7.4 6.5-12.7l-178-246z"
+                p-id="3989" fill="#363636"></path>
+            <path
+                d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64z m0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
+                p-id="3990" fill="#363636"></path>
+        </svg>
+    </a><hr style="border-top: 1px solid #EEEEEE;">
+<div id="comment"></div>
+<script>
+    const getStoredTheme = () => localStorage.getItem("theme") === "dark" ? "dark" : "light";
+
+    const setGiscusTheme = () => {
+        const sendMessage = (message) => {
+            const iframe = document.querySelector('iframe.giscus-frame');
+            if (iframe) {
+                iframe.contentWindow.postMessage({giscus: message}, 'https://giscus.app');
+            }
+        }
+        sendMessage({setConfig: {theme: getStoredTheme()}})
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const giscusAttributes = {
+            "src": "https://giscus.app/client.js",
+            "data-repo": "UnionPan\/UnionPan.github.io",
+            "data-repo-id": "R_kgDOIZ-Mxw",
+            "data-category": "General",
+            "data-category-id": "DIC_kwDOIZ-Mx84CuT-c",
+            "data-mapping": "pathname",
+            "data-reactions-enabled": "1",
+            "data-emit-metadata": "0",
+            "data-input-position": "bottom",
+            "data-theme": getStoredTheme(),
+            "data-lang": "en",
+            "data-loading": "lazy",
+            "crossorigin": "anonymous",
+        };
+
+        
+        const giscusScript = document.createElement("script");
+        Object.entries(giscusAttributes).forEach(
+            ([key, value]) => giscusScript.setAttribute(key, value));
+        document.getElementById("comment").appendChild(giscusScript);
+
+        
+        const themeToggle = document.querySelector(".theme-toggle");
+        if (themeToggle) {
+            themeToggle.addEventListener("click", setGiscusTheme);
+        }
+    });
+
+</script>
+
+
+<div class="pp-container">
+        <section class="pre-and-post">
+            <div class="has-text-left">
+                
+                <p>Previous post</p>
+                <a href="http://localhost:63227/post/what_are_sufficient_statistics/">What (on earth) is a Sufficient Statistic?</a>
+                
+            </div>
+            <div class="has-text-right">
+                
+            </div>
+        </section>
+    </div>
+
+</div>
+
+                <footer class="footer">
+</footer>
+            </main>
+        </div>
+
+        <script>
+            
+            function setTheme(theme) {
+                let body = document.body;
+                let themeIcon = document.querySelector(".theme-icon");
+                if (theme === "dark") {
+                    body.classList.add("dark-mode");
+                    themeIcon.src = "http:\/\/localhost:63227\/svg/moon.svg";
+                    themeIcon.alt = "moon icon";
+                } else {
+                    body.classList.remove("dark-mode");
+                    themeIcon.src = "http:\/\/localhost:63227\/svg/sun.svg";
+                    themeIcon.alt = "sun icon";
+                }
+                localStorage.setItem("theme", theme);
+            }
+
+            
+            document.addEventListener('DOMContentLoaded', function() {
+                
+                let theme = localStorage.getItem("theme");
+                
+                
+                if (!theme) {
+                    const isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+                    theme = isDarkMode ? 'dark' : 'light';
+                }
+                
+                setTheme(theme);
+
+                
+                document.getElementById("theme-toggle").addEventListener("click", function(e) {
+                    e.preventDefault();
+                    let currentTheme = localStorage.getItem("theme") || "light";
+                    let newTheme = currentTheme === "light" ? "dark" : "light";
+                    setTheme(newTheme);
+                });
+            });
+            
+            
+            function toggleBlogMenu(event) {
+                event.preventDefault();
+                const submenu = document.getElementById('blog-submenu');
+                const arrow = document.querySelector('.dropdown-arrow');
+                
+                if (submenu.classList.contains('open')) {
+                    submenu.classList.remove('open');
+                    arrow.style.transform = 'rotate(0deg)';
+                } else {
+                    submenu.classList.add('open');
+                    arrow.style.transform = 'rotate(180deg)';
+                }
+            }
+            
+            
+            document.addEventListener('click', function(event) {
+                const navContainer = document.querySelector('.nav-item-container');
+                const submenu = document.getElementById('blog-submenu');
+                const arrow = document.querySelector('.dropdown-arrow');
+                
+                if (!navContainer.contains(event.target) && submenu.classList.contains('open')) {
+                    submenu.classList.remove('open');
+                    arrow.style.transform = 'rotate(0deg)';
+                }
+            });
+        </script>
+    </body>
+</html>
+

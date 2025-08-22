@@ -2,36 +2,29 @@
 <!DOCTYPE html>
 <html lang="en-us">
 <head>
-	<meta name="generator" content="Hugo 0.125.7">
+	<meta name="generator" content="Hugo 0.148.2"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=53278&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>union&#39;s blog</title>
     <meta name="description"
         content="Regret has been lower bounded">
-    <link rel="canonical" href="https://unionpan.github.io/" />
+    <link rel="canonical" href="http://localhost:53278/" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
     
-    <link rel="stylesheet" href="https://unionpan.github.io/scss/style.min.fd03f00c6cceb36e9051ed7a5f050822f69766d1ebc4b0a9eaf818a01fbcb591.css">
-    <meta property="og:url" content="https://unionpan.github.io/">
+    <link rel="stylesheet" href="http://localhost:53278/scss/style.min.946b0c7a0d756c1bc30f44a31ef1dc1c99d052fb40f551d23013cbcb71dd0a77.css">
+    <meta property="og:url" content="http://localhost:53278/">
   <meta property="og:site_name" content="union&#39;s blog">
   <meta property="og:title" content="union&#39;s blog">
   <meta property="og:description" content="Regret has been lower bounded">
-  <meta property="og:locale" content="en-us">
+  <meta property="og:locale" content="en_us">
   <meta property="og:type" content="website">
 
-    <meta name="twitter:card" content="summary"><meta name="twitter:title" content="union&#39;s blog">
-<meta name="twitter:description" content="Regret has been lower bounded">
+    
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="union&#39;s blog">
+  <meta name="twitter:description" content="Regret has been lower bounded">
 
     
-    
-    
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P8CZD2GL8F"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-P8CZD2GL8F');
-    </script>
     
     <script>
         document.addEventListener("DOMContentLoaded", function () {
@@ -44,396 +37,404 @@
         });
     </script>
     
-</head><body><nav class="navbar is-light" role="navigation">
-    <div class="container">
-        <div class="navbar-brand">
-            <a href="/" title="home" class="navbar-item">
-                <span class="logo">
-                    <h1>union&#39;s blog</h1>
-                </span>
-            </a>
-
-            
+</head><body>
+        <div class="theme-toggle-container">
             <a id="theme-toggle" class="theme-toggle" href="#">
-                <img src="https://unionpan.github.io/svg/sun.svg" alt="sun icon" class="theme-icon" />
-            </a>
-
-            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
+                <img src="http://localhost:53278/svg/sun.svg" alt="sun icon" class="theme-icon" />
             </a>
         </div>
-
-        <div class="navbar-menu">
-            <div class="navbar-start">
-                
-                <a href="/about" class="navbar-item">About</a>
-                
-                <a href="/post" class="navbar-item">Blog</a>
-                
-                <a href="/categories" class="navbar-item">Categories</a>
-                
-                <a href="/cv.pdf" class="navbar-item">CV</a>
-                
-            </div>
-
-        </div>
-        <div class="search">
-            <div id="fastSearch">
-                <input id="searchInput" tabindex="0" placeholder="Search..">
-                <ul id="searchResults">
-
-                </ul>
-            </div>
-            <a id="search-btn" style="display: inline-block;" href="# ">
-                <div class="icon-search"><svg class="search-svg" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
-            </a>
-        </div>
-
-        <script src="/js/fuse.min.js"></script> 
-        <script src="/js/fastsearch.js"></script>
-
-    </div>
-</nav>
-
-<script>
-    
-    document.addEventListener('DOMContentLoaded', function() {
-        var burger = document.querySelector('.navbar-burger');
-        burger.addEventListener('click', function() {
-            burger.classList.toggle('is-active');
-            document.querySelector('.navbar-menu').classList.toggle('is-active');
-        });
-    });
-
-    
-    function setTheme(theme) {
-        let body = document.body;
-        let themeIcon = document.querySelector(".theme-icon");
-        if (theme === "dark") {
-            body.classList.add("dark-mode");
-            themeIcon.src = "https:\/\/unionpan.github.io\/svg/moon.svg";
-            themeIcon.alt = "moon icon";
-        } else {
-            body.classList.remove("dark-mode");
-            themeIcon.src = "https:\/\/unionpan.github.io\/svg/sun.svg";
-            themeIcon.alt = "sun icon";
-        }
         
-        localStorage.setItem("theme", theme);
-    }
-
-    
-    let theme = localStorage.getItem("theme") || "light";
-    const isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    if (isDarkMode) {
-        
-        setTheme('dark');
-
-    } else {
-        
-        setTheme('light');
-    }
-    setTheme(theme);
-
-    
-    document.getElementById("theme-toggle").addEventListener("click", function() {
-        if (theme === "light") {
-            theme = "dark";
-        } else {
-            theme = "light";
-        }
-        setTheme(theme);
-    });
-
-
-
-</script>
-
-
-
-</header><main>
-<article>
-    <div class="is-centered">
-            <div class="title subtitle heading is-6">
-                <div id="home-box" >
-                            
-                            <div class="avatar-container">
-                                <img src="/images/me/avatar.png" class="author-avatar">
-
-                            </div>
-                            
-
-
-
-                        <h1 id="home-title" class="title is-1 ">union&#39;s blog</h1>
-                    <div class="description column content typewriter-effect">
-                        <div class="text" id="typewriter-text"> the free man is a warrior.</div>
-
+        <div class="layout-container">
+            <aside class="sidebar">
+                <div class="sidebar-content">
+                    <div class="sidebar-header">
+                        <h1 class="site-title">
+                            <a href="/" class="site-title-link">YUNIAN PAN</a>
+                        </h1>
                     </div>
-                    <script>
-                        const typeWriter = document.getElementById('typewriter-text');
-                        typeWriter.style.setProperty('--characters', typeWriter.innerHTML.length);
-                    </script>
-
-                    <div class="social-icon">
-
-                        
-                        <a href="https://www.linkedin.com/in/unionpan/" title="Linkedin"><span class="change-color icon">
+                    <nav class="sidebar-nav">
+                        <div class="nav-item-container">
+                            <a href="#" class="nav-link blog-toggle " onclick="toggleBlogMenu(event)">
+                                Blog <span class="dropdown-arrow">▼</span>
+                            </a>
+                            <div class="submenu" id="blog-submenu">
+                                <a href="/post/about_me" class="submenu-link">About Me</a>
+                                <a href="/post/2022" class="submenu-link">2022</a>
+                                <a href="/post/2023" class="submenu-link">2023</a>
+                                <a href="/post/2024" class="submenu-link">2024</a>
+                                <a href="/post/2025" class="submenu-link">2025</a>
+                            </div>
+                        </div>
+                        <a href="/statement" class="nav-link ">Statement/CV</a>
+                        <a href="/contact" class="nav-link ">Contact</a>
+                        <a href="/photos" class="nav-link ">Photos</a>
+                    </nav>
+                    <div class="sidebar-footer">
+                        <div class="copyright">
+                            © 2022-2025 all rights reserved
+                        </div>
+                        <div class="social-icons">
+                            
+                            <a href="https://www.linkedin.com/in/unionpan/" title="Linkedin" class="social-link">
                                 <svg height="32px" width="32px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
     stroke-linecap="round" stroke-linejoin="round">
     <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
     <rect x="2" y="9" width="4" height="12"></rect>
     <circle cx="4" cy="4" r="2"></circle>
 </svg>
-                            </span></a>
-                        
-                        <a href="https://github.com/UnionPan" title="Github"><span class="change-color icon">
+                            </a>
+                            
+                            <a href="https://github.com/UnionPan" title="Github" class="social-link">
                                 <svg height="32px" width="32px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
     stroke-linecap="round" stroke-linejoin="round">
     <path
         d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
     </path>
 </svg>
-                            </span></a>
-                        
-                        <a href="https://twitter.com/Union54572322" title="twitter"><span class="change-color icon">
+                            </a>
+                            
+                            <a href="https://twitter.com/Union54572322" title="twitter" class="social-link">
                                 <svg height="32px" width="32px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
     stroke-linecap="round" stroke-linejoin="round">
     <path
         d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
     </path>
 </svg>
-                            </span></a>
-                        
-                        <a href="https://www.instagram.com/pyn_rodcutter/?hl=en" title="instagram"><span class="change-color icon">
+                            </a>
+                            
+                            <a href="https://www.facebook.com/yunian.pan/" title="Facebook" class="social-link">
+                                <svg height="32px" width="32px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+</svg>
+                            </a>
+                            
+                            <a href="https://www.instagram.com/pyn_rodcutter/?hl=en" title="instagram" class="social-link">
                                 <svg height="32px" width="32px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
     stroke-linecap="round" stroke-linejoin="round">
     <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
     <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
     <line x1="17.5" y1="6.5" x2="17.5" y2="6.5"></line>
 </svg>
-                            </span></a>
-                        
-
+                            </a>
+                            
+                        </div>
                     </div>
-
                 </div>
+            </aside>
+            <main class="main-content">
+<div class="home-container">
+    <section class="posts-carousel-container">        
+        <div class="posts-carousel">
+            <div class="posts-track">
+                
+                <article class="carousel-post-card">
+                    <div class="card-thumbnail">
+                        
+                            <img src="http://localhost:53278//images/post/2025/Mechanism_Design/thumbnail.jpg" alt="Bayesian games, mechanism design, and so on" class="card-img">
+                        
+                    </div>
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <time datetime="2025-08-18">Aug 18, 2025</time>
+                        </div>
+                        <h3 class="card-title">
+                            <a href="/post/2025/mechanism_design/">Bayesian games, mechanism design, and so on</a>
+                        </h3>
+                        <div class="card-abstract">
+                            
+                                This past year I suffered a lot mentally and financially, my funding was paused and my girlfriend Sam (check out her spotify here!) lost her boojee …
+                            
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="carousel-post-card">
+                    <div class="card-thumbnail">
+                        
+                            <img src="http://localhost:53278//images/post/2024/What_Are_Sufficient_Statistics/thumbnail.png" alt="What (on earth) is a Sufficient Statistic?" class="card-img">
+                        
+                    </div>
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <time datetime="2024-04-28">Apr 28, 2024</time>
+                        </div>
+                        <h3 class="card-title">
+                            <a href="/post/2024/what_are_sufficient_statistics/">What (on earth) is a Sufficient Statistic?</a>
+                        </h3>
+                        <div class="card-abstract">
+                            
+                                It sometimes drives me insane to hear about engineering or economics people using the word &ldquo;sufficient statistics&rdquo; in the seminars. The …
+                            
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="carousel-post-card">
+                    <div class="card-thumbnail">
+                        
+                            <img src="http://localhost:53278//images/post/2024/Butterfly_Effect/thumbnail.webp" alt="The Lorenz dynamics and Butterfly Effect" class="card-img">
+                        
+                    </div>
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <time datetime="2024-04-08">Apr 8, 2024</time>
+                        </div>
+                        <h3 class="card-title">
+                            <a href="/post/2024/butterfly_effect/">The Lorenz dynamics and Butterfly Effect</a>
+                        </h3>
+                        <div class="card-abstract">
+                            
+                                Chaotic behavior can emerge even in simple dynamics such as replicator, and Rock-Paper-Scissor oscillators, depending on the game settings. To begin …
+                            
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="carousel-post-card">
+                    <div class="card-thumbnail">
+                        
+                            <img src="http://localhost:53278//images/post/2024/Talagrand/thumbnail.webp" alt="Talagrand&#39;s Isoperimetry inequality" class="card-img">
+                        
+                    </div>
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <time datetime="2024-03-26">Mar 26, 2024</time>
+                        </div>
+                        <h3 class="card-title">
+                            <a href="/post/2024/talagrand/">Talagrand&#39;s Isoperimetry inequality</a>
+                        </h3>
+                        <div class="card-abstract">
+                            
+                                This post is in celebration of Michel Talagrand winning Abel prize. Not to overly romanticize this but this is pretty much a come back story because …
+                            
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="carousel-post-card">
+                    <div class="card-thumbnail">
+                        
+                            <img src="http://localhost:53278//images/post/2024/Variational_Perspective/thumbnail.png" alt="A Variational Perspective On Gradient Descent" class="card-img">
+                        
+                    </div>
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <time datetime="2024-02-11">Feb 11, 2024</time>
+                        </div>
+                        <h3 class="card-title">
+                            <a href="/post/2024/variational_perspective/">A Variational Perspective On Gradient Descent</a>
+                        </h3>
+                        <div class="card-abstract">
+                            
+                                In this post I just want to share a simple and elegant idea from a Control System Letter paper written by Maxim Raginsky et al.1. This idea largely …
+                            
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="carousel-post-card">
+                    <div class="card-thumbnail">
+                        
+                            <img src="http://localhost:53278//images/post/2023/Dueling_Bandits/thumbnail.jpg" alt=" Some Notes on Dueling Bandits" class="card-img">
+                        
+                    </div>
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <time datetime="2023-10-11">Oct 11, 2023</time>
+                        </div>
+                        <h3 class="card-title">
+                            <a href="/post/2023/dueling_bandits/"> Some Notes on Dueling Bandits</a>
+                        </h3>
+                        <div class="card-abstract">
+                            
+                                The dueling bandit problem natrually fits the description of a variety of recommendation systems that require &lsquo;&rsquo;learning on the …
+                            
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="carousel-post-card">
+                    <div class="card-thumbnail">
+                        
+                            <img src="http://localhost:53278//images/me/elenadrew.PNG" alt="About Me" class="card-img">
+                        
+                    </div>
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <time datetime="2023-08-26">Aug 26, 2023</time>
+                        </div>
+                        <h3 class="card-title">
+                            <a href="/post/about_me/about/">About Me</a>
+                        </h3>
+                        <div class="card-abstract">
+                            
+                                When you write an About Me, you want something permanent. I don&rsquo;t have much that&rsquo;s permanent, but I go by &lsquo;Union&rsquo; &mdash; a …
+                            
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="carousel-post-card">
+                    <div class="card-thumbnail">
+                        
+                            <img src="http://localhost:53278//images/post/2023/Erdos-Szekeres/thumbnail.webp" alt="Erdos-Szekeres Theorem" class="card-img">
+                        
+                    </div>
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <time datetime="2023-07-24">Jul 24, 2023</time>
+                        </div>
+                        <h3 class="card-title">
+                            <a href="/post/2023/erdos-szekeres/">Erdos-Szekeres Theorem</a>
+                        </h3>
+                        <div class="card-abstract">
+                            
+                                This post is dedicated to Erdos-Szekeres Theorem, which says:
+ES Thm. (Monotone sequence) For any positive integer $n$, any sequence of $n^2 + 1$ …
+                            
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="carousel-post-card">
+                    <div class="card-thumbnail">
+                        
+                            <img src="http://localhost:53278//images/post/2023/Wardrop_Equilibirum/thumbnail.png" alt="Wardrop Equilibrium" class="card-img">
+                        
+                    </div>
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <time datetime="2023-01-30">Jan 30, 2023</time>
+                        </div>
+                        <h3 class="card-title">
+                            <a href="/post/2023/wardrop_equilibirum/">Wardrop Equilibrium</a>
+                        </h3>
+                        <div class="card-abstract">
+                            
+                                I remember having those unpleasant lines in our high school canteen, flooded by the starving students queeing for their lunch, I would always pick a …
+                            
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="carousel-post-card">
+                    <div class="card-thumbnail">
+                        
+                            <img src="http://localhost:53278//images/post/2022/Nesterov/thumbnail.jpg" alt="Nesterov" class="card-img">
+                        
+                    </div>
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <time datetime="2022-12-31">Dec 31, 2022</time>
+                        </div>
+                        <h3 class="card-title">
+                            <a href="/post/2022/nesterov/">Nesterov</a>
+                        </h3>
+                        <div class="card-abstract">
+                            
+                                I did a presentation in a group meeting to briefly review the lower complexity bound of first-order convex optimization; and how Nesterov proceed to …
+                            
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="carousel-post-card">
+                    <div class="card-thumbnail">
+                        
+                            <img src="http://localhost:53278//images/post/2022/The_Capacity_of_Deception/thumbnail.png" alt="Capacity of Deception" class="card-img">
+                        
+                    </div>
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <time datetime="2022-11-16">Nov 16, 2022</time>
+                        </div>
+                        <h3 class="card-title">
+                            <a href="/post/2022/the_capacity_of_deception/">Capacity of Deception</a>
+                        </h3>
+                        <div class="card-abstract">
+                            
+                                This is pretty much scribed from Tor Lattimore&rsquo;s Bandit Algorithms book,Bandit Algorithms. This book has been the most informational item for me …
+                            
+                        </div>
+                    </div>
+                </article>
+                
             </div>
-
-    </div></article>
-<div class="summary">
-    
-        <article class="post">
-  <div class="single-container column is-centered">
-    <div class="archive" id="post-container">
-      <header class="post-header">
-        <h1 class="post-title hover-underline-animation"><a class="post-link" href="/post/what_are_sufficient_statistics/">What (on earth) is a Sufficient Statistic?</a></h1>
-       
-       
-      </header>
-      <div class="post-content">
-        <div class="excerpt post-summary">
-          It sometimes drives me insane to hear about engineering or economics people using the word &ldquo;sufficient statistics&rdquo; in the seminars. The idea of it, as many people will understand it correctly, is that this function summarizes the information from the data, impeccable, alright. But the terminology itself comes with a very rigorous definition. I would very much prefer if you do not plan to give the rigorous description about why it is sufficient in the statistical sense, use some other words like sufficient information or sufficient signaling if necessary.
         </div>
-        
-        <div class="post-time-container">
-          <span class="post-time"> 2024-04-28 </span>
-        </div>
-      </div>
-      
-    </div>
-  </div>
-</article>
-
-    
-        <article class="post">
-  <div class="single-container column is-centered">
-    <div class="archive" id="post-container">
-      <header class="post-header">
-        <h1 class="post-title hover-underline-animation"><a class="post-link" href="/post/butterfly_effect/">The Lorenz dynamics and Butterfly Effect</a></h1>
-       
-       
-      </header>
-      <div class="post-content">
-        <div class="excerpt post-summary">
-          Chaotic behavior can emerge even in simple dynamics such as replicator, and Rock-Paper-Scissor oscillators, depending on the game settings. To begin with, we first define what is chaos qualitatively: &ldquo;Chaos can be described as long term, aperiodic behaviour that exhibits sensitive dependence on initial conditions. Sensitive dependence on initial conditions implies that nearby trajectories diverge exponentially fast over time.&rdquo; Or, by Edward Lorenz, when the present determines the future but the approximate present does not approximately determine the future.
-        </div>
-        
-        <div class="post-time-container">
-          <span class="post-time"> 2024-04-08 </span>
-        </div>
-      </div>
-      
-    </div>
-  </div>
-</article>
-
-    
-        <article class="post">
-  <div class="single-container column is-centered">
-    <div class="archive" id="post-container">
-      <header class="post-header">
-        <h1 class="post-title hover-underline-animation"><a class="post-link" href="/post/talagrand/">Talagrand&#39;s Isoperimetry inequality</a></h1>
-       
-       
-      </header>
-      <div class="post-content">
-        <div class="excerpt post-summary">
-          This post is in celebration of Michel Talagrand winning Abel prize. Not to overly romanticize this but this is pretty much a come back story because back in the days of last century, “The type of mathematics I do was not fashionable at all when I started. It was considered inferior mathematics.” &ndash;Michel Talagrand.
-Now we&rsquo;ve seen significance of his contribution to the concentration of measure, suprema of stochastic processes and spin glass, all partially owing to his celebrated isoperimetry inequality in product probability space.
-        </div>
-        
-        <div class="post-time-container">
-          <span class="post-time"> 2024-03-26 </span>
-        </div>
-      </div>
-      
-    </div>
-  </div>
-</article>
-
-    
-        <article class="post">
-  <div class="single-container column is-centered">
-    <div class="archive" id="post-container">
-      <header class="post-header">
-        <h1 class="post-title hover-underline-animation"><a class="post-link" href="/post/variational_perspective/">A Variational Perspective On Gradient Descent</a></h1>
-       
-       
-      </header>
-      <div class="post-content">
-        <div class="excerpt post-summary">
-          In this post I just want to share a simple and elegant idea from a Control System Letter paper written by Maxim Raginsky et al.1. This idea largely inspired my recent work on multi-agent learning in (monotone) games2, which I might devote another post to talk about if I happen to get some interesting results out of it.
-The idea starts from here: we all know that the archetype of solving convex optimization problem is through gradient descent: $$ x_{k+1} = x_k - \nabla f(x_k), $$ which, in continuous time, corresponds to an autonomous dynamical system: $$ \dot{x} = - \nabla f (x) , \quad x(0) = x_0.
-        </div>
-        
-        <div class="post-time-container">
-          <span class="post-time"> 2024-02-11 </span>
-        </div>
-      </div>
-      
-    </div>
-  </div>
-</article>
-
-    
-        <article class="post">
-  <div class="single-container column is-centered">
-    <div class="archive" id="post-container">
-      <header class="post-header">
-        <h1 class="post-title hover-underline-animation"><a class="post-link" href="/post/dueling_bandits/"> Some Notes on Dueling Bandits</a></h1>
-       
-       
-      </header>
-      <div class="post-content">
-        <div class="excerpt post-summary">
-          The dueling bandit problem natrually fits the description of a variety of recommendation systems that require &lsquo;&rsquo;learning on the fly&rsquo;&rsquo;, yet have no explicit access to a &lsquo;&lsquo;reward&rsquo;&rsquo; model. Instead, the &lsquo;&lsquo;human&rsquo;&rsquo; feedback part takes the form of &lsquo;&lsquo;choices&rsquo;&rsquo;, &lsquo;&lsquo;votes&rsquo;&rsquo;, or some discrete forms. Hence, oftentimes a learning protocol proceeds at time steps \(t = 1, \ldots, T\):
-The algorithm chooses a pair of arms \( a_i, a_j \) from \(K\) available ones; The oracle/human feedback/nature reveals the winner arm \( a_i \), with probability \( P(a_i \succ a_j)\), \( P(a_i \prec a_j) = 1 - P(a_i \succ a_j) \) So the feedback is either \(a_i\) or \( a_j \), the preferences forms a matrix \(P \in \mathbb{R}^{K \times K}\) such that \( P + P^{\top} = I\) which defines the hidden information of the dueling bandit problem.
-        </div>
-        
-        <div class="post-time-container">
-          <span class="post-time"> 2023-10-11 </span>
-        </div>
-      </div>
-      
-    </div>
-  </div>
-</article>
-
-    
-        <article class="post">
-  <div class="single-container column is-centered">
-    <div class="archive" id="post-container">
-      <header class="post-header">
-        <h1 class="post-title hover-underline-animation"><a class="post-link" href="/post/wardrop_equilibirum/">Wardrop Equilibrium</a></h1>
-       
-       
-      </header>
-      <div class="post-content">
-        <div class="excerpt post-summary">
-          I remember having those unpleasant lines in our high school canteen, flooded by the starving students queeing for their lunch, I would always pick a window with fewer people waiting, compromising myself with awful food. Another similar thought that always stricked me was the odds that tourists always pick the same time to travel, there&rsquo;s almost always traffic congestion everywhere during holiday seasons. Yeah, lives have been always so hard.
-        </div>
-        
-        <div class="post-time-container">
-          <span class="post-time"> 2023-01-30 </span>
-        </div>
-      </div>
-      
-    </div>
-  </div>
-</article>
-
-    
-        <article class="post">
-  <div class="single-container column is-centered">
-    <div class="archive" id="post-container">
-      <header class="post-header">
-        <h1 class="post-title hover-underline-animation"><a class="post-link" href="/post/nesterov/">Nesterov</a></h1>
-       
-       
-      </header>
-      <div class="post-content">
-        <div class="excerpt post-summary">
-          I did a presentation in a group meeting to briefly review the lower complexity bound of first-order convex optimization; and how Nesterov proceed to match the lower bound using the estimation sequence, the slides are here.
-Consider an unconstrained optimization problem: $$ \min_{x \in \mathbb{R}^n} f(x) . $$ Here, \(f \in \mathcal{C}^1\) is a convex, $L$-Lipschitz smooth function. Obviously we can solve this problem by using first-order methods, using iterations:
-        </div>
-        
-        <div class="post-time-container">
-          <span class="post-time"> 2022-12-31 </span>
-        </div>
-      </div>
-      
-    </div>
-  </div>
-</article>
-
-    
-        <article class="post">
-  <div class="single-container column is-centered">
-    <div class="archive" id="post-container">
-      <header class="post-header">
-        <h1 class="post-title hover-underline-animation"><a class="post-link" href="/post/the_capacity_of_deception/">A Cryptographic Conundrum</a></h1>
-       
-       
-      </header>
-      <div class="post-content">
-        <div class="excerpt post-summary">
-          Optimal Communication Let there be Alice and Bob, whose mission this time is to and communicate in the most efficient way possible, while Alice is given a bunch of random outcomes.
-Alice wants to tell with Bob about a sequence of \(n\) independent random outcomes sampled from a known distribution \(Q\). To keep things concise, they&rsquo;ve agreed on a secret binary language. Now, the plot thickens with the concept of entropy.
-        </div>
-        
-        <div class="post-time-container">
-          <span class="post-time"> 2022-11-16 </span>
-        </div>
-      </div>
-      
-    </div>
-  </div>
-</article>
-
-    
-    <hr>
-<section class="pagination" >
-    
-    <label class="pag-link">Page 1 of 1</label>
-    
-</section>
-
+    </section>
 </div>
 
-        </main><footer class="footer">
-    <div class="content has-text-centered">
-    <span>&copy; 2024 </span>
-    <span>
-        only in chaos are we conceivable.
-    </span>
-    </div>
+                
+            </main>
+        </div>
 
+        <script>
+            
+            function setTheme(theme) {
+                let body = document.body;
+                let themeIcon = document.querySelector(".theme-icon");
+                if (theme === "dark") {
+                    body.classList.add("dark-mode");
+                    themeIcon.src = "http:\/\/localhost:53278\/svg/moon.svg";
+                    themeIcon.alt = "moon icon";
+                } else {
+                    body.classList.remove("dark-mode");
+                    themeIcon.src = "http:\/\/localhost:53278\/svg/sun.svg";
+                    themeIcon.alt = "sun icon";
+                }
+                localStorage.setItem("theme", theme);
+            }
 
-  </footer>
+            
+            document.addEventListener('DOMContentLoaded', function() {
+                
+                let theme = localStorage.getItem("theme");
+                
+                
+                if (!theme) {
+                    const isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+                    theme = isDarkMode ? 'dark' : 'light';
+                }
+                
+                setTheme(theme);
 
-  </body>
+                
+                document.getElementById("theme-toggle").addEventListener("click", function(e) {
+                    e.preventDefault();
+                    let currentTheme = localStorage.getItem("theme") || "light";
+                    let newTheme = currentTheme === "light" ? "dark" : "light";
+                    setTheme(newTheme);
+                });
+            });
+            
+            
+            function toggleBlogMenu(event) {
+                event.preventDefault();
+                const submenu = document.getElementById('blog-submenu');
+                const arrow = document.querySelector('.dropdown-arrow');
+                
+                if (submenu.classList.contains('open')) {
+                    submenu.classList.remove('open');
+                    arrow.style.transform = 'rotate(0deg)';
+                } else {
+                    submenu.classList.add('open');
+                    arrow.style.transform = 'rotate(180deg)';
+                }
+            }
+            
+            
+            document.addEventListener('click', function(event) {
+                const navContainer = document.querySelector('.nav-item-container');
+                const submenu = document.getElementById('blog-submenu');
+                const arrow = document.querySelector('.dropdown-arrow');
+                
+                if (!navContainer.contains(event.target) && submenu.classList.contains('open')) {
+                    submenu.classList.remove('open');
+                    arrow.style.transform = 'rotate(0deg)';
+                }
+            });
+        </script>
+    </body>
 </html>
 

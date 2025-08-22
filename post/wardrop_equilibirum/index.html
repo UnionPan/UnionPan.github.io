@@ -1,28 +1,34 @@
 
 <!DOCTYPE html>
 <html lang="en-us">
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=63227&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>Wardrop Equilibrium | union&#39;s blog</title>
     <meta name="description"
-        content="I remember having those unpleasant lines in our high school canteen, flooded by the starving students queeing for their lunch, I would always pick a window with fewer people waiting, compromising myself with awful food. Another similar thought that always stricked me was the odds that tourists always pick the same time to travel, there&rsquo;s almost always traffic congestion everywhere during holiday seasons. Yeah, lives have been always so hard.">
-    <link rel="canonical" href="https://unionpan.github.io/post/wardrop_equilibirum/" />
+        content="I remember having those unpleasant lines in our high school canteen, flooded by the starving students queeing for their lunch, I would always pick a window with fewer people waiting, compromising myself with awful food.
+Another similar thought that always stricked me was the odds that tourists always pick the same time to travel, there&rsquo;s almost always traffic congestion everywhere during holiday seasons. Yeah, lives have been always so hard.
+On the first level of thinking, when there&rsquo;s a lack of resource you attempt to find alternatives, e.g., picking another time for traveling, another food window, etc.. The level two thinking is maybe &lsquo;&lsquo;since other people are avoiding holidays, what if I insist on going out on holidays&rsquo;&rsquo;? Or maybe there&rsquo;s a twisted level three thinking, &lsquo;&lsquo;what if everybody thinks like the level two thinker, &hellip;.&rsquo;&rsquo; It&rsquo;s somewhat intimidating to follow this infinite hierachy, but definitely rewarding, as there are certainly moments when people are regretting their travel decisions, thinking to themselves &lsquo;&lsquo;I probably should not have gone the high way.&rsquo;&rsquo;">
+    <link rel="canonical" href="http://localhost:63227/post/wardrop_equilibirum/" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
     
-    <link rel="stylesheet" href="https://unionpan.github.io/scss/style.min.fd03f00c6cceb36e9051ed7a5f050822f69766d1ebc4b0a9eaf818a01fbcb591.css">
-    <meta property="og:url" content="https://unionpan.github.io/post/wardrop_equilibirum/">
+    <link rel="stylesheet" href="http://localhost:63227/scss/style.min.7f52dae63704e9b4aa0b8a6f2fa1672c98aaedcc9998a665166733014e85bb99.css">
+    <meta property="og:url" content="http://localhost:63227/post/wardrop_equilibirum/">
   <meta property="og:site_name" content="union&#39;s blog">
   <meta property="og:title" content="Wardrop Equilibrium">
-  <meta property="og:description" content="I remember having those unpleasant lines in our high school canteen, flooded by the starving students queeing for their lunch, I would always pick a window with fewer people waiting, compromising myself with awful food. Another similar thought that always stricked me was the odds that tourists always pick the same time to travel, there’s almost always traffic congestion everywhere during holiday seasons. Yeah, lives have been always so hard.">
-  <meta property="og:locale" content="en-us">
+  <meta property="og:description" content="I remember having those unpleasant lines in our high school canteen, flooded by the starving students queeing for their lunch, I would always pick a window with fewer people waiting, compromising myself with awful food. Another similar thought that always stricked me was the odds that tourists always pick the same time to travel, there’s almost always traffic congestion everywhere during holiday seasons. Yeah, lives have been always so hard.
+On the first level of thinking, when there’s a lack of resource you attempt to find alternatives, e.g., picking another time for traveling, another food window, etc.. The level two thinking is maybe ‘‘since other people are avoiding holidays, what if I insist on going out on holidays’’? Or maybe there’s a twisted level three thinking, ‘‘what if everybody thinks like the level two thinker, ….’’ It’s somewhat intimidating to follow this infinite hierachy, but definitely rewarding, as there are certainly moments when people are regretting their travel decisions, thinking to themselves ‘‘I probably should not have gone the high way.’’">
+  <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="post">
     <meta property="article:published_time" content="2023-01-30T00:00:00+00:00">
     <meta property="article:modified_time" content="2023-01-30T00:00:00+00:00">
 
-    <meta name="twitter:card" content="summary"><meta name="twitter:title" content="Wardrop Equilibrium">
-<meta name="twitter:description" content="I remember having those unpleasant lines in our high school canteen, flooded by the starving students queeing for their lunch, I would always pick a window with fewer people waiting, compromising myself with awful food. Another similar thought that always stricked me was the odds that tourists always pick the same time to travel, there&rsquo;s almost always traffic congestion everywhere during holiday seasons. Yeah, lives have been always so hard.">
+    
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Wardrop Equilibrium">
+  <meta name="twitter:description" content="I remember having those unpleasant lines in our high school canteen, flooded by the starving students queeing for their lunch, I would always pick a window with fewer people waiting, compromising myself with awful food. Another similar thought that always stricked me was the odds that tourists always pick the same time to travel, there’s almost always traffic congestion everywhere during holiday seasons. Yeah, lives have been always so hard.
+On the first level of thinking, when there’s a lack of resource you attempt to find alternatives, e.g., picking another time for traveling, another food window, etc.. The level two thinking is maybe ‘‘since other people are avoiding holidays, what if I insist on going out on holidays’’? Or maybe there’s a twisted level three thinking, ‘‘what if everybody thinks like the level two thinker, ….’’ It’s somewhat intimidating to follow this infinite hierachy, but definitely rewarding, as there are certainly moments when people are regretting their travel decisions, thinking to themselves ‘‘I probably should not have gone the high way.’’">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"
     integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
@@ -37,15 +43,6 @@
     integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
     onload="renderMathInElement(document.body);"></script>
     
-    
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P8CZD2GL8F"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-P8CZD2GL8F');
-    </script>
-    
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             renderMathInElement(document.body, {
@@ -57,116 +54,90 @@
         });
     </script>
     
-</head><body><nav class="navbar is-light" role="navigation">
-    <div class="container">
-        <div class="navbar-brand">
-            <a href="/" title="home" class="navbar-item">
-                <span class="logo">
-                    <h1>union&#39;s blog</h1>
-                </span>
-            </a>
-
-            
+</head><body>
+        <div class="theme-toggle-container">
             <a id="theme-toggle" class="theme-toggle" href="#">
-                <img src="https://unionpan.github.io/svg/sun.svg" alt="sun icon" class="theme-icon" />
-            </a>
-
-            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
+                <img src="http://localhost:63227/svg/sun.svg" alt="sun icon" class="theme-icon" />
             </a>
         </div>
-
-        <div class="navbar-menu">
-            <div class="navbar-start">
-                
-                <a href="/about" class="navbar-item">About</a>
-                
-                <a href="/post" class="navbar-item">Blog</a>
-                
-                <a href="/categories" class="navbar-item">Categories</a>
-                
-                <a href="/cv.pdf" class="navbar-item">CV</a>
-                
-            </div>
-
-        </div>
-        <div class="search">
-            <div id="fastSearch">
-                <input id="searchInput" tabindex="0" placeholder="Search..">
-                <ul id="searchResults">
-
-                </ul>
-            </div>
-            <a id="search-btn" style="display: inline-block;" href="# ">
-                <div class="icon-search"><svg class="search-svg" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
-            </a>
-        </div>
-
-        <script src="/js/fuse.min.js"></script> 
-        <script src="/js/fastsearch.js"></script>
-
-    </div>
-</nav>
-
-<script>
-    
-    document.addEventListener('DOMContentLoaded', function() {
-        var burger = document.querySelector('.navbar-burger');
-        burger.addEventListener('click', function() {
-            burger.classList.toggle('is-active');
-            document.querySelector('.navbar-menu').classList.toggle('is-active');
-        });
-    });
-
-    
-    function setTheme(theme) {
-        let body = document.body;
-        let themeIcon = document.querySelector(".theme-icon");
-        if (theme === "dark") {
-            body.classList.add("dark-mode");
-            themeIcon.src = "https:\/\/unionpan.github.io\/svg/moon.svg";
-            themeIcon.alt = "moon icon";
-        } else {
-            body.classList.remove("dark-mode");
-            themeIcon.src = "https:\/\/unionpan.github.io\/svg/sun.svg";
-            themeIcon.alt = "sun icon";
-        }
         
-        localStorage.setItem("theme", theme);
-    }
-
-    
-    let theme = localStorage.getItem("theme") || "light";
-    const isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    if (isDarkMode) {
-        
-        setTheme('dark');
-
-    } else {
-        
-        setTheme('light');
-    }
-    setTheme(theme);
-
-    
-    document.getElementById("theme-toggle").addEventListener("click", function() {
-        if (theme === "light") {
-            theme = "dark";
-        } else {
-            theme = "light";
-        }
-        setTheme(theme);
-    });
-
-
-
-</script>
-
-
-
-</header><main>
+        <div class="layout-container">
+            <aside class="sidebar">
+                <div class="sidebar-content">
+                    <div class="sidebar-header">
+                        <h1 class="site-title">
+                            <a href="/" class="site-title-link">Yunian Pan</a>
+                        </h1>
+                    </div>
+                    <nav class="sidebar-nav">
+                        <div class="nav-item-container">
+                            <a href="#" class="nav-link blog-toggle active" onclick="toggleBlogMenu(event)">
+                                Blog <span class="dropdown-arrow">▼</span>
+                            </a>
+                            <div class="submenu" id="blog-submenu">
+                                <a href="/post/about" class="submenu-link">About Me</a>
+                                
+                                <a href="/post/2022" class="submenu-link">2022</a>
+                                
+                                <a href="/post/2023" class="submenu-link">2023</a>
+                                
+                                <a href="/post/2024" class="submenu-link">2024</a>
+                                
+                                <a href="/post/2025" class="submenu-link">2025</a>
+                                
+                            </div>
+                        </div>
+                        <a href="/statement" class="nav-link ">Statement/CV</a>
+                        <a href="/contact" class="nav-link ">Contact</a>
+                        <a href="/photos" class="nav-link ">Photos</a>
+                    </nav>
+                    <div class="sidebar-footer">
+                        <div class="copyright">
+                            © 2022-2025 all rights reserved
+                        </div>
+                        <div class="social-icons">
+                            
+                            <a href="https://www.linkedin.com/in/unionpan/" title="Linkedin" class="social-link">
+                                <svg height="32px" width="32px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+    <rect x="2" y="9" width="4" height="12"></rect>
+    <circle cx="4" cy="4" r="2"></circle>
+</svg>
+                            </a>
+                            
+                            <a href="https://github.com/UnionPan" title="Github" class="social-link">
+                                <svg height="32px" width="32px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+    </path>
+</svg>
+                            </a>
+                            
+                            <a href="https://twitter.com/Union54572322" title="twitter" class="social-link">
+                                <svg height="32px" width="32px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
+    </path>
+</svg>
+                            </a>
+                            
+                            <a href="https://www.instagram.com/pyn_rodcutter/?hl=en" title="instagram" class="social-link">
+                                <svg height="32px" width="32px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+    <line x1="17.5" y1="6.5" x2="17.5" y2="6.5"></line>
+</svg>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </aside>
+            <main class="main-content">
 <div class="single-container">
     <div class="archive">
         <h1 class="title is-1">Wardrop Equilibrium</h1>
@@ -187,7 +158,7 @@
                     </div>
                 </div>
                 <div class="small-categories-container">
-                    <a href="/categories/game-theory">Game Theory</a>
+                    <a href="/categories/some-random-math">Some random math</a>
                 </div>
             </div>
         </div>
@@ -245,26 +216,22 @@ For each OD pair \(w \in \mathcal{W}\), let \(m_w = m(\mathcal{X}_w) \) represen
 <p>Let \((\Omega, \mathcal{F}, \mathbb{P})\) be the probability space, \(l_e: \mathbb{R}_+ \times \Omega \to \mathbb{R}_+\) be the cost/latency functions, measuring the travel delay of the edge \(e \in \mathcal{E}\) determined by its edge flow \(q_e\) and a state variable \(\omega \in \Omega\) that is universal for the entire traffic network, e.g., \(\omega\) can represent the weather condition, road incidents or anything that affects the congestion level. Let \(l : \mathbb{R}^{|\mathcal{E}|}_{\geq 0} \times \Omega \mapsto \mathbb{R}^{|\mathcal{E}|}_+\) denote the vector-valued latency function.For an instance \(\omega \in \Omega\), the latency of path \(p\) is defined as \(\ell_p : = \sum_{e \in p} l_e (q_e, \omega ) = \Lambda^{\top}_p l (\Lambda \mu, \omega )\), which can be seen as a function of \(\mu\) and \(\omega\), written as \(\ell_p = \ell_p(\mu, \omega)\). We write the vector-valued path latency function as \(\ell : \Delta \times \Omega \mapsto \mathbb{R}^{|\mathcal{P}|}_+\). Each instance \(\omega\) determines a congestion game, captured by the tuple \(\mathcal{G}_c^{\omega} = ( \mathcal{G}, \mathcal{W}, \mathcal{X} , \mathcal{P}, \mathcal{\ell}(\cdot, \omega) )\). Each path flow profile \(\mu \in \Delta\) induces a probability measure associated with the positive random vector \(\ell(\mu, \cdot): \Omega \mapsto \mathbb{R}^{|\mathcal{P}|}_+\). The following assumption gives some realistic properties for the latency.</p>
 <h4 id="standing-assumption">Standing Assumption</h4>
 <blockquote>
-<p>For all \(e \in \mathcal{E}\), the latency functions \(l_e\) are \(\omega\)-measurable, for all \(\omega \in \Omega\), \(l_e\) are \(L_0\)-Lipschitz continuous and differentiable in \(q_e\) with \(\cfrac{ \partial l_e (q_e, \omega)}{\partial q_e} &gt; 0 \) for all \(q_e \geq 0\).</p>
-</blockquote>
+<p>For all \(e \in \mathcal{E}\), the latency functions \(l_e\) are \(\omega\)-measurable, for all \(\omega \in \Omega\), \(l_e\) are \(L_0\)-Lipschitz continuous and differentiable in \(q_e\) with \(\cfrac{ \partial l_e (q_e, \omega)}{\partial q_e} &gt; 0 \) for all \(q_e \geq 0\).</p></blockquote>
 <p>Now let&rsquo;s define and find the equilibria satisfying  of a deterministic game, i.e., when \(|\Omega|\) is a singleton. The first, as it turns out, coincides with the Nash Equilibrium.</p>
 <h4 id="definition-wardrop-equilibrium">Definition (Wardrop Equilibrium)</h4>
 <blockquote>
-<p>A path flow \(\mu \in \Delta\) is said to be a  Wardrop Equilibrium (WE) if \(\forall w \in \mathcal{W}\), \( \mu_p &gt; 0\) indicates \( \ell_p \leq \ell_{p^{\prime}}\) for all \(p^{\prime} \in \mathcal{P}_w\).</p>
-</blockquote>
+<p>A path flow \(\mu \in \Delta\) is said to be a  Wardrop Equilibrium (WE) if \(\forall w \in \mathcal{W}\), \( \mu_p &gt; 0\) indicates \( \ell_p \leq \ell_{p^{\prime}}\) for all \(p^{\prime} \in \mathcal{P}_w\).</p></blockquote>
 <p>The second, while not satisfying the incentive conditions, somehow concides with the Nash equilibrium in a &ldquo;regularized&rdquo; version of the game, where the utility for each individual player is a sum of the latency and a &ldquo;toll price&rdquo;.</p>
 <h4 id="definition-system-equilibrium">Definition (System Equilibrium)</h4>
 <blockquote>
-<p>A path flow \(\mu \in \Delta\) is said to be a system optimum if the aggregated latency \(S(\mu) := \sum_{e \in \mathcal{E}} q_e l_e \) is minimized.</p>
-</blockquote>
+<p>A path flow \(\mu \in \Delta\) is said to be a system optimum if the aggregated latency \(S(\mu) := \sum_{e \in \mathcal{E}} q_e l_e \) is minimized.</p></blockquote>
 <p>Wardrop equilibrium can be characterized by the minimization of an objective function called Beckmann potential, we end this post by proving it.</p>
 <h4 id="theorem">Theorem</h4>
 <blockquote>
 <p>A path flow \(\mu^* \in \Delta\) is a WE if and only if it minimizes the Beckmann potential:
 $$
 \min_{\mu \in \Delta} \Phi (\mu) := \sum_{e\in \mathcal{E}}\int_{0}^{(\Lambda \mu)_e} l_e (z) dz.
-$$</p>
-</blockquote>
+$$</p></blockquote>
 <h4 id="proof">Proof</h4>
 <p>We first write down the constraint \(\Delta\) as a set of inequalities and equalities,
 $$
@@ -317,20 +284,66 @@ The uniqueness of the edge flow solution \(q = \Lambda \mu\) can be established 
                 d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64z m0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
                 p-id="3990" fill="#363636"></path>
         </svg>
-    </a>
+    </a><hr style="border-top: 1px solid #EEEEEE;">
+<div id="comment"></div>
+<script>
+    const getStoredTheme = () => localStorage.getItem("theme") === "dark" ? "dark" : "light";
+
+    const setGiscusTheme = () => {
+        const sendMessage = (message) => {
+            const iframe = document.querySelector('iframe.giscus-frame');
+            if (iframe) {
+                iframe.contentWindow.postMessage({giscus: message}, 'https://giscus.app');
+            }
+        }
+        sendMessage({setConfig: {theme: getStoredTheme()}})
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const giscusAttributes = {
+            "src": "https://giscus.app/client.js",
+            "data-repo": "UnionPan\/UnionPan.github.io",
+            "data-repo-id": "R_kgDOIZ-Mxw",
+            "data-category": "General",
+            "data-category-id": "DIC_kwDOIZ-Mx84CuT-c",
+            "data-mapping": "pathname",
+            "data-reactions-enabled": "1",
+            "data-emit-metadata": "0",
+            "data-input-position": "bottom",
+            "data-theme": getStoredTheme(),
+            "data-lang": "en",
+            "data-loading": "lazy",
+            "crossorigin": "anonymous",
+        };
+
+        
+        const giscusScript = document.createElement("script");
+        Object.entries(giscusAttributes).forEach(
+            ([key, value]) => giscusScript.setAttribute(key, value));
+        document.getElementById("comment").appendChild(giscusScript);
+
+        
+        const themeToggle = document.querySelector(".theme-toggle");
+        if (themeToggle) {
+            themeToggle.addEventListener("click", setGiscusTheme);
+        }
+    });
+
+</script>
+
 
 <div class="pp-container">
         <section class="pre-and-post">
             <div class="has-text-left">
                 
                 <p>Previous post</p>
-                <a href="https://unionpan.github.io/post/nesterov/">Nesterov</a>
+                <a href="http://localhost:63227/post/nesterov/">Nesterov</a>
                 
             </div>
             <div class="has-text-right">
                 
                 <p>Next post</p>
-                <a href="https://unionpan.github.io/post/dueling_bandits/"> Some Notes on Dueling Bandits</a>
+                <a href="http://localhost:63227/post/erdos-szekeres/">Erdos-Szekeres Theorem</a>
                 
             </div>
         </section>
@@ -338,17 +351,77 @@ The uniqueness of the edge flow solution \(q = \Lambda \mu\) can be established 
 
 </div>
 
-        </main><footer class="footer">
-    <div class="content has-text-centered">
-    <span>&copy; 2024 </span>
-    <span>
-        only in chaos are we conceivable.
-    </span>
-    </div>
+                <footer class="footer">
+</footer>
+            </main>
+        </div>
 
+        <script>
+            
+            function setTheme(theme) {
+                let body = document.body;
+                let themeIcon = document.querySelector(".theme-icon");
+                if (theme === "dark") {
+                    body.classList.add("dark-mode");
+                    themeIcon.src = "http:\/\/localhost:63227\/svg/moon.svg";
+                    themeIcon.alt = "moon icon";
+                } else {
+                    body.classList.remove("dark-mode");
+                    themeIcon.src = "http:\/\/localhost:63227\/svg/sun.svg";
+                    themeIcon.alt = "sun icon";
+                }
+                localStorage.setItem("theme", theme);
+            }
 
-  </footer>
+            
+            document.addEventListener('DOMContentLoaded', function() {
+                
+                let theme = localStorage.getItem("theme");
+                
+                
+                if (!theme) {
+                    const isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+                    theme = isDarkMode ? 'dark' : 'light';
+                }
+                
+                setTheme(theme);
 
-  </body>
+                
+                document.getElementById("theme-toggle").addEventListener("click", function(e) {
+                    e.preventDefault();
+                    let currentTheme = localStorage.getItem("theme") || "light";
+                    let newTheme = currentTheme === "light" ? "dark" : "light";
+                    setTheme(newTheme);
+                });
+            });
+            
+            
+            function toggleBlogMenu(event) {
+                event.preventDefault();
+                const submenu = document.getElementById('blog-submenu');
+                const arrow = document.querySelector('.dropdown-arrow');
+                
+                if (submenu.classList.contains('open')) {
+                    submenu.classList.remove('open');
+                    arrow.style.transform = 'rotate(0deg)';
+                } else {
+                    submenu.classList.add('open');
+                    arrow.style.transform = 'rotate(180deg)';
+                }
+            }
+            
+            
+            document.addEventListener('click', function(event) {
+                const navContainer = document.querySelector('.nav-item-container');
+                const submenu = document.getElementById('blog-submenu');
+                const arrow = document.querySelector('.dropdown-arrow');
+                
+                if (!navContainer.contains(event.target) && submenu.classList.contains('open')) {
+                    submenu.classList.remove('open');
+                    arrow.style.transform = 'rotate(0deg)';
+                }
+            });
+        </script>
+    </body>
 </html>
 

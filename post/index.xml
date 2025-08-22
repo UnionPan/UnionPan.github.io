@@ -2,67 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on union&#39;s blog</title>
-    <link>https://unionpan.github.io/post/</link>
+    <link>http://localhost:53278/post/</link>
     <description>Recent content in Posts on union&#39;s blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 28 Apr 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://unionpan.github.io/post/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>What (on earth) is a Sufficient Statistic?</title>
-      <link>https://unionpan.github.io/post/what_are_sufficient_statistics/</link>
-      <pubDate>Sun, 28 Apr 2024 00:00:00 +0000</pubDate>
-      <guid>https://unionpan.github.io/post/what_are_sufficient_statistics/</guid>
-      <description>It sometimes drives me insane to hear about engineering or economics people using the word &amp;ldquo;sufficient statistics&amp;rdquo; in the seminars. The idea of it, as many people will understand it correctly, is that this function summarizes the information from the data, impeccable, alright. But the terminology itself comes with a very rigorous definition. I would very much prefer if you do not plan to give the rigorous description about why it is sufficient in the statistical sense, use some other words like sufficient information or sufficient signaling if necessary.</description>
-    </item>
-    <item>
-      <title>The Lorenz dynamics and Butterfly Effect</title>
-      <link>https://unionpan.github.io/post/butterfly_effect/</link>
-      <pubDate>Mon, 08 Apr 2024 00:00:00 +0000</pubDate>
-      <guid>https://unionpan.github.io/post/butterfly_effect/</guid>
-      <description>Chaotic behavior can emerge even in simple dynamics such as replicator, and Rock-Paper-Scissor oscillators, depending on the game settings. To begin with, we first define what is chaos qualitatively: &amp;ldquo;Chaos can be described as long term, aperiodic behaviour that exhibits sensitive dependence on initial conditions. Sensitive dependence on initial conditions implies that nearby trajectories diverge exponentially fast over time.&amp;rdquo; Or, by Edward Lorenz, when the present determines the future but the approximate present does not approximately determine the future.</description>
-    </item>
-    <item>
-      <title>Talagrand&#39;s Isoperimetry inequality</title>
-      <link>https://unionpan.github.io/post/talagrand/</link>
-      <pubDate>Tue, 26 Mar 2024 00:00:00 +0000</pubDate>
-      <guid>https://unionpan.github.io/post/talagrand/</guid>
-      <description>This post is in celebration of Michel Talagrand winning Abel prize. Not to overly romanticize this but this is pretty much a come back story because back in the days of last century, “The type of mathematics I do was not fashionable at all when I started. It was considered inferior mathematics.” &amp;ndash;Michel Talagrand.&#xA;Now we&amp;rsquo;ve seen significance of his contribution to the concentration of measure, suprema of stochastic processes and spin glass, all partially owing to his celebrated isoperimetry inequality in product probability space.</description>
-    </item>
-    <item>
-      <title>A Variational Perspective On Gradient Descent</title>
-      <link>https://unionpan.github.io/post/variational_perspective/</link>
-      <pubDate>Sun, 11 Feb 2024 00:00:00 +0000</pubDate>
-      <guid>https://unionpan.github.io/post/variational_perspective/</guid>
-      <description>In this post I just want to share a simple and elegant idea from a Control System Letter paper written by Maxim Raginsky et al.1. This idea largely inspired my recent work on multi-agent learning in (monotone) games2, which I might devote another post to talk about if I happen to get some interesting results out of it.&#xA;The idea starts from here: we all know that the archetype of solving convex optimization problem is through gradient descent: $$ x_{k+1} = x_k - \nabla f(x_k), $$ which, in continuous time, corresponds to an autonomous dynamical system: $$ \dot{x} = - \nabla f (x) , \quad x(0) = x_0.</description>
-    </item>
-    <item>
-      <title> Some Notes on Dueling Bandits</title>
-      <link>https://unionpan.github.io/post/dueling_bandits/</link>
-      <pubDate>Wed, 11 Oct 2023 00:00:00 +0000</pubDate>
-      <guid>https://unionpan.github.io/post/dueling_bandits/</guid>
-      <description>The dueling bandit problem natrually fits the description of a variety of recommendation systems that require &amp;lsquo;&amp;rsquo;learning on the fly&amp;rsquo;&amp;rsquo;, yet have no explicit access to a &amp;lsquo;&amp;lsquo;reward&amp;rsquo;&amp;rsquo; model. Instead, the &amp;lsquo;&amp;lsquo;human&amp;rsquo;&amp;rsquo; feedback part takes the form of &amp;lsquo;&amp;lsquo;choices&amp;rsquo;&amp;rsquo;, &amp;lsquo;&amp;lsquo;votes&amp;rsquo;&amp;rsquo;, or some discrete forms. Hence, oftentimes a learning protocol proceeds at time steps \(t = 1, \ldots, T\):&#xA;The algorithm chooses a pair of arms \( a_i, a_j \) from \(K\) available ones; The oracle/human feedback/nature reveals the winner arm \( a_i \), with probability \( P(a_i \succ a_j)\), \( P(a_i \prec a_j) = 1 - P(a_i \succ a_j) \) So the feedback is either \(a_i\) or \( a_j \), the preferences forms a matrix \(P \in \mathbb{R}^{K \times K}\) such that \( P + P^{\top} = I\) which defines the hidden information of the dueling bandit problem.</description>
-    </item>
-    <item>
-      <title>Wardrop Equilibrium</title>
-      <link>https://unionpan.github.io/post/wardrop_equilibirum/</link>
-      <pubDate>Mon, 30 Jan 2023 00:00:00 +0000</pubDate>
-      <guid>https://unionpan.github.io/post/wardrop_equilibirum/</guid>
-      <description>I remember having those unpleasant lines in our high school canteen, flooded by the starving students queeing for their lunch, I would always pick a window with fewer people waiting, compromising myself with awful food. Another similar thought that always stricked me was the odds that tourists always pick the same time to travel, there&amp;rsquo;s almost always traffic congestion everywhere during holiday seasons. Yeah, lives have been always so hard.</description>
-    </item>
-    <item>
-      <title>Nesterov</title>
-      <link>https://unionpan.github.io/post/nesterov/</link>
-      <pubDate>Sat, 31 Dec 2022 00:00:00 +0000</pubDate>
-      <guid>https://unionpan.github.io/post/nesterov/</guid>
-      <description>I did a presentation in a group meeting to briefly review the lower complexity bound of first-order convex optimization; and how Nesterov proceed to match the lower bound using the estimation sequence, the slides are here.&#xA;Consider an unconstrained optimization problem: $$ \min_{x \in \mathbb{R}^n} f(x) . $$ Here, \(f \in \mathcal{C}^1\) is a convex, $L$-Lipschitz smooth function. Obviously we can solve this problem by using first-order methods, using iterations:</description>
-    </item>
-    <item>
-      <title>A Cryptographic Conundrum</title>
-      <link>https://unionpan.github.io/post/the_capacity_of_deception/</link>
-      <pubDate>Wed, 16 Nov 2022 18:58:11 +0800</pubDate>
-      <guid>https://unionpan.github.io/post/the_capacity_of_deception/</guid>
-      <description>Optimal Communication Let there be Alice and Bob, whose mission this time is to and communicate in the most efficient way possible, while Alice is given a bunch of random outcomes.&#xA;Alice wants to tell with Bob about a sequence of \(n\) independent random outcomes sampled from a known distribution \(Q\). To keep things concise, they&amp;rsquo;ve agreed on a secret binary language. Now, the plot thickens with the concept of entropy.</description>
-    </item>
+    <lastBuildDate></lastBuildDate>
+    <atom:link href="http://localhost:53278/post/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

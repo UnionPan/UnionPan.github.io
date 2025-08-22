@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2022 on union&#39;s blog</title>
+    <link>http://localhost:53278/post/2022/</link>
+    <description>Recent content in 2022 on union&#39;s blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 31 Dec 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:53278/post/2022/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Nesterov</title>
+      <link>http://localhost:53278/post/2022/nesterov/</link>
+      <pubDate>Sat, 31 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>http://localhost:53278/post/2022/nesterov/</guid>
+      <description>&lt;p&gt;I did a presentation in a group meeting to briefly review the lower complexity bound of first-order convex optimization; and how Nesterov proceed to match the lower bound using the estimation sequence, &lt;a href=&#34;https://drive.google.com/file/d/1EynpHsGDV-UObuT9tYwNmkAesYSN5GiY/view?usp=sharing&#34;&gt;the slides are here&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Consider an unconstrained optimization problem:&#xA;$$&#xA;\min_{x \in \mathbb{R}^n} f(x) .&#xA;$$&#xA;Here, \(f \in \mathcal{C}^1\) is a convex, $L$-Lipschitz smooth function.&#xA;Obviously we can solve this problem by using first-order methods, using iterations:&lt;/p&gt;&#xA;&lt;p&gt;\[&#xA;x_{k} \in x_{0} + \operatorname{Span} \left \{f^{\prime} \left (x_{0} \right ), \ldots, f^{\prime} \left (x_{k-1} \right )\right \}.&#xA;\]&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Capacity of Deception</title>
+      <link>http://localhost:53278/post/2022/the_capacity_of_deception/</link>
+      <pubDate>Wed, 16 Nov 2022 18:58:11 +0800</pubDate>
+      <guid>http://localhost:53278/post/2022/the_capacity_of_deception/</guid>
+      <description>&lt;p&gt;This is pretty much scribed from Tor Lattimore&amp;rsquo;s Bandit Algorithms book,&lt;a href=&#34;https://tor-lattimore.com/downloads/book/book.pdf&#34;&gt;Bandit Algorithms&lt;/a&gt;. This book has been the most informational item for me in a while. There is a chapter about the foundations of information theory, which is simply entropy, but the story telling reminds me of deception.&#xA;Entropy, in plain words, is the measure of uncertainty for certain information; to communicate is to eliminate such uncertainty, to deceive, however, is to obscure certain information, hence to enforce such uncertainty. The duality has never been formalized as far as I know, because if you simply name the Shannon limit as the capacity of deception, you are doing anything innovative.&#xA;But, if you think from Shannon&amp;rsquo;s perspective, wasn&amp;rsquo;t he also just doing the same thing? (Sorry for quoting my advisor here.) Anyway here goes the story:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

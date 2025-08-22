@@ -1,0 +1,387 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=53278&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>A Variational Perspective On Gradient Descent | union&#39;s blog</title>
+    <meta name="description"
+        content="In this post I just want to share a simple and elegant idea from a Control System Letter paper written by Maxim Raginsky et al.1. This idea largely inspired my recent work on multi-agent learning in (monotone) games2, which I might devote another post to talk about if I happen to get some interesting results out of it.
+The idea starts from here: we all know that the archetype of solving convex optimization problem is through gradient descent:
+$$
+x_{k&#43;1} =  x_k  - \nabla f(x_k),
+$$
+which, in continuous time, corresponds to an autonomous dynamical system:
+$$
+\dot{x} =  - \nabla f (x) , \quad x(0) = x_0.
+$$
+A natural question to ask is what are the hidden objectives being achieved along the gradient flow. This question was approached in a &ldquo;inverse optimal control&rdquo; fashion, i.e., given an autonomous dynamical system, identify the close-loop control and its corresponding optimal control problem. In this approach, the Fenchel-Young inequality played a crucial role to formulate the optimal control problem, as was extensively used in the variational principles introduced by Brezis and Ekeland3.">
+    <link rel="canonical" href="http://localhost:53278/post/2024/variational_perspective/" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+    
+    <link rel="stylesheet" href="http://localhost:53278/scss/style.min.946b0c7a0d756c1bc30f44a31ef1dc1c99d052fb40f551d23013cbcb71dd0a77.css">
+    <meta property="og:url" content="http://localhost:53278/post/2024/variational_perspective/">
+  <meta property="og:site_name" content="union&#39;s blog">
+  <meta property="og:title" content="A Variational Perspective On Gradient Descent">
+  <meta property="og:description" content="In this post I just want to share a simple and elegant idea from a Control System Letter paper written by Maxim Raginsky et al.1. This idea largely inspired my recent work on multi-agent learning in (monotone) games2, which I might devote another post to talk about if I happen to get some interesting results out of it.
+The idea starts from here: we all know that the archetype of solving convex optimization problem is through gradient descent: $$ x_{k&#43;1} = x_k - \nabla f(x_k), $$ which, in continuous time, corresponds to an autonomous dynamical system: $$ \dot{x} = - \nabla f (x) , \quad x(0) = x_0. $$ A natural question to ask is what are the hidden objectives being achieved along the gradient flow. This question was approached in a “inverse optimal control” fashion, i.e., given an autonomous dynamical system, identify the close-loop control and its corresponding optimal control problem. In this approach, the Fenchel-Young inequality played a crucial role to formulate the optimal control problem, as was extensively used in the variational principles introduced by Brezis and Ekeland3.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2024-02-11T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-02-11T00:00:00+00:00">
+
+    
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="A Variational Perspective On Gradient Descent">
+  <meta name="twitter:description" content="In this post I just want to share a simple and elegant idea from a Control System Letter paper written by Maxim Raginsky et al.1. This idea largely inspired my recent work on multi-agent learning in (monotone) games2, which I might devote another post to talk about if I happen to get some interesting results out of it.
+The idea starts from here: we all know that the archetype of solving convex optimization problem is through gradient descent: $$ x_{k&#43;1} = x_k - \nabla f(x_k), $$ which, in continuous time, corresponds to an autonomous dynamical system: $$ \dot{x} = - \nabla f (x) , \quad x(0) = x_0. $$ A natural question to ask is what are the hidden objectives being achieved along the gradient flow. This question was approached in a “inverse optimal control” fashion, i.e., given an autonomous dynamical system, identify the close-loop control and its corresponding optimal control problem. In this approach, the Fenchel-Young inequality played a crucial role to formulate the optimal control problem, as was extensively used in the variational principles introduced by Brezis and Ekeland3.">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"
+    integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"
+    integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8"
+    crossorigin="anonymous"></script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    { left: "$$", right: "$$", display: true },
+                    { left: "$", right: "$", display: false }
+                ]
+            });
+        });
+    </script>
+    
+</head><body>
+        <div class="theme-toggle-container">
+            <a id="theme-toggle" class="theme-toggle" href="#">
+                <img src="http://localhost:53278/svg/sun.svg" alt="sun icon" class="theme-icon" />
+            </a>
+        </div>
+        
+        <div class="layout-container">
+            <aside class="sidebar">
+                <div class="sidebar-content">
+                    <div class="sidebar-header">
+                        <h1 class="site-title">
+                            <a href="/" class="site-title-link">YUNIAN PAN</a>
+                        </h1>
+                    </div>
+                    <nav class="sidebar-nav">
+                        <div class="nav-item-container">
+                            <a href="#" class="nav-link blog-toggle active" onclick="toggleBlogMenu(event)">
+                                Blog <span class="dropdown-arrow">▼</span>
+                            </a>
+                            <div class="submenu" id="blog-submenu">
+                                <a href="/post/about_me" class="submenu-link">About Me</a>
+                                <a href="/post/2022" class="submenu-link">2022</a>
+                                <a href="/post/2023" class="submenu-link">2023</a>
+                                <a href="/post/2024" class="submenu-link">2024</a>
+                                <a href="/post/2025" class="submenu-link">2025</a>
+                            </div>
+                        </div>
+                        <a href="/statement" class="nav-link ">Statement/CV</a>
+                        <a href="/contact" class="nav-link ">Contact</a>
+                        <a href="/photos" class="nav-link ">Photos</a>
+                    </nav>
+                    <div class="sidebar-footer">
+                        <div class="copyright">
+                            © 2022-2025 all rights reserved
+                        </div>
+                        <div class="social-icons">
+                            
+                            <a href="https://www.linkedin.com/in/unionpan/" title="Linkedin" class="social-link">
+                                <svg height="32px" width="32px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+    <rect x="2" y="9" width="4" height="12"></rect>
+    <circle cx="4" cy="4" r="2"></circle>
+</svg>
+                            </a>
+                            
+                            <a href="https://github.com/UnionPan" title="Github" class="social-link">
+                                <svg height="32px" width="32px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+    </path>
+</svg>
+                            </a>
+                            
+                            <a href="https://twitter.com/Union54572322" title="twitter" class="social-link">
+                                <svg height="32px" width="32px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
+    </path>
+</svg>
+                            </a>
+                            
+                            <a href="https://www.facebook.com/yunian.pan/" title="Facebook" class="social-link">
+                                <svg height="32px" width="32px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+</svg>
+                            </a>
+                            
+                            <a href="https://www.instagram.com/pyn_rodcutter/?hl=en" title="instagram" class="social-link">
+                                <svg height="32px" width="32px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+    <line x1="17.5" y1="6.5" x2="17.5" y2="6.5"></line>
+</svg>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </aside>
+            <main class="main-content">
+<div class="single-container">
+    <div class="archive">
+        
+        <div class="post-thumbnail-container">
+            <img src="http://localhost:53278//images/post/2024/Variational_Perspective/thumbnail.png" alt="A Variational Perspective On Gradient Descent" class="post-thumbnail-image">
+        </div>
+        
+        <h1 class="title is-1">A Variational Perspective On Gradient Descent</h1>
+        <hr class="title-content-separator">
+        <div class="title subtitle heading is-6">
+            <div class="small-categories-container">
+                    <a href="/categories/some-random-math">Some random math</a>
+                </div>
+            </div>
+        <div class="content article-content">
+            <div class="toc-container">
+                
+    <div class="post-toc">
+        
+            <aside>
+                <button id="tocButton" ><h4 id="contents" style="margin-left: 1vw;color:rgb(96, 134, 180);margin-bottom: 0;">CONTENTS</h4></button>
+                <div id="hide"><nav id="TableOfContents"></nav></div>
+            </aside>
+        
+    </div><script>
+    
+        let button = document.getElementById('tocButton');
+        let hide = document.getElementById("hide");
+        let contents=document.getElementById("contents");
+        button.addEventListener("click", function() {
+        if (hide.style.display!='block') {
+            hide.style.display='block'
+        } else {
+            hide.style.display='none'
+            contents.style.color='rgb(96, 134, 180)'
+        }
+        });
+    
+
+
+
+
+</script>
+            </div>
+            <p>In this post I just want to share a simple and elegant idea from a Control System Letter paper written by Maxim Raginsky et al.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>. This idea largely inspired my recent work on multi-agent learning in (monotone) games<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>, which I might devote another post to talk about if I happen to get some interesting results out of it.</p>
+<p>The idea starts from here: we all know that the archetype of solving convex optimization problem is through gradient descent:
+$$
+x_{k+1} =  x_k  - \nabla f(x_k),
+$$
+which, in continuous time, corresponds to an autonomous dynamical system:
+$$
+\dot{x} =  - \nabla f (x) , \quad x(0) = x_0.
+$$
+A natural question to ask is what are the hidden objectives being achieved along the gradient flow. This question was approached in a &ldquo;inverse optimal control&rdquo; fashion, i.e., given an autonomous dynamical system, identify the close-loop control and its corresponding optimal control problem. In this approach, the Fenchel-Young inequality played a crucial role to formulate the optimal control problem, as was extensively used in the variational principles introduced by Brezis and Ekeland<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>.</p>
+<p>For any function \(f\) defined over primal space \( \mathcal{X}\), denote its Fenchel conjugate as \(f^* (y) =  \sup_{x \in \mathcal{X}} \{  \langle x,y \rangle  - f(x)\} \), we have the Fenchel coupling:
+$$
+\mathcal{FC}_{f} (x, y) =  f(x ) + f^*(y) - \langle x, y \rangle  \geq 0
+$$</p>
+<p>with the equality holds if.f. $ y \in \partial f(x)$, or $x \in \partial f^* (y)$ if $f$ is convex.</p>
+<p>Now we can try constructing the optimal control problem, we have:
+$$
+\begin{align*}
+\inf_{ u \in \mathcal{U} } J(x_0) &amp; \triangleq \int_{t=0}^{\infty} f(x(t)) + f^* (-u(t)) + \langle u(t), \bar{x}  \rangle  \mathrm{d}t \\
+\text{s.t. } \quad \quad \quad &amp; \dot{x} = u , \quad x(0) = x_0
+\end{align*}
+$$
+where $\bar{x} \in \arg\min_{x\in\mathcal{X} }f(x) $ is an optimal solution. Intuitively, solving this optimal control problem should also lead to an optimal solution to the original problem $\min_{x \in \mathcal{X}} f$. This can be actually verified by, let&rsquo;s say, put $u^* (t)$ to be a close-loop control $-\nabla f(x(t))$, we know it eventually leads to $\bar{x}$, and by Fenchel-young inequality, $f(\bar{x}(t)) + f^* (-u^* (t)) + \langle u^* (t), \bar{x}  \rangle = 0$, meaning that the stage cost of the optimal control problem also goes to $0$, we have enough reason to believe that $u^*(t)$ is actually the optimal control.</p>
+<p>This result is nearly trivial as we just need to construct a Lyapunov function $V(x) =  \frac{1}{2} \|x - \bar{x}\|^2$.
+We have, by Fenchel-Young inequality,
+\begin{equation}
+\dot{V} (x) + f(x) + f^* ( - u) + \langle  \bar{x}, u \rangle \geq 0 ,
+\end{equation} which simply imply that $V(x)$ is actually a value function and the optimal control should be whatever makes the equality holds, i.e., the close-loop control $ - \nabla f(x(t)) $.
+The benefit we can gain from this is the availablity of an entire analytical toolbag for differential equations, even stochastic differential equations if we consider the stochastic case.</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>Tzen, B., Raj, A., Raginsky, M. and Bach, F., 2023. Variational principles for mirror descent and mirror langevin dynamics. IEEE Control Systems Letters.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>Pan, Y., Li, T. and Zhu, Q., 2024. On the Variational Interpretation of Mirror Play in Monotone Games. arXiv preprint arXiv:2403.15636.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3">
+<p>Brézis, H. and Ekeland, I., 1976. Un principe variationnel associéa certaines equations paraboliques. Le cas independant du temps. CR Acad. Sci. Paris Sér. AB, 282(17), pp.971-974.&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+        </div>
+    </div>
+    <a href="#" id="scrollToTopButton">
+        <svg t="1686753152588" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+            p-id="3988" width="48" height="48">
+            <path
+                d="M518.5 360.3c-3.2-4.4-9.7-4.4-12.9 0l-178 246c-3.8 5.3 0 12.7 6.5 12.7H381c10.2 0 19.9-4.9 25.9-13.2L512 460.4l105.2 145.4c6 8.3 15.6 13.2 25.9 13.2H690c6.5 0 10.3-7.4 6.5-12.7l-178-246z"
+                p-id="3989" fill="#363636"></path>
+            <path
+                d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64z m0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
+                p-id="3990" fill="#363636"></path>
+        </svg>
+    </a><hr style="border-top: 1px solid #EEEEEE;">
+<div id="comment"></div>
+<script>
+    const getStoredTheme = () => localStorage.getItem("theme") === "dark" ? "dark" : "light";
+
+    const setGiscusTheme = () => {
+        const sendMessage = (message) => {
+            const iframe = document.querySelector('iframe.giscus-frame');
+            if (iframe) {
+                iframe.contentWindow.postMessage({giscus: message}, 'https://giscus.app');
+            }
+        }
+        sendMessage({setConfig: {theme: getStoredTheme()}})
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const giscusAttributes = {
+            "src": "https://giscus.app/client.js",
+            "data-repo": "UnionPan\/UnionPan.github.io",
+            "data-repo-id": "R_kgDOIZ-Mxw",
+            "data-category": "General",
+            "data-category-id": "DIC_kwDOIZ-Mx84CuT-c",
+            "data-mapping": "pathname",
+            "data-reactions-enabled": "1",
+            "data-emit-metadata": "0",
+            "data-input-position": "bottom",
+            "data-theme": getStoredTheme(),
+            "data-lang": "en",
+            "data-loading": "lazy",
+            "crossorigin": "anonymous",
+        };
+
+        
+        const giscusScript = document.createElement("script");
+        Object.entries(giscusAttributes).forEach(
+            ([key, value]) => giscusScript.setAttribute(key, value));
+        document.getElementById("comment").appendChild(giscusScript);
+
+        
+        const themeToggle = document.querySelector(".theme-toggle");
+        if (themeToggle) {
+            themeToggle.addEventListener("click", setGiscusTheme);
+        }
+    });
+
+</script>
+
+
+<div class="pp-container">
+        <section class="pre-and-post">
+            <div class="has-text-left">
+                
+            </div>
+            <div class="has-text-right">
+                
+                <p>Next post</p>
+                <a href="http://localhost:53278/post/2024/talagrand/">Talagrand&#39;s Isoperimetry inequality</a>
+                
+            </div>
+        </section>
+    </div>
+
+</div>
+
+                <footer class="footer">
+</footer>
+            </main>
+        </div>
+
+        <script>
+            
+            function setTheme(theme) {
+                let body = document.body;
+                let themeIcon = document.querySelector(".theme-icon");
+                if (theme === "dark") {
+                    body.classList.add("dark-mode");
+                    themeIcon.src = "http:\/\/localhost:53278\/svg/moon.svg";
+                    themeIcon.alt = "moon icon";
+                } else {
+                    body.classList.remove("dark-mode");
+                    themeIcon.src = "http:\/\/localhost:53278\/svg/sun.svg";
+                    themeIcon.alt = "sun icon";
+                }
+                localStorage.setItem("theme", theme);
+            }
+
+            
+            document.addEventListener('DOMContentLoaded', function() {
+                
+                let theme = localStorage.getItem("theme");
+                
+                
+                if (!theme) {
+                    const isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+                    theme = isDarkMode ? 'dark' : 'light';
+                }
+                
+                setTheme(theme);
+
+                
+                document.getElementById("theme-toggle").addEventListener("click", function(e) {
+                    e.preventDefault();
+                    let currentTheme = localStorage.getItem("theme") || "light";
+                    let newTheme = currentTheme === "light" ? "dark" : "light";
+                    setTheme(newTheme);
+                });
+            });
+            
+            
+            function toggleBlogMenu(event) {
+                event.preventDefault();
+                const submenu = document.getElementById('blog-submenu');
+                const arrow = document.querySelector('.dropdown-arrow');
+                
+                if (submenu.classList.contains('open')) {
+                    submenu.classList.remove('open');
+                    arrow.style.transform = 'rotate(0deg)';
+                } else {
+                    submenu.classList.add('open');
+                    arrow.style.transform = 'rotate(180deg)';
+                }
+            }
+            
+            
+            document.addEventListener('click', function(event) {
+                const navContainer = document.querySelector('.nav-item-container');
+                const submenu = document.getElementById('blog-submenu');
+                const arrow = document.querySelector('.dropdown-arrow');
+                
+                if (!navContainer.contains(event.target) && submenu.classList.contains('open')) {
+                    submenu.classList.remove('open');
+                    arrow.style.transform = 'rotate(0deg)';
+                }
+            });
+        </script>
+    </body>
+</html>
+

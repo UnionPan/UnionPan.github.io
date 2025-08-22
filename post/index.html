@@ -1,36 +1,29 @@
 
 <!DOCTYPE html>
 <html lang="en-us">
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=53278&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>Posts | union&#39;s blog</title>
     <meta name="description"
         content="Regret has been lower bounded">
-    <link rel="canonical" href="https://unionpan.github.io/post/" />
+    <link rel="canonical" href="http://localhost:53278/post/" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
     
-    <link rel="stylesheet" href="https://unionpan.github.io/scss/style.min.fd03f00c6cceb36e9051ed7a5f050822f69766d1ebc4b0a9eaf818a01fbcb591.css">
-    <meta property="og:url" content="https://unionpan.github.io/post/">
+    <link rel="stylesheet" href="http://localhost:53278/scss/style.min.946b0c7a0d756c1bc30f44a31ef1dc1c99d052fb40f551d23013cbcb71dd0a77.css">
+    <meta property="og:url" content="http://localhost:53278/post/">
   <meta property="og:site_name" content="union&#39;s blog">
   <meta property="og:title" content="Posts">
   <meta property="og:description" content="Regret has been lower bounded">
-  <meta property="og:locale" content="en-us">
+  <meta property="og:locale" content="en_us">
   <meta property="og:type" content="website">
 
-    <meta name="twitter:card" content="summary"><meta name="twitter:title" content="Posts">
-<meta name="twitter:description" content="Regret has been lower bounded">
+    
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Posts">
+  <meta name="twitter:description" content="Regret has been lower bounded">
 
     
-    
-    
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P8CZD2GL8F"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-P8CZD2GL8F');
-    </script>
     
     <script>
         document.addEventListener("DOMContentLoaded", function () {
@@ -43,234 +36,256 @@
         });
     </script>
     
-</head><body><nav class="navbar is-light" role="navigation">
-    <div class="container">
-        <div class="navbar-brand">
-            <a href="/" title="home" class="navbar-item">
-                <span class="logo">
-                    <h1>union&#39;s blog</h1>
-                </span>
-            </a>
-
-            
+</head><body>
+        <div class="theme-toggle-container">
             <a id="theme-toggle" class="theme-toggle" href="#">
-                <img src="https://unionpan.github.io/svg/sun.svg" alt="sun icon" class="theme-icon" />
-            </a>
-
-            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
+                <img src="http://localhost:53278/svg/sun.svg" alt="sun icon" class="theme-icon" />
             </a>
         </div>
-
-        <div class="navbar-menu">
-            <div class="navbar-start">
+        
+        <div class="layout-container">
+            <aside class="sidebar">
+                <div class="sidebar-content">
+                    <div class="sidebar-header">
+                        <h1 class="site-title">
+                            <a href="/" class="site-title-link">YUNIAN PAN</a>
+                        </h1>
+                    </div>
+                    <nav class="sidebar-nav">
+                        <div class="nav-item-container">
+                            <a href="#" class="nav-link blog-toggle active" onclick="toggleBlogMenu(event)">
+                                Blog <span class="dropdown-arrow">▼</span>
+                            </a>
+                            <div class="submenu" id="blog-submenu">
+                                <a href="/post/about_me" class="submenu-link">About Me</a>
+                                <a href="/post/2022" class="submenu-link">2022</a>
+                                <a href="/post/2023" class="submenu-link">2023</a>
+                                <a href="/post/2024" class="submenu-link">2024</a>
+                                <a href="/post/2025" class="submenu-link">2025</a>
+                            </div>
+                        </div>
+                        <a href="/statement" class="nav-link ">Statement/CV</a>
+                        <a href="/contact" class="nav-link ">Contact</a>
+                        <a href="/photos" class="nav-link ">Photos</a>
+                    </nav>
+                    <div class="sidebar-footer">
+                        <div class="copyright">
+                            © 2022-2025 all rights reserved
+                        </div>
+                        <div class="social-icons">
+                            
+                            <a href="https://www.linkedin.com/in/unionpan/" title="Linkedin" class="social-link">
+                                <svg height="32px" width="32px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+    <rect x="2" y="9" width="4" height="12"></rect>
+    <circle cx="4" cy="4" r="2"></circle>
+</svg>
+                            </a>
+                            
+                            <a href="https://github.com/UnionPan" title="Github" class="social-link">
+                                <svg height="32px" width="32px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+    </path>
+</svg>
+                            </a>
+                            
+                            <a href="https://twitter.com/Union54572322" title="twitter" class="social-link">
+                                <svg height="32px" width="32px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
+    </path>
+</svg>
+                            </a>
+                            
+                            <a href="https://www.facebook.com/yunian.pan/" title="Facebook" class="social-link">
+                                <svg height="32px" width="32px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+</svg>
+                            </a>
+                            
+                            <a href="https://www.instagram.com/pyn_rodcutter/?hl=en" title="instagram" class="social-link">
+                                <svg height="32px" width="32px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+    <line x1="17.5" y1="6.5" x2="17.5" y2="6.5"></line>
+</svg>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </aside>
+            <main class="main-content">
+<div class="home-container">
+    <section class="posts-carousel-container blog-carousel">
+        <div class="posts-carousel">
+            <div class="posts-track">
                 
-                <a href="/about" class="navbar-item">About</a>
+                    <div class="carousel-post-card">                                                                                               
+                  <div class="card-thumbnail">                                                                                                
+                                                                                                                                   
+                        <div class="card-placeholder">                                                                                      
+                            <div class="card-icon">📝</div>                                                                                 
+                         </div>                                                                                                              
+                                                                                                                                   
+               </div>   
+                        <div class="card-content">
+                            <div class="card-meta">August 18, 2025</div>
+                            <h3 class="card-title">
+                                <a href="/post/2025/">2025</a>
+                            </h3>
+                            <div class="card-abstract"></div>
+                        </div>
+                    </div>
                 
-                <a href="/post" class="navbar-item">Blog</a>
+                    <div class="carousel-post-card">                                                                                               
+                  <div class="card-thumbnail">                                                                                                
+                                                                                                                                   
+                        <div class="card-placeholder">                                                                                      
+                            <div class="card-icon">📝</div>                                                                                 
+                         </div>                                                                                                              
+                                                                                                                                   
+               </div>   
+                        <div class="card-content">
+                            <div class="card-meta">April 28, 2024</div>
+                            <h3 class="card-title">
+                                <a href="/post/2024/">2024</a>
+                            </h3>
+                            <div class="card-abstract"></div>
+                        </div>
+                    </div>
                 
-                <a href="/categories" class="navbar-item">Categories</a>
+                    <div class="carousel-post-card">                                                                                               
+                  <div class="card-thumbnail">                                                                                                
+                                                                                                                                   
+                        <div class="card-placeholder">                                                                                      
+                            <div class="card-icon">📝</div>                                                                                 
+                         </div>                                                                                                              
+                                                                                                                                   
+               </div>   
+                        <div class="card-content">
+                            <div class="card-meta">October 11, 2023</div>
+                            <h3 class="card-title">
+                                <a href="/post/2023/">2023</a>
+                            </h3>
+                            <div class="card-abstract"></div>
+                        </div>
+                    </div>
                 
-                <a href="/cv.pdf" class="navbar-item">CV</a>
+                    <div class="carousel-post-card">                                                                                               
+                  <div class="card-thumbnail">                                                                                                
+                                                                                                                       
+                         <img src="http://localhost:53278//images/me/elenadrew.PNG" alt="About Me" class="card-img">                              
+                                                                                                                                    
+               </div>   
+                        <div class="card-content">
+                            <div class="card-meta">August 26, 2023</div>
+                            <h3 class="card-title">
+                                <a href="/post/about_me/">About Me</a>
+                            </h3>
+                            <div class="card-abstract"></div>
+                        </div>
+                    </div>
+                
+                    <div class="carousel-post-card">                                                                                               
+                  <div class="card-thumbnail">                                                                                                
+                                                                                                                                   
+                        <div class="card-placeholder">                                                                                      
+                            <div class="card-icon">📝</div>                                                                                 
+                         </div>                                                                                                              
+                                                                                                                                   
+               </div>   
+                        <div class="card-content">
+                            <div class="card-meta">December 31, 2022</div>
+                            <h3 class="card-title">
+                                <a href="/post/2022/">2022</a>
+                            </h3>
+                            <div class="card-abstract"></div>
+                        </div>
+                    </div>
                 
             </div>
-
         </div>
-        <div class="search">
-            <div id="fastSearch">
-                <input id="searchInput" tabindex="0" placeholder="Search..">
-                <ul id="searchResults">
-
-                </ul>
-            </div>
-            <a id="search-btn" style="display: inline-block;" href="# ">
-                <div class="icon-search"><svg class="search-svg" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
-            </a>
-        </div>
-
-        <script src="/js/fuse.min.js"></script> 
-        <script src="/js/fastsearch.js"></script>
-
-    </div>
-</nav>
-
-<script>
-    
-    document.addEventListener('DOMContentLoaded', function() {
-        var burger = document.querySelector('.navbar-burger');
-        burger.addEventListener('click', function() {
-            burger.classList.toggle('is-active');
-            document.querySelector('.navbar-menu').classList.toggle('is-active');
-        });
-    });
-
-    
-    function setTheme(theme) {
-        let body = document.body;
-        let themeIcon = document.querySelector(".theme-icon");
-        if (theme === "dark") {
-            body.classList.add("dark-mode");
-            themeIcon.src = "https:\/\/unionpan.github.io\/svg/moon.svg";
-            themeIcon.alt = "moon icon";
-        } else {
-            body.classList.remove("dark-mode");
-            themeIcon.src = "https:\/\/unionpan.github.io\/svg/sun.svg";
-            themeIcon.alt = "sun icon";
-        }
-        
-        localStorage.setItem("theme", theme);
-    }
-
-    
-    let theme = localStorage.getItem("theme") || "light";
-    const isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    if (isDarkMode) {
-        
-        setTheme('dark');
-
-    } else {
-        
-        setTheme('light');
-    }
-    setTheme(theme);
-
-    
-    document.getElementById("theme-toggle").addEventListener("click", function() {
-        if (theme === "light") {
-            theme = "dark";
-        } else {
-            theme = "light";
-        }
-        setTheme(theme);
-    });
-
-
-
-</script>
-
-
-
-</header><main>
-<div class="container">
-    <div class="section">
-        <div class="content">
-            <h1 class="h1-title">Archives</h1>
-        </div>
-    </div>
+    </section>
 </div>
 
-    <div class="archive-container column is-centered">
-        <div class="archive">
-
-            
-            <h2 class="archive-title">2024</h2>
-            
-            
-
-            <article class="archive-item">
-                <a href="https://unionpan.github.io/post/what_are_sufficient_statistics/" class="archive-item-link hover-underline-animation">What (on earth) is a Sufficient Statistic?</a>
-                <span class="archive-item-date">
-                    April 28, 2024
-                </span>
-
-            </article>
-            
-            
-
-            <article class="archive-item">
-                <a href="https://unionpan.github.io/post/butterfly_effect/" class="archive-item-link hover-underline-animation">The Lorenz dynamics and Butterfly Effect</a>
-                <span class="archive-item-date">
-                    April 8, 2024
-                </span>
-
-            </article>
-            
-            
-
-            <article class="archive-item">
-                <a href="https://unionpan.github.io/post/talagrand/" class="archive-item-link hover-underline-animation">Talagrand&#39;s Isoperimetry inequality</a>
-                <span class="archive-item-date">
-                    March 26, 2024
-                </span>
-
-            </article>
-            
-            
-
-            <article class="archive-item">
-                <a href="https://unionpan.github.io/post/variational_perspective/" class="archive-item-link hover-underline-animation">A Variational Perspective On Gradient Descent</a>
-                <span class="archive-item-date">
-                    February 11, 2024
-                </span>
-
-            </article>
-            
-            
-            <h2 class="archive-title">2023</h2>
-            
-            
-
-            <article class="archive-item">
-                <a href="https://unionpan.github.io/post/dueling_bandits/" class="archive-item-link hover-underline-animation"> Some Notes on Dueling Bandits</a>
-                <span class="archive-item-date">
-                    October 11, 2023
-                </span>
-
-            </article>
-            
-            
-
-            <article class="archive-item">
-                <a href="https://unionpan.github.io/post/wardrop_equilibirum/" class="archive-item-link hover-underline-animation">Wardrop Equilibrium</a>
-                <span class="archive-item-date">
-                    January 30, 2023
-                </span>
-
-            </article>
-            
-            
-            <h2 class="archive-title">2022</h2>
-            
-            
-
-            <article class="archive-item">
-                <a href="https://unionpan.github.io/post/nesterov/" class="archive-item-link hover-underline-animation">Nesterov</a>
-                <span class="archive-item-date">
-                    December 31, 2022
-                </span>
-
-            </article>
-            
-            
-
-            <article class="archive-item">
-                <a href="https://unionpan.github.io/post/the_capacity_of_deception/" class="archive-item-link hover-underline-animation">A Cryptographic Conundrum</a>
-                <span class="archive-item-date">
-                    November 16, 2022
-                </span>
-
-            </article>
-            
-            
+                <footer class="footer">
+</footer>
+            </main>
         </div>
 
-    </div>
+        <script>
+            
+            function setTheme(theme) {
+                let body = document.body;
+                let themeIcon = document.querySelector(".theme-icon");
+                if (theme === "dark") {
+                    body.classList.add("dark-mode");
+                    themeIcon.src = "http:\/\/localhost:53278\/svg/moon.svg";
+                    themeIcon.alt = "moon icon";
+                } else {
+                    body.classList.remove("dark-mode");
+                    themeIcon.src = "http:\/\/localhost:53278\/svg/sun.svg";
+                    themeIcon.alt = "sun icon";
+                }
+                localStorage.setItem("theme", theme);
+            }
 
+            
+            document.addEventListener('DOMContentLoaded', function() {
+                
+                let theme = localStorage.getItem("theme");
+                
+                
+                if (!theme) {
+                    const isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+                    theme = isDarkMode ? 'dark' : 'light';
+                }
+                
+                setTheme(theme);
 
-
-        </main><footer class="footer">
-    <div class="content has-text-centered">
-    <span>&copy; 2024 </span>
-    <span>
-        only in chaos are we conceivable.
-    </span>
-    </div>
-
-
-  </footer>
-
-  </body>
+                
+                document.getElementById("theme-toggle").addEventListener("click", function(e) {
+                    e.preventDefault();
+                    let currentTheme = localStorage.getItem("theme") || "light";
+                    let newTheme = currentTheme === "light" ? "dark" : "light";
+                    setTheme(newTheme);
+                });
+            });
+            
+            
+            function toggleBlogMenu(event) {
+                event.preventDefault();
+                const submenu = document.getElementById('blog-submenu');
+                const arrow = document.querySelector('.dropdown-arrow');
+                
+                if (submenu.classList.contains('open')) {
+                    submenu.classList.remove('open');
+                    arrow.style.transform = 'rotate(0deg)';
+                } else {
+                    submenu.classList.add('open');
+                    arrow.style.transform = 'rotate(180deg)';
+                }
+            }
+            
+            
+            document.addEventListener('click', function(event) {
+                const navContainer = document.querySelector('.nav-item-container');
+                const submenu = document.getElementById('blog-submenu');
+                const arrow = document.querySelector('.dropdown-arrow');
+                
+                if (!navContainer.contains(event.target) && submenu.classList.contains('open')) {
+                    submenu.classList.remove('open');
+                    arrow.style.transform = 'rotate(0deg)';
+                }
+            });
+        </script>
+    </body>
 </html>
 

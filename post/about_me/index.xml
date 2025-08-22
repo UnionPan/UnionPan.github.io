@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>About Me on union&#39;s blog</title>
+    <link>http://localhost:53278/post/about_me/</link>
+    <description>Recent content in About Me on union&#39;s blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 26 Aug 2023 20:18:54 +0300</lastBuildDate>
+    <atom:link href="http://localhost:53278/post/about_me/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About Me</title>
+      <link>http://localhost:53278/post/about_me/about/</link>
+      <pubDate>Sat, 26 Aug 2023 20:18:54 +0300</pubDate>
+      <guid>http://localhost:53278/post/about_me/about/</guid>
+      <description>&lt;p&gt;When you write an About Me, you want something permanent. I don&amp;rsquo;t have much that&amp;rsquo;s permanent,&#xA;but I go by &amp;lsquo;Union&amp;rsquo; &amp;mdash; a homophone of my Chinese name that I find cute and hope will stick.&#xA;What won&amp;rsquo;t last much longer is that I&amp;rsquo;m finishing my PhD at NYU Tandon, and here goes the elevator pitch for my research:&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;em&gt;My dissertation focuses on the transient, macroscopic, and microscopic behaviors of multi-agent learning and interactions, which emerge from the complex systems accross various disciplines. My work primarily centers on the intersection of statistical reinforcement learning and applied game theory, where I try to quantify the uncertainties arise in decision-making processes and understand their efficiency.&lt;/em&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
