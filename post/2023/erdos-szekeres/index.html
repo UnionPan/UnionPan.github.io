@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 <html lang="en-us">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=53487&amp;path=livereload" data-no-instant defer></script>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>Erdos-Szekeres Theorem | union&#39;s blog</title>
@@ -13,11 +13,11 @@ For any positive integer
 $n$, any sequence of $n^2 &#43; 1$ distinct real numbers contains a monotone subsequence of length at least $n&#43;1$.
 This means that within any sufficiently long sequence, there is either an increasing subsequence or a decreasing subsequence of a certain minimum length.
 There&rsquo;s another version of the theorem statement coming from the 1935 paper by Paul Erdos and George Szekeres1, which concerns combinatorial geometry. It says:">
-    <link rel="canonical" href="http://localhost:53487/post/2023/erdos-szekeres/" />
+    <link rel="canonical" href="https://unionpan.github.io/post/2023/erdos-szekeres/" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
     
-    <link rel="stylesheet" href="http://localhost:53487/scss/style.min.946b0c7a0d756c1bc30f44a31ef1dc1c99d052fb40f551d23013cbcb71dd0a77.css">
-    <meta property="og:url" content="http://localhost:53487/post/2023/erdos-szekeres/">
+    <link rel="stylesheet" href="https://unionpan.github.io/scss/style.min.946b0c7a0d756c1bc30f44a31ef1dc1c99d052fb40f551d23013cbcb71dd0a77.css">
+    <meta property="og:url" content="https://unionpan.github.io/post/2023/erdos-szekeres/">
   <meta property="og:site_name" content="union&#39;s blog">
   <meta property="og:title" content="Erdos-Szekeres Theorem">
   <meta property="og:description" content="This post is dedicated to Erdos-Szekeres Theorem, which says:
@@ -51,6 +51,15 @@ There’s another version of the theorem statement coming from the 1935 paper by
     integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
     onload="renderMathInElement(document.body);"></script>
     
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P8CZD2GL8F"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-P8CZD2GL8F');
+    </script>
+    
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             renderMathInElement(document.body, {
@@ -65,7 +74,7 @@ There’s another version of the theorem statement coming from the 1935 paper by
 </head><body>
         <div class="theme-toggle-container">
             <a id="theme-toggle" class="theme-toggle" href="#">
-                <img src="http://localhost:53487/svg/sun.svg" alt="sun icon" class="theme-icon" />
+                <img src="https://unionpan.github.io/svg/sun.svg" alt="sun icon" class="theme-icon" />
             </a>
         </div>
         
@@ -152,7 +161,7 @@ There’s another version of the theorem statement coming from the 1935 paper by
     <div class="archive">
         
         <div class="post-thumbnail-container">
-            <img src="http://localhost:53487//images/post/2023/Erdos-Szekeres/thumbnail.webp" alt="Erdos-Szekeres Theorem" class="post-thumbnail-image">
+            <img src="https://unionpan.github.io//images/post/2023/Erdos-Szekeres/thumbnail.webp" alt="Erdos-Szekeres Theorem" class="post-thumbnail-image">
         </div>
         
         <h1 class="title is-1">Erdos-Szekeres Theorem</h1>
@@ -339,13 +348,13 @@ $$1 \le b_k \le n$$</p>
             <div class="has-text-left">
                 
                 <p>Previous post</p>
-                <a href="http://localhost:53487/post/2023/wardrop_equilibirum/">Wardrop Equilibrium</a>
+                <a href="https://unionpan.github.io/post/2023/wardrop_equilibirum/">Wardrop Equilibrium</a>
                 
             </div>
             <div class="has-text-right">
                 
                 <p>Next post</p>
-                <a href="http://localhost:53487/post/2023/dueling_bandits/"> Some Notes on Dueling Bandits</a>
+                <a href="https://unionpan.github.io/post/2023/dueling_bandits/"> Some Notes on Dueling Bandits</a>
                 
             </div>
         </section>
@@ -365,11 +374,11 @@ $$1 \le b_k \le n$$</p>
                 let themeIcon = document.querySelector(".theme-icon");
                 if (theme === "dark") {
                     body.classList.add("dark-mode");
-                    themeIcon.src = "http:\/\/localhost:53487\/svg/moon.svg";
+                    themeIcon.src = "https:\/\/unionpan.github.io\/svg/moon.svg";
                     themeIcon.alt = "moon icon";
                 } else {
                     body.classList.remove("dark-mode");
-                    themeIcon.src = "http:\/\/localhost:53487\/svg/sun.svg";
+                    themeIcon.src = "https:\/\/unionpan.github.io\/svg/sun.svg";
                     themeIcon.alt = "sun icon";
                 }
                 localStorage.setItem("theme", theme);

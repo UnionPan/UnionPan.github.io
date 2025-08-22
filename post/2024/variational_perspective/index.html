@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 <html lang="en-us">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=53487&amp;path=livereload" data-no-instant defer></script>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>A Variational Perspective On Gradient Descent | union&#39;s blog</title>
@@ -16,11 +16,11 @@ $$
 \dot{x} =  - \nabla f (x) , \quad x(0) = x_0.
 $$
 A natural question to ask is what are the hidden objectives being achieved along the gradient flow. This question was approached in a &ldquo;inverse optimal control&rdquo; fashion, i.e., given an autonomous dynamical system, identify the close-loop control and its corresponding optimal control problem. In this approach, the Fenchel-Young inequality played a crucial role to formulate the optimal control problem, as was extensively used in the variational principles introduced by Brezis and Ekeland3.">
-    <link rel="canonical" href="http://localhost:53487/post/2024/variational_perspective/" />
+    <link rel="canonical" href="https://unionpan.github.io/post/2024/variational_perspective/" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
     
-    <link rel="stylesheet" href="http://localhost:53487/scss/style.min.946b0c7a0d756c1bc30f44a31ef1dc1c99d052fb40f551d23013cbcb71dd0a77.css">
-    <meta property="og:url" content="http://localhost:53487/post/2024/variational_perspective/">
+    <link rel="stylesheet" href="https://unionpan.github.io/scss/style.min.946b0c7a0d756c1bc30f44a31ef1dc1c99d052fb40f551d23013cbcb71dd0a77.css">
+    <meta property="og:url" content="https://unionpan.github.io/post/2024/variational_perspective/">
   <meta property="og:site_name" content="union&#39;s blog">
   <meta property="og:title" content="A Variational Perspective On Gradient Descent">
   <meta property="og:description" content="In this post I just want to share a simple and elegant idea from a Control System Letter paper written by Maxim Raginsky et al.1. This idea largely inspired my recent work on multi-agent learning in (monotone) games2, which I might devote another post to talk about if I happen to get some interesting results out of it.
@@ -50,6 +50,15 @@ The idea starts from here: we all know that the archetype of solving convex opti
     integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
     onload="renderMathInElement(document.body);"></script>
     
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P8CZD2GL8F"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-P8CZD2GL8F');
+    </script>
+    
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             renderMathInElement(document.body, {
@@ -64,7 +73,7 @@ The idea starts from here: we all know that the archetype of solving convex opti
 </head><body>
         <div class="theme-toggle-container">
             <a id="theme-toggle" class="theme-toggle" href="#">
-                <img src="http://localhost:53487/svg/sun.svg" alt="sun icon" class="theme-icon" />
+                <img src="https://unionpan.github.io/svg/sun.svg" alt="sun icon" class="theme-icon" />
             </a>
         </div>
         
@@ -151,7 +160,7 @@ The idea starts from here: we all know that the archetype of solving convex opti
     <div class="archive">
         
         <div class="post-thumbnail-container">
-            <img src="http://localhost:53487//images/post/2024/Variational_Perspective/thumbnail.png" alt="A Variational Perspective On Gradient Descent" class="post-thumbnail-image">
+            <img src="https://unionpan.github.io//images/post/2024/Variational_Perspective/thumbnail.png" alt="A Variational Perspective On Gradient Descent" class="post-thumbnail-image">
         </div>
         
         <h1 class="title is-1">A Variational Perspective On Gradient Descent</h1>
@@ -303,7 +312,7 @@ The benefit we can gain from this is the availablity of an entire analytical too
             <div class="has-text-right">
                 
                 <p>Next post</p>
-                <a href="http://localhost:53487/post/2024/talagrand/">Talagrand&#39;s Isoperimetry inequality</a>
+                <a href="https://unionpan.github.io/post/2024/talagrand/">Talagrand&#39;s Isoperimetry inequality</a>
                 
             </div>
         </section>
@@ -323,11 +332,11 @@ The benefit we can gain from this is the availablity of an entire analytical too
                 let themeIcon = document.querySelector(".theme-icon");
                 if (theme === "dark") {
                     body.classList.add("dark-mode");
-                    themeIcon.src = "http:\/\/localhost:53487\/svg/moon.svg";
+                    themeIcon.src = "https:\/\/unionpan.github.io\/svg/moon.svg";
                     themeIcon.alt = "moon icon";
                 } else {
                     body.classList.remove("dark-mode");
-                    themeIcon.src = "http:\/\/localhost:53487\/svg/sun.svg";
+                    themeIcon.src = "https:\/\/unionpan.github.io\/svg/sun.svg";
                     themeIcon.alt = "sun icon";
                 }
                 localStorage.setItem("theme", theme);

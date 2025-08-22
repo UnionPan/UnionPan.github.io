@@ -2,38 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>2024 on union&#39;s blog</title>
-    <link>http://localhost:53487/post/2024/</link>
+    <link>https://unionpan.github.io/post/2024/</link>
     <description>Recent content in 2024 on union&#39;s blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 28 Apr 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:53487/post/2024/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://unionpan.github.io/post/2024/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>What (on earth) is a Sufficient Statistic?</title>
-      <link>http://localhost:53487/post/2024/what_are_sufficient_statistics/</link>
+      <link>https://unionpan.github.io/post/2024/what_are_sufficient_statistics/</link>
       <pubDate>Sun, 28 Apr 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:53487/post/2024/what_are_sufficient_statistics/</guid>
+      <guid>https://unionpan.github.io/post/2024/what_are_sufficient_statistics/</guid>
       <description>&lt;p&gt;It sometimes drives me insane to hear about engineering or economics people using the word &amp;ldquo;sufficient statistics&amp;rdquo; in the seminars.&#xA;The idea of it, as many people will understand it correctly, is that this function summarizes the information from the data, impeccable, alright.&#xA;But the terminology itself comes with a very rigorous definition.&#xA;I would very much prefer if you do not plan to give the rigorous description about why it is sufficient in the statistical sense, use some other words like sufficient information or sufficient signaling if necessary.&lt;/p&gt;</description>
     </item>
     <item>
       <title>The Lorenz dynamics and Butterfly Effect</title>
-      <link>http://localhost:53487/post/2024/butterfly_effect/</link>
+      <link>https://unionpan.github.io/post/2024/butterfly_effect/</link>
       <pubDate>Mon, 08 Apr 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:53487/post/2024/butterfly_effect/</guid>
+      <guid>https://unionpan.github.io/post/2024/butterfly_effect/</guid>
       <description>&lt;p&gt;Chaotic behavior can emerge even in simple dynamics such as replicator, and Rock-Paper-Scissor oscillators, depending on the game settings. To begin with, we first define what is chaos qualitatively: &lt;em&gt;&amp;ldquo;Chaos can be described as long term, aperiodic behaviour that exhibits sensitive dependence on initial conditions. Sensitive dependence on initial conditions implies that nearby trajectories diverge exponentially fast over time.&amp;rdquo;&lt;/em&gt; Or, by Edward Lorenz, &lt;em&gt;when the present determines the future but the approximate present does not approximately determine the future.&lt;/em&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Talagrand&#39;s Isoperimetry inequality</title>
-      <link>http://localhost:53487/post/2024/talagrand/</link>
+      <link>https://unionpan.github.io/post/2024/talagrand/</link>
       <pubDate>Tue, 26 Mar 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:53487/post/2024/talagrand/</guid>
+      <guid>https://unionpan.github.io/post/2024/talagrand/</guid>
       <description>&lt;p&gt;This post is in celebration of Michel Talagrand winning Abel prize. Not to overly romanticize this but this is pretty much a come back story because back in the days of last century, &lt;em&gt;“The type of mathematics I do was not fashionable at all when I started. It was considered inferior mathematics.”&lt;/em&gt; &amp;ndash;Michel Talagrand.&lt;/p&gt;&#xA;&lt;p&gt;Now we&amp;rsquo;ve seen significance of his contribution to the concentration of measure, suprema of stochastic processes and spin glass, all partially owing to his celebrated isoperimetry inequality in product probability space.&#xA;What is an isoperimetry inequality? It is a concept in mathematics, particularly in the field of geometry and geometric analysis, that compares the length (or perimeter) of a closed curve to the area of the region it encloses, establishing that among all shapes with the same perimeter, the circle has the maximum area.&#xA;For example:&#xA;$$&#xA;4 \pi A \leq L^2&#xA;$$&#xA;where the equality holds if.f. the curve is a circle. In a more general sense, the isoperimetric inequality relates the volume of an $n$-dimensional domain to the surface area of its boundary, with the sphere in $n$-dimensional space providing the optimal (maximum volume for a given surface area) ratio.&#xA;Applying this concept to probability space, Talagrand was able to prove the following:&lt;/p&gt;</description>
     </item>
     <item>
       <title>A Variational Perspective On Gradient Descent</title>
-      <link>http://localhost:53487/post/2024/variational_perspective/</link>
+      <link>https://unionpan.github.io/post/2024/variational_perspective/</link>
       <pubDate>Sun, 11 Feb 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:53487/post/2024/variational_perspective/</guid>
+      <guid>https://unionpan.github.io/post/2024/variational_perspective/</guid>
       <description>&lt;p&gt;In this post I just want to share a simple and elegant idea from a Control System Letter paper written by Maxim Raginsky et al.&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;. This idea largely inspired my recent work on multi-agent learning in (monotone) games&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;, which I might devote another post to talk about if I happen to get some interesting results out of it.&lt;/p&gt;&#xA;&lt;p&gt;The idea starts from here: we all know that the archetype of solving convex optimization problem is through gradient descent:&#xA;$$&#xA;x_{k+1} =  x_k  - \nabla f(x_k),&#xA;$$&#xA;which, in continuous time, corresponds to an autonomous dynamical system:&#xA;$$&#xA;\dot{x} =  - \nabla f (x) , \quad x(0) = x_0.&#xA;$$&#xA;A natural question to ask is what are the hidden objectives being achieved along the gradient flow. This question was approached in a &amp;ldquo;inverse optimal control&amp;rdquo; fashion, i.e., given an autonomous dynamical system, identify the close-loop control and its corresponding optimal control problem. In this approach, the Fenchel-Young inequality played a crucial role to formulate the optimal control problem, as was extensively used in the variational principles introduced by Brezis and Ekeland&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;</description>
     </item>
   </channel>

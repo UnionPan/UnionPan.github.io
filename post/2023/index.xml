@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>2023 on union&#39;s blog</title>
-    <link>http://localhost:53487/post/2023/</link>
+    <link>https://unionpan.github.io/post/2023/</link>
     <description>Recent content in 2023 on union&#39;s blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 11 Oct 2023 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:53487/post/2023/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://unionpan.github.io/post/2023/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title> Some Notes on Dueling Bandits</title>
-      <link>http://localhost:53487/post/2023/dueling_bandits/</link>
+      <link>https://unionpan.github.io/post/2023/dueling_bandits/</link>
       <pubDate>Wed, 11 Oct 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:53487/post/2023/dueling_bandits/</guid>
+      <guid>https://unionpan.github.io/post/2023/dueling_bandits/</guid>
       <description>&lt;p&gt;The dueling bandit problem natrually fits the description of a variety of recommendation systems that require &amp;lsquo;&amp;rsquo;learning on the fly&amp;rsquo;&amp;rsquo;, yet have no explicit access to a&#xA;&amp;lsquo;&amp;lsquo;reward&amp;rsquo;&amp;rsquo; model. Instead, the &amp;lsquo;&amp;lsquo;human&amp;rsquo;&amp;rsquo; feedback part takes the form of &amp;lsquo;&amp;lsquo;choices&amp;rsquo;&amp;rsquo;, &amp;lsquo;&amp;lsquo;votes&amp;rsquo;&amp;rsquo;, or some discrete forms.&#xA;Hence, oftentimes a learning protocol proceeds at time steps \(t = 1, \ldots, T\):&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;The algorithm chooses a pair of arms \( a_i, a_j \) from \(K\) available ones;&lt;/li&gt;&#xA;&lt;li&gt;The oracle/human feedback/nature reveals the winner arm \( a_i \), with probability \( P(a_i \succ a_j)\), \( P(a_i \prec a_j) = 1 - P(a_i \succ a_j) \)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;So the feedback is either \(a_i\) or \( a_j \), the preferences forms a matrix \(P \in \mathbb{R}^{K \times K}\) such that \( P + P^{\top} = I\) which defines the hidden information of the dueling bandit problem. The cumulative regret in the stochastic dueling bandit setting is:&#xA;$$&#xA;\mathcal{R}_T = \sum_{t=1}^T P( a^* \succ a^t_i ) + P( a^* \succ a^t_j )&#xA;$$&#xA;where \(a^* \) is usually the Condorcet winner, i.e., \( P( a^* \succ a_j) &amp;gt; \frac{1}{2} \ \ \forall j \in [K], a_j \neq a^*\). Condorcet winner is a pretty straightforward idea, which might not exist in general cases. To see that, suppose there are three candidates: A, B, and C, and three voters with the following preferences:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Erdos-Szekeres Theorem</title>
-      <link>http://localhost:53487/post/2023/erdos-szekeres/</link>
+      <link>https://unionpan.github.io/post/2023/erdos-szekeres/</link>
       <pubDate>Mon, 24 Jul 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:53487/post/2023/erdos-szekeres/</guid>
+      <guid>https://unionpan.github.io/post/2023/erdos-szekeres/</guid>
       <description>&lt;p&gt;This post is dedicated to Erdos-Szekeres Theorem, which says:&lt;/p&gt;&#xA;&lt;h5 id=&#34;es-thm-monotone-sequence&#34;&gt;ES Thm. (Monotone sequence)&lt;/h5&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;For any positive integer&#xA;$n$, any sequence of $n^2 + 1$ distinct real numbers contains a monotone subsequence of length at least $n+1$.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;p&gt;This means that within any sufficiently long sequence, there is either an increasing subsequence or a decreasing subsequence of a certain minimum length.&lt;/p&gt;&#xA;&lt;p&gt;There&amp;rsquo;s another version of the theorem statement coming from the 1935 paper by Paul Erdos and George Szekeres&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;, which concerns combinatorial geometry. It says:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Wardrop Equilibrium</title>
-      <link>http://localhost:53487/post/2023/wardrop_equilibirum/</link>
+      <link>https://unionpan.github.io/post/2023/wardrop_equilibirum/</link>
       <pubDate>Mon, 30 Jan 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:53487/post/2023/wardrop_equilibirum/</guid>
+      <guid>https://unionpan.github.io/post/2023/wardrop_equilibirum/</guid>
       <description>&lt;p&gt;I remember having those unpleasant lines in our high school canteen, flooded by the starving students queeing for their lunch, I would always pick a window with fewer people waiting, compromising myself with awful food.&#xA;Another similar thought that always stricked me was the odds that tourists always pick the same time to travel, there&amp;rsquo;s almost always traffic congestion everywhere during holiday seasons. Yeah, lives have been always so hard.&lt;br&gt;&#xA;On the first level of thinking, when there&amp;rsquo;s a lack of resource you attempt to find alternatives, e.g., picking another time for traveling, another food window, etc.. The level two thinking is maybe &amp;lsquo;&amp;lsquo;since other people are avoiding holidays, what if I insist on going out on holidays&amp;rsquo;&amp;rsquo;? Or maybe there&amp;rsquo;s a twisted level three thinking, &amp;lsquo;&amp;lsquo;what if everybody thinks like the level two thinker, &amp;hellip;.&amp;rsquo;&amp;rsquo; It&amp;rsquo;s somewhat intimidating to follow this infinite hierachy, but definitely rewarding, as there are certainly moments when people are regretting their travel decisions, thinking to themselves &amp;lsquo;&amp;lsquo;I probably should not have gone the high way.&amp;rsquo;&amp;rsquo;&lt;/p&gt;</description>
     </item>
   </channel>
