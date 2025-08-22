@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 <html lang="en-us">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=59251&amp;path=livereload" data-no-instant defer></script>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title> Some Notes on Dueling Bandits | union&#39;s blog</title>
@@ -18,11 +18,11 @@ $$
 \mathcal{R}_T = \sum_{t=1}^T P( a^* \succ a^t_i ) &#43; P( a^* \succ a^t_j )
 $$
 where \(a^* \) is usually the Condorcet winner, i.e., \( P( a^* \succ a_j) &gt; \frac{1}{2} \ \ \forall j \in [K], a_j \neq a^*\). Condorcet winner is a pretty straightforward idea, which might not exist in general cases. To see that, suppose there are three candidates: A, B, and C, and three voters with the following preferences:">
-    <link rel="canonical" href="http://localhost:59251/post/2023/dueling_bandits/" />
+    <link rel="canonical" href="https://unionpan.github.io/post/2023/dueling_bandits/" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
     
-    <link rel="stylesheet" href="http://localhost:59251/scss/style.min.8b023792a58f7a8864735890e7f9de0bdde593faf3d796e7d7fce5971c3d6c25.css">
-    <meta property="og:url" content="http://localhost:59251/post/2023/dueling_bandits/">
+    <link rel="stylesheet" href="https://unionpan.github.io/scss/style.min.8b023792a58f7a8864735890e7f9de0bdde593faf3d796e7d7fce5971c3d6c25.css">
+    <meta property="og:url" content="https://unionpan.github.io/post/2023/dueling_bandits/">
   <meta property="og:site_name" content="union&#39;s blog">
   <meta property="og:title" content=" Some Notes on Dueling Bandits">
   <meta property="og:description" content="The dueling bandit problem natrually fits the description of a variety of recommendation systems that require ‘’learning on the fly’’, yet have no explicit access to a ‘‘reward’’ model. Instead, the ‘‘human’’ feedback part takes the form of ‘‘choices’’, ‘‘votes’’, or some discrete forms. Hence, oftentimes a learning protocol proceeds at time steps \(t = 1, \ldots, T\):
@@ -52,6 +52,15 @@ The algorithm chooses a pair of arms \( a_i, a_j \) from \(K\) available ones; T
     integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
     onload="renderMathInElement(document.body);"></script>
     
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P8CZD2GL8F"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-P8CZD2GL8F');
+    </script>
+    
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             renderMathInElement(document.body, {
@@ -66,7 +75,7 @@ The algorithm chooses a pair of arms \( a_i, a_j \) from \(K\) available ones; T
 </head><body>
         <div class="theme-toggle-container">
             <a id="theme-toggle" class="theme-toggle" href="#">
-                <img src="http://localhost:59251/svg/sun.svg" alt="sun icon" class="theme-icon" />
+                <img src="https://unionpan.github.io/svg/sun.svg" alt="sun icon" class="theme-icon" />
             </a>
         </div>
         
@@ -160,7 +169,7 @@ The algorithm chooses a pair of arms \( a_i, a_j \) from \(K\) available ones; T
     <div class="archive">
         
         <div class="post-thumbnail-container">
-            <img src="http://localhost:59251//images/post/2023/Dueling_Bandits/thumbnail.jpg" alt=" Some Notes on Dueling Bandits" class="post-thumbnail-image">
+            <img src="https://unionpan.github.io//images/post/2023/Dueling_Bandits/thumbnail.jpg" alt=" Some Notes on Dueling Bandits" class="post-thumbnail-image">
         </div>
         
         <h1 class="title is-1"> Some Notes on Dueling Bandits</h1>
@@ -446,7 +455,7 @@ We&rsquo;ll see where it leads us to.</p>
             <div class="has-text-left">
                 
                 <p>Previous post</p>
-                <a href="http://localhost:59251/post/2023/erdos-szekeres/">Erdos-Szekeres Theorem</a>
+                <a href="https://unionpan.github.io/post/2023/erdos-szekeres/">Erdos-Szekeres Theorem</a>
                 
             </div>
             <div class="has-text-right">
@@ -469,11 +478,11 @@ We&rsquo;ll see where it leads us to.</p>
                 let themeIcon = document.querySelector(".theme-icon");
                 if (theme === "dark") {
                     body.classList.add("dark-mode");
-                    themeIcon.src = "http:\/\/localhost:59251\/svg/moon.svg";
+                    themeIcon.src = "https:\/\/unionpan.github.io\/svg/moon.svg";
                     themeIcon.alt = "moon icon";
                 } else {
                     body.classList.remove("dark-mode");
-                    themeIcon.src = "http:\/\/localhost:59251\/svg/sun.svg";
+                    themeIcon.src = "https:\/\/unionpan.github.io\/svg/sun.svg";
                     themeIcon.alt = "sun icon";
                 }
                 localStorage.setItem("theme", theme);
