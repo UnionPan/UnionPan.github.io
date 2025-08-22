@@ -1,17 +1,17 @@
 
 <!DOCTYPE html>
 <html lang="en-us">
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=59251&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>2023 | union&#39;s blog</title>
     <meta name="description"
         content="Regret has been lower bounded">
-    <link rel="canonical" href="https://unionpan.github.io/post/2023/" />
+    <link rel="canonical" href="http://localhost:59251/post/2023/" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
     
-    <link rel="stylesheet" href="https://unionpan.github.io/scss/style.min.946b0c7a0d756c1bc30f44a31ef1dc1c99d052fb40f551d23013cbcb71dd0a77.css">
-    <meta property="og:url" content="https://unionpan.github.io/post/2023/">
+    <link rel="stylesheet" href="http://localhost:59251/scss/style.min.8b023792a58f7a8864735890e7f9de0bdde593faf3d796e7d7fce5971c3d6c25.css">
+    <meta property="og:url" content="http://localhost:59251/post/2023/">
   <meta property="og:site_name" content="union&#39;s blog">
   <meta property="og:title" content="2023">
   <meta property="og:description" content="Regret has been lower bounded">
@@ -24,15 +24,6 @@
   <meta name="twitter:description" content="Regret has been lower bounded">
 
     
-    
-    
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P8CZD2GL8F"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-P8CZD2GL8F');
-    </script>
     
     <script>
         document.addEventListener("DOMContentLoaded", function () {
@@ -48,12 +39,19 @@
 </head><body>
         <div class="theme-toggle-container">
             <a id="theme-toggle" class="theme-toggle" href="#">
-                <img src="https://unionpan.github.io/svg/sun.svg" alt="sun icon" class="theme-icon" />
+                <img src="http://localhost:59251/svg/sun.svg" alt="sun icon" class="theme-icon" />
             </a>
         </div>
         
+        
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+
         <div class="layout-container">
-            <aside class="sidebar">
+            <aside class="sidebar" id="sidebar">
                 <div class="sidebar-content">
                     <div class="sidebar-header">
                         <h1 class="site-title">
@@ -139,7 +137,7 @@
                     <div class="carousel-post-card">                                                                                               
                   <div class="card-thumbnail">                                                                                                
                                                                                                                        
-                         <img src="https://unionpan.github.io//images/post/2023/Dueling_Bandits/thumbnail.jpg" alt=" Some Notes on Dueling Bandits" class="card-img">                              
+                         <img src="http://localhost:59251//images/post/2023/Dueling_Bandits/thumbnail.jpg" alt=" Some Notes on Dueling Bandits" class="card-img">                              
                                                                                                                                     
                </div>   
                         <div class="card-content">
@@ -165,7 +163,7 @@ where \(a^* \) is usually the Condorcet winner, i.e., \( P( a^* \succ a_j) &gt; 
                     <div class="carousel-post-card">                                                                                               
                   <div class="card-thumbnail">                                                                                                
                                                                                                                        
-                         <img src="https://unionpan.github.io//images/post/2023/Erdos-Szekeres/thumbnail.webp" alt="Erdos-Szekeres Theorem" class="card-img">                              
+                         <img src="http://localhost:59251//images/post/2023/Erdos-Szekeres/thumbnail.webp" alt="Erdos-Szekeres Theorem" class="card-img">                              
                                                                                                                                     
                </div>   
                         <div class="card-content">
@@ -186,7 +184,7 @@ $n$, any sequence of $n^2 + 1$ distinct real numbers contains a monotone subsequ
                     <div class="carousel-post-card">                                                                                               
                   <div class="card-thumbnail">                                                                                                
                                                                                                                        
-                         <img src="https://unionpan.github.io//images/post/2023/Wardrop_Equilibirum/thumbnail.png" alt="Wardrop Equilibrium" class="card-img">                              
+                         <img src="http://localhost:59251//images/post/2023/Wardrop_Equilibirum/thumbnail.png" alt="Wardrop Equilibrium" class="card-img">                              
                                                                                                                                     
                </div>   
                         <div class="card-content">
@@ -217,11 +215,11 @@ On the first level of thinking, when there&rsquo;s a lack of resource you attemp
                 let themeIcon = document.querySelector(".theme-icon");
                 if (theme === "dark") {
                     body.classList.add("dark-mode");
-                    themeIcon.src = "https:\/\/unionpan.github.io\/svg/moon.svg";
+                    themeIcon.src = "http:\/\/localhost:59251\/svg/moon.svg";
                     themeIcon.alt = "moon icon";
                 } else {
                     body.classList.remove("dark-mode");
-                    themeIcon.src = "https:\/\/unionpan.github.io\/svg/sun.svg";
+                    themeIcon.src = "http:\/\/localhost:59251\/svg/sun.svg";
                     themeIcon.alt = "sun icon";
                 }
                 localStorage.setItem("theme", theme);
@@ -250,6 +248,15 @@ On the first level of thinking, when there&rsquo;s a lack of resource you attemp
             });
             
             
+            document.getElementById('mobile-menu-toggle').addEventListener('click', function() {
+                const sidebar = document.getElementById('sidebar');
+                const button = this;
+                
+                sidebar.classList.toggle('open');
+                button.classList.toggle('active');
+            });
+
+            
             function toggleBlogMenu(event) {
                 event.preventDefault();
                 const submenu = document.getElementById('blog-submenu');
@@ -274,6 +281,29 @@ On the first level of thinking, when there&rsquo;s a lack of resource you attemp
                     submenu.classList.remove('open');
                     arrow.style.transform = 'rotate(0deg)';
                 }
+            });
+
+            
+            document.addEventListener('click', function(event) {
+                const sidebar = document.getElementById('sidebar');
+                const toggleButton = document.getElementById('mobile-menu-toggle');
+                
+                if (sidebar.classList.contains('open') && 
+                    !sidebar.contains(event.target) && 
+                    !toggleButton.contains(event.target)) {
+                    sidebar.classList.remove('open');
+                    toggleButton.classList.remove('active');
+                }
+            });
+
+            
+            document.querySelectorAll('.sidebar .nav-link, .sidebar .submenu-link').forEach(link => {
+                link.addEventListener('click', function() {
+                    const sidebar = document.getElementById('sidebar');
+                    const toggleButton = document.getElementById('mobile-menu-toggle');
+                    sidebar.classList.remove('open');
+                    toggleButton.classList.remove('active');
+                });
             });
         </script>
     </body>

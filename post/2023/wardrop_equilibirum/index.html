@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 <html lang="en-us">
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=59251&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>Wardrop Equilibrium | union&#39;s blog</title>
@@ -9,11 +9,11 @@
         content="I remember having those unpleasant lines in our high school canteen, flooded by the starving students queeing for their lunch, I would always pick a window with fewer people waiting, compromising myself with awful food.
 Another similar thought that always stricked me was the odds that tourists always pick the same time to travel, there&rsquo;s almost always traffic congestion everywhere during holiday seasons. Yeah, lives have been always so hard.
 On the first level of thinking, when there&rsquo;s a lack of resource you attempt to find alternatives, e.g., picking another time for traveling, another food window, etc.. The level two thinking is maybe &lsquo;&lsquo;since other people are avoiding holidays, what if I insist on going out on holidays&rsquo;&rsquo;? Or maybe there&rsquo;s a twisted level three thinking, &lsquo;&lsquo;what if everybody thinks like the level two thinker, &hellip;.&rsquo;&rsquo; It&rsquo;s somewhat intimidating to follow this infinite hierachy, but definitely rewarding, as there are certainly moments when people are regretting their travel decisions, thinking to themselves &lsquo;&lsquo;I probably should not have gone the high way.&rsquo;&rsquo;">
-    <link rel="canonical" href="https://unionpan.github.io/post/2023/wardrop_equilibirum/" />
+    <link rel="canonical" href="http://localhost:59251/post/2023/wardrop_equilibirum/" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
     
-    <link rel="stylesheet" href="https://unionpan.github.io/scss/style.min.946b0c7a0d756c1bc30f44a31ef1dc1c99d052fb40f551d23013cbcb71dd0a77.css">
-    <meta property="og:url" content="https://unionpan.github.io/post/2023/wardrop_equilibirum/">
+    <link rel="stylesheet" href="http://localhost:59251/scss/style.min.8b023792a58f7a8864735890e7f9de0bdde593faf3d796e7d7fce5971c3d6c25.css">
+    <meta property="og:url" content="http://localhost:59251/post/2023/wardrop_equilibirum/">
   <meta property="og:site_name" content="union&#39;s blog">
   <meta property="og:title" content="Wardrop Equilibrium">
   <meta property="og:description" content="I remember having those unpleasant lines in our high school canteen, flooded by the starving students queeing for their lunch, I would always pick a window with fewer people waiting, compromising myself with awful food. Another similar thought that always stricked me was the odds that tourists always pick the same time to travel, there’s almost always traffic congestion everywhere during holiday seasons. Yeah, lives have been always so hard.
@@ -43,15 +43,6 @@ On the first level of thinking, when there’s a lack of resource you attempt to
     integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
     onload="renderMathInElement(document.body);"></script>
     
-    
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P8CZD2GL8F"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-P8CZD2GL8F');
-    </script>
-    
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             renderMathInElement(document.body, {
@@ -66,12 +57,19 @@ On the first level of thinking, when there’s a lack of resource you attempt to
 </head><body>
         <div class="theme-toggle-container">
             <a id="theme-toggle" class="theme-toggle" href="#">
-                <img src="https://unionpan.github.io/svg/sun.svg" alt="sun icon" class="theme-icon" />
+                <img src="http://localhost:59251/svg/sun.svg" alt="sun icon" class="theme-icon" />
             </a>
         </div>
         
+        
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+
         <div class="layout-container">
-            <aside class="sidebar">
+            <aside class="sidebar" id="sidebar">
                 <div class="sidebar-content">
                     <div class="sidebar-header">
                         <h1 class="site-title">
@@ -153,16 +151,20 @@ On the first level of thinking, when there’s a lack of resource you attempt to
     <div class="archive">
         
         <div class="post-thumbnail-container">
-            <img src="https://unionpan.github.io//images/post/2023/Wardrop_Equilibirum/thumbnail.png" alt="Wardrop Equilibrium" class="post-thumbnail-image">
+            <img src="http://localhost:59251//images/post/2023/Wardrop_Equilibirum/thumbnail.png" alt="Wardrop Equilibrium" class="post-thumbnail-image">
         </div>
         
         <h1 class="title is-1">Wardrop Equilibrium</h1>
         <hr class="title-content-separator">
+        
         <div class="title subtitle heading is-6">
             <div class="small-categories-container">
-                    <a href="/categories/some-random-math">Some random math</a>
-                </div>
+                
+                        <span class="category-text">Economics is not science---Yuri Dvorkin</span>
+                    
             </div>
+        </div>
+        
         <div class="content article-content">
             <div class="toc-container">
                 
@@ -341,7 +343,7 @@ The uniqueness of the edge flow solution \(q = \Lambda \mu\) can be established 
             <div class="has-text-right">
                 
                 <p>Next post</p>
-                <a href="https://unionpan.github.io/post/2023/erdos-szekeres/">Erdos-Szekeres Theorem</a>
+                <a href="http://localhost:59251/post/2023/erdos-szekeres/">Erdos-Szekeres Theorem</a>
                 
             </div>
         </section>
@@ -361,11 +363,11 @@ The uniqueness of the edge flow solution \(q = \Lambda \mu\) can be established 
                 let themeIcon = document.querySelector(".theme-icon");
                 if (theme === "dark") {
                     body.classList.add("dark-mode");
-                    themeIcon.src = "https:\/\/unionpan.github.io\/svg/moon.svg";
+                    themeIcon.src = "http:\/\/localhost:59251\/svg/moon.svg";
                     themeIcon.alt = "moon icon";
                 } else {
                     body.classList.remove("dark-mode");
-                    themeIcon.src = "https:\/\/unionpan.github.io\/svg/sun.svg";
+                    themeIcon.src = "http:\/\/localhost:59251\/svg/sun.svg";
                     themeIcon.alt = "sun icon";
                 }
                 localStorage.setItem("theme", theme);
@@ -394,6 +396,15 @@ The uniqueness of the edge flow solution \(q = \Lambda \mu\) can be established 
             });
             
             
+            document.getElementById('mobile-menu-toggle').addEventListener('click', function() {
+                const sidebar = document.getElementById('sidebar');
+                const button = this;
+                
+                sidebar.classList.toggle('open');
+                button.classList.toggle('active');
+            });
+
+            
             function toggleBlogMenu(event) {
                 event.preventDefault();
                 const submenu = document.getElementById('blog-submenu');
@@ -418,6 +429,29 @@ The uniqueness of the edge flow solution \(q = \Lambda \mu\) can be established 
                     submenu.classList.remove('open');
                     arrow.style.transform = 'rotate(0deg)';
                 }
+            });
+
+            
+            document.addEventListener('click', function(event) {
+                const sidebar = document.getElementById('sidebar');
+                const toggleButton = document.getElementById('mobile-menu-toggle');
+                
+                if (sidebar.classList.contains('open') && 
+                    !sidebar.contains(event.target) && 
+                    !toggleButton.contains(event.target)) {
+                    sidebar.classList.remove('open');
+                    toggleButton.classList.remove('active');
+                }
+            });
+
+            
+            document.querySelectorAll('.sidebar .nav-link, .sidebar .submenu-link').forEach(link => {
+                link.addEventListener('click', function() {
+                    const sidebar = document.getElementById('sidebar');
+                    const toggleButton = document.getElementById('mobile-menu-toggle');
+                    sidebar.classList.remove('open');
+                    toggleButton.classList.remove('active');
+                });
             });
         </script>
     </body>

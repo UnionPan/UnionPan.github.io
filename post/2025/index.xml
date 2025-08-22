@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>2025 on union&#39;s blog</title>
-    <link>https://unionpan.github.io/post/2025/</link>
+    <link>http://localhost:59251/post/2025/</link>
     <description>Recent content in 2025 on union&#39;s blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 18 Aug 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://unionpan.github.io/post/2025/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:59251/post/2025/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Bayesian games, mechanism design, and so on</title>
-      <link>https://unionpan.github.io/post/2025/mechanism_design/</link>
+      <title>Bayesian Holonic (Global) Games</title>
+      <link>http://localhost:59251/post/2025/mechanism_design/</link>
       <pubDate>Mon, 18 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>https://unionpan.github.io/post/2025/mechanism_design/</guid>
-      <description>&lt;p&gt;This past year I suffered a lot mentally and financially, my funding was paused and my girlfriend Sam (check out her &lt;a href=&#34;https://open.spotify.com/artist/3qo9BlnVduy6nW0pY1kmTQ&#34;&gt;spotify&lt;/a&gt; here!) lost her boojee A.P.C. job, so I haven&amp;rsquo;t posted for a while. It&amp;rsquo;s really a leisure and effort to write stuff consistently (because wtf am I supposed to write?!!?). But the coding agents (Claude, Gemini etc..) really revolutionarized my efficiency, and shamelessly I have to admit that I use them a lot to &amp;ldquo;vibe code&amp;rdquo; and even do research, with sufficient human surveillance.&#xA;So hopefully, I will resume writing for my own sanity.&lt;/p&gt;</description>
+      <guid>http://localhost:59251/post/2025/mechanism_design/</guid>
+      <description>&lt;p&gt;This past year I suffered a lot mentally and financially, my funding got paused and my girlfriend Sam (check out her &lt;a href=&#34;https://open.spotify.com/artist/3qo9BlnVduy6nW0pY1kmTQ&#34;&gt;spotify&lt;/a&gt;!) lost her boojee A.P.C. job. So I haven&amp;rsquo;t posted for a while. It&amp;rsquo;s really a leisure and effort to write stuff consistently (because wtf am I supposed to write?!!?). But the coding agents (Claude, Gemini etc..) really revolutionarized my efficiency, and shamelessly I have to admit that I use them a lot to &amp;ldquo;vibe code&amp;rdquo; and even do research, with sufficient human surveillance.&#xA;So hopefully, I will resume writing for my own sanity.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

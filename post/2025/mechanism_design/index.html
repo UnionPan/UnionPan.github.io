@@ -1,21 +1,21 @@
 
 <!DOCTYPE html>
 <html lang="en-us">
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=59251&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <title>Bayesian games, mechanism design, and so on | union&#39;s blog</title>
+    <title>Bayesian Holonic (Global) Games | union&#39;s blog</title>
     <meta name="description"
-        content="This past year I suffered a lot mentally and financially, my funding was paused and my girlfriend Sam (check out her spotify here!) lost her boojee A.P.C. job, so I haven&rsquo;t posted for a while. It&rsquo;s really a leisure and effort to write stuff consistently (because wtf am I supposed to write?!!?). But the coding agents (Claude, Gemini etc..) really revolutionarized my efficiency, and shamelessly I have to admit that I use them a lot to &ldquo;vibe code&rdquo; and even do research, with sufficient human surveillance.
+        content="This past year I suffered a lot mentally and financially, my funding got paused and my girlfriend Sam (check out her spotify!) lost her boojee A.P.C. job. So I haven&rsquo;t posted for a while. It&rsquo;s really a leisure and effort to write stuff consistently (because wtf am I supposed to write?!!?). But the coding agents (Claude, Gemini etc..) really revolutionarized my efficiency, and shamelessly I have to admit that I use them a lot to &ldquo;vibe code&rdquo; and even do research, with sufficient human surveillance.
 So hopefully, I will resume writing for my own sanity.">
-    <link rel="canonical" href="https://unionpan.github.io/post/2025/mechanism_design/" />
+    <link rel="canonical" href="http://localhost:59251/post/2025/mechanism_design/" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
     
-    <link rel="stylesheet" href="https://unionpan.github.io/scss/style.min.946b0c7a0d756c1bc30f44a31ef1dc1c99d052fb40f551d23013cbcb71dd0a77.css">
-    <meta property="og:url" content="https://unionpan.github.io/post/2025/mechanism_design/">
+    <link rel="stylesheet" href="http://localhost:59251/scss/style.min.8b023792a58f7a8864735890e7f9de0bdde593faf3d796e7d7fce5971c3d6c25.css">
+    <meta property="og:url" content="http://localhost:59251/post/2025/mechanism_design/">
   <meta property="og:site_name" content="union&#39;s blog">
-  <meta property="og:title" content="Bayesian games, mechanism design, and so on">
-  <meta property="og:description" content="This past year I suffered a lot mentally and financially, my funding was paused and my girlfriend Sam (check out her spotify here!) lost her boojee A.P.C. job, so I haven’t posted for a while. It’s really a leisure and effort to write stuff consistently (because wtf am I supposed to write?!!?). But the coding agents (Claude, Gemini etc..) really revolutionarized my efficiency, and shamelessly I have to admit that I use them a lot to “vibe code” and even do research, with sufficient human surveillance. So hopefully, I will resume writing for my own sanity.">
+  <meta property="og:title" content="Bayesian Holonic (Global) Games">
+  <meta property="og:description" content="This past year I suffered a lot mentally and financially, my funding got paused and my girlfriend Sam (check out her spotify!) lost her boojee A.P.C. job. So I haven’t posted for a while. It’s really a leisure and effort to write stuff consistently (because wtf am I supposed to write?!!?). But the coding agents (Claude, Gemini etc..) really revolutionarized my efficiency, and shamelessly I have to admit that I use them a lot to “vibe code” and even do research, with sufficient human surveillance. So hopefully, I will resume writing for my own sanity.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="post">
@@ -24,8 +24,8 @@ So hopefully, I will resume writing for my own sanity.">
 
     
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Bayesian games, mechanism design, and so on">
-  <meta name="twitter:description" content="This past year I suffered a lot mentally and financially, my funding was paused and my girlfriend Sam (check out her spotify here!) lost her boojee A.P.C. job, so I haven’t posted for a while. It’s really a leisure and effort to write stuff consistently (because wtf am I supposed to write?!!?). But the coding agents (Claude, Gemini etc..) really revolutionarized my efficiency, and shamelessly I have to admit that I use them a lot to “vibe code” and even do research, with sufficient human surveillance. So hopefully, I will resume writing for my own sanity.">
+  <meta name="twitter:title" content="Bayesian Holonic (Global) Games">
+  <meta name="twitter:description" content="This past year I suffered a lot mentally and financially, my funding got paused and my girlfriend Sam (check out her spotify!) lost her boojee A.P.C. job. So I haven’t posted for a while. It’s really a leisure and effort to write stuff consistently (because wtf am I supposed to write?!!?). But the coding agents (Claude, Gemini etc..) really revolutionarized my efficiency, and shamelessly I have to admit that I use them a lot to “vibe code” and even do research, with sufficient human surveillance. So hopefully, I will resume writing for my own sanity.">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"
     integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
@@ -39,15 +39,6 @@ So hopefully, I will resume writing for my own sanity.">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
     integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
     onload="renderMathInElement(document.body);"></script>
-    
-    
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P8CZD2GL8F"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-P8CZD2GL8F');
-    </script>
     
     <script>
         document.addEventListener("DOMContentLoaded", function () {
@@ -63,12 +54,19 @@ So hopefully, I will resume writing for my own sanity.">
 </head><body>
         <div class="theme-toggle-container">
             <a id="theme-toggle" class="theme-toggle" href="#">
-                <img src="https://unionpan.github.io/svg/sun.svg" alt="sun icon" class="theme-icon" />
+                <img src="http://localhost:59251/svg/sun.svg" alt="sun icon" class="theme-icon" />
             </a>
         </div>
         
+        
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+
         <div class="layout-container">
-            <aside class="sidebar">
+            <aside class="sidebar" id="sidebar">
                 <div class="sidebar-content">
                     <div class="sidebar-header">
                         <h1 class="site-title">
@@ -150,16 +148,20 @@ So hopefully, I will resume writing for my own sanity.">
     <div class="archive">
         
         <div class="post-thumbnail-container">
-            <img src="https://unionpan.github.io//images/post/2025/Mechanism_Design/thumbnail.jpg" alt="Bayesian games, mechanism design, and so on" class="post-thumbnail-image">
+            <img src="http://localhost:59251//images/post/2025/mechanism_design/thumbnail.jpg" alt="Bayesian Holonic (Global) Games" class="post-thumbnail-image">
         </div>
         
-        <h1 class="title is-1">Bayesian games, mechanism design, and so on</h1>
+        <h1 class="title is-1">Bayesian Holonic (Global) Games</h1>
         <hr class="title-content-separator">
+        
         <div class="title subtitle heading is-6">
             <div class="small-categories-container">
-                    <a href="/categories/i-am-back">I am back</a>
-                </div>
+                
+                        <a href="https://open.spotify.com/track/3xVtc7PB4V3AqAfq4Iahli?si=2f5b226464b74184">I am back</a>
+                    
             </div>
+        </div>
+        
         <div class="content article-content">
             <div class="toc-container">
                 
@@ -174,8 +176,6 @@ So hopefully, I will resume writing for my own sanity.">
         <li><a href="#bayesian-equilibrium-analysis">Bayesian Equilibrium Analysis</a></li>
         <li><a href="#the-fixed-point-problem">The Fixed-Point Problem</a></li>
         <li><a href="#existence-and-uniqueness-of-equilibria">Existence and Uniqueness of Equilibria</a></li>
-        <li><a href="#whats-actually-novel-spoiler-not-much">What&rsquo;s Actually Novel (Spoiler: Not Much)</a></li>
-        <li><a href="#the-computational-reality-check">The Computational Reality Check</a></li>
       </ul>
     </li>
   </ul>
@@ -202,42 +202,51 @@ So hopefully, I will resume writing for my own sanity.">
 
 </script>
             </div>
-            <p>This past year I suffered a lot mentally and financially, my funding was paused and my girlfriend Sam (check out her <a href="https://open.spotify.com/artist/3qo9BlnVduy6nW0pY1kmTQ">spotify</a> here!) lost her boojee A.P.C. job, so I haven&rsquo;t posted for a while. It&rsquo;s really a leisure and effort to write stuff consistently (because wtf am I supposed to write?!!?). But the coding agents (Claude, Gemini etc..) really revolutionarized my efficiency, and shamelessly I have to admit that I use them a lot to &ldquo;vibe code&rdquo; and even do research, with sufficient human surveillance.
+            <p>This past year I suffered a lot mentally and financially, my funding got paused and my girlfriend Sam (check out her <a href="https://open.spotify.com/artist/3qo9BlnVduy6nW0pY1kmTQ">spotify</a>!) lost her boojee A.P.C. job. So I haven&rsquo;t posted for a while. It&rsquo;s really a leisure and effort to write stuff consistently (because wtf am I supposed to write?!!?). But the coding agents (Claude, Gemini etc..) really revolutionarized my efficiency, and shamelessly I have to admit that I use them a lot to &ldquo;vibe code&rdquo; and even do research, with sufficient human surveillance.
 So hopefully, I will resume writing for my own sanity.</p>
-<p>Maybe I am being hypocritical here&hellip;a lot of people love giving an existing/trivial phenomenon/methodology a new name, and hence proposing a new &lsquo;&lsquo;framework&rsquo;&rsquo;. The underlying mathematical or engineering contribution is often minimal, or sometimes even worse, wrong.
-Throughout the years I find this widely exists in academia, or even industry. Don&rsquo;t get me wrong—I totally understand why this happens. Coming up with genuinely novel ideas is <em>hard</em>, especially when you&rsquo;re under constant pressure to publish, get grants, and prove your worth to reviewers who might be having a bad day. Sometimes you gotta work with what you&rsquo;ve got, rebrand it nicely, and hope people buy into your &ldquo;innovative framework.&rdquo;</p>
-<p>I guess the real problem is there&rsquo;s no objective bar for what counts as &ldquo;innovative enough.&rdquo; One reviewer&rsquo;s &ldquo;trivial extension&rdquo; is another&rsquo;s &ldquo;groundbreaking contribution.&rdquo; This ambiguity, combined with the sheer volume of papers flooding the system, has caused troubles. Overworked reviewers sometimes delegate to grad students or (God help us) undergrads who may not catch when the emperor has no clothes.</p>
+<p>So I am a huge hypocrite&ndash;throughout the years I&rsquo;ve witnessed tons of people rebranding existing/trivial phenomenon/methodologies as &lsquo;&rsquo;novel frameworks&rsquo;&rsquo;. I mean, aren&rsquo;t we all? Even Shannon was just applying probability theory, except for it actually opened the pandora box. To some degree I believe being completely innovative is inherently <em>impossible</em> as you&rsquo;ve gotta find some shoulders to stand on. It gets harder when you&rsquo;re under constant pressure to publish, get grants, and do rebuttal with reviewers who might be having a bad day.</p>
+<p>Sometimes I wonder where the objective bar, for what counts as &ldquo;innovative enough&rdquo;, actually is. The sheer volume of academic papers flood into the system, how much values do they actually create? Overworked reviewers delegate to grad students or (God help us) undergrads, are they able to catch when the emperor has no clothes?</p>
 <h2 id="holonic-risk">&ldquo;Holonic Risk&rdquo;</h2>
-<p>So my advisor has been writing a paper called &ldquo;Holonic Risk&rdquo;, using ChatGPT (the reason I know this is because I tracked his Overleaf editing history and code style, a lot of &lsquo;&rsquo;_\( _\)&rsquo;&rsquo; for equations,) the core idea is that he imagined that there exists a  networked chunks of players that interact with each other through the specific network structured utility functions.
+<p>This is the paper my advisor has been writing. He gradually accustomed himself with ChatGPT that it just infiltrated to his everyday editing of stuff (the Overleaf history and code style shows it all,) which I can&rsquo;t say if it&rsquo;s good or bad. The core idea is that he envisioned this networked chunks of players that interact with each other through a set of specifically structured utility functions.
 A &ldquo;holons&rdquo; is a &ldquo;chunk of players&rdquo;, and the Nash equilibrium, as you may upgrade it into Bayesian, is a &ldquo;Holonic equilibrium&rdquo;.</p>
 <p>Here&rsquo;s a global game<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> example &ldquo;holonic Bayesian game&rdquo;:</p>
 <p><strong>Players</strong>: Set of voters $N = \bigcup_{i \in I} N_i$ where $I$ indexes committees (holons) and $N_i$ are voters in committee $i$.</p>
 <p><strong>Types</strong>: Each voter $k \in N_i$ has private type $\xi_k^i \in \{0,1\}$ drawn from Bernoulli$(p)$, representing their preference strength.</p>
 <p><strong>Actions</strong>: Binary voting decision $x_k^i \in \{0,1\}$.</p>
-<p><strong>Information Structure</strong>: Each voter observes only their own type $\xi_k^i$ but knows the type distribution $p$ is common across all voters.</p>
+<p><strong>Information Structure</strong>: Each voter observes only their own type $\xi_k^i$ but knows the type Bernoulli distribution $p$ is common across all voters.</p>
 <p><strong>Payoff Structure</strong>: For voter $k$ in committee $i$, the utility function is:
-$$U_k^i(x_k^i, x_{-k}^i, \omega_{-i}; \xi_k^i) = \mathbf{1}_{{ \omega^i = 0}}(c_0 + c_1 x_k^i) + \mathbf{1}_{ { \omega^i = 1 } } c_2 \cdot \mathbf{1}_{ { x_k^i \neq \xi_k^i }}$$</p>
+$$
+U_k^i(x_k^i, x_{-k}^i, \omega_{-i}; \xi_k^i) = \mathbf{1}_{{ \omega^i = 0}}(c_0 + c_1 x_k^i) + \mathbf{1}_{ { \omega^i = 1 } } c_2 \cdot \mathbf{1}_{ { x_k^i \neq \xi_k^i }}
+$$</p>
 <p>where $\omega^i \in {0,1}$ is the committee outcome and $\omega_{-i}$ represents other committees&rsquo; outcomes.</p>
 <p>The &ldquo;holonic&rdquo; aspect reduces to this coupling mechanism:</p>
 <p>$$ \omega^i = \mathbf{1}_{\left\{   \sum_{k \in N_i} x_k^i \geq \theta + \gamma \sum_{j \neq i} \right\}}$$</p>
-<p>So committee $i$ succeeds if its vote total exceeds a threshold that increases linearly with the number of failed external committees. The parameter $\gamma \geq 0$ controls coupling strength.</p>
+<p>So committee $i$ succeeds if its vote total exceeds a threshold that increases linearly with the number of failed external committees.
+The parameter $\gamma \geq 0$ controls coupling strength.</p>
+<p>To be fair this cannot be counted as completely a global game because it has atomic players. But the common feature is that you can sort of leverage the global symmetry to analyze the Nash equilibrium.</p>
 <h3 id="bayesian-equilibrium-analysis">Bayesian Equilibrium Analysis</h3>
-<p>In a Bayesian Nash equilibrium, each voter chooses a strategy $\sigma_k^i: {0,1} \rightarrow {0,1}$ that maximizes expected utility given their beliefs about others&rsquo; strategies and external outcomes.</p>
+<p>In a Bayesian Nash equilibrium, each voter chooses a strategy $\sigma_k^i: \{0,1} \rightarrow \{0,1\}$ that maximizes expected utility given their beliefs about others&rsquo; strategies and external outcomes.</p>
+<p><strong>Equilibrium condition</strong>: For truth-telling to be a Bayesian Nash equilibrium, we need basically:
+$$
+\mathbb{E}[U_k^i(\sigma^i_k(\xi_k^i), \sigma_{-k}^i(\xi_{-k}^i), \omega_{-i}; \xi_k^i)] \geq \mathbb{E}[U_k^i(1- \sigma^i_k(\xi_k^i), \sigma_{-k}^i(\xi_{-k}^i), \omega_{-i}; \xi_k^i)]
+$$
+for all $k, i$ and both values of $\xi_k^i$. So, you have $|\mathcal{I}|$ times $n$ set of equations for three types of strategies:</p>
 <p><strong>Truth-telling strategy</strong>: $\sigma_k^i(\xi_k^i) = \xi_k^i$ (vote your type).</p>
-<p><strong>Equilibrium condition</strong>: For truth-telling to be a Bayesian Nash equilibrium, we need:
-$$\mathbb{E}[U_k^i(\xi_k^i, \sigma_{-k}^i(\xi_{-k}^i), \omega_{-i}; \xi_k^i)] \geq \mathbb{E}[U_k^i(1-\xi_k^i, \sigma_{-k}^i(\xi_{-k}^i), \omega_{-i}; \xi_k^i)]$$</p>
-<p>for all $k, i$ and both values of $\xi_k^i$.</p>
-<p>This reduces to the incentive compatibility constraint:
-$$\mathbb{P}(\omega^i = 1) \geq \frac{c_1}{c_1 + c_2}$$</p>
+<p><strong>Truth-reversing strategy</strong>: $\sigma_k^i(\xi_k^i) = 1 - \xi_k^i$ (vote against your type).</p>
+<p><strong>Pooling strategies</strong>: $\sigma^i_k(\xi_k^i) = 1$ or $\sigma^i_k(\xi_k^i) = 0$ (vote constantly).</p>
+<p>For truth-telling strategy, the equilibrium condition reduces to the incentive compatibility constraint:
+$$\mathbb{P}(\omega^i = 1) \geq \frac{c_1}{c_1 + c_2}.$$
+That is to say, under the strategy, I calculate the success probability within one holon $i$, it has to be above certain threshold for this strategy to be ``okay&rsquo;&rsquo; as an equilibrium, but to calculate the success rate under a type prior, you have to consider other holons as well, this eventaully becomes a tangled &lsquo;&lsquo;chicken-egg&rsquo;&rsquo; problem.</p>
 <h3 id="the-fixed-point-problem">The Fixed-Point Problem</h3>
-<p>Under symmetric truth-telling strategies, all committees have the same success probability $q$. The number of external failures follows $\text{Binomial}(|I|-1, 1-q)$, leading to the fixed-point equation:</p>
+<p>Most &lsquo;&lsquo;chicken-egg&rsquo;&rsquo; problem can be solved by fixed-point equations.
+Under symmetric truth-telling strategies, all committees have the same success probability $q$. The number of external failures follows $\text{Binomial}(|I|-1, 1-q)$, leading to the fixed-point equation:</p>
 <p>$$q = \sum_{z=0}^{|I|-1} \binom{|I|-1}{z} (1-q)^z q^{|I|-1-z} \cdot \mathbb{P}\left(\text{Binomial}(n,p) \geq \theta + \gamma z\right)$$</p>
-<p>For large $n$, using the normal approximation:
+<p>For large $n \to \infty$, using the normal approximation:
 $$q = \sum_{z=0}^{|I|-1} \binom{|I|-1}{z} (1-q)^z q^{|I|-1-z} \cdot \Phi\left(\frac{np - \theta - \gamma z}{\sqrt{np(1-p)}}\right)$$</p>
 <p>In the limit $|I| \rightarrow \infty$ with $\delta = \gamma |I|$ fixed, this becomes:
 $$q = \Phi\left(\frac{np - \theta - \delta(1-q)}{\sqrt{np(1-p)}}\right)$$</p>
 <h3 id="existence-and-uniqueness-of-equilibria">Existence and Uniqueness of Equilibria</h3>
-<p>The key mathematical questions become:</p>
+<p>Since there is no other way around than enumerating if every possible strategy satisfies the incentive compatibility, the key mathematical questions become:</p>
 <ol>
 <li><strong>Existence</strong>: When does a solution $q^* \in [0,1]$ exist?</li>
 <li><strong>Uniqueness</strong>: When is the solution unique?</li>
@@ -246,35 +255,11 @@ $$q = \Phi\left(\frac{np - \theta - \delta(1-q)}{\sqrt{np(1-p)}}\right)$$</p>
 <p><strong>Uniqueness condition</strong>: The mapping $T(q) = \Phi\left(\frac{np - \theta - \delta(1-q)}{\sqrt{np(1-p)}}\right)$ is a contraction when:
 $$\frac{\delta \phi\left(\frac{np - \theta - \delta(1-q)}{\sqrt{np(1-p)}}\right)}{\sqrt{np(1-p)}} &lt; 1$$</p>
 <p>where $\phi$ is the standard normal density. This is guaranteed when $\delta$ is sufficiently small relative to $\sqrt{np(1-p)}$.</p>
-<p><strong>Multiple equilibria</strong>: For large $\delta$, the system can exhibit bistability with equilibria near $q = 0$ and $q = 1$, separated by an unstable interior equilibrium.</p>
-<h3 id="whats-actually-novel-spoiler-not-much">What&rsquo;s Actually Novel (Spoiler: Not Much)</h3>
-<p>From a game theory perspective, this is:</p>
-<ul>
-<li>A <strong>global game</strong> with strategic complementarities</li>
-<li><strong>Threshold models</strong> with network effects</li>
-<li><strong>Coordination games</strong> with incomplete information</li>
-</ul>
-<p>The specific linear coupling $\theta + \gamma z$ is new, but the mathematical framework is entirely standard. The &ldquo;holonic equilibrium&rdquo; concepts are just rebranded Bayesian Nash equilibria with particular structure.</p>
-<h3 id="the-computational-reality-check">The Computational Reality Check</h3>
-<p>Here&rsquo;s where theory meets practice. The beautiful fixed-point equation only works when:</p>
-<ol>
-<li><strong>$n$ is large</strong>: Need CLT for normal approximation</li>
-<li><strong>$\gamma$ is small</strong>: Need contraction for uniqueness</li>
-<li><strong>Truth-telling holds</strong>: Need incentive compatibility</li>
-</ol>
-<p>When any of these fail, you&rsquo;re stuck with a discrete Boolean satisfiability problem:
-$$\omega^i = \mathbf{1}<em>{{X^i \geq \theta + \gamma \sum</em>{j \neq i}(1-\omega^j)}}$$</p>
-<p>for vote totals $X^i$. This system can have:</p>
-<ul>
-<li><strong>No solutions</strong> (contradictory constraints)</li>
-<li><strong>Multiple solutions</strong> (coordination failures)</li>
-<li><strong>Exponential complexity</strong> (need to check $2^{|I|}$ configurations)</li>
-</ul>
-<p>So the &ldquo;elegant&rdquo; theory only applies in limiting regimes that wash out the interesting discrete dynamics.</p>
-<p>Look, I get it. Academic survival sometimes requires creative packaging. And there&rsquo;s value in applying standard tools to new domains, even if the mathematical innovation is limited.</p>
-<p>But let&rsquo;s be honest about what we&rsquo;re doing. This is Bayesian game theory with a specific payoff structure, not a revolutionary new framework. The insights come from computational implementation and parameter exploration, not from theoretical breakthroughs.</p>
-<p>Maybe that&rsquo;s enough. Maybe we don&rsquo;t need every paper to prove new theorems. Sometimes the contribution is showing how existing theory applies to practical problems, or developing computational tools that make complex models tractable.</p>
-<p>But we should call it what it is.</p>
+<p><strong>Multiple equilibria</strong>: For large $\delta$, the system can exhibit bistability with equilibria near $q = 0$ and $q = 1$, separated by an unstable interior equilibrium. So the interpretation is, the more coupling between holons, the more chaotic it becomes. Below is kind of a relationship between $q$ and the prior $p$, the theoretical plot got twisted because at some of the $p$ the fixed point equations can&rsquo;t be solved.</p>
+<p><img src="/images/post/2025/mechanism_design/success_holon.png" alt=""></p>
+<p>With a simple set up like this it&rsquo;s already not very computationally convenient for seeking the equilibrium, so you can imagine how hard it is for general Bayesian Nash equilibrium.</p>
+<p>The motivation of coming up with a system like this is still something I couldn&rsquo;t figure out, because what do I know.
+But we should call it what it is. LOL.</p>
 <div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
@@ -369,11 +354,11 @@ $$\omega^i = \mathbf{1}<em>{{X^i \geq \theta + \gamma \sum</em>{j \neq i}(1-\ome
                 let themeIcon = document.querySelector(".theme-icon");
                 if (theme === "dark") {
                     body.classList.add("dark-mode");
-                    themeIcon.src = "https:\/\/unionpan.github.io\/svg/moon.svg";
+                    themeIcon.src = "http:\/\/localhost:59251\/svg/moon.svg";
                     themeIcon.alt = "moon icon";
                 } else {
                     body.classList.remove("dark-mode");
-                    themeIcon.src = "https:\/\/unionpan.github.io\/svg/sun.svg";
+                    themeIcon.src = "http:\/\/localhost:59251\/svg/sun.svg";
                     themeIcon.alt = "sun icon";
                 }
                 localStorage.setItem("theme", theme);
@@ -402,6 +387,15 @@ $$\omega^i = \mathbf{1}<em>{{X^i \geq \theta + \gamma \sum</em>{j \neq i}(1-\ome
             });
             
             
+            document.getElementById('mobile-menu-toggle').addEventListener('click', function() {
+                const sidebar = document.getElementById('sidebar');
+                const button = this;
+                
+                sidebar.classList.toggle('open');
+                button.classList.toggle('active');
+            });
+
+            
             function toggleBlogMenu(event) {
                 event.preventDefault();
                 const submenu = document.getElementById('blog-submenu');
@@ -426,6 +420,29 @@ $$\omega^i = \mathbf{1}<em>{{X^i \geq \theta + \gamma \sum</em>{j \neq i}(1-\ome
                     submenu.classList.remove('open');
                     arrow.style.transform = 'rotate(0deg)';
                 }
+            });
+
+            
+            document.addEventListener('click', function(event) {
+                const sidebar = document.getElementById('sidebar');
+                const toggleButton = document.getElementById('mobile-menu-toggle');
+                
+                if (sidebar.classList.contains('open') && 
+                    !sidebar.contains(event.target) && 
+                    !toggleButton.contains(event.target)) {
+                    sidebar.classList.remove('open');
+                    toggleButton.classList.remove('active');
+                }
+            });
+
+            
+            document.querySelectorAll('.sidebar .nav-link, .sidebar .submenu-link').forEach(link => {
+                link.addEventListener('click', function() {
+                    const sidebar = document.getElementById('sidebar');
+                    const toggleButton = document.getElementById('mobile-menu-toggle');
+                    sidebar.classList.remove('open');
+                    toggleButton.classList.remove('active');
+                });
             });
         </script>
     </body>

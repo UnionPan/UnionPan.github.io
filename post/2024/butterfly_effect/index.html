@@ -1,17 +1,17 @@
 
 <!DOCTYPE html>
 <html lang="en-us">
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=59251&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>The Lorenz dynamics and Butterfly Effect | union&#39;s blog</title>
     <meta name="description"
         content="Chaotic behavior can emerge even in simple dynamics such as replicator, and Rock-Paper-Scissor oscillators, depending on the game settings. To begin with, we first define what is chaos qualitatively: &ldquo;Chaos can be described as long term, aperiodic behaviour that exhibits sensitive dependence on initial conditions. Sensitive dependence on initial conditions implies that nearby trajectories diverge exponentially fast over time.&rdquo; Or, by Edward Lorenz, when the present determines the future but the approximate present does not approximately determine the future.">
-    <link rel="canonical" href="https://unionpan.github.io/post/2024/butterfly_effect/" />
+    <link rel="canonical" href="http://localhost:59251/post/2024/butterfly_effect/" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
     
-    <link rel="stylesheet" href="https://unionpan.github.io/scss/style.min.946b0c7a0d756c1bc30f44a31ef1dc1c99d052fb40f551d23013cbcb71dd0a77.css">
-    <meta property="og:url" content="https://unionpan.github.io/post/2024/butterfly_effect/">
+    <link rel="stylesheet" href="http://localhost:59251/scss/style.min.8b023792a58f7a8864735890e7f9de0bdde593faf3d796e7d7fce5971c3d6c25.css">
+    <meta property="og:url" content="http://localhost:59251/post/2024/butterfly_effect/">
   <meta property="og:site_name" content="union&#39;s blog">
   <meta property="og:title" content="The Lorenz dynamics and Butterfly Effect">
   <meta property="og:description" content="Chaotic behavior can emerge even in simple dynamics such as replicator, and Rock-Paper-Scissor oscillators, depending on the game settings. To begin with, we first define what is chaos qualitatively: “Chaos can be described as long term, aperiodic behaviour that exhibits sensitive dependence on initial conditions. Sensitive dependence on initial conditions implies that nearby trajectories diverge exponentially fast over time.” Or, by Edward Lorenz, when the present determines the future but the approximate present does not approximately determine the future.">
@@ -39,15 +39,6 @@
     integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
     onload="renderMathInElement(document.body);"></script>
     
-    
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P8CZD2GL8F"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-P8CZD2GL8F');
-    </script>
-    
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             renderMathInElement(document.body, {
@@ -62,12 +53,19 @@
 </head><body>
         <div class="theme-toggle-container">
             <a id="theme-toggle" class="theme-toggle" href="#">
-                <img src="https://unionpan.github.io/svg/sun.svg" alt="sun icon" class="theme-icon" />
+                <img src="http://localhost:59251/svg/sun.svg" alt="sun icon" class="theme-icon" />
             </a>
         </div>
         
+        
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+
         <div class="layout-container">
-            <aside class="sidebar">
+            <aside class="sidebar" id="sidebar">
                 <div class="sidebar-content">
                     <div class="sidebar-header">
                         <h1 class="site-title">
@@ -149,16 +147,20 @@
     <div class="archive">
         
         <div class="post-thumbnail-container">
-            <img src="https://unionpan.github.io//images/post/2024/Butterfly_Effect/thumbnail.webp" alt="The Lorenz dynamics and Butterfly Effect" class="post-thumbnail-image">
+            <img src="http://localhost:59251//images/post/2024/Butterfly_Effect/thumbnail.webp" alt="The Lorenz dynamics and Butterfly Effect" class="post-thumbnail-image">
         </div>
         
         <h1 class="title is-1">The Lorenz dynamics and Butterfly Effect</h1>
         <hr class="title-content-separator">
+        
         <div class="title subtitle heading is-6">
             <div class="small-categories-container">
-                    <a href="/categories/some-random-math">Some random math</a>
-                </div>
+                
+                        <span class="category-text">My life is in chaos</span>
+                    
             </div>
+        </div>
+        
         <div class="content article-content">
             <div class="toc-container">
                 
@@ -329,13 +331,13 @@ the analogy has morphed into using a butterfly.</p>
             <div class="has-text-left">
                 
                 <p>Previous post</p>
-                <a href="https://unionpan.github.io/post/2024/talagrand/">Talagrand&#39;s Isoperimetry inequality</a>
+                <a href="http://localhost:59251/post/2024/talagrand/">Talagrand&#39;s Isoperimetry inequality</a>
                 
             </div>
             <div class="has-text-right">
                 
                 <p>Next post</p>
-                <a href="https://unionpan.github.io/post/2024/what_are_sufficient_statistics/">What (on earth) is a Sufficient Statistic?</a>
+                <a href="http://localhost:59251/post/2024/what_are_sufficient_statistics/">What (on earth) is a Sufficient Statistic?</a>
                 
             </div>
         </section>
@@ -355,11 +357,11 @@ the analogy has morphed into using a butterfly.</p>
                 let themeIcon = document.querySelector(".theme-icon");
                 if (theme === "dark") {
                     body.classList.add("dark-mode");
-                    themeIcon.src = "https:\/\/unionpan.github.io\/svg/moon.svg";
+                    themeIcon.src = "http:\/\/localhost:59251\/svg/moon.svg";
                     themeIcon.alt = "moon icon";
                 } else {
                     body.classList.remove("dark-mode");
-                    themeIcon.src = "https:\/\/unionpan.github.io\/svg/sun.svg";
+                    themeIcon.src = "http:\/\/localhost:59251\/svg/sun.svg";
                     themeIcon.alt = "sun icon";
                 }
                 localStorage.setItem("theme", theme);
@@ -388,6 +390,15 @@ the analogy has morphed into using a butterfly.</p>
             });
             
             
+            document.getElementById('mobile-menu-toggle').addEventListener('click', function() {
+                const sidebar = document.getElementById('sidebar');
+                const button = this;
+                
+                sidebar.classList.toggle('open');
+                button.classList.toggle('active');
+            });
+
+            
             function toggleBlogMenu(event) {
                 event.preventDefault();
                 const submenu = document.getElementById('blog-submenu');
@@ -412,6 +423,29 @@ the analogy has morphed into using a butterfly.</p>
                     submenu.classList.remove('open');
                     arrow.style.transform = 'rotate(0deg)';
                 }
+            });
+
+            
+            document.addEventListener('click', function(event) {
+                const sidebar = document.getElementById('sidebar');
+                const toggleButton = document.getElementById('mobile-menu-toggle');
+                
+                if (sidebar.classList.contains('open') && 
+                    !sidebar.contains(event.target) && 
+                    !toggleButton.contains(event.target)) {
+                    sidebar.classList.remove('open');
+                    toggleButton.classList.remove('active');
+                }
+            });
+
+            
+            document.querySelectorAll('.sidebar .nav-link, .sidebar .submenu-link').forEach(link => {
+                link.addEventListener('click', function() {
+                    const sidebar = document.getElementById('sidebar');
+                    const toggleButton = document.getElementById('mobile-menu-toggle');
+                    sidebar.classList.remove('open');
+                    toggleButton.classList.remove('active');
+                });
             });
         </script>
     </body>

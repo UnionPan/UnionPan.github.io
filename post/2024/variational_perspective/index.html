@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 <html lang="en-us">
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=59251&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>A Variational Perspective On Gradient Descent | union&#39;s blog</title>
@@ -16,11 +16,11 @@ $$
 \dot{x} =  - \nabla f (x) , \quad x(0) = x_0.
 $$
 A natural question to ask is what are the hidden objectives being achieved along the gradient flow. This question was approached in a &ldquo;inverse optimal control&rdquo; fashion, i.e., given an autonomous dynamical system, identify the close-loop control and its corresponding optimal control problem. In this approach, the Fenchel-Young inequality played a crucial role to formulate the optimal control problem, as was extensively used in the variational principles introduced by Brezis and Ekeland3.">
-    <link rel="canonical" href="https://unionpan.github.io/post/2024/variational_perspective/" />
+    <link rel="canonical" href="http://localhost:59251/post/2024/variational_perspective/" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
     
-    <link rel="stylesheet" href="https://unionpan.github.io/scss/style.min.946b0c7a0d756c1bc30f44a31ef1dc1c99d052fb40f551d23013cbcb71dd0a77.css">
-    <meta property="og:url" content="https://unionpan.github.io/post/2024/variational_perspective/">
+    <link rel="stylesheet" href="http://localhost:59251/scss/style.min.8b023792a58f7a8864735890e7f9de0bdde593faf3d796e7d7fce5971c3d6c25.css">
+    <meta property="og:url" content="http://localhost:59251/post/2024/variational_perspective/">
   <meta property="og:site_name" content="union&#39;s blog">
   <meta property="og:title" content="A Variational Perspective On Gradient Descent">
   <meta property="og:description" content="In this post I just want to share a simple and elegant idea from a Control System Letter paper written by Maxim Raginsky et al.1. This idea largely inspired my recent work on multi-agent learning in (monotone) games2, which I might devote another post to talk about if I happen to get some interesting results out of it.
@@ -50,15 +50,6 @@ The idea starts from here: we all know that the archetype of solving convex opti
     integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
     onload="renderMathInElement(document.body);"></script>
     
-    
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P8CZD2GL8F"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-P8CZD2GL8F');
-    </script>
-    
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             renderMathInElement(document.body, {
@@ -73,12 +64,19 @@ The idea starts from here: we all know that the archetype of solving convex opti
 </head><body>
         <div class="theme-toggle-container">
             <a id="theme-toggle" class="theme-toggle" href="#">
-                <img src="https://unionpan.github.io/svg/sun.svg" alt="sun icon" class="theme-icon" />
+                <img src="http://localhost:59251/svg/sun.svg" alt="sun icon" class="theme-icon" />
             </a>
         </div>
         
+        
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+
         <div class="layout-container">
-            <aside class="sidebar">
+            <aside class="sidebar" id="sidebar">
                 <div class="sidebar-content">
                     <div class="sidebar-header">
                         <h1 class="site-title">
@@ -160,16 +158,20 @@ The idea starts from here: we all know that the archetype of solving convex opti
     <div class="archive">
         
         <div class="post-thumbnail-container">
-            <img src="https://unionpan.github.io//images/post/2024/Variational_Perspective/thumbnail.png" alt="A Variational Perspective On Gradient Descent" class="post-thumbnail-image">
+            <img src="http://localhost:59251//images/post/2024/Variational_Perspective/thumbnail.png" alt="A Variational Perspective On Gradient Descent" class="post-thumbnail-image">
         </div>
         
         <h1 class="title is-1">A Variational Perspective On Gradient Descent</h1>
         <hr class="title-content-separator">
+        
         <div class="title subtitle heading is-6">
             <div class="small-categories-container">
-                    <a href="/categories/some-random-math">Some random math</a>
-                </div>
+                
+                        <span class="category-text">I procrastinated writing this paper</span>
+                    
             </div>
+        </div>
+        
         <div class="content article-content">
             <div class="toc-container">
                 
@@ -312,7 +314,7 @@ The benefit we can gain from this is the availablity of an entire analytical too
             <div class="has-text-right">
                 
                 <p>Next post</p>
-                <a href="https://unionpan.github.io/post/2024/talagrand/">Talagrand&#39;s Isoperimetry inequality</a>
+                <a href="http://localhost:59251/post/2024/talagrand/">Talagrand&#39;s Isoperimetry inequality</a>
                 
             </div>
         </section>
@@ -332,11 +334,11 @@ The benefit we can gain from this is the availablity of an entire analytical too
                 let themeIcon = document.querySelector(".theme-icon");
                 if (theme === "dark") {
                     body.classList.add("dark-mode");
-                    themeIcon.src = "https:\/\/unionpan.github.io\/svg/moon.svg";
+                    themeIcon.src = "http:\/\/localhost:59251\/svg/moon.svg";
                     themeIcon.alt = "moon icon";
                 } else {
                     body.classList.remove("dark-mode");
-                    themeIcon.src = "https:\/\/unionpan.github.io\/svg/sun.svg";
+                    themeIcon.src = "http:\/\/localhost:59251\/svg/sun.svg";
                     themeIcon.alt = "sun icon";
                 }
                 localStorage.setItem("theme", theme);
@@ -365,6 +367,15 @@ The benefit we can gain from this is the availablity of an entire analytical too
             });
             
             
+            document.getElementById('mobile-menu-toggle').addEventListener('click', function() {
+                const sidebar = document.getElementById('sidebar');
+                const button = this;
+                
+                sidebar.classList.toggle('open');
+                button.classList.toggle('active');
+            });
+
+            
             function toggleBlogMenu(event) {
                 event.preventDefault();
                 const submenu = document.getElementById('blog-submenu');
@@ -389,6 +400,29 @@ The benefit we can gain from this is the availablity of an entire analytical too
                     submenu.classList.remove('open');
                     arrow.style.transform = 'rotate(0deg)';
                 }
+            });
+
+            
+            document.addEventListener('click', function(event) {
+                const sidebar = document.getElementById('sidebar');
+                const toggleButton = document.getElementById('mobile-menu-toggle');
+                
+                if (sidebar.classList.contains('open') && 
+                    !sidebar.contains(event.target) && 
+                    !toggleButton.contains(event.target)) {
+                    sidebar.classList.remove('open');
+                    toggleButton.classList.remove('active');
+                }
+            });
+
+            
+            document.querySelectorAll('.sidebar .nav-link, .sidebar .submenu-link').forEach(link => {
+                link.addEventListener('click', function() {
+                    const sidebar = document.getElementById('sidebar');
+                    const toggleButton = document.getElementById('mobile-menu-toggle');
+                    sidebar.classList.remove('open');
+                    toggleButton.classList.remove('active');
+                });
             });
         </script>
     </body>
