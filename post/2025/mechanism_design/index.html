@@ -383,8 +383,7 @@ But we should call it what it is. LOL.</p>
                 
                 
                 if (!theme) {
-                    const isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-                    theme = isDarkMode ? 'dark' : 'light';
+                    theme = 'dark';
                 }
                 
                 setTheme(theme);
@@ -459,6 +458,43 @@ But we should call it what it is. LOL.</p>
                     });
                 }
             });
+
+            
+            function addWheelScrolling(selector) {
+                const carousel = document.querySelector(selector);
+                if (!carousel) return;
+
+                
+                const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+                const isMac = /Mac|iPhone|iPod|iPad/i.test(navigator.userAgent);
+                
+                carousel.addEventListener('wheel', function(e) {
+                    
+                    if (isMobile) {
+                        return;
+                    }
+                    
+                    
+                    
+                    const isTouchpad = isMac && (Math.abs(e.deltaX) > 0 || Math.abs(e.deltaY) < 50);
+                    
+                    
+                    if (isTouchpad && Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
+                        
+                        return;
+                    }
+                    
+                    
+                    if (!isTouchpad && Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+                        e.preventDefault();
+                        carousel.scrollLeft += e.deltaY * 2;
+                    }
+                });
+            }
+            
+            
+            addWheelScrolling('.posts-carousel');
+            addWheelScrolling('.photos-carousel');
         </script>
     </body>
 </html>
