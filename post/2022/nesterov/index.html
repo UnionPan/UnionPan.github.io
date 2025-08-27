@@ -13,19 +13,19 @@ $$
 $$
 Here, \(f \in \mathcal{C}^1\) is a convex, $L$-Lipschitz smooth function.
 Obviously we can solve this problem by using first-order methods, using iterations:
-\[
+$$
 x_{k} \in x_{0} &#43; \operatorname{Span} \left \{f^{\prime} \left (x_{0} \right ), \ldots, f^{\prime} \left (x_{k-1} \right )\right \}.
-\]">
+$$">
     <link rel="canonical" href="https://unionpan.github.io/post/2022/nesterov/" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
     
-    <link rel="stylesheet" href="https://unionpan.github.io/scss/style.min.8b023792a58f7a8864735890e7f9de0bdde593faf3d796e7d7fce5971c3d6c25.css">
+    <link rel="stylesheet" href="https://unionpan.github.io/scss/style.min.9159e0412fd17ddb0818227395a6386fb4677f5e7ae387429b44043d7afabd2c.css">
     <meta property="og:url" content="https://unionpan.github.io/post/2022/nesterov/">
   <meta property="og:site_name" content="union&#39;s blog">
   <meta property="og:title" content="Nesterov">
   <meta property="og:description" content="I did a presentation in a group meeting to briefly review the lower complexity bound of first-order convex optimization; and how Nesterov proceed to match the lower bound using the estimation sequence, the slides are here.
 Consider an unconstrained optimization problem: $$ \min_{x \in \mathbb{R}^n} f(x) . $$ Here, \(f \in \mathcal{C}^1\) is a convex, $L$-Lipschitz smooth function. Obviously we can solve this problem by using first-order methods, using iterations:
-\[ x_{k} \in x_{0} &#43; \operatorname{Span} \left \{f^{\prime} \left (x_{0} \right ), \ldots, f^{\prime} \left (x_{k-1} \right )\right \}. \]">
+$$ x_{k} \in x_{0} &#43; \operatorname{Span} \left \{f^{\prime} \left (x_{0} \right ), \ldots, f^{\prime} \left (x_{k-1} \right )\right \}. $$">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="post">
@@ -37,7 +37,7 @@ Consider an unconstrained optimization problem: $$ \min_{x \in \mathbb{R}^n} f(x
   <meta name="twitter:title" content="Nesterov">
   <meta name="twitter:description" content="I did a presentation in a group meeting to briefly review the lower complexity bound of first-order convex optimization; and how Nesterov proceed to match the lower bound using the estimation sequence, the slides are here.
 Consider an unconstrained optimization problem: $$ \min_{x \in \mathbb{R}^n} f(x) . $$ Here, \(f \in \mathcal{C}^1\) is a convex, $L$-Lipschitz smooth function. Obviously we can solve this problem by using first-order methods, using iterations:
-\[ x_{k} \in x_{0} &#43; \operatorname{Span} \left \{f^{\prime} \left (x_{0} \right ), \ldots, f^{\prime} \left (x_{k-1} \right )\right \}. \]">
+$$ x_{k} \in x_{0} &#43; \operatorname{Span} \left \{f^{\prime} \left (x_{0} \right ), \ldots, f^{\prime} \left (x_{k-1} \right )\right \}. $$">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"
     integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
@@ -220,13 +220,13 @@ $$
 $$
 Here, \(f \in \mathcal{C}^1\) is a convex, $L$-Lipschitz smooth function.
 Obviously we can solve this problem by using first-order methods, using iterations:</p>
-<p>\[
+<p>$$
 x_{k} \in x_{0} + \operatorname{Span} \left \{f^{\prime} \left (x_{0} \right ), \ldots, f^{\prime} \left (x_{k-1} \right )\right \}.
-\]</p>
+$$</p>
 <p>The question is what their fundamental limit is, and how to achieve it.</p>
 <p>For fundamental limits, Nesterov constructed a quadratic function whose <em>one-step gradients give very little geometry information about the other dimensions</em>, so that once the dimensionality of the problem becomes large, it gets really hard to solve it. (As the error is lower bounded by $\mathcal{O} (1/k^2)$, with $k$ being the dimension.)</p>
 <p>He then came up with an algorithm to match the lower bound.
-Despite the complexity of the algorithm itself, the idea is not that complicated:</p>
+Despite the complexity of the algorithm itself, the idea is not that (actually it is) complicated:</p>
 <blockquote>
 <p>We use a series of weighted quadratic functions $\{\lambda_k, \phi_k \}$ to estimate the function itself at each point $x_k$,  which has two properties</p>
 <ul>
@@ -241,6 +241,7 @@ $$</li>
 </ul>
 <p>So intead of minimizing the function itself, we minimize $\{\phi_k \}$ at each step, which is easier but also matches the lower bound because it is quadratic!</p></blockquote>
 <p>There are of course a bunch of alternative interpretations about this method, one of which I found quite intriguing was the dual perspective<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>, which views every accelerated gradient step as an optimal coupling of the primal and dual step.</p>
+<p>Another that I know of is <a href="https://arxiv.org/abs/1506.08187">Bubbeck&rsquo;s paper</a>. You will have to see the geometric interpretation for yourself, it basically says that two balls shrink is faster than one ball shrinks. Personally I find the youtube &lsquo;&lsquo;momentum videos&rsquo;&rsquo; not super helpful&hellip;</p>
 <div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
@@ -319,6 +320,9 @@ $$</li>
                 
             </div>
             <div class="has-text-right">
+                
+                <p>Next post</p>
+                <a href="https://unionpan.github.io/post/2022/monge/">Monge Partition</a>
                 
             </div>
         </section>

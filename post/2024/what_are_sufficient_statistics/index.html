@@ -6,18 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>What (on earth) is a Sufficient Statistic? | union&#39;s blog</title>
     <meta name="description"
-        content="It sometimes drives me insane to hear about engineering or economics people using the word &ldquo;sufficient statistics&rdquo; in the seminars.
-The idea of it, as many people will understand it correctly, is that this function summarizes the information from the data, impeccable, alright.
-But the terminology itself comes with a very rigorous definition.
-I would very much prefer if you do not plan to give the rigorous description about why it is sufficient in the statistical sense, use some other words like sufficient information or sufficient signaling if necessary.">
+        content="It certainly bothered me (not any more) to hear people casually dropping the word &ldquo;sufficient statistics&rdquo; in their talks, often describing some of their &lsquo;&lsquo;observations&rsquo;&rsquo; or &lsquo;&lsquo;samples&rsquo;&rsquo; that they feel like are &lsquo;&lsquo;sufficient&rsquo;&rsquo; for them to make certain decisions.
+The thing is, the word &lsquo;&lsquo;sufficient&rsquo;&rsquo; comes with a very rigorous definition, that may not even hold in those frameworks.
+For example, a lot of traffic control algorithms use measured vehicle streamed data to learn some embeddings as the input, the downstream tasks could be variable speed limit for certain highway segments for example, and people might call the embeddings &lsquo;&lsquo;sufficient statistics&rsquo;&rsquo;.
+Umm, &hellip; truth is I don&rsquo;t even where to start with this.">
     <link rel="canonical" href="https://unionpan.github.io/post/2024/what_are_sufficient_statistics/" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
     
-    <link rel="stylesheet" href="https://unionpan.github.io/scss/style.min.8b023792a58f7a8864735890e7f9de0bdde593faf3d796e7d7fce5971c3d6c25.css">
+    <link rel="stylesheet" href="https://unionpan.github.io/scss/style.min.9159e0412fd17ddb0818227395a6386fb4677f5e7ae387429b44043d7afabd2c.css">
     <meta property="og:url" content="https://unionpan.github.io/post/2024/what_are_sufficient_statistics/">
   <meta property="og:site_name" content="union&#39;s blog">
   <meta property="og:title" content="What (on earth) is a Sufficient Statistic?">
-  <meta property="og:description" content="It sometimes drives me insane to hear about engineering or economics people using the word “sufficient statistics” in the seminars. The idea of it, as many people will understand it correctly, is that this function summarizes the information from the data, impeccable, alright. But the terminology itself comes with a very rigorous definition. I would very much prefer if you do not plan to give the rigorous description about why it is sufficient in the statistical sense, use some other words like sufficient information or sufficient signaling if necessary.">
+  <meta property="og:description" content="It certainly bothered me (not any more) to hear people casually dropping the word “sufficient statistics” in their talks, often describing some of their ‘‘observations’’ or ‘‘samples’’ that they feel like are ‘‘sufficient’’ for them to make certain decisions. The thing is, the word ‘‘sufficient’’ comes with a very rigorous definition, that may not even hold in those frameworks. For example, a lot of traffic control algorithms use measured vehicle streamed data to learn some embeddings as the input, the downstream tasks could be variable speed limit for certain highway segments for example, and people might call the embeddings ‘‘sufficient statistics’’. Umm, … truth is I don’t even where to start with this.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="post">
@@ -27,7 +27,7 @@ I would very much prefer if you do not plan to give the rigorous description abo
     
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="What (on earth) is a Sufficient Statistic?">
-  <meta name="twitter:description" content="It sometimes drives me insane to hear about engineering or economics people using the word “sufficient statistics” in the seminars. The idea of it, as many people will understand it correctly, is that this function summarizes the information from the data, impeccable, alright. But the terminology itself comes with a very rigorous definition. I would very much prefer if you do not plan to give the rigorous description about why it is sufficient in the statistical sense, use some other words like sufficient information or sufficient signaling if necessary.">
+  <meta name="twitter:description" content="It certainly bothered me (not any more) to hear people casually dropping the word “sufficient statistics” in their talks, often describing some of their ‘‘observations’’ or ‘‘samples’’ that they feel like are ‘‘sufficient’’ for them to make certain decisions. The thing is, the word ‘‘sufficient’’ comes with a very rigorous definition, that may not even hold in those frameworks. For example, a lot of traffic control algorithms use measured vehicle streamed data to learn some embeddings as the input, the downstream tasks could be variable speed limit for certain highway segments for example, and people might call the embeddings ‘‘sufficient statistics’’. Umm, … truth is I don’t even where to start with this.">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"
     integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
@@ -168,7 +168,7 @@ I would very much prefer if you do not plan to give the rigorous description abo
         <div class="title subtitle heading is-6">
             <div class="small-categories-container">
                 
-                        <span class="category-text">Sometimes I am just too Cynical</span>
+                        <a href="https://www.nobelprize.org/prizes/economic-sciences/2011/sargent/facts/">Thomas Sargent told me to avoid using this word</a>
                     
             </div>
         </div>
@@ -211,11 +211,11 @@ I would very much prefer if you do not plan to give the rigorous description abo
 
 </script>
             </div>
-            <p>It sometimes drives me insane to hear about engineering or economics people using the word &ldquo;sufficient statistics&rdquo; in the seminars.
-The idea of it, as many people will understand it correctly, is that this function summarizes the information from the data, impeccable, alright.
-But the terminology itself comes with a very rigorous definition.
-I would very much prefer if you do not plan to give the rigorous description about why it is sufficient in the statistical sense, use some other words like sufficient information or sufficient signaling if necessary.</p>
-<p>Anyhow, in case we are really gonna use it, let&rsquo;s talk about what a sufficient statistic is.
+            <p>It certainly bothered me (not any more) to hear people casually dropping the word &ldquo;sufficient statistics&rdquo; in their talks, often describing some of their &lsquo;&lsquo;observations&rsquo;&rsquo; or &lsquo;&lsquo;samples&rsquo;&rsquo; that they feel like are &lsquo;&lsquo;sufficient&rsquo;&rsquo; for them to make certain decisions.
+The thing is, the word &lsquo;&lsquo;sufficient&rsquo;&rsquo; comes with a very rigorous definition, that may not even hold in those frameworks.
+For example, a lot of traffic control algorithms use measured vehicle streamed data to learn some embeddings as the input, the downstream tasks could be variable speed limit for certain highway segments for example, and people might call the embeddings &lsquo;&lsquo;sufficient statistics&rsquo;&rsquo;.
+Umm, &hellip; truth is I don&rsquo;t even where to start with this.</p>
+<p>Anyhow, in case you are wondering, let me give you a pedantic-as-hell sufficient statistic definition.
 Given a probability space $(\Omega, \mathbb{P}, \mathcal{F})$, where the parameter space $\Omega$ that labels all the possible statistical models ${P_\theta}$, we call a function, often denoted as $T$, that maps from data $X \sim P_\theta(\cdot) \in \Delta (\mathcal{X})$ to some &lsquo;&lsquo;coonclusion&rsquo;&rsquo; a statistic.
 E.g., from the Boston housing prices data we get the average price, and that is a statistic, we can also calculate the emprical variance, now that&rsquo;s also a statistic. To be more general, we restrict the data to be in a measurable space $(\mathcal{X}, \mathcal{B})$ and the statistical outcome to be in a measurable space $(\mathcal{T}, \mathcal{C})$.</p>
 <h5 id="definition-1">Definition 1</h5>
@@ -277,7 +277,7 @@ $\quad \quad \quad \quad \quad \quad \quad  \quad \quad \quad \quad \quad \quad 
 $$
 f_{X \mid \Theta}(x \mid \theta) = \underbrace{h(x)}_{h(x)} \underbrace{c(\theta) \exp \bigg( { \sum_{i=1}^{d} \theta_{i} t_{i}(x) \bigg) }}_{g(\theta, T(x))}.
 $$</p>
-<p>To summarize, a statistic is a function, when we say it is sufficient we have to tell people what (statistical) model, and what parameters it is sufficient to, even though sometimes it is intuitive and does not need all the fuss.</p>
+<p>To summarize, a statistic is a function, when we say it is sufficient we have to tell people what (statistical) model, and what parameters it is sufficient to, even though sometimes it is intuitive and does not need all the fuss. (Statistics is not pure math anyway.)</p>
 
         </div>
     </div>

@@ -11,7 +11,7 @@ So hopefully, I will resume writing for my own sanity.">
     <link rel="canonical" href="https://unionpan.github.io/post/2025/mechanism_design/" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
     
-    <link rel="stylesheet" href="https://unionpan.github.io/scss/style.min.8b023792a58f7a8864735890e7f9de0bdde593faf3d796e7d7fce5971c3d6c25.css">
+    <link rel="stylesheet" href="https://unionpan.github.io/scss/style.min.9159e0412fd17ddb0818227395a6386fb4677f5e7ae387429b44043d7afabd2c.css">
     <meta property="og:url" content="https://unionpan.github.io/post/2025/mechanism_design/">
   <meta property="og:site_name" content="union&#39;s blog">
   <meta property="og:title" content="Bayesian Holonic (Global) Games">
@@ -19,8 +19,8 @@ So hopefully, I will resume writing for my own sanity.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="post">
-    <meta property="article:published_time" content="2025-08-18T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-08-18T00:00:00+00:00">
+    <meta property="article:published_time" content="2025-07-01T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-07-01T00:00:00+00:00">
 
     
   <meta name="twitter:card" content="summary">
@@ -229,7 +229,7 @@ U_k^i(x_k^i, x_{-k}^i, \omega_{-i}; \xi_k^i) = \mathbf{1}_{{ \omega^i = 0}}(c_0 
 $$</p>
 <p>where $\omega^i \in {0,1}$ is the committee outcome and $\omega_{-i}$ represents other committees&rsquo; outcomes.</p>
 <p>The &ldquo;holonic&rdquo; aspect reduces to this coupling mechanism:</p>
-<p>$$ \omega^i = \mathbf{1}_{\left\{   \sum_{k \in N_i} x_k^i \geq \theta + \gamma \sum_{j \neq i} \right\}}$$</p>
+<p>$$ \omega^i = \mathbf{1}_{\left\{   \sum_{k \in N_i} x_k^i \geq \theta + \gamma \sum_{j \neq i} \omega^{j}\right\}}$$</p>
 <p>So committee $i$ succeeds if its vote total exceeds a threshold that increases linearly with the number of failed external committees.
 The parameter $\gamma \geq 0$ controls coupling strength.</p>
 <p>To be fair this cannot be counted as completely a global game because it has atomic players. But the common feature is that you can sort of leverage the global symmetry to analyze the Nash equilibrium.</p>
@@ -344,6 +344,9 @@ But we should call it what it is. LOL.</p>
                 
             </div>
             <div class="has-text-right">
+                
+                <p>Next post</p>
+                <a href="https://unionpan.github.io/post/2025/rlhf/">Reinforcement Learning with Human Feedback</a>
                 
             </div>
         </section>

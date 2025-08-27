@@ -1,0 +1,1090 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>union&#39;s blog</title>
+    <meta name="description"
+        content="Data-Driven Monge&rsquo;s Partition
+There are many service centers in our city, such as MTA subway station, Vaccination sites, Wifi hot-spots, Blue Bicycles, hospitals, parking lots etc.. Meanwhile, there are so many people in need of these services who are distributed maybe according to some point processes. The question of how to efficiently make assignments between the demands and the service centers gives rise to a special type of problems called semi-discrete optimal transport.">
+    <link rel="canonical" href="http://localhost:1313/post/2022/mongepartition/mongepartition/" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+    
+    <link rel="stylesheet" href="http://localhost:1313/scss/style.min.8b023792a58f7a8864735890e7f9de0bdde593faf3d796e7d7fce5971c3d6c25.css">
+    <meta property="og:url" content="http://localhost:1313/post/2022/mongepartition/mongepartition/">
+  <meta property="og:site_name" content="union&#39;s blog">
+  <meta property="og:title" content="union&#39;s blog">
+  <meta property="og:description" content="Data-Driven Monge’s Partition There are many service centers in our city, such as MTA subway station, Vaccination sites, Wifi hot-spots, Blue Bicycles, hospitals, parking lots etc.. Meanwhile, there are so many people in need of these services who are distributed maybe according to some point processes. The question of how to efficiently make assignments between the demands and the service centers gives rise to a special type of problems called semi-discrete optimal transport.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+
+    
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="union&#39;s blog">
+  <meta name="twitter:description" content="Data-Driven Monge’s Partition There are many service centers in our city, such as MTA subway station, Vaccination sites, Wifi hot-spots, Blue Bicycles, hospitals, parking lots etc.. Meanwhile, there are so many people in need of these services who are distributed maybe according to some point processes. The question of how to efficiently make assignments between the demands and the service centers gives rise to a special type of problems called semi-discrete optimal transport.">
+
+    
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    { left: "$$", right: "$$", display: true },
+                    { left: "$", right: "$", display: false }
+                ]
+            });
+        });
+    </script>
+    
+</head><body>
+        <div class="theme-toggle-container">
+            <a id="theme-toggle" class="theme-toggle" href="#">
+                <img src="http://localhost:1313/svg/sun.svg" alt="sun icon" class="theme-icon" />
+            </a>
+        </div>
+        
+        
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+
+        <div class="layout-container">
+            <aside class="sidebar" id="sidebar">
+                <div class="sidebar-content">
+                    <div class="sidebar-header">
+                        <h1 class="site-title">
+                            <a href="/" class="site-title-link">YUNIAN PAN</a>
+                        </h1>
+                    </div>
+                    <nav class="sidebar-nav">
+                        <div class="nav-item-container">
+                            <a href="#" class="nav-link blog-toggle active" onclick="toggleBlogMenu(event)">
+                                Blog <span class="dropdown-arrow">▼</span>
+                            </a>
+                            <div class="submenu" id="blog-submenu">
+                                <a href="/post/about_me" class="submenu-link">About Me</a>
+                                <a href="/post/2022" class="submenu-link">2022</a>
+                                <a href="/post/2023" class="submenu-link">2023</a>
+                                <a href="/post/2024" class="submenu-link">2024</a>
+                                <a href="/post/2025" class="submenu-link">2025</a>
+                            </div>
+                        </div>
+                        <a href="/statement" class="nav-link ">Statement/CV</a>
+                        <a href="/contact" class="nav-link ">Contact</a>
+                        <a href="/photos" class="nav-link ">Photos</a>
+                    </nav>
+                    <div class="sidebar-footer">
+                        <div class="copyright">
+                            © 2022-2025 all rights reserved
+                        </div>
+                        <div class="social-icons">
+                            
+                            <a href="https://www.linkedin.com/in/unionpan/" title="Linkedin" class="social-link">
+                                <svg height="32px" width="32px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+    <rect x="2" y="9" width="4" height="12"></rect>
+    <circle cx="4" cy="4" r="2"></circle>
+</svg>
+                            </a>
+                            
+                            <a href="https://github.com/UnionPan" title="Github" class="social-link">
+                                <svg height="32px" width="32px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+    </path>
+</svg>
+                            </a>
+                            
+                            <a href="https://twitter.com/Union54572322" title="twitter" class="social-link">
+                                <svg height="32px" width="32px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
+    </path>
+</svg>
+                            </a>
+                            
+                            <a href="https://www.facebook.com/yunian.pan/" title="Facebook" class="social-link">
+                                <svg height="32px" width="32px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+</svg>
+                            </a>
+                            
+                            <a href="https://www.instagram.com/pyn_rodcutter/?hl=en" title="instagram" class="social-link">
+                                <svg height="32px" width="32px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+    <line x1="17.5" y1="6.5" x2="17.5" y2="6.5"></line>
+</svg>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </aside>
+            <main class="main-content">
+<div class="single-container">
+    <div class="archive">
+        
+        <h1 class="title is-1"></h1>
+        <hr class="title-content-separator">
+        
+        <div class="content article-content">
+            <div class="toc-container">
+                
+    <div class="post-toc">
+        
+            <aside>
+                <button id="tocButton" ><h4 id="contents" style="margin-left: 1vw;color:rgb(96, 134, 180);margin-bottom: 0;">CONTENTS</h4></button>
+                <div id="hide"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#preliminary-setting">Preliminary Setting</a>
+      <ul>
+        <li><a href="#the-matching-problem">The Matching Problem</a></li>
+      </ul>
+    </li>
+    <li><a href="#the-kantorovich-relaxation-and-dual">The Kantorovich Relaxation and Dual</a>
+      <ul>
+        <li></li>
+        <li><a href="#solution-to-the-dual">Solution to the Dual</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </aside>
+        
+    </div><script>
+    
+        let button = document.getElementById('tocButton');
+        let hide = document.getElementById("hide");
+        let contents=document.getElementById("contents");
+        button.addEventListener("click", function() {
+        if (hide.style.display!='block') {
+            hide.style.display='block'
+        } else {
+            hide.style.display='none'
+            contents.style.color='rgb(96, 134, 180)'
+        }
+        });
+    
+
+
+
+
+</script>
+            </div>
+            <h1 id="data-driven-monges-partition">Data-Driven Monge&rsquo;s Partition</h1>
+<p>There are many service centers in our city, such as MTA subway station, Vaccination sites, Wifi hot-spots, Blue Bicycles, hospitals, parking lots etc.. Meanwhile, there are so many people in need of these services who are distributed maybe according to some point processes. The question of how to efficiently make assignments between the demands and the service centers gives rise to a special type of problems called semi-discrete optimal transport.</p>
+<p>In this notebook I am going to explore how this semi-discrete optimal transport is solved through Monge&rsquo;s partition and how this partition can be achieved using some geospatial data.</p>
+<h2 id="preliminary-setting">Preliminary Setting</h2>
+<p>Let us denote the entire space as $\mathcal{X}$, (in a lot of cases this $\mathcal{X}$ is just some hull in a 2D plane.)
+The dirac-delta measure of service centers is $\nu = \sum_{i=1}^S \nu_s \delta_{x_s}$, where $x_s \in \mathcal{X} \ \ s = 1, \ldots, S$ are $S$ resource centers.
+The demand processes is a Poisson point process $\eta: \mathcal{X} \to \mathbf{N}$ ($\mathbf{N}$ is some $\sigma$-finite measure) with intensity measure $\lambda: \mathcal{X} \to \mathbb{R}_+$.</p>
+<p>The public utility of assgining a demand point $x \in \mathcal{X}$ to service center $x_s$ is $u_s(\cdot): \mathcal{X} \to \mathbb{R}$. We assume this utility is $u_s(x) =  C - |x - x_s|^2$, where $C$ is some constant.</p>
+<h3 id="the-matching-problem">The Matching Problem</h3>
+<p>First look at a natural possible solution where we partition the entire map so that each site is assigned some &lsquo;&lsquo;governed area&rsquo;&rsquo;,
+the allocation takes a form of an open subpartition of $\mathcal{X}$.</p>
+<p><em><strong>Definition</strong></em>
+The set of such allocation rule is:
+\begin{equation*}
+\mathcal{A} = \left{\mathbf{A} = (A_1, \ldots, A_S), A_s \text{ is an open subset of }\mathcal{X}, A_s \bigcap A_k = \emptyset \ \ \forall s \neq k\right}|
+\end{equation*}
+and the unallocated set is $A_0 : = \mathcal{X} - \bigcup_{s=1}^S A_s$.</p>
+<p>Now let the regional social welfare be $u(\mathbf{A})$, (i.e., the sum of utility,) by Campbell&rsquo;s formula
+\begin{align*}
+u(\mathbf{A}) = &amp; \sum_{s=1}^S \mathbb{E}\left[ \int_{A_s} u_s(x) \eta(dx) \right] \
+= &amp;\sum_{s=1}^S \int_{A_s} u_s(x)\lambda(dx)
+\end{align*}</p>
+<p><em><strong>The Problem</strong></em></p>
+<p>The incentive of a public planner is to maximize the regional social welfare, under the constraint such that every service center is fully loaded, (under the assumption that total demand is saturated.)</p>
+<p>\begin{align}
+\max_{\mathbf{A}\in \mathcal{A}}&amp;\quad u(\mathbf{A})  \
+\text{s.t. }&amp;\quad \nu_s  \leq \lambda(A_s)  \ \ \ s = 1,\ldots, S .
+\end{align}</p>
+<h4 id="constructing-such-a-problem">Constructing Such a Problem</h4>
+<p>In the sequel I am going to construct the two densities needed for our problem.</p>
+<p>I downloaded the data from <a href="https://data.cityofnewyork.us/Health/New-York-City-Locations-Providing-Seasonal-Flu-Vac/w9ei-idxz/data">NYC Open Data</a>, which provides the locations of seasonal flu vaccinatiion sites. Let&rsquo;s take a look at the locations by visualize it through $\texttt{seaborn}$.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> geopandas <span style="color:#66d9ef">as</span> gpd
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> pandas
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> pysal
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> seaborn
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> contextily
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#66d9ef">as</span> plt
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.cluster <span style="color:#f92672">import</span> DBSCAN
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#from sklearn.neighbors import KernelDensity</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>v_sites <span style="color:#f92672">=</span> pandas<span style="color:#f92672">.</span>read_csv(
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;data/New_York_City_Locations_Providing_Seasonal_Flu_Vaccinations.csv&#39;</span>)
+</span></span><span style="display:flex;"><span>g_sites <span style="color:#f92672">=</span> gpd<span style="color:#f92672">.</span>GeoDataFrame(v_sites, geometry<span style="color:#f92672">=</span>gpd<span style="color:#f92672">.</span>points_from_xy(v_sites<span style="color:#f92672">.</span>Longitude, v_sites<span style="color:#f92672">.</span>Latitude))
+</span></span><span style="display:flex;"><span>g_sites<span style="color:#f92672">.</span>head()
+</span></span></code></pre></div><!-- raw HTML omitted -->
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+<p><!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># The transformation into a geopandas dataframe</span>
+</span></span><span style="display:flex;"><span>g_sites<span style="color:#f92672">.</span>plot(figsize <span style="color:#f92672">=</span> (<span style="color:#ae81ff">12</span>,<span style="color:#ae81ff">12</span>))
+</span></span></code></pre></div><pre><code>&lt;AxesSubplot:&gt;
+</code></pre>
+<p><img src="MongePartition_files/MongePartition_5_1.png" alt="png"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>joint_axes <span style="color:#f92672">=</span> seaborn<span style="color:#f92672">.</span>jointplot(
+</span></span><span style="display:flex;"><span>    x<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Longitude&#39;</span>, y<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Latitude&#39;</span>, data<span style="color:#f92672">=</span>v_sites, s<span style="color:#f92672">=</span><span style="color:#ae81ff">0.8</span>, height<span style="color:#f92672">=</span><span style="color:#ae81ff">15</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>contextily<span style="color:#f92672">.</span>add_basemap(
+</span></span><span style="display:flex;"><span>    joint_axes<span style="color:#f92672">.</span>ax_joint,
+</span></span><span style="display:flex;"><span>    crs<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;EPSG:4326&#34;</span>,
+</span></span><span style="display:flex;"><span>    source<span style="color:#f92672">=</span>contextily<span style="color:#f92672">.</span>providers<span style="color:#f92672">.</span>CartoDB<span style="color:#f92672">.</span>PositronNoLabels
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><p><img src="MongePartition_files/MongePartition_6_0.png" alt="png"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># For simplicity we assume that the capacity is index-irrelevant, assgining uniform mass to every site. </span>
+</span></span><span style="display:flex;"><span>site_pos <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>vstack([v_sites<span style="color:#f92672">.</span>Longitude, v_sites<span style="color:#f92672">.</span>Latitude])
+</span></span><span style="display:flex;"><span>site_measure <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;pos&#34;</span>: site_pos<span style="color:#f92672">.</span>T, <span style="color:#e6db74">&#34;cap&#34;</span>: (<span style="color:#ae81ff">1</span><span style="color:#f92672">/</span>len(site_pos[<span style="color:#ae81ff">0</span>])) <span style="color:#f92672">*</span> np<span style="color:#f92672">.</span>ones(len(site_pos[<span style="color:#ae81ff">0</span>]))}
+</span></span></code></pre></div><h4 id="kernel-density-and-hexbin-plot-as-two-types-of-density-estimation">Kernel Density and Hexbin Plot as Two Types of Density Estimation</h4>
+<p>A hexbin plot is simply a hexagonal grid that counts how many points fall within each grid cell, so it is actually a <em>spatial</em> or <em>$2$-dimensional histogram</em>.</p>
+<p>Kernel density estimator uses a non-parametric smooth kernel bump $\frac{1}{h}K(\frac{x - y}{h})$ such that $\int_{-\infty}^{\infty} \frac{1}{h}K(\frac{x - y}{h})dx = 1$ and $\int_{-\infty}^{\infty} \frac{x}{h}K(\frac{x - y}{h})dx = 0 $ to describe the grid bins. The approximated density in $2$-dimensional case is:
+\begin{equation*}
+f(x, y) = \frac{1}{n} \sum_{i=1}^n \frac{1}{h_1 h_2} K(\frac{x - X_i}{h_1}) K(\frac{y - Y_i}{h_2})
+\end{equation*}
+Often times we simply choose $K(\frac{x - y}{h})$ to be Gaussian kernel:
+$$
+K(x, y) \propto \exp(- \frac{|x - y|^2}{2h^2})
+$$</p>
+<p>Obviously for the discrete measure we do not need this type of modeling, so it is just for illustration purpose. Later when we deal with diffusing measure we might need these density estimators.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>f, ax <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">25</span>, <span style="color:#ae81ff">18</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ax[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>hexbin(
+</span></span><span style="display:flex;"><span>    v_sites[<span style="color:#e6db74">&#39;Longitude&#39;</span>],
+</span></span><span style="display:flex;"><span>    v_sites[<span style="color:#e6db74">&#39;Latitude&#39;</span>],
+</span></span><span style="display:flex;"><span>    gridsize<span style="color:#f92672">=</span><span style="color:#ae81ff">50</span>,
+</span></span><span style="display:flex;"><span>    linewidths<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>,
+</span></span><span style="display:flex;"><span>    alpha<span style="color:#f92672">=</span><span style="color:#ae81ff">0.5</span>,
+</span></span><span style="display:flex;"><span>    cmap<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;viridis_r&#39;</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>contextily<span style="color:#f92672">.</span>add_basemap(
+</span></span><span style="display:flex;"><span>    ax[<span style="color:#ae81ff">0</span>], crs<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;EPSG:4326&#34;</span>,
+</span></span><span style="display:flex;"><span>    source<span style="color:#f92672">=</span>contextily<span style="color:#f92672">.</span>providers<span style="color:#f92672">.</span>CartoDB<span style="color:#f92672">.</span>Positron
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ax[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> seaborn<span style="color:#f92672">.</span>kdeplot(
+</span></span><span style="display:flex;"><span>    v_sites[<span style="color:#e6db74">&#39;Longitude&#39;</span>],
+</span></span><span style="display:flex;"><span>    v_sites[<span style="color:#e6db74">&#39;Latitude&#39;</span>],
+</span></span><span style="display:flex;"><span>    n_levels<span style="color:#f92672">=</span><span style="color:#ae81ff">50</span>,
+</span></span><span style="display:flex;"><span>    shade<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>,
+</span></span><span style="display:flex;"><span>    alpha<span style="color:#f92672">=</span><span style="color:#ae81ff">0.55</span>,
+</span></span><span style="display:flex;"><span>    cmap<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;viridis_r&#39;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>contextily<span style="color:#f92672">.</span>add_basemap(
+</span></span><span style="display:flex;"><span>    ax[<span style="color:#ae81ff">1</span>], crs<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;EPSG:4326&#34;</span>,
+</span></span><span style="display:flex;"><span>    source<span style="color:#f92672">=</span>contextily<span style="color:#f92672">.</span>providers<span style="color:#f92672">.</span>CartoDB<span style="color:#f92672">.</span>Positron
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><pre><code>/Users/union/anaconda3/envs/eco/lib/python3.9/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variable as a keyword arg: y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+</code></pre>
+<p><img src="MongePartition_files/MongePartition_9_1.png" alt="png"></p>
+<h4 id="what-about-the-real-density">What about the real density?</h4>
+<p>Now we have obtained the point locations, and we assigned uniform point masses to each of them representing the &lsquo;&lsquo;capacity&rsquo;&rsquo;, so we are done constructing the first discrete measure.</p>
+<p>Now what we need is the populational density of demand. Unfortunately even the Poisson type of point data is unavailable, as it has to be the dataset of spatial-tagged disease cases. So,
+to get the demand density distribution, we approximate it from a NYC census data, downloaded from <a href="https://www.kaggle.com/muonneutrino/mapping-new-york-city-census-data/data">Kaggle Mapping New York City Census Data</a>. There are two files we can consider. The first one being the census block, which contains the exact locations of the blocks being censored, the block codes, county and state names. The second one contains the census tracts, the county, borough names and exact populations calculated for each block.</p>
+<p>Let&rsquo;s first merge the two pandas data frames to obtain the point data, each point contains all the information carried by the census tract statistics.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>blocks <span style="color:#f92672">=</span> pandas<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;data/census_block_loc.csv&#39;</span>)
+</span></span><span style="display:flex;"><span>census <span style="color:#f92672">=</span> pandas<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;data/nyc_census_tracts.csv&#39;</span>, index_col<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>blocks <span style="color:#f92672">=</span> blocks[blocks<span style="color:#f92672">.</span>County<span style="color:#f92672">.</span>isin(
+</span></span><span style="display:flex;"><span>    [<span style="color:#e6db74">&#39;Bronx&#39;</span>, <span style="color:#e6db74">&#39;Kings&#39;</span>, <span style="color:#e6db74">&#39;New York&#39;</span>, <span style="color:#e6db74">&#39;Queens&#39;</span>, <span style="color:#e6db74">&#39;Richmond&#39;</span>])]
+</span></span><span style="display:flex;"><span>blocks[<span style="color:#e6db74">&#39;Tract&#39;</span>] <span style="color:#f92672">=</span> blocks<span style="color:#f92672">.</span>BlockCode <span style="color:#f92672">//</span> <span style="color:#ae81ff">10000</span>
+</span></span><span style="display:flex;"><span>blocks <span style="color:#f92672">=</span> blocks<span style="color:#f92672">.</span>merge(census, how<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;left&#39;</span>,
+</span></span><span style="display:flex;"><span>                      right_index<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>, left_on<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Tract&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>blocks<span style="color:#f92672">.</span>head()
+</span></span></code></pre></div><!-- raw HTML omitted -->
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+<p><!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
+<h4 id="start-from-populational-density">Start From Populational Density</h4>
+<p>We choose the total population as a number that labels the specific points with their associated populational density, so still they form a discrete point measure. But it is at least helpful to visualize the populational density through some colormap.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>latmin <span style="color:#f92672">=</span> <span style="color:#ae81ff">40.48</span>
+</span></span><span style="display:flex;"><span>lonmin <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">74.28</span>
+</span></span><span style="display:flex;"><span>latmax <span style="color:#f92672">=</span> <span style="color:#ae81ff">40.93</span>
+</span></span><span style="display:flex;"><span>lonmax <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">73.65</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>lat_vals <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>mgrid[latmin:latmax:<span style="color:#ae81ff">200</span>j]
+</span></span><span style="display:flex;"><span>lon_vals <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>mgrid[lonmin:lonmax:<span style="color:#ae81ff">200</span>j]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>mp_vals <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>zeros([<span style="color:#ae81ff">200</span>, <span style="color:#ae81ff">200</span>])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>d_lat <span style="color:#f92672">=</span> lat_vals[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">-</span> lat_vals[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>d_lon <span style="color:#f92672">=</span> lon_vals[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">-</span> lon_vals[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> lat, lon, val <span style="color:#f92672">in</span> zip(blocks<span style="color:#f92672">.</span>Latitude, blocks<span style="color:#f92672">.</span>Longitude, blocks<span style="color:#f92672">.</span>TotalPop):
+</span></span><span style="display:flex;"><span>    lat_idx <span style="color:#f92672">=</span> int(np<span style="color:#f92672">.</span>rint((lat <span style="color:#f92672">-</span> latmin) <span style="color:#f92672">/</span> d_lat))
+</span></span><span style="display:flex;"><span>    lon_idx <span style="color:#f92672">=</span> int(np<span style="color:#f92672">.</span>rint((lon <span style="color:#f92672">-</span> lonmin) <span style="color:#f92672">/</span> d_lon))
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> np<span style="color:#f92672">.</span>isnan(val):
+</span></span><span style="display:flex;"><span>        mp_vals[lon_idx, lat_idx] <span style="color:#f92672">=</span> val
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>lon_mts <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>min(lon_vals), np<span style="color:#f92672">.</span>max(lon_vals)
+</span></span><span style="display:flex;"><span>lat_mts <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>min(lat_vals), np<span style="color:#f92672">.</span>max(lat_vals)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>fig, ax <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">15</span>,<span style="color:#ae81ff">15</span>)) 
+</span></span><span style="display:flex;"><span>ax<span style="color:#f92672">.</span>set(xlim<span style="color:#f92672">=</span>lon_mts, ylim<span style="color:#f92672">=</span>lat_mts)
+</span></span><span style="display:flex;"><span>contextily<span style="color:#f92672">.</span>add_basemap(ax, crs<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;EPSG:4326&#34;</span>, source<span style="color:#f92672">=</span>contextily<span style="color:#f92672">.</span>providers<span style="color:#f92672">.</span>CartoDB<span style="color:#f92672">.</span>Positron)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>im <span style="color:#f92672">=</span> ax<span style="color:#f92672">.</span>imshow(mp_vals<span style="color:#f92672">.</span>T, origin<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;lower&#39;</span>, cmap<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Greens&#39;</span>, extent<span style="color:#f92672">=</span>(np<span style="color:#f92672">.</span>min(lon_vals), np<span style="color:#f92672">.</span>max(lon_vals), np<span style="color:#f92672">.</span>min(lat_vals), np<span style="color:#f92672">.</span>max(lat_vals)))
+</span></span><span style="display:flex;"><span>ax<span style="color:#f92672">.</span>set_xlabel(<span style="color:#e6db74">&#39;Longitude&#39;</span>)
+</span></span><span style="display:flex;"><span>ax<span style="color:#f92672">.</span>set_ylabel(<span style="color:#e6db74">&#39;Latitude&#39;</span>)
+</span></span><span style="display:flex;"><span>ax<span style="color:#f92672">.</span>set_title(<span style="color:#e6db74">&#39;The population distributiion&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>colorbar(im, fraction<span style="color:#f92672">=</span><span style="color:#ae81ff">0.035</span>, pad<span style="color:#f92672">=</span><span style="color:#ae81ff">0.04</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><p><img src="MongePartition_files/MongePartition_13_0.png" alt="png"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>entire_pop <span style="color:#f92672">=</span> int(np<span style="color:#f92672">.</span>sum(blocks<span style="color:#f92672">.</span>TotalPop))
+</span></span><span style="display:flex;"><span>num_tracts <span style="color:#f92672">=</span> len(blocks<span style="color:#f92672">.</span>Longitude)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;The entire population in NYC is </span><span style="color:#e6db74">{}</span><span style="color:#e6db74">, censored in </span><span style="color:#e6db74">{}</span><span style="color:#e6db74"> tracts </span><span style="color:#ae81ff">\n</span><span style="color:#e6db74"> </span><span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span><span style="color:#e6db74">        The city area is in the bounded box of longitudes [</span><span style="color:#e6db74">{}</span><span style="color:#e6db74"> </span><span style="color:#e6db74">{}</span><span style="color:#e6db74">] and latitudes [</span><span style="color:#e6db74">{}</span><span style="color:#e6db74"> </span><span style="color:#e6db74">{}</span><span style="color:#e6db74">]&#34;</span><span style="color:#f92672">.</span>
+</span></span><span style="display:flex;"><span>        format(entire_pop, num_tracts, lon_mts[<span style="color:#ae81ff">0</span>], 
+</span></span><span style="display:flex;"><span>        lon_mts[<span style="color:#ae81ff">1</span>], lat_mts[<span style="color:#ae81ff">0</span>], lat_mts[<span style="color:#ae81ff">1</span>]))
+</span></span></code></pre></div><pre><code>The entire population in NYC is 52551009, censored in 18053 tracts 
+         The city area is in the bounded box of longitudes [-74.28 -73.65] and latitudes [40.48 40.93]
+</code></pre>
+<p>Recall that the kernel density estimation is basically interpolating between the sampled points to predict the intensity of unsampled region, so the early view is that maybe we can also use the trick by fine-griding the entire 2D plane and apply the &lsquo;&lsquo;scaled&rsquo;&rsquo; version of density estimator, say
+\begin{equation*}
+\hat{\lambda}(x, y) = \frac{1}{\sum_i pop_i h_x h_y} \sum_{i=1}^N pop_i K(\frac{x - x_i}{h_x}) K(\frac{y - y_i}{h_y}),
+\end{equation*}
+where $\hat{\lambda}(x, y)$ is the estimated density at longitude $y$ and latitude $x$, $pop_i$ is the censored total population at point $(x_i, y_i)$</p>
+<p>To examine the correctness of this estimation, integrate the density over latitude and longitude
+\begin{equation*}
+\int_{- \infty}^{\infty} \int_{-\infty}^{\infty} \frac{1}{\sum_i pop_i h_x h_y} \sum_{i=1}^N pop_i K(\frac{x - x_i}{h_x}) K(\frac{y - y_i}{h_y}) dx dy = \frac{1}{\sum_i pop_i} \sum_{i=1}^N pop_i \int_{- \infty}^{\infty} \frac{1}{h_x} K(\frac{x - x_i}{h_x}) dx \int_{-\infty}^{\infty} \frac{1}{h_y} K(\frac{y - y_i}{h_y})  dy  = \frac{1}{\sum_i pop_i} \sum_i pop_i = 1
+\end{equation*}</p>
+<p>Note that this demand estimation has some issues: first, it does not really make sense to integrate over an infinite 2-D plane, however for our application it&rsquo;s sufficient as the tail will &lsquo;&lsquo;fade&rsquo;&rsquo; near the boundary; second, we have to consider the plausibility to use census data as a source of demand sampling.  But since now I don&rsquo;t have many choices :(,  I will briefly use this for illustration purposes. If there are spatial-tagged discease data poping up, maybe then we can perform some more accurate geospatial analysis.</p>
+<p>I am going to use the libary scipy Gaussian Kernel density estimation module to obtain the population density since it has the weighted implementation.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> scipy <span style="color:#f92672">import</span> stats
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>points <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>stack([np<span style="color:#f92672">.</span>array(blocks<span style="color:#f92672">.</span>Longitude), np<span style="color:#f92672">.</span>array(blocks<span style="color:#f92672">.</span>Latitude)])
+</span></span><span style="display:flex;"><span>pops <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>array(blocks<span style="color:#f92672">.</span>TotalPop)
+</span></span><span style="display:flex;"><span>pops[np<span style="color:#f92672">.</span>isnan(pops)] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>gkernel <span style="color:#f92672">=</span> stats<span style="color:#f92672">.</span>gaussian_kde(dataset<span style="color:#f92672">=</span>points, bw_method<span style="color:#f92672">=</span><span style="color:#66d9ef">None</span>, weights<span style="color:#f92672">=</span>pops)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>positions <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>stack([lat_vals<span style="color:#f92672">.</span>ravel(), lon_vals<span style="color:#f92672">.</span>ravel()])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Z <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>reshape(gkernel(positions)<span style="color:#f92672">.</span>T, lon_vals<span style="color:#f92672">.</span>shape)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#39;The kernel integration over the entire boundary is </span><span style="color:#e6db74">{}</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">.</span>format(gkernel<span style="color:#f92672">.</span>integrate_box(low_bounds<span style="color:#f92672">=</span>[np<span style="color:#f92672">.</span>min(lon_vals), np<span style="color:#f92672">.</span>min(lat_vals)], high_bounds<span style="color:#f92672">=</span>[np<span style="color:#f92672">.</span>max(lon_vals), np<span style="color:#f92672">.</span>max(lat_vals)])))
+</span></span></code></pre></div><pre><code>The kernel integration over the entire boundary is 0.9917503652964066
+</code></pre>
+<p>Just to verify the estimated density is close to the data by plotting the heatmap of kernel integration. It turns out the 2-loop integration is quite slow, (about 20 mins). What we finally will get is a [200, 200] matrix representing the populational density on the map.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>ker_vals <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>zeros((<span style="color:#ae81ff">200</span>, <span style="color:#ae81ff">200</span>))
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> lat_val <span style="color:#f92672">in</span> lat_vals:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> lon_val <span style="color:#f92672">in</span> lon_vals:
+</span></span><span style="display:flex;"><span>        lat_idx <span style="color:#f92672">=</span> int(np<span style="color:#f92672">.</span>rint((lat_val <span style="color:#f92672">-</span> latmin) <span style="color:#f92672">/</span> d_lat))
+</span></span><span style="display:flex;"><span>        lon_idx <span style="color:#f92672">=</span> int(np<span style="color:#f92672">.</span>rint((lon_val <span style="color:#f92672">-</span> lonmin) <span style="color:#f92672">/</span> d_lon))
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">#print(&#34;iter: lon {} lat {}&#34;.format(lat_idx, lon_idx))</span>
+</span></span><span style="display:flex;"><span>        ker_vals[lon_idx, lat_idx] <span style="color:#f92672">=</span> gkernel<span style="color:#f92672">.</span>integrate_box(low_bounds<span style="color:#f92672">=</span>[lon_val, lat_val], high_bounds<span style="color:#f92672">=</span>[lon_val<span style="color:#f92672">+</span>d_lon, lat_val<span style="color:#f92672">+</span>d_lat])
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>fig, ax <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">15</span>,<span style="color:#ae81ff">15</span>))
+</span></span><span style="display:flex;"><span>ax<span style="color:#f92672">.</span>set(xlim<span style="color:#f92672">=</span>lon_mts, ylim<span style="color:#f92672">=</span>lat_mts)
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#contextily.add_basemap(ax, crs=&#34;EPSG:4326&#34;, source=contextily.providers.CartoDB.Positron)</span>
+</span></span><span style="display:flex;"><span>im <span style="color:#f92672">=</span> ax<span style="color:#f92672">.</span>imshow(ker_vals<span style="color:#f92672">.</span>T, origin<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;lower&#39;</span>, cmap<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Purples&#39;</span>,
+</span></span><span style="display:flex;"><span>               extent<span style="color:#f92672">=</span>(np<span style="color:#f92672">.</span>min(lon_vals), np<span style="color:#f92672">.</span>max(lon_vals), np<span style="color:#f92672">.</span>min(lat_vals), np<span style="color:#f92672">.</span>max(lat_vals)))
+</span></span><span style="display:flex;"><span>ax<span style="color:#f92672">.</span>set_xlabel(<span style="color:#e6db74">&#39;Longitude&#39;</span>)
+</span></span><span style="display:flex;"><span>ax<span style="color:#f92672">.</span>set_ylabel(<span style="color:#e6db74">&#39;Latitude&#39;</span>)
+</span></span><span style="display:flex;"><span>ax<span style="color:#f92672">.</span>set_title(<span style="color:#e6db74">&#39;The estimated populational density&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>colorbar(im, fraction<span style="color:#f92672">=</span><span style="color:#ae81ff">0.035</span>, pad<span style="color:#f92672">=</span><span style="color:#ae81ff">0.04</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><p><img src="MongePartition_files/MongePartition_19_0.png" alt="png"></p>
+<h2 id="the-kantorovich-relaxation-and-dual">The Kantorovich Relaxation and Dual</h2>
+<p>It turns out the infinite dimensional problem can be solved by looking at its dual.</p>
+<p>Recall what we previously did is representing the transference plan $\operatorname{T}<em>{#}$ as $\mathbf{A}$, where $\operatorname{T}</em>{#}(x) = \sum_{x_s} x_s \mathbb{I}_{{ x \in A_s}}$.
+What this transference plan means is that for every individual in location $x$, he or she is going to be sent site $x_s$ if $x$ is in the partition governed by $x_s$, i.e., $x \in A_s$.
+However, we can define a more general transference plan that allows the splitting of population in the location $x$.</p>
+<p><em><strong>Definition</strong></em>
+A weak relaxation is a set of non-negative measure over $\mathcal{X}$:
+\begin{equation*}
+\boldsymbol{\lambda} := (\lambda_1, \lambda_2, \ldots, \lambda_S) \quad  \sum_{i=1}^S \lambda_i \leq \lambda \quad \lambda_0 = \lambda - \sum_{i=1}^S \lambda_i
+\end{equation*}</p>
+<p>Consider a more general partition which assign each site a positive measure $\lambda_s$, such that $\int_{\mathcal{X}}\lambda_{s}=\nu_{s}$ and $\sum_{s \in \mathcal{S}} \lambda_{s} \leq \lambda $, in this form of assignment the demand of the entire area is divided by $\boldsymbol{\lambda}$ and assigned to corresponding sites.</p>
+<p>The problem can be restated as finding a coupling $\pi \in \bar{\Pi}(\lambda, \nu)$ to maximize the total utility of assignment:</p>
+<p>\begin{align*}
+U &amp;:= \max_{\pi \in \bar{\Pi}(\lambda, \nu)} \int_{\mathcal{X} \times \mathcal{X}} u(x, y)\pi(dx, dy) \
+&amp;= \max_{\pi \in \bar{\Pi}(\lambda, \nu)} \int_{\mathcal{X}}\sum_{s \in \mathcal{X}_{\mathcal{S}}} u(x, s) \pi(dx, s),
+\end{align*}</p>
+<p>where $\bar{\Pi}(\lambda, \nu)$ is defined as:
+\begin{equation*}
+\bar{\Pi} (\lambda, \nu) = \left{\sum_{s \in \mathcal{S}} \delta_{x_{s}}(d y) \otimes \lambda_{s}(dx), \text { where } \int_{\mathcal{X}} \lambda_{s}=\nu_{s} \text { and } \sum_{s \in \mathcal{S}} \lambda_{s} \leq \lambda .\right}
+\end{equation*}</p>
+<p>This set of coupling can be thought of as a sum of naive independent couplings between site measure $\nu$ and splitted population measures $\lambda_s$, the splitted population measure sum up to at most $\lambda$.</p>
+<p>In analogue to the Monge-Kantorovich theory, define the set of dual profit-price pairs:
+$$
+\overline{\mathcal{J}}<em>{u}:={(\xi, p) \in C(\mathcal{X}) \times \mathbb{R}^{|S|} ; \quad \xi(x)+p_s \geq u(x, x_s) \ \ \forall(x, x_s) \in \mathcal{X} \times \mathcal{X}</em>{\mathcal{S}}}.
+$$ <br>
+This dual variable set has an interesting interpretation. Imagine you are a broker who helps the government to make vaccination recomendation for the customers by pricing the sites. For each customer at location $x$, you help the customer get $\xi(x)$ as a vaccination welfare, and if the customer goes to site $x_s$, and the government gets paid with price $p_s$. So the total utility made with your help is $ \xi(x) + p_s$ for customer $x$ going to site $x_s$, it has to satisfy that your interposition actually gives no shrinkage of the social welfare, i.e., $\xi(x)+p_s \geq u(x, x_s) $.</p>
+<p>The classical Kantorovich duality theorem says:</p>
+<p><em><strong>Theorem</strong></em>[Strong duality]
+If $\lambda(\mathcal{X}) = \nu(\mathcal{X})$,
+$$
+U = \inf_{(\xi, p ) \in \overline{J}<em>u}\int</em>{\mathcal{X}}\xi d\lambda + \sum_{s \in \mathcal{S}} p_s \nu_s.
+$$</p>
+<h4 id="the-dual-program">The Dual Program</h4>
+<p>Now we define a transformation that is related to the optimal pricing.</p>
+<p><em><strong>Definition</strong></em>
+[$u$-transform]
+For profit function $\xi \in \mathcal{C}(\mathcal{X})$, its $u$-transform is
+\begin{equation*}
+\xi^u_s = \sup_{x \in \mathcal{X}} u(x, x_s) - \xi(x)
+\end{equation*}
+for price vector $p \in \R^S$, its $u$-transform is
+\begin{equation*}
+p^u(x) = \sup_{s \in \mathcal{S}}u(x, x_s) - p_s
+\end{equation*}</p>
+<p><em><strong>Definition</strong></em>
+[$u$-convexity]
+$\xi$ is $u$-convex if it satisfies that $\xi = p^u$ for some $p \in \mathbb{R}^S$, similarly, $p$ is $u$-convex if it satisfies that $p = \xi^u$ for some $\xi \in C(\mathcal{X})$. Denote the set of $u$-convex functions as $\mathcal{U}_{\xi}$ and $\mathcal{U}_p$.</p>
+<p>One important property is that $\xi$ is $u$-convex if.f $\xi^{uu} = \xi$, and the same holds for $p$. By this property it can be shown that $\R^S \subset \mathcal{U}<em>p  $ ($\forall p \in \R^S$, $p^{uu} = p$), thus $\mathcal{U}<em>p = \R^S$.
+Without such simplification, the significance is that by \cite{villani2009optimal}, when the source and target measure is balanced one can narrow the searching scope in the set of $u$-convex functions $\mathcal{U}</em>{\xi}$ or $\mathcal{U}</em>{p}$.</p>
+<h4 id="strong-duality-restate">Strong Duality Restate</h4>
+<p><em><strong>Theorem</strong></em>[Strong duality (unbalanced)]
+The primal problem can be reduced to its dual form: if $\lambda(\mathcal{X}) &gt; \nu(\mathcal{X})$, then
+$$U = \inf_{p \in \mathcal{U}<em>p; p\geq 0} \int</em>{\mathcal{X}} [p^u]<em>+ d\lambda + \sum</em>{i=1}^Sp_i \nu_i,$$ where $[p^u]_+$ gives the optimal partition.</p>
+<p>The advantage of such dual transform is that instead of directly looking for a infinite-dimensional partition, one optimize $p$ over finite dimensional space $\R^S_+$, computing $u$-transform of $p$ is equivalent to finding $p$-weighted partition, denoted as $\mathbf{A}^p = (A_1^p, \ldots, A^p_S)$, where
+$$
+A^p_s = {x \in \mathcal{X} \ \ [u(x, x_s) - p_s]<em>+ \geq [u(x, x_j) - p_j]</em>+ \ \  \forall j \neq s}
+$$
+Note that if $u(x,x_s)$ is the negative Euclidean distance plus a large constant, the partition coincides with $p$-weighted Voronoi diagram.</p>
+<h3 id="solution-to-the-dual">Solution to the Dual</h3>
+<p>Let the dual objective function be $\Phi(\cdot): \R^S \to \R$,
+\begin{equation*}
+\Phi(p) = \int_{\mathcal{X}} \sup_{s\in \mathcal{S}}[u(x, x_s) - p_s]<em>+ d\lambda(x) + \sum</em>{s\in\mathcal{S}} p_s \nu_s
+\end{equation*}</p>
+<p><em><strong>Lemma</strong></em>[Characterization of $\Phi$] $\Phi$ is convex and continuously differentiable with
+$$
+\frac{\partial \Phi (p)}{\partial p_s} = \nu_s - \lambda(A^p_s)<br>
+$$</p>
+<p>Thus we can leverage gradient descent $ p \leftarrow p  - \alpha_t \nabla_p \Phi$ to solve the problem. This gradient has a quite straightforward interpretation which is the demand-capacity differences. Intuitively if the demand is higher than the capacity then the price goes higher such that the assigned partition will be smaller, and vice versa.</p>
+<p>Now we are at least ready to approach to the partition problem, with sites measure $\nu$, estimated density $\hat{\lambda}$, and shifted quadratic utility $u_s$.
+The first task is to calculate and plot $A_p$, it turns out that given a price $p$, the partition is just a set of adjacent polygons.</p>
+<p>We can plot that under no whatsoever assumptions about the demand density, i.e., population uniformly distributed, what the Voronoi-diagram looks like. But we have to develop some machinaries to calculate and display the polygons induced by the diagrams. The following code (<a href="https://gist.github.com/sunayana/a3a564058e97752f726ca65d56fab529">author: sunayana</a>) provides an implementation to obtain the weighted voronoi cells.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e">## from https://gist.github.com/sunayana/a3a564058e97752f726ca65d56fab529</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> itertools
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> scipy.spatial <span style="color:#f92672">import</span> ConvexHull
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> matplotlib.collections <span style="color:#f92672">import</span> LineCollection
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">disc_uniform_pick</span>(N):
+</span></span><span style="display:flex;"><span>    angle <span style="color:#f92672">=</span> (<span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> np<span style="color:#f92672">.</span>pi) <span style="color:#f92672">*</span> np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>random(N)
+</span></span><span style="display:flex;"><span>    out <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>stack([np<span style="color:#f92672">.</span>cos(angle), np<span style="color:#f92672">.</span>sin(angle)], axis<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>    out <span style="color:#f92672">*=</span> np<span style="color:#f92672">.</span>sqrt(np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>random(N))[:,<span style="color:#66d9ef">None</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> out
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">norm2</span>(X):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> np<span style="color:#f92672">.</span>sqrt(np<span style="color:#f92672">.</span>sum(X <span style="color:#f92672">**</span> <span style="color:#ae81ff">2</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">normalized</span>(X):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> X <span style="color:#f92672">/</span> norm2(X)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## ------ Delaunay triangulation -----------------</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_triangle_normal</span>(A, B, C):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> normalized(np<span style="color:#f92672">.</span>cross(A, B) <span style="color:#f92672">+</span> np<span style="color:#f92672">.</span>cross(B, C) <span style="color:#f92672">+</span> np<span style="color:#f92672">.</span>cross(C, A))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_power_circumcenter</span>(A, B, C):
+</span></span><span style="display:flex;"><span>    N <span style="color:#f92672">=</span> get_triangle_normal(A, B, C)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> (<span style="color:#f92672">-</span><span style="color:#ae81ff">.5</span> <span style="color:#f92672">/</span> N[<span style="color:#ae81ff">2</span>]) <span style="color:#f92672">*</span> N[:<span style="color:#ae81ff">2</span>] 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">is_ccw_triangle</span>(A, B, C):
+</span></span><span style="display:flex;"><span>    M <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>concatenate([np<span style="color:#f92672">.</span>stack([A, B, C]), np<span style="color:#f92672">.</span>ones((<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">1</span>))], axis<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> np<span style="color:#f92672">.</span>linalg<span style="color:#f92672">.</span>det(M) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_power_triangulation</span>(S, R):
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Compute the lifted weighted points</span>
+</span></span><span style="display:flex;"><span>    S_norm <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>sum(S <span style="color:#f92672">**</span> <span style="color:#ae81ff">2</span>, axis<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>) <span style="color:#f92672">-</span> R <span style="color:#f92672">**</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>    S_lifted <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>concatenate([S, S_norm[:, <span style="color:#66d9ef">None</span>]], axis<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Special case for 3 points</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> S<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">==</span> <span style="color:#ae81ff">3</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> is_ccw_triangle(S[<span style="color:#ae81ff">0</span>], S[<span style="color:#ae81ff">1</span>], S[<span style="color:#ae81ff">2</span>]):
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> [[<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>]], np<span style="color:#f92672">.</span>array([get_power_circumcenter(<span style="color:#f92672">*</span>S_lifted)])
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> [[<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>]], np<span style="color:#f92672">.</span>array([get_power_circumcenter(<span style="color:#f92672">*</span>S_lifted)])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Compute the convex hull of the lifted weighted points</span>
+</span></span><span style="display:flex;"><span>    hull <span style="color:#f92672">=</span> ConvexHull(S_lifted)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Extract the Delaunay triangulation from the lower hull</span>
+</span></span><span style="display:flex;"><span>    tri_list <span style="color:#f92672">=</span> tuple([a, b, c] <span style="color:#66d9ef">if</span> is_ccw_triangle(S[a], S[b], S[c]) <span style="color:#66d9ef">else</span> [
+</span></span><span style="display:flex;"><span>                     a, c, b] <span style="color:#66d9ef">for</span> (a, b, c), eq <span style="color:#f92672">in</span> zip(hull<span style="color:#f92672">.</span>simplices, hull<span style="color:#f92672">.</span>equations) <span style="color:#66d9ef">if</span> eq[<span style="color:#ae81ff">2</span>] <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Compute the Voronoi points</span>
+</span></span><span style="display:flex;"><span>    V <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>array([get_power_circumcenter(<span style="color:#f92672">*</span>S_lifted[tri]) <span style="color:#66d9ef">for</span> tri <span style="color:#f92672">in</span> tri_list])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Job done</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> tri_list, V
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># --- Compute Voronoi cells ---------------------------------------------------</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Order the segments</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">order_segment_list</span>(segment_list):
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Pick the first element</span>
+</span></span><span style="display:flex;"><span>    first <span style="color:#f92672">=</span> min((seg[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">0</span>], i) <span style="color:#66d9ef">for</span> i, seg <span style="color:#f92672">in</span> enumerate(segment_list))[<span style="color:#ae81ff">1</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># In-place ordering</span>
+</span></span><span style="display:flex;"><span>    segment_list[<span style="color:#ae81ff">0</span>], segment_list[first] <span style="color:#f92672">=</span> segment_list[first], segment_list[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(len(segment_list) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(i <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, len(segment_list)):
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> segment_list[i][<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">1</span>] <span style="color:#f92672">==</span> segment_list[j][<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">0</span>]:
+</span></span><span style="display:flex;"><span>                segment_list[i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>], segment_list[j] <span style="color:#f92672">=</span> segment_list[j], segment_list[i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>]
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Job done</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> segment_list
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#39;&#39;&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Compute the segments and half-lines that delimits each Voronoi cell
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  * The segments are oriented so that they are in CCW order
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  * Each cell is a list of (i, j), (A, U, tmin, tmax) where
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">     * i, j are the indices of two ends of the segment. Segments end points are
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">       the circumcenters. If i or j is set to None, then it&#39;s an infinite end
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">     * A is the origin of the segment
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">     * U is the direction of the segment, as a unit vector
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">     * tmin is the parameter for the left end of the segment. Can be -1, for minus infinity
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">     * tmax is the parameter for the right end of the segment. Can be -1, for infinity
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">     * Therefore, the endpoints are [A + tmin * U, A + tmax * U]
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#39;&#39;&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_voronoi_cells</span>(S, V, tri_list):
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Keep track of which circles are included in the triangulation</span>
+</span></span><span style="display:flex;"><span>    vertices_set <span style="color:#f92672">=</span> frozenset(itertools<span style="color:#f92672">.</span>chain(<span style="color:#f92672">*</span>tri_list))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Keep track of which edge separate which triangles</span>
+</span></span><span style="display:flex;"><span>    edge_map <span style="color:#f92672">=</span> {}
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> i, tri <span style="color:#f92672">in</span> enumerate(tri_list):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> edge <span style="color:#f92672">in</span> itertools<span style="color:#f92672">.</span>combinations(tri, <span style="color:#ae81ff">2</span>):
+</span></span><span style="display:flex;"><span>            edge <span style="color:#f92672">=</span> tuple(sorted(edge))
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> edge <span style="color:#f92672">in</span> edge_map:
+</span></span><span style="display:flex;"><span>                edge_map[edge]<span style="color:#f92672">.</span>append(i)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>                edge_map[edge] <span style="color:#f92672">=</span> [i]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># For each triangle</span>
+</span></span><span style="display:flex;"><span>    voronoi_cell_map <span style="color:#f92672">=</span> {i: [] <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> vertices_set}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> i, (a, b, c) <span style="color:#f92672">in</span> enumerate(tri_list):
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># For each edge of the triangle</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> u, v, w <span style="color:#f92672">in</span> ((a, b, c), (b, c, a), (c, a, b)):
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># Finite Voronoi edge</span>
+</span></span><span style="display:flex;"><span>            edge <span style="color:#f92672">=</span> tuple(sorted((u, v)))
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> len(edge_map[edge]) <span style="color:#f92672">==</span> <span style="color:#ae81ff">2</span>:
+</span></span><span style="display:flex;"><span>                j, k <span style="color:#f92672">=</span> edge_map[edge]
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> k <span style="color:#f92672">==</span> i:
+</span></span><span style="display:flex;"><span>                    j, k <span style="color:#f92672">=</span> k, j
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e"># Compute the segment parameters</span>
+</span></span><span style="display:flex;"><span>                U <span style="color:#f92672">=</span> V[k] <span style="color:#f92672">-</span> V[j]
+</span></span><span style="display:flex;"><span>                U_norm <span style="color:#f92672">=</span> norm2(U)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e"># Add the segment</span>
+</span></span><span style="display:flex;"><span>                voronoi_cell_map[u]<span style="color:#f92672">.</span>append(
+</span></span><span style="display:flex;"><span>                    ((j, k), (V[j], U <span style="color:#f92672">/</span> U_norm, <span style="color:#ae81ff">0</span>, U_norm)))
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e"># Infinite Voronoi edge</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e"># Compute the segment parameters</span>
+</span></span><span style="display:flex;"><span>                A, B, C, D <span style="color:#f92672">=</span> S[u], S[v], S[w], V[i]
+</span></span><span style="display:flex;"><span>                U <span style="color:#f92672">=</span> normalized(B <span style="color:#f92672">-</span> A)
+</span></span><span style="display:flex;"><span>                I <span style="color:#f92672">=</span> A <span style="color:#f92672">+</span> np<span style="color:#f92672">.</span>dot(D <span style="color:#f92672">-</span> A, U) <span style="color:#f92672">*</span> U
+</span></span><span style="display:flex;"><span>                W <span style="color:#f92672">=</span> normalized(I <span style="color:#f92672">-</span> D)
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> np<span style="color:#f92672">.</span>dot(W, I <span style="color:#f92672">-</span> C) <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>                    W <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>W
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e"># Add the segment</span>
+</span></span><span style="display:flex;"><span>                voronoi_cell_map[u]<span style="color:#f92672">.</span>append(
+</span></span><span style="display:flex;"><span>                    ((edge_map[edge][<span style="color:#ae81ff">0</span>], <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>), (D,  W, <span style="color:#ae81ff">0</span>, np<span style="color:#f92672">.</span>Inf)))
+</span></span><span style="display:flex;"><span>                voronoi_cell_map[v]<span style="color:#f92672">.</span>append(
+</span></span><span style="display:flex;"><span>                    ((<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, edge_map[edge][<span style="color:#ae81ff">0</span>]), (D, <span style="color:#f92672">-</span>W, <span style="color:#f92672">-</span>np<span style="color:#f92672">.</span>Inf, <span style="color:#ae81ff">0</span>)))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Job done</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> {i: order_segment_list(segment_list) <span style="color:#66d9ef">for</span> i, segment_list <span style="color:#f92672">in</span> voronoi_cell_map<span style="color:#f92672">.</span>items()}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># --- Plot all the things -----------------------------------------------------</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">display</span>(S, R, tri_list, voronoi_cell_map):
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Setup</span>
+</span></span><span style="display:flex;"><span>    fig, ax <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(figsize <span style="color:#f92672">=</span> (<span style="color:#ae81ff">18</span>,<span style="color:#ae81ff">12</span>))
+</span></span><span style="display:flex;"><span>    plt<span style="color:#f92672">.</span>axis(<span style="color:#e6db74">&#39;equal&#39;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">#plt.axis(&#39;off&#39;)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Set min/max display size, as Matplotlib does it wrong</span>
+</span></span><span style="display:flex;"><span>    min_corner <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>amin(S, axis<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>) <span style="color:#f92672">-</span> np<span style="color:#f92672">.</span>max(R)
+</span></span><span style="display:flex;"><span>    max_corner <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>amax(S, axis<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>) <span style="color:#f92672">+</span> np<span style="color:#f92672">.</span>max(R)
+</span></span><span style="display:flex;"><span>    plt<span style="color:#f92672">.</span>xlim((min_corner[<span style="color:#ae81ff">0</span>], max_corner[<span style="color:#ae81ff">0</span>]))
+</span></span><span style="display:flex;"><span>    plt<span style="color:#f92672">.</span>ylim((min_corner[<span style="color:#ae81ff">1</span>], max_corner[<span style="color:#ae81ff">1</span>]))
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">#print(min_corner[0], max_corner[0], min_corner[1], max_corner[1])</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Plot the sites</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> Si, Ri <span style="color:#f92672">in</span> zip(S, R):
+</span></span><span style="display:flex;"><span>        ax<span style="color:#f92672">.</span>add_artist(plt<span style="color:#f92672">.</span>Circle(Si, <span style="color:#ae81ff">0.001</span>, fill<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>, alpha<span style="color:#f92672">=</span><span style="color:#ae81ff">.4</span>,
+</span></span><span style="display:flex;"><span>                      lw<span style="color:#f92672">=</span><span style="color:#ae81ff">0.</span>, color<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;#8080f0&#39;</span>, zorder<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    contextily<span style="color:#f92672">.</span>add_basemap(ax, crs<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;EPSG:4326&#34;</span>,
+</span></span><span style="display:flex;"><span>                           source<span style="color:#f92672">=</span>contextily<span style="color:#f92672">.</span>providers<span style="color:#f92672">.</span>Stamen<span style="color:#f92672">.</span>TonerLabels)
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Plot the power triangulation</span>
+</span></span><span style="display:flex;"><span>    edge_set <span style="color:#f92672">=</span> frozenset(tuple(sorted(edge))
+</span></span><span style="display:flex;"><span>                         <span style="color:#66d9ef">for</span> tri <span style="color:#f92672">in</span> tri_list <span style="color:#66d9ef">for</span> edge <span style="color:#f92672">in</span> itertools<span style="color:#f92672">.</span>combinations(tri, <span style="color:#ae81ff">2</span>))
+</span></span><span style="display:flex;"><span>    line_list <span style="color:#f92672">=</span> LineCollection([(S[i], S[j])
+</span></span><span style="display:flex;"><span>                               <span style="color:#66d9ef">for</span> i, j <span style="color:#f92672">in</span> edge_set], lw<span style="color:#f92672">=</span><span style="color:#ae81ff">1.</span>, colors<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;.9&#39;</span>)
+</span></span><span style="display:flex;"><span>    line_list<span style="color:#f92672">.</span>set_zorder(<span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>    ax<span style="color:#f92672">.</span>add_collection(line_list)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Plot the Voronoi cells</span>
+</span></span><span style="display:flex;"><span>    edge_map <span style="color:#f92672">=</span> {}
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> segment_list <span style="color:#f92672">in</span> voronoi_cell_map<span style="color:#f92672">.</span>values():
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> edge, (A, U, tmin, tmax) <span style="color:#f92672">in</span> segment_list:
+</span></span><span style="display:flex;"><span>            edge <span style="color:#f92672">=</span> tuple(sorted(edge))
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> edge <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> edge_map:
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> tmax <span style="color:#f92672">is</span> np<span style="color:#f92672">.</span>Inf:
+</span></span><span style="display:flex;"><span>                    tmax <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> tmin <span style="color:#f92672">is</span> <span style="color:#f92672">-</span>np<span style="color:#f92672">.</span>Inf:
+</span></span><span style="display:flex;"><span>                    tmin <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                edge_map[edge] <span style="color:#f92672">=</span> (A <span style="color:#f92672">+</span> tmin <span style="color:#f92672">*</span> U, A <span style="color:#f92672">+</span> tmax <span style="color:#f92672">*</span> U)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    line_list <span style="color:#f92672">=</span> LineCollection(edge_map<span style="color:#f92672">.</span>values(), lw<span style="color:#f92672">=</span><span style="color:#ae81ff">1.</span>, colors<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;b&#39;</span>)
+</span></span><span style="display:flex;"><span>    line_list<span style="color:#f92672">.</span>set_zorder(<span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>    ax<span style="color:#f92672">.</span>add_collection(line_list)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Job done</span>
+</span></span><span style="display:flex;"><span>    plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><p>In implementation, the weighted voronoi diagram is computed through lifting the geographical locations $x_s = (lat_s, lon_s)$ to 3-dimensional $x_s^{3D} = (lat_s, lon_s, \sqrt{C -p_s})$ such that the expression $-u(x, x_s) + p_s  = - C + (lat - lat_s)^2 + (lon - lon_s)^2  + p_s =  - | x^{3D} - x_s^{3D} |^2$, where any $x^{3D} = (lat, lon, 0)$.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Now we can show the Voronoi diagram using the test_sites and 0 weights.</span>
+</span></span><span style="display:flex;"><span>test_sites, test_weights <span style="color:#f92672">=</span> site_measure[<span style="color:#e6db74">&#34;pos&#34;</span>], np<span style="color:#f92672">.</span>zeros(len(site_measure[<span style="color:#e6db74">&#34;pos&#34;</span>]))
+</span></span><span style="display:flex;"><span>tri_list, vor_vert <span style="color:#f92672">=</span> get_power_triangulation(test_sites, test_weights)
+</span></span><span style="display:flex;"><span>voronoi_cell_map <span style="color:#f92672">=</span> get_voronoi_cells(test_sites, vor_vert, tri_list)
+</span></span><span style="display:flex;"><span>display(test_sites, test_weights, tri_list, voronoi_cell_map)
+</span></span></code></pre></div><p><img src="MongePartition_files/MongePartition_26_0.png" alt="png"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> tqdm <span style="color:#f92672">import</span> tqdm
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> shapely.geometry <span style="color:#f92672">import</span> Polygon, MultiPoint
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> fiona
+</span></span><span style="display:flex;"><span>fiona<span style="color:#f92672">.</span>supported_drivers
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">GeographicData</span>():
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    A dataset class
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">__init__</span>(self, filename<span style="color:#f92672">=</span><span style="color:#66d9ef">None</span>):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> filename <span style="color:#f92672">==</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span>                self<span style="color:#f92672">.</span>gdf <span style="color:#f92672">=</span> gpd<span style="color:#f92672">.</span>read_file(gpd<span style="color:#f92672">.</span>datasets<span style="color:#f92672">.</span>get_path(<span style="color:#e6db74">&#39;nybb&#39;</span>))
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>                self<span style="color:#f92672">.</span>gdf <span style="color:#f92672">=</span> gpd<span style="color:#f92672">.</span>read_file(filename)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">except</span> fiona<span style="color:#f92672">.</span>errors<span style="color:#f92672">.</span>DataIOError <span style="color:#66d9ef">as</span> err:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">TypeError</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">is_array_in_list</span>(self, array, list_of_arrays):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> a <span style="color:#f92672">in</span> list_of_arrays:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> np<span style="color:#f92672">.</span>array_equal(array, a):
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">False</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_shapely_polygons</span>(self, voronoi_cell_map):
+</span></span><span style="display:flex;"><span>        polygons_lst <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> key <span style="color:#f92672">in</span> voronoi_cell_map:
+</span></span><span style="display:flex;"><span>            value <span style="color:#f92672">=</span> voronoi_cell_map[key]
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># Convert value to polygon</span>
+</span></span><span style="display:flex;"><span>            poly <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">for</span> edge, (A, U, tmin, tmax) <span style="color:#f92672">in</span> value:
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> tmin <span style="color:#f92672">==</span> <span style="color:#f92672">-</span>np<span style="color:#f92672">.</span>Inf:
+</span></span><span style="display:flex;"><span>                    tmin <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">10.0</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> tmax <span style="color:#f92672">==</span> np<span style="color:#f92672">.</span>Inf:
+</span></span><span style="display:flex;"><span>                    tmax <span style="color:#f92672">=</span> <span style="color:#ae81ff">10.0</span>
+</span></span><span style="display:flex;"><span>                pt_lft <span style="color:#f92672">=</span> A <span style="color:#f92672">+</span> tmin <span style="color:#f92672">*</span> U
+</span></span><span style="display:flex;"><span>                pt_rt <span style="color:#f92672">=</span> A <span style="color:#f92672">+</span> tmax <span style="color:#f92672">*</span> U
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> self<span style="color:#f92672">.</span>is_array_in_list(pt_lft, poly) <span style="color:#f92672">and</span> np<span style="color:#f92672">.</span>isfinite(pt_lft)<span style="color:#f92672">.</span>all():
+</span></span><span style="display:flex;"><span>                    poly<span style="color:#f92672">.</span>append(list(pt_lft))
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> self<span style="color:#f92672">.</span>is_array_in_list(pt_rt, poly) <span style="color:#f92672">and</span> np<span style="color:#f92672">.</span>isfinite(pt_rt)<span style="color:#f92672">.</span>all():
+</span></span><span style="display:flex;"><span>                    poly<span style="color:#f92672">.</span>append(list(pt_rt))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> len(poly) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>                poly_shp <span style="color:#f92672">=</span> Polygon(np<span style="color:#f92672">.</span>array(poly))
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> poly_shp<span style="color:#f92672">.</span>is_valid:
+</span></span><span style="display:flex;"><span>                    polygons_lst<span style="color:#f92672">.</span>append(poly_shp)
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>                    <span style="color:#75715e"># clip polygon with boundary</span>
+</span></span><span style="display:flex;"><span>                    pts <span style="color:#f92672">=</span> MultiPoint(poly_shp<span style="color:#f92672">.</span>exterior<span style="color:#f92672">.</span>coords[<span style="color:#ae81ff">1</span>:])
+</span></span><span style="display:flex;"><span>                    chull <span style="color:#f92672">=</span> pts<span style="color:#f92672">.</span>convex_hull
+</span></span><span style="display:flex;"><span>                    polygons_lst<span style="color:#f92672">.</span>append(chull)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> polygons_lst
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">combine_dhs_voronoi</span>(self, poly_lst):
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>weighted_voronoi <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>gdf
+</span></span><span style="display:flex;"><span>        p <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>weighted_voronoi<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>        voronois <span style="color:#f92672">=</span> list(np<span style="color:#f92672">.</span>zeros(p))
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> tqdm(range(p)):
+</span></span><span style="display:flex;"><span>            pt <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>weighted_voronoi<span style="color:#f92672">.</span>loc[self<span style="color:#f92672">.</span>weighted_voronoi<span style="color:#f92672">.</span>index[i], <span style="color:#e6db74">&#39;geometry&#39;</span>]
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">for</span> poly <span style="color:#f92672">in</span> poly_lst:
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> poly<span style="color:#f92672">.</span>contains(pt):
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">if</span> voronois[i] <span style="color:#f92672">==</span> <span style="color:#ae81ff">0.0</span>:
+</span></span><span style="display:flex;"><span>                        voronois[i] <span style="color:#f92672">=</span> poly
+</span></span><span style="display:flex;"><span>                        <span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>                        print(<span style="color:#e6db74">&#34;cell not empty&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>weighted_voronoi[<span style="color:#e6db74">&#39;cells&#39;</span>] <span style="color:#f92672">=</span> voronois
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># drop geometry column and rename cells as geometry.</span>
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>weighted_voronoi <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>weighted_voronoi<span style="color:#f92672">.</span>drop(columns<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;geometry&#39;</span>], axis<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>weighted_voronoi <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>weighted_voronoi<span style="color:#f92672">.</span>rename(columns<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#39;cells&#39;</span>: <span style="color:#e6db74">&#39;geometry&#39;</span>})
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> shapely.geometry <span style="color:#f92672">import</span> Polygon, MultiPoint
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SemidiscreteOT</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">__init__</span>(self, dc_measure, ct_measure, learning_rate):
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>sites <span style="color:#f92672">=</span> dc_measure
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>density <span style="color:#f92672">=</span> ct_measure
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>price <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>zeros(len(dc_measure[<span style="color:#e6db74">&#34;pos&#34;</span>]))
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>lr <span style="color:#f92672">=</span> learning_rate
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>tri_list, self<span style="color:#f92672">.</span>vor_vert <span style="color:#f92672">=</span> get_power_triangulation(
+</span></span><span style="display:flex;"><span>            self<span style="color:#f92672">.</span>sites[<span style="color:#e6db74">&#34;pos&#34;</span>], self<span style="color:#f92672">.</span>price)
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>voronoi_cell_map <span style="color:#f92672">=</span> get_voronoi_cells(
+</span></span><span style="display:flex;"><span>            self<span style="color:#f92672">.</span>sites[<span style="color:#e6db74">&#34;pos&#34;</span>], self<span style="color:#f92672">.</span>vor_vert, self<span style="color:#f92672">.</span>tri_list)
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>poly_lst <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>get_shapely_polygons()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">price_iter</span>(self, T):
+</span></span><span style="display:flex;"><span>        prices <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> t <span style="color:#f92672">in</span> range(T):
+</span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">&#34;The </span><span style="color:#e6db74">{}</span><span style="color:#e6db74"> th iteration: &#34;</span><span style="color:#f92672">.</span>format(t))
+</span></span><span style="display:flex;"><span>            grad <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>calc_diff()
+</span></span><span style="display:flex;"><span>            self<span style="color:#f92672">.</span>price <span style="color:#f92672">+=</span> self<span style="color:#f92672">.</span>lr <span style="color:#f92672">*</span> grad
+</span></span><span style="display:flex;"><span>            prices<span style="color:#f92672">.</span>append(self<span style="color:#f92672">.</span>price)
+</span></span><span style="display:flex;"><span>            self<span style="color:#f92672">.</span>update_cell_map()
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> prices
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">is_array_in_list</span>(self, array, list_of_arrays):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> a <span style="color:#f92672">in</span> list_of_arrays:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> np<span style="color:#f92672">.</span>array_equal(array, a):
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">False</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">update_cell_map</span>(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># This function will update the cellmap from the price/weight vector we get</span>
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>tri_list, self<span style="color:#f92672">.</span>vor_vert <span style="color:#f92672">=</span> get_power_triangulation(
+</span></span><span style="display:flex;"><span>            self<span style="color:#f92672">.</span>sites[<span style="color:#e6db74">&#34;pos&#34;</span>], self<span style="color:#f92672">.</span>price)
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>voronoi_cell_map <span style="color:#f92672">=</span> get_voronoi_cells(
+</span></span><span style="display:flex;"><span>            self<span style="color:#f92672">.</span>sites[<span style="color:#e6db74">&#34;pos&#34;</span>], self<span style="color:#f92672">.</span>vor_vert, self<span style="color:#f92672">.</span>tri_list)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">calc_diff</span>(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># For every vaccination site, set the demand-capacity difference to be the capacity</span>
+</span></span><span style="display:flex;"><span>        diff <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>zeros_like(self<span style="color:#f92672">.</span>price)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> id, voronoi_cell <span style="color:#f92672">in</span> enumerate(self<span style="color:#f92672">.</span>voronoi_cell_map):
+</span></span><span style="display:flex;"><span>            diff[id] <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>sites[<span style="color:#e6db74">&#34;cap&#34;</span>][id] <span style="color:#f92672">-</span> self<span style="color:#f92672">.</span>calc_demand(self<span style="color:#f92672">.</span>poly_lst[id], voronoi_cell)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> diff
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">calc_demand_unif</span>(self, polygon, voronoi_cell):
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># approximate the demand using integrated density </span>
+</span></span><span style="display:flex;"><span>        ar <span style="color:#f92672">=</span> polygon<span style="color:#f92672">.</span>area
+</span></span><span style="display:flex;"><span>        dmd <span style="color:#f92672">=</span> ar 
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> dmd
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">calc_demand</span>(self, polygon, voronoi_cell):
+</span></span><span style="display:flex;"><span>        point_x <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>voronoi_cell_map[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>        point_y <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>voronoi_cell_map[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">1</span>]
+</span></span><span style="display:flex;"><span>        low_bounds <span style="color:#f92672">=</span> (point_x <span style="color:#f92672">-</span> d_lon, point_y <span style="color:#f92672">-</span> d_lat)
+</span></span><span style="display:flex;"><span>        high_bounds <span style="color:#f92672">=</span> (point_x <span style="color:#f92672">+</span> d_lon, point_y <span style="color:#f92672">+</span> d_lat)
+</span></span><span style="display:flex;"><span>        dmd <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>density<span style="color:#f92672">.</span>integrate_box(low_bounds, high_bounds)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> dmd
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_shapely_polygons</span>(self):
+</span></span><span style="display:flex;"><span>        polygons_lst <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> key <span style="color:#f92672">in</span> self<span style="color:#f92672">.</span>voronoi_cell_map:
+</span></span><span style="display:flex;"><span>            value <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>voronoi_cell_map[key]
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># Convert value to polygon</span>
+</span></span><span style="display:flex;"><span>            poly <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">for</span> edge, (A, U, tmin, tmax) <span style="color:#f92672">in</span> value:
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> tmin <span style="color:#f92672">==</span> <span style="color:#f92672">-</span>np<span style="color:#f92672">.</span>Inf:
+</span></span><span style="display:flex;"><span>                    tmin <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">10.0</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> tmax <span style="color:#f92672">==</span> np<span style="color:#f92672">.</span>Inf:
+</span></span><span style="display:flex;"><span>                    tmax <span style="color:#f92672">=</span> <span style="color:#ae81ff">10.0</span>
+</span></span><span style="display:flex;"><span>                pt_lft <span style="color:#f92672">=</span> A <span style="color:#f92672">+</span> tmin <span style="color:#f92672">*</span> U
+</span></span><span style="display:flex;"><span>                pt_rt <span style="color:#f92672">=</span> A <span style="color:#f92672">+</span> tmax <span style="color:#f92672">*</span> U
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> self<span style="color:#f92672">.</span>is_array_in_list(pt_lft, poly) <span style="color:#f92672">and</span> np<span style="color:#f92672">.</span>isfinite(pt_lft)<span style="color:#f92672">.</span>all():
+</span></span><span style="display:flex;"><span>                    poly<span style="color:#f92672">.</span>append(list(pt_lft))
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> self<span style="color:#f92672">.</span>is_array_in_list(pt_rt, poly) <span style="color:#f92672">and</span> np<span style="color:#f92672">.</span>isfinite(pt_rt)<span style="color:#f92672">.</span>all():
+</span></span><span style="display:flex;"><span>                    poly<span style="color:#f92672">.</span>append(list(pt_rt))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> len(poly) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>                poly_shp <span style="color:#f92672">=</span> Polygon(np<span style="color:#f92672">.</span>array(poly))
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> poly_shp<span style="color:#f92672">.</span>is_valid:
+</span></span><span style="display:flex;"><span>                    polygons_lst<span style="color:#f92672">.</span>append(poly_shp)
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>                    <span style="color:#75715e"># clip polygon with boundary</span>
+</span></span><span style="display:flex;"><span>                    pts <span style="color:#f92672">=</span> MultiPoint(poly_shp<span style="color:#f92672">.</span>exterior<span style="color:#f92672">.</span>coords[<span style="color:#ae81ff">1</span>:])
+</span></span><span style="display:flex;"><span>                    chull <span style="color:#f92672">=</span> pts<span style="color:#f92672">.</span>convex_hull
+</span></span><span style="display:flex;"><span>                    polygons_lst<span style="color:#f92672">.</span>append(chull)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> polygons_lst
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">plot_weighted_voronoi</span>(self):
+</span></span><span style="display:flex;"><span>        fig, ax <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">18</span>, <span style="color:#ae81ff">12</span>))
+</span></span><span style="display:flex;"><span>        plt<span style="color:#f92672">.</span>axis(<span style="color:#e6db74">&#39;equal&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Set min/max display size, as Matplotlib does it wrong</span>
+</span></span><span style="display:flex;"><span>        min_corner <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>amin(self<span style="color:#f92672">.</span>sites[<span style="color:#e6db74">&#34;pos&#34;</span>], axis<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>) <span style="color:#f92672">-</span> np<span style="color:#f92672">.</span>max(self<span style="color:#f92672">.</span>price)
+</span></span><span style="display:flex;"><span>        max_corner <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>amax(self<span style="color:#f92672">.</span>sites[<span style="color:#e6db74">&#34;pos&#34;</span>], axis<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>) <span style="color:#f92672">+</span> np<span style="color:#f92672">.</span>max(self<span style="color:#f92672">.</span>price)
+</span></span><span style="display:flex;"><span>        plt<span style="color:#f92672">.</span>xlim((min_corner[<span style="color:#ae81ff">0</span>], max_corner[<span style="color:#ae81ff">0</span>]))
+</span></span><span style="display:flex;"><span>        plt<span style="color:#f92672">.</span>ylim((min_corner[<span style="color:#ae81ff">1</span>], max_corner[<span style="color:#ae81ff">1</span>]))
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Plot the sites</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> Si, Ri <span style="color:#f92672">in</span> zip(self<span style="color:#f92672">.</span>sites[<span style="color:#e6db74">&#34;pos&#34;</span>], self<span style="color:#f92672">.</span>price):
+</span></span><span style="display:flex;"><span>            ax<span style="color:#f92672">.</span>add_artist(plt<span style="color:#f92672">.</span>Circle(Si, <span style="color:#ae81ff">0.002</span>, fill<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>, alpha<span style="color:#f92672">=</span><span style="color:#ae81ff">.4</span>,
+</span></span><span style="display:flex;"><span>                            lw<span style="color:#f92672">=</span><span style="color:#ae81ff">0.</span>, color<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;#8080f0&#39;</span>, zorder<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>))
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        contextily<span style="color:#f92672">.</span>add_basemap(ax, crs<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;EPSG:4326&#34;</span>,
+</span></span><span style="display:flex;"><span>                           source<span style="color:#f92672">=</span>contextily<span style="color:#f92672">.</span>providers<span style="color:#f92672">.</span>Stamen<span style="color:#f92672">.</span>TonerLabels)
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Plot the power triangulation</span>
+</span></span><span style="display:flex;"><span>        edge_set <span style="color:#f92672">=</span> frozenset(tuple(sorted(edge))
+</span></span><span style="display:flex;"><span>                         <span style="color:#66d9ef">for</span> tri <span style="color:#f92672">in</span> self<span style="color:#f92672">.</span>tri_list <span style="color:#66d9ef">for</span> edge <span style="color:#f92672">in</span> itertools<span style="color:#f92672">.</span>combinations(tri, <span style="color:#ae81ff">2</span>))
+</span></span><span style="display:flex;"><span>        line_list <span style="color:#f92672">=</span> LineCollection([(self<span style="color:#f92672">.</span>sites[<span style="color:#e6db74">&#34;pos&#34;</span>][i], self<span style="color:#f92672">.</span>sites[<span style="color:#e6db74">&#34;pos&#34;</span>][j])
+</span></span><span style="display:flex;"><span>                               <span style="color:#66d9ef">for</span> i, j <span style="color:#f92672">in</span> edge_set], lw<span style="color:#f92672">=</span><span style="color:#ae81ff">1.</span>, colors<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;.9&#39;</span>)
+</span></span><span style="display:flex;"><span>        line_list<span style="color:#f92672">.</span>set_zorder(<span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>        ax<span style="color:#f92672">.</span>add_collection(line_list)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Plot the Voronoi cells</span>
+</span></span><span style="display:flex;"><span>        edge_map <span style="color:#f92672">=</span> {}
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> segment_list <span style="color:#f92672">in</span> self<span style="color:#f92672">.</span>voronoi_cell_map<span style="color:#f92672">.</span>values():
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">for</span> edge, (A, U, tmin, tmax) <span style="color:#f92672">in</span> segment_list:
+</span></span><span style="display:flex;"><span>                edge <span style="color:#f92672">=</span> tuple(sorted(edge))
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> edge <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> edge_map:
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">if</span> tmax <span style="color:#f92672">is</span> np<span style="color:#f92672">.</span>Inf:
+</span></span><span style="display:flex;"><span>                        tmax <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">if</span> tmin <span style="color:#f92672">is</span> <span style="color:#f92672">-</span>np<span style="color:#f92672">.</span>Inf:
+</span></span><span style="display:flex;"><span>                        tmin <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                    edge_map[edge] <span style="color:#f92672">=</span> (A <span style="color:#f92672">+</span> tmin <span style="color:#f92672">*</span> U, A <span style="color:#f92672">+</span> tmax <span style="color:#f92672">*</span> U)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        line_list <span style="color:#f92672">=</span> LineCollection(edge_map<span style="color:#f92672">.</span>values(), lw<span style="color:#f92672">=</span><span style="color:#ae81ff">1.</span>, colors<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;b&#39;</span>)
+</span></span><span style="display:flex;"><span>        line_list<span style="color:#f92672">.</span>set_zorder(<span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>        ax<span style="color:#f92672">.</span>add_collection(line_list)
+</span></span><span style="display:flex;"><span>        plt<span style="color:#f92672">.</span>show()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>semiot <span style="color:#f92672">=</span> SemidiscreteOT(dc_measure<span style="color:#f92672">=</span>site_measure,
+</span></span><span style="display:flex;"><span>                        ct_measure<span style="color:#f92672">=</span>gkernel, learning_rate<span style="color:#f92672">=</span><span style="color:#ae81ff">0.001</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>prices <span style="color:#f92672">=</span> semiot<span style="color:#f92672">.</span>price_iter(<span style="color:#ae81ff">10</span>)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Display the final outcome</span>
+</span></span><span style="display:flex;"><span>semiot<span style="color:#f92672">.</span>plot_weighted_voronoi()
+</span></span></code></pre></div><p><img src="MongePartition_files/MongePartition_29_0.png" alt="png"></p>
+
+        </div>
+    </div>
+    <a href="#" id="scrollToTopButton">
+        <svg t="1686753152588" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+            p-id="3988" width="48" height="48">
+            <path
+                d="M518.5 360.3c-3.2-4.4-9.7-4.4-12.9 0l-178 246c-3.8 5.3 0 12.7 6.5 12.7H381c10.2 0 19.9-4.9 25.9-13.2L512 460.4l105.2 145.4c6 8.3 15.6 13.2 25.9 13.2H690c6.5 0 10.3-7.4 6.5-12.7l-178-246z"
+                p-id="3989" fill="#363636"></path>
+            <path
+                d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64z m0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
+                p-id="3990" fill="#363636"></path>
+        </svg>
+    </a><hr style="border-top: 1px solid #EEEEEE;">
+<div id="comment"></div>
+<script>
+    const getStoredTheme = () => localStorage.getItem("theme") === "dark" ? "dark" : "light";
+
+    const setGiscusTheme = () => {
+        const sendMessage = (message) => {
+            const iframe = document.querySelector('iframe.giscus-frame');
+            if (iframe) {
+                iframe.contentWindow.postMessage({giscus: message}, 'https://giscus.app');
+            }
+        }
+        sendMessage({setConfig: {theme: getStoredTheme()}})
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const giscusAttributes = {
+            "src": "https://giscus.app/client.js",
+            "data-repo": "UnionPan\/UnionPan.github.io",
+            "data-repo-id": "R_kgDOIZ-Mxw",
+            "data-category": "General",
+            "data-category-id": "DIC_kwDOIZ-Mx84CuT-c",
+            "data-mapping": "pathname",
+            "data-reactions-enabled": "1",
+            "data-emit-metadata": "0",
+            "data-input-position": "bottom",
+            "data-theme": getStoredTheme(),
+            "data-lang": "en",
+            "data-loading": "lazy",
+            "crossorigin": "anonymous",
+        };
+
+        
+        const giscusScript = document.createElement("script");
+        Object.entries(giscusAttributes).forEach(
+            ([key, value]) => giscusScript.setAttribute(key, value));
+        document.getElementById("comment").appendChild(giscusScript);
+
+        
+        const themeToggle = document.querySelector(".theme-toggle");
+        if (themeToggle) {
+            themeToggle.addEventListener("click", setGiscusTheme);
+        }
+    });
+
+</script>
+
+
+<div class="pp-container">
+        <section class="pre-and-post">
+            <div class="has-text-left">
+                
+            </div>
+            <div class="has-text-right">
+                
+                <p>Next post</p>
+                <a href="http://localhost:1313/post/2022/the_capacity_of_deception/">Capacity of Deception</a>
+                
+            </div>
+        </section>
+    </div>
+
+</div>
+
+                <footer class="footer">
+</footer>
+            </main>
+        </div>
+
+        <script>
+            
+            function setTheme(theme) {
+                let body = document.body;
+                let themeIcon = document.querySelector(".theme-icon");
+                if (theme === "dark") {
+                    body.classList.add("dark-mode");
+                    themeIcon.src = "http:\/\/localhost:1313\/svg/moon.svg";
+                    themeIcon.alt = "moon icon";
+                } else {
+                    body.classList.remove("dark-mode");
+                    themeIcon.src = "http:\/\/localhost:1313\/svg/sun.svg";
+                    themeIcon.alt = "sun icon";
+                }
+                localStorage.setItem("theme", theme);
+            }
+
+            
+            document.addEventListener('DOMContentLoaded', function() {
+                
+                let theme = localStorage.getItem("theme");
+                
+                
+                if (!theme) {
+                    const isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+                    theme = isDarkMode ? 'dark' : 'light';
+                }
+                
+                setTheme(theme);
+
+                
+                document.getElementById("theme-toggle").addEventListener("click", function(e) {
+                    e.preventDefault();
+                    let currentTheme = localStorage.getItem("theme") || "light";
+                    let newTheme = currentTheme === "light" ? "dark" : "light";
+                    setTheme(newTheme);
+                });
+            });
+            
+            
+            document.getElementById('mobile-menu-toggle').addEventListener('click', function() {
+                const sidebar = document.getElementById('sidebar');
+                const button = this;
+                
+                sidebar.classList.toggle('open');
+                button.classList.toggle('active');
+            });
+
+            
+            function toggleBlogMenu(event) {
+                event.preventDefault();
+                event.stopPropagation(); 
+                const submenu = document.getElementById('blog-submenu');
+                const arrow = document.querySelector('.dropdown-arrow');
+                
+                if (submenu.classList.contains('open')) {
+                    submenu.classList.remove('open');
+                    arrow.style.transform = 'rotate(0deg)';
+                } else {
+                    submenu.classList.add('open');
+                    arrow.style.transform = 'rotate(180deg)';
+                }
+            }
+            
+            
+            document.addEventListener('click', function(event) {
+                const navContainer = document.querySelector('.nav-item-container');
+                const submenu = document.getElementById('blog-submenu');
+                const arrow = document.querySelector('.dropdown-arrow');
+                
+                if (!navContainer.contains(event.target) && submenu.classList.contains('open')) {
+                    submenu.classList.remove('open');
+                    arrow.style.transform = 'rotate(0deg)';
+                }
+            });
+
+            
+            document.addEventListener('click', function(event) {
+                const sidebar = document.getElementById('sidebar');
+                const toggleButton = document.getElementById('mobile-menu-toggle');
+                
+                if (sidebar.classList.contains('open') && 
+                    !sidebar.contains(event.target) && 
+                    !toggleButton.contains(event.target)) {
+                    sidebar.classList.remove('open');
+                    toggleButton.classList.remove('active');
+                }
+            });
+
+            
+            document.querySelectorAll('.sidebar .nav-link, .sidebar .submenu-link').forEach(link => {
+                if (!link.classList.contains('blog-toggle')) {
+                    link.addEventListener('click', function() {
+                        const sidebar = document.getElementById('sidebar');
+                        const toggleButton = document.getElementById('mobile-menu-toggle');
+                        sidebar.classList.remove('open');
+                        toggleButton.classList.remove('active');
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>
+

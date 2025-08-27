@@ -6,12 +6,19 @@
     <description>Recent content in 2025 on union&#39;s blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 18 Aug 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 25 Aug 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://unionpan.github.io/post/2025/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Reinforcement Learning with Human Feedback</title>
+      <link>https://unionpan.github.io/post/2025/rlhf/</link>
+      <pubDate>Mon, 25 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://unionpan.github.io/post/2025/rlhf/</guid>
+      <description>&lt;p&gt;I would love to think of the ICML 2023 conference in Honolulu as a pivotal event for my P.h.D. research. During that time I was kind of talking to Reagan and having the time of my life. I remember in the conference there was a workshop session named &lt;em&gt;sampling over discrete space&lt;/em&gt;. It felt serendipitous, like the universe was pointing me toward somewhere significant, much like how my brilliant colleague &lt;a href=&#34;https://taoli-nyu.github.io/&#34;&gt;Tao&lt;/a&gt; pointing to the bright future here haha&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Bayesian Holonic (Global) Games</title>
       <link>https://unionpan.github.io/post/2025/mechanism_design/</link>
-      <pubDate>Mon, 18 Aug 2025 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 01 Jul 2025 00:00:00 +0000</pubDate>
       <guid>https://unionpan.github.io/post/2025/mechanism_design/</guid>
       <description>&lt;p&gt;This past year I suffered a lot mentally and financially, my funding got paused and my girlfriend Sam (check out her &lt;a href=&#34;https://open.spotify.com/artist/3qo9BlnVduy6nW0pY1kmTQ&#34;&gt;spotify&lt;/a&gt;!) lost her boojee A.P.C. job. So I haven&amp;rsquo;t posted for a while. It&amp;rsquo;s really a leisure and effort to write stuff consistently (because wtf am I supposed to write?!!?). But the coding agents (Claude, Gemini etc..) really revolutionarized my efficiency, and shamelessly I have to admit that I use them a lot to &amp;ldquo;vibe code&amp;rdquo; and even do research, with sufficient human surveillance.&#xA;So hopefully, I will resume writing for my own sanity.&lt;/p&gt;</description>
     </item>
