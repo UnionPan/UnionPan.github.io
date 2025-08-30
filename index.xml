@@ -2,122 +2,122 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>union&#39;s blog</title>
-    <link>http://localhost:1313/</link>
+    <link>https://unionpan.github.io/</link>
     <description>Recent content on union&#39;s blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 25 Aug 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://unionpan.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Reinforcement Learning with Human Feedback</title>
-      <link>http://localhost:1313/post/2025/rlhf/</link>
+      <link>https://unionpan.github.io/post/2025/rlhf/</link>
       <pubDate>Mon, 25 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/post/2025/rlhf/</guid>
+      <guid>https://unionpan.github.io/post/2025/rlhf/</guid>
       <description>&lt;p&gt;I would love to think of the ICML 2023 conference in Honolulu as a pivotal event for my P.h.D. research. During that time I was kind of talking to Reagan and having the time of my life. I remember in the conference there was a workshop session named &lt;em&gt;sampling over discrete space&lt;/em&gt;. It felt serendipitous, like the universe was pointing me toward somewhere significant, much like how my brilliant colleague &lt;a href=&#34;https://taoli-nyu.github.io/&#34;&gt;Tao&lt;/a&gt; pointing to the bright future here haha&lt;/p&gt;</description>
     </item>
     <item>
       <title>Photos</title>
-      <link>http://localhost:1313/photos/</link>
+      <link>https://unionpan.github.io/photos/</link>
       <pubDate>Thu, 21 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/photos/</guid>
+      <guid>https://unionpan.github.io/photos/</guid>
       <description></description>
     </item>
     <item>
       <title>Bayesian Holonic (Global) Games</title>
-      <link>http://localhost:1313/post/2025/mechanism_design/</link>
+      <link>https://unionpan.github.io/post/2025/mechanism_design/</link>
       <pubDate>Tue, 01 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/post/2025/mechanism_design/</guid>
+      <guid>https://unionpan.github.io/post/2025/mechanism_design/</guid>
       <description>&lt;p&gt;This past year I suffered a lot mentally and financially, my funding got paused and my girlfriend Sam (check out her &lt;a href=&#34;https://open.spotify.com/artist/3qo9BlnVduy6nW0pY1kmTQ&#34;&gt;spotify&lt;/a&gt;!) lost her boojee A.P.C. job. So I haven&amp;rsquo;t posted for a while. It&amp;rsquo;s really a leisure and effort to write stuff consistently (because wtf am I supposed to write?!!?). But the coding agents (Claude, Gemini etc..) really revolutionarized my efficiency, and shamelessly I have to admit that I use them a lot to &amp;ldquo;vibe code&amp;rdquo; and even do research, with sufficient human surveillance.&#xA;So hopefully, I will resume writing for my own sanity.&lt;/p&gt;</description>
     </item>
     <item>
       <title>About Me</title>
-      <link>http://localhost:1313/post/about_me/about/</link>
+      <link>https://unionpan.github.io/post/about_me/about/</link>
       <pubDate>Mon, 26 Aug 2024 20:18:54 +0300</pubDate>
-      <guid>http://localhost:1313/post/about_me/about/</guid>
+      <guid>https://unionpan.github.io/post/about_me/about/</guid>
       <description>&lt;p&gt;When you write an About Me, you want something permanent.&#xA;Well, I go by &amp;lsquo;Union&amp;rsquo; &amp;mdash; a homophone of my Chinese name that I find neat and hope will stick.&#xA;What won&amp;rsquo;t last much longer is that I&amp;rsquo;m finishing my PhD at NYU Tandon, and here goes the elevator pitch for my research:&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;em&gt;I develop algorithms that optimize the transient processes of multi-agent decision-making in complex systems, leveraging game theory and machine learning across domains like communication, transportation, and finance.&lt;/em&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>What (on earth) is a Sufficient Statistic?</title>
-      <link>http://localhost:1313/post/2024/what_are_sufficient_statistics/</link>
+      <link>https://unionpan.github.io/post/2024/what_are_sufficient_statistics/</link>
       <pubDate>Sun, 28 Apr 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/post/2024/what_are_sufficient_statistics/</guid>
+      <guid>https://unionpan.github.io/post/2024/what_are_sufficient_statistics/</guid>
       <description>&lt;p&gt;It certainly bothered me (not any more) to hear people casually dropping the word &amp;ldquo;sufficient statistics&amp;rdquo; in their talks, often describing some of their &amp;lsquo;&amp;lsquo;observations&amp;rsquo;&amp;rsquo; or &amp;lsquo;&amp;lsquo;samples&amp;rsquo;&amp;rsquo; that they feel like are &amp;lsquo;&amp;lsquo;sufficient&amp;rsquo;&amp;rsquo; for them to make certain decisions.&#xA;The thing is, the word &amp;lsquo;&amp;lsquo;sufficient&amp;rsquo;&amp;rsquo; comes with a very rigorous definition, that may not even hold in those frameworks.&#xA;For example, a lot of traffic control algorithms use measured vehicle streamed data to learn some embeddings as the input, the downstream tasks could be variable speed limit for certain highway segments for example, and people might call the embeddings &amp;lsquo;&amp;lsquo;sufficient statistics&amp;rsquo;&amp;rsquo;.&#xA;Umm, &amp;hellip; truth is I don&amp;rsquo;t even where to start with this.&lt;/p&gt;</description>
     </item>
     <item>
       <title>The Lorenz dynamics and Butterfly Effect</title>
-      <link>http://localhost:1313/post/2024/butterfly_effect/</link>
+      <link>https://unionpan.github.io/post/2024/butterfly_effect/</link>
       <pubDate>Mon, 08 Apr 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/post/2024/butterfly_effect/</guid>
+      <guid>https://unionpan.github.io/post/2024/butterfly_effect/</guid>
       <description>&lt;p&gt;Chaotic behavior can emerge even in simple dynamics such as replicator, and Rock-Paper-Scissor oscillators, depending on the game settings. To begin with, we first define what is chaos qualitatively: &lt;em&gt;&amp;ldquo;Chaos can be described as long term, aperiodic behaviour that exhibits sensitive dependence on initial conditions. Sensitive dependence on initial conditions implies that nearby trajectories diverge exponentially fast over time.&amp;rdquo;&lt;/em&gt; Or, by Edward Lorenz, &lt;em&gt;when the present determines the future but the approximate present does not approximately determine the future.&lt;/em&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Talagrand&#39;s Isoperimetry inequality</title>
-      <link>http://localhost:1313/post/2024/talagrand/</link>
+      <link>https://unionpan.github.io/post/2024/talagrand/</link>
       <pubDate>Tue, 26 Mar 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/post/2024/talagrand/</guid>
+      <guid>https://unionpan.github.io/post/2024/talagrand/</guid>
       <description>&lt;p&gt;This post is in celebration of Michel Talagrand winning Abel prize. Not to overly romanticize this but this is pretty much a come back story because back in the days of last century, &lt;em&gt;“The type of mathematics I do was not fashionable at all when I started. It was considered inferior mathematics.”&lt;/em&gt; &amp;ndash;Michel Talagrand.&lt;/p&gt;&#xA;&lt;p&gt;Now we&amp;rsquo;ve seen significance of his contribution to the concentration of measure, suprema of stochastic processes and spin glass, all partially owing to his celebrated isoperimetry inequality in product probability space.&#xA;What is an isoperimetry inequality? It is a concept in mathematics, particularly in the field of geometry and geometric analysis, that compares the length (or perimeter) of a closed curve to the area of the region it encloses, establishing that among all shapes with the same perimeter, the circle has the maximum area.&#xA;For example:&#xA;$$&#xA;4 \pi A \leq L^2&#xA;$$&#xA;where the equality holds if.f. the curve is a circle. In a more general sense, the isoperimetric inequality relates the volume of an $n$-dimensional domain to the surface area of its boundary, with the sphere in $n$-dimensional space providing the optimal (maximum volume for a given surface area) ratio.&#xA;Applying this concept to probability space, Talagrand was able to prove the following:&lt;/p&gt;</description>
     </item>
     <item>
       <title>A Variational Perspective On Gradient Descent</title>
-      <link>http://localhost:1313/post/2024/variational_perspective/</link>
+      <link>https://unionpan.github.io/post/2024/variational_perspective/</link>
       <pubDate>Sun, 11 Feb 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/post/2024/variational_perspective/</guid>
+      <guid>https://unionpan.github.io/post/2024/variational_perspective/</guid>
       <description>&lt;p&gt;In this post I just want to share a simple and elegant idea from a Control System Letter paper written by Maxim Raginsky et al.&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;. This idea largely inspired my recent work on multi-agent learning in (monotone) games&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;, which I might devote another post to talk about if I happen to get some interesting results out of it.&lt;/p&gt;&#xA;&lt;p&gt;The idea starts from here: we all know that the archetype of solving convex optimization problem is through gradient descent:&#xA;$$&#xA;x_{k+1} =  x_k  - \nabla f(x_k),&#xA;$$&#xA;which, in continuous time, corresponds to an autonomous dynamical system:&#xA;$$&#xA;\dot{x} =  - \nabla f (x) , \quad x(0) = x_0.&#xA;$$&#xA;A natural question to ask is what are the hidden objectives being achieved along the gradient flow. This question was approached in a &amp;ldquo;inverse optimal control&amp;rdquo; fashion, i.e., given an autonomous dynamical system, identify the close-loop control and its corresponding optimal control problem. In this approach, the Fenchel-Young inequality played a crucial role to formulate the optimal control problem, as was extensively used in the variational principles introduced by Brezis and Ekeland&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;</description>
     </item>
     <item>
       <title> Some Notes on Dueling Bandits</title>
-      <link>http://localhost:1313/post/2023/dueling_bandits/</link>
+      <link>https://unionpan.github.io/post/2023/dueling_bandits/</link>
       <pubDate>Wed, 11 Oct 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/post/2023/dueling_bandits/</guid>
+      <guid>https://unionpan.github.io/post/2023/dueling_bandits/</guid>
       <description>&lt;p&gt;The dueling bandit problem natrually fits the description of a variety of recommendation systems that require &amp;lsquo;&amp;rsquo;learning on the fly&amp;rsquo;&amp;rsquo;, yet have no explicit access to a&#xA;&amp;lsquo;&amp;lsquo;reward&amp;rsquo;&amp;rsquo; model. Instead, the &amp;lsquo;&amp;lsquo;human&amp;rsquo;&amp;rsquo; feedback part takes the form of &amp;lsquo;&amp;lsquo;choices&amp;rsquo;&amp;rsquo;, &amp;lsquo;&amp;lsquo;votes&amp;rsquo;&amp;rsquo;, or some discrete forms.&#xA;Hence, oftentimes a learning protocol proceeds at time steps \(t = 1, \ldots, T\):&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;The algorithm chooses a pair of arms \( a_i, a_j \) from \(K\) available ones;&lt;/li&gt;&#xA;&lt;li&gt;The oracle/human feedback/nature reveals the winner arm \( a_i \), with probability \( P(a_i \succ a_j)\), \( P(a_i \prec a_j) = 1 - P(a_i \succ a_j) \)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;So the feedback is either \(a_i\) or \( a_j \), the preferences forms a matrix \(P \in \mathbb{R}^{K \times K}\) such that \( P + P^{\top} = I\) which defines the hidden information of the dueling bandit problem. The cumulative regret in the stochastic dueling bandit setting is:&#xA;$$&#xA;\mathcal{R}_T = \sum_{t=1}^T P( a^* \succ a^t_i ) + P( a^* \succ a^t_j )&#xA;$$&#xA;where \(a^* \) is usually the Condorcet winner, i.e., \( P( a^* \succ a_j) &amp;gt; \frac{1}{2} \ \ \forall j \in [K], a_j \neq a^*\). Condorcet winner is a pretty straightforward idea, which might not exist in general cases. To see that, suppose there are three candidates: A, B, and C, and three voters with the following preferences:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Erdos-Szekeres Theorem</title>
-      <link>http://localhost:1313/post/2023/erdos-szekeres/</link>
+      <link>https://unionpan.github.io/post/2023/erdos-szekeres/</link>
       <pubDate>Mon, 24 Jul 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/post/2023/erdos-szekeres/</guid>
+      <guid>https://unionpan.github.io/post/2023/erdos-szekeres/</guid>
       <description>&lt;p&gt;This post is dedicated to Erdos-Szekeres Theorem, which says:&lt;/p&gt;&#xA;&lt;h5 id=&#34;es-thm-monotone-sequence&#34;&gt;ES Thm. (Monotone sequence)&lt;/h5&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;For any positive integer&#xA;$n$, any sequence of $n^2 + 1$ distinct real numbers contains a monotone subsequence of length at least $n+1$.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;p&gt;This means that within any sufficiently long sequence, there is either an increasing subsequence or a decreasing subsequence of a certain minimum length.&lt;/p&gt;&#xA;&lt;p&gt;There&amp;rsquo;s another version of the theorem statement coming from the 1935 paper by Paul Erdos and George Szekeres&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;, which concerns combinatorial geometry. It says:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Wardrop Equilibrium</title>
-      <link>http://localhost:1313/post/2023/wardrop_equilibirum/</link>
+      <link>https://unionpan.github.io/post/2023/wardrop_equilibirum/</link>
       <pubDate>Mon, 30 Jan 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/post/2023/wardrop_equilibirum/</guid>
+      <guid>https://unionpan.github.io/post/2023/wardrop_equilibirum/</guid>
       <description>&lt;p&gt;I remember having those unpleasant lines in our high school canteen, flooded by the starving students queeing for their lunch, I would always pick a window with fewer people waiting, compromising myself with awful food.&#xA;Another similar thought that always stricked me was the odds that tourists always pick the same time to travel, there&amp;rsquo;s almost always traffic congestion everywhere during holiday seasons. Yeah, lives have been always so hard.&lt;br&gt;&#xA;On the first level of thinking, when there&amp;rsquo;s a lack of resource you attempt to find alternatives, e.g., picking another time for traveling, another food window, etc.. The level two thinking is maybe &amp;lsquo;&amp;lsquo;since other people are avoiding holidays, what if I insist on going out on holidays&amp;rsquo;&amp;rsquo;? Or maybe there&amp;rsquo;s a twisted level three thinking, &amp;lsquo;&amp;lsquo;what if everybody thinks like the level two thinker, &amp;hellip;.&amp;rsquo;&amp;rsquo; It&amp;rsquo;s somewhat intimidating to follow this infinite hierachy, but definitely rewarding, as there are certainly moments when people are regretting their travel decisions, thinking to themselves &amp;lsquo;&amp;lsquo;I probably should not have gone the high way.&amp;rsquo;&amp;rsquo;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Monge Partition</title>
-      <link>http://localhost:1313/post/2022/monge/</link>
+      <link>https://unionpan.github.io/post/2022/monge/</link>
       <pubDate>Sat, 31 Dec 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/post/2022/monge/</guid>
+      <guid>https://unionpan.github.io/post/2022/monge/</guid>
       <description>&lt;p&gt;There are many service centers in our city, such as MTA subway station, Vaccination sites, Wifi hot-spots, Blue Bicycles, hospitals, parking lots etc.. Meanwhile, there are so many people in need of these services who are distributed maybe according to some point processes. The question of how to efficiently make assignments between the demands and the service centers gives rise to a special type of problems called semi-discrete optimal transport.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Nesterov</title>
-      <link>http://localhost:1313/post/2022/nesterov/</link>
+      <link>https://unionpan.github.io/post/2022/nesterov/</link>
       <pubDate>Sat, 31 Dec 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/post/2022/nesterov/</guid>
+      <guid>https://unionpan.github.io/post/2022/nesterov/</guid>
       <description>&lt;p&gt;I did a presentation in a group meeting to briefly review the lower complexity bound of first-order convex optimization; and how Nesterov proceed to match the lower bound using the estimation sequence, &lt;a href=&#34;https://drive.google.com/file/d/1EynpHsGDV-UObuT9tYwNmkAesYSN5GiY/view?usp=sharing&#34;&gt;the slides are here&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Consider an unconstrained optimization problem:&#xA;$$&#xA;\min_{x \in \mathbb{R}^n} f(x) .&#xA;$$&#xA;Here, \(f \in \mathcal{C}^1\) is a convex, $L$-Lipschitz smooth function.&#xA;Obviously we can solve this problem by using first-order methods, using iterations:&lt;/p&gt;&#xA;&lt;p&gt;$$&#xA;x_{k} \in x_{0} + \operatorname{Span} \left \{f^{\prime} \left (x_{0} \right ), \ldots, f^{\prime} \left (x_{k-1} \right )\right \}.&#xA;$$&lt;/p&gt;</description>
     </item>
     <item>
       <title>Capacity of Deception</title>
-      <link>http://localhost:1313/post/2022/the_capacity_of_deception/</link>
+      <link>https://unionpan.github.io/post/2022/the_capacity_of_deception/</link>
       <pubDate>Wed, 16 Nov 2022 18:58:11 +0800</pubDate>
-      <guid>http://localhost:1313/post/2022/the_capacity_of_deception/</guid>
+      <guid>https://unionpan.github.io/post/2022/the_capacity_of_deception/</guid>
       <description>&lt;p&gt;This is pretty much scribed from Tor Lattimore&amp;rsquo;s Bandit Algorithms book,&lt;a href=&#34;https://tor-lattimore.com/downloads/book/book.pdf&#34;&gt;Bandit Algorithms&lt;/a&gt;. This book has been the most informational item for me in a while. There is a chapter about the foundations of information theory, which is simply entropy, but the story telling reminds me of deception.&#xA;Entropy, in plain words, is the measure of uncertainty for certain information; to communicate is to eliminate such uncertainty, to deceive, however, is to obscure certain information, hence to enforce such uncertainty. The duality has never been formalized as far as I know, because if you simply name the Shannon limit as the capacity of deception, you are doing anything innovative.&#xA;But, if you think from Shannon&amp;rsquo;s perspective, wasn&amp;rsquo;t he also just doing the same thing? (Sorry for quoting my advisor here.) Anyway here goes the story:&lt;/p&gt;</description>
     </item>
     <item>
       <title></title>
-      <link>http://localhost:1313/contact/</link>
+      <link>https://unionpan.github.io/contact/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/contact/</guid>
+      <guid>https://unionpan.github.io/contact/</guid>
       <description>&lt;h2&gt;&lt;/h2&gt;&#xA;&lt;h3 id=&#34;phone&#34;&gt;Phone&lt;/h3&gt;&#xA;&lt;p&gt;&lt;strong&gt;+1 (646)-404-1857&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;email&#34;&gt;Email&lt;/h3&gt;&#xA;&lt;p&gt;&lt;strong&gt;pyn950@.gmail.com&lt;/strong&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title></title>
-      <link>http://localhost:1313/statement/</link>
+      <link>https://unionpan.github.io/statement/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/statement/</guid>
+      <guid>https://unionpan.github.io/statement/</guid>
       <description>&lt;p&gt;I am a P.h.D. candidate at NYU Tandon. My dissertation focuses on the transient, macroscopic, and microscopic behaviors of multi-agent learning and interactions, which emerge from the complex systems accross various disciplines. My work primarily centers on the intersection of statistical reinforcement learning and applied game theory, where I try to quantify the uncertainties arise in decision-making processes and understand their efficiency. An application is the design of decentralized multi-radar communication algorithm that mitigates the mutual interference during the target detection.&lt;/p&gt;</description>
     </item>
   </channel>

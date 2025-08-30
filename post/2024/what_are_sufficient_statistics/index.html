@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 <html lang="en-us">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>What (on earth) is a Sufficient Statistic? | union&#39;s blog</title>
@@ -11,11 +11,11 @@ The thing is, the word &lsquo;&lsquo;sufficient&rsquo;&rsquo; comes with a very 
 For example, a lot of traffic control algorithms use measured vehicle streamed data to learn some embeddings as the input, the downstream tasks could be variable speed limit for certain highway segments for example, and people might call the embeddings &lsquo;&lsquo;sufficient statistics&rsquo;&rsquo;.
 Umm, &hellip; truth is I don&rsquo;t even where to start with this.">
     <meta name="google-site-verification" content="leqKZ6ZyQGOq6f_hMMWU-dgFPt8qgZeyJj-ZfCjyz3I" />
-    <link rel="canonical" href="http://localhost:1313/post/2024/what_are_sufficient_statistics/" />
+    <link rel="canonical" href="https://unionpan.github.io/post/2024/what_are_sufficient_statistics/" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
     
-    <link rel="stylesheet" href="http://localhost:1313/scss/style.min.bdfc41214cc1a8cd1b66e75ea61094e5fc36501e8aa0c63d2662d1a318cc3668.css">
-    <meta property="og:url" content="http://localhost:1313/post/2024/what_are_sufficient_statistics/">
+    <link rel="stylesheet" href="https://unionpan.github.io/scss/style.min.bdfc41214cc1a8cd1b66e75ea61094e5fc36501e8aa0c63d2662d1a318cc3668.css">
+    <meta property="og:url" content="https://unionpan.github.io/post/2024/what_are_sufficient_statistics/">
   <meta property="og:site_name" content="union&#39;s blog">
   <meta property="og:title" content="What (on earth) is a Sufficient Statistic?">
   <meta property="og:description" content="It certainly bothered me (not any more) to hear people casually dropping the word “sufficient statistics” in their talks, often describing some of their ‘‘observations’’ or ‘‘samples’’ that they feel like are ‘‘sufficient’’ for them to make certain decisions. The thing is, the word ‘‘sufficient’’ comes with a very rigorous definition, that may not even hold in those frameworks. For example, a lot of traffic control algorithms use measured vehicle streamed data to learn some embeddings as the input, the downstream tasks could be variable speed limit for certain highway segments for example, and people might call the embeddings ‘‘sufficient statistics’’. Umm, … truth is I don’t even where to start with this.">
@@ -43,6 +43,15 @@ Umm, &hellip; truth is I don&rsquo;t even where to start with this.">
     integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
     onload="renderMathInElement(document.body);"></script>
     
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P8CZD2GL8F"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-P8CZD2GL8F');
+    </script>
+    
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             renderMathInElement(document.body, {
@@ -57,7 +66,7 @@ Umm, &hellip; truth is I don&rsquo;t even where to start with this.">
 </head><body>
         <div class="theme-toggle-container">
             <a id="theme-toggle" class="theme-toggle" href="#">
-                <img src="http://localhost:1313/svg/sun.svg" alt="sun icon" class="theme-icon" />
+                <img src="https://unionpan.github.io/svg/sun.svg" alt="sun icon" class="theme-icon" />
             </a>
         </div>
         
@@ -151,7 +160,7 @@ Umm, &hellip; truth is I don&rsquo;t even where to start with this.">
     <div class="archive">
         
         <div class="post-thumbnail-container">
-            <img src="http://localhost:1313//images/post/2024/What_Are_Sufficient_Statistics/thumbnail.png" alt="What (on earth) is a Sufficient Statistic?" class="post-thumbnail-image">
+            <img src="https://unionpan.github.io//images/post/2024/What_Are_Sufficient_Statistics/thumbnail.png" alt="What (on earth) is a Sufficient Statistic?" class="post-thumbnail-image">
         </div>
         
         <h1 class="title is-1">What (on earth) is a Sufficient Statistic?</h1>
@@ -336,7 +345,7 @@ $$</p>
             <div class="has-text-left">
                 
                 <p>Previous post</p>
-                <a href="http://localhost:1313/post/2024/butterfly_effect/">The Lorenz dynamics and Butterfly Effect</a>
+                <a href="https://unionpan.github.io/post/2024/butterfly_effect/">The Lorenz dynamics and Butterfly Effect</a>
                 
             </div>
             <div class="has-text-right">
@@ -359,11 +368,11 @@ $$</p>
                 let themeIcon = document.querySelector(".theme-icon");
                 if (theme === "dark") {
                     body.classList.add("dark-mode");
-                    themeIcon.src = "http:\/\/localhost:1313\/svg/moon.svg";
+                    themeIcon.src = "https:\/\/unionpan.github.io\/svg/moon.svg";
                     themeIcon.alt = "moon icon";
                 } else {
                     body.classList.remove("dark-mode");
-                    themeIcon.src = "http:\/\/localhost:1313\/svg/sun.svg";
+                    themeIcon.src = "https:\/\/unionpan.github.io\/svg/sun.svg";
                     themeIcon.alt = "sun icon";
                 }
                 localStorage.setItem("theme", theme);
