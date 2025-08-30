@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 <html lang="en-us">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>Nesterov | union&#39;s blog</title>
@@ -17,11 +17,11 @@ $$
 x_{k} \in x_{0} &#43; \operatorname{Span} \left \{f^{\prime} \left (x_{0} \right ), \ldots, f^{\prime} \left (x_{k-1} \right )\right \}.
 $$">
     <meta name="google-site-verification" content="leqKZ6ZyQGOq6f_hMMWU-dgFPt8qgZeyJj-ZfCjyz3I" />
-    <link rel="canonical" href="http://localhost:1313/post/2022/nesterov/" />
+    <link rel="canonical" href="https://yunianpan.com/post/2022/nesterov/" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
     
-    <link rel="stylesheet" href="http://localhost:1313/scss/style.min.bdfc41214cc1a8cd1b66e75ea61094e5fc36501e8aa0c63d2662d1a318cc3668.css">
-    <meta property="og:url" content="http://localhost:1313/post/2022/nesterov/">
+    <link rel="stylesheet" href="https://yunianpan.com/scss/style.min.bdfc41214cc1a8cd1b66e75ea61094e5fc36501e8aa0c63d2662d1a318cc3668.css">
+    <meta property="og:url" content="https://yunianpan.com/post/2022/nesterov/">
   <meta property="og:site_name" content="union&#39;s blog">
   <meta property="og:title" content="Nesterov">
   <meta property="og:description" content="I did a presentation in a group meeting to briefly review the lower complexity bound of first-order convex optimization; and how Nesterov proceed to match the lower bound using the estimation sequence, the slides are here.
@@ -53,6 +53,15 @@ $$ x_{k} \in x_{0} &#43; \operatorname{Span} \left \{f^{\prime} \left (x_{0} \ri
     integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
     onload="renderMathInElement(document.body);"></script>
     
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P8CZD2GL8F"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-P8CZD2GL8F');
+    </script>
+    
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -79,7 +88,7 @@ $$ x_{k} \in x_{0} &#43; \operatorname{Span} \left \{f^{\prime} \left (x_{0} \ri
 </head><body>
         <div class="theme-toggle-container">
             <a id="theme-toggle" class="theme-toggle" href="#">
-                <img src="http://localhost:1313/svg/sun.svg" alt="sun icon" class="theme-icon" />
+                <img src="https://yunianpan.com/svg/sun.svg" alt="sun icon" class="theme-icon" />
             </a>
         </div>
         
@@ -173,7 +182,7 @@ $$ x_{k} \in x_{0} &#43; \operatorname{Span} \left \{f^{\prime} \left (x_{0} \ri
     <div class="archive">
         
         <div class="post-thumbnail-container">
-            <img src="http://localhost:1313//images/post/2022/Nesterov/thumbnail.jpg" alt="Nesterov" class="post-thumbnail-image">
+            <img src="https://yunianpan.com//images/post/2022/Nesterov/thumbnail.jpg" alt="Nesterov" class="post-thumbnail-image">
         </div>
         
         <h1 class="title is-1">Nesterov</h1>
@@ -320,13 +329,13 @@ $$</li>
             <div class="has-text-left">
                 
                 <p>Previous post</p>
-                <a href="http://localhost:1313/post/2022/the_capacity_of_deception/">Capacity of Deception</a>
+                <a href="https://yunianpan.com/post/2022/the_capacity_of_deception/">Capacity of Deception</a>
                 
             </div>
             <div class="has-text-right">
                 
                 <p>Next post</p>
-                <a href="http://localhost:1313/post/2022/monge/">Monge Partition</a>
+                <a href="https://yunianpan.com/post/2022/monge/">Monge Partition</a>
                 
             </div>
         </section>
@@ -346,11 +355,11 @@ $$</li>
                 let themeIcon = document.querySelector(".theme-icon");
                 if (theme === "dark") {
                     body.classList.add("dark-mode");
-                    themeIcon.src = "http:\/\/localhost:1313\/svg/moon.svg";
+                    themeIcon.src = "https:\/\/yunianpan.com\/svg/moon.svg";
                     themeIcon.alt = "moon icon";
                 } else {
                     body.classList.remove("dark-mode");
-                    themeIcon.src = "http:\/\/localhost:1313\/svg/sun.svg";
+                    themeIcon.src = "https:\/\/yunianpan.com\/svg/sun.svg";
                     themeIcon.alt = "sun icon";
                 }
                 localStorage.setItem("theme", theme);
