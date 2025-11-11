@@ -6,18 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>Blackwell Approachability | union&#39;s blog</title>
     <meta name="description"
-        content="Pretty much my whole PhD is about learning in games. I wouldn&rsquo;t dare to say I mastered, but I&rsquo;ve tried major algorithmic advancement in this field, maybe there is no way of distributing this but
-Learning in Games">
+        content="Safe to say my PhD was all about learning in games. One of the most elegant concepts I encountered is Blackwell&rsquo;s Approachability theorem 1, a beautiful piece of mathematics that connects geometry, game theory, and the very essence of what it means by no-regret learning. While it has been known for a long time that approachability implies the existence of no-regret algorithms, the connection is much stronger: the two are, in a very strong sense, algorithmically equivalent.">
     <meta name="google-site-verification" content="leqKZ6ZyQGOq6f_hMMWU-dgFPt8qgZeyJj-ZfCjyz3I" />
     <link rel="canonical" href="https://yunianpan.com/post/2025/learning_in_games/" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
     
-    <link rel="stylesheet" href="https://yunianpan.com/scss/style.min.302fb7504def0e08e50bd405824a87eddd06e78f01fa2da6761e4062eb0558ee.css">
+    <link rel="stylesheet" href="https://yunianpan.com/scss/style.min.68ea290cc741787e63960863183945af12fd62d87d74775454fd7335d4bfa0a8.css">
     <meta property="og:url" content="https://yunianpan.com/post/2025/learning_in_games/">
   <meta property="og:site_name" content="union&#39;s blog">
   <meta property="og:title" content="Blackwell Approachability">
-  <meta property="og:description" content="Pretty much my whole PhD is about learning in games. I wouldn’t dare to say I mastered, but I’ve tried major algorithmic advancement in this field, maybe there is no way of distributing this but
-Learning in Games">
+  <meta property="og:description" content="Safe to say my PhD was all about learning in games. One of the most elegant concepts I encountered is Blackwell’s Approachability theorem 1, a beautiful piece of mathematics that connects geometry, game theory, and the very essence of what it means by no-regret learning. While it has been known for a long time that approachability implies the existence of no-regret algorithms, the connection is much stronger: the two are, in a very strong sense, algorithmically equivalent.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="post">
@@ -27,8 +25,7 @@ Learning in Games">
     
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Blackwell Approachability">
-  <meta name="twitter:description" content="Pretty much my whole PhD is about learning in games. I wouldn’t dare to say I mastered, but I’ve tried major algorithmic advancement in this field, maybe there is no way of distributing this but
-Learning in Games">
+  <meta name="twitter:description" content="Safe to say my PhD was all about learning in games. One of the most elegant concepts I encountered is Blackwell’s Approachability theorem 1, a beautiful piece of mathematics that connects geometry, game theory, and the very essence of what it means by no-regret learning. While it has been known for a long time that approachability implies the existence of no-regret algorithms, the connection is much stronger: the two are, in a very strong sense, algorithmically equivalent.">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"
     integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
@@ -212,6 +209,15 @@ Learning in Games">
                 
     <div class="post-toc">
         
+            <aside>
+                <button id="tocButton" ><h4 id="contents" style="margin-left: 1vw;color:rgb(96, 134, 180);margin-bottom: 0;">CONTENTS</h4></button>
+                <div id="hide"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#the-algorithmic-equivalence">The Algorithmic Equivalence</a></li>
+  </ul>
+</nav></div>
+            </aside>
+        
     </div><script>
     
         let button = document.getElementById('tocButton');
@@ -232,8 +238,55 @@ Learning in Games">
 
 </script>
             </div>
-            <p>Pretty much my whole PhD is about learning in games. I wouldn&rsquo;t dare to say I mastered, but I&rsquo;ve tried major algorithmic advancement in this field, maybe there is no way of distributing this but</p>
-<h2 id="learning-in-games">Learning in Games</h2>
+            <p>Safe to say my PhD was all about learning in games. One of the most elegant concepts I encountered is Blackwell&rsquo;s Approachability theorem <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>, a beautiful piece of mathematics that connects geometry, game theory, and the very essence of what it means by no-regret learning. While it has been known for a long time that approachability implies the existence of no-regret algorithms, the connection is much stronger: the two are, in a very strong sense, algorithmically equivalent.</p>
+<p>At its heart, learning in games is about approaching equilibrium with iterative plays, which can be reduced to minimizing <strong>regret</strong><sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>—the difference between your actual payoff and what you could have had by choosing the best single action in hindsight. A good algorithm ensures your average payoff is as good as if you&rsquo;d known the best action from the start. This is the goal of <strong>Online Linear Optimization (OLO)</strong>, where a learner repeatedly chooses a point $x_t$ from a convex set $K$ and incurs a linear loss $\langle f_t, x_t \rangle$ for a sequence of loss vectors $f_t$. The regret is the difference between the total loss and the loss of the best single action in hindsight:
+$$
+\mathcal{R}_T = \sum_{t=1}^T \langle f_t, x_t \rangle - \min_{x \in K} \sum_{t=1}^T \langle f_t, x \rangle
+$$
+A no-regret algorithm ensures that the average regret, $\mathcal{R}_T/T$, goes to zero.</p>
+<p>Blackwell&rsquo;s theorem provides a geometric framework to understand when such algorithms are possible. It deals with a &ldquo;target&rdquo; region of desirable outcomes, a convex set $S$, in the space of all possible average payoffs. The theorem tells us if a player can force the average payoff vector, $\bar{u}_t$, to enter and stay in $S$, no matter what the opponent does. If they can, the set is <strong>approachable</strong>.</p>
+<p>The condition for approachability is simple and elegant. A convex set $S$ is approachable if and only if for any average payoff vector $z$ outside of $S$, the player can choose an action that, in expectation, moves the payoff vector closer to $S$. Formally, for every point $z \notin S$, there must exist a mixed action $x$ for the player such that for all opponent mixed actions $y$:
+$$
+(z - \Pi_S(z))^\top (u(x,y) - \Pi_S(z)) \le 0
+$$
+Here, $\Pi_S(z)$ is the Euclidean projection of $z$ onto $S$.</p>
+<h2 id="the-algorithmic-equivalence">The Algorithmic Equivalence</h2>
+<p>The equivalence between approachability and no-regret learning is established through a pair of reductions. The key is to use the powerful tools of conic duality, which requires the set to be approached to be a cone.</p>
+<p>But what if our target set is a general convex set, not a cone? This is where a clever &ldquo;lifting trick&rdquo; comes in. We can embed any compact convex set $K$ into a higher-dimensional space to create a cone. Let $\kappa = \max_{x \in K} |x|$ be the &ldquo;norm&rdquo; of the set. We define a new &ldquo;lifted&rdquo; set $\tilde{K} = {\kappa} \times K$ in $\mathbb{R}^{d+1}$. The conic hull of this set, $\text{cone}(\tilde{K})$, is a cone.</p>
+<p>The image below illustrates this construction:</p>
+<p><img src="/images/post/2025/learning_in_games/bwfig.png" alt="Geometric interpretation of the lifting trick"></p>
+<p>Here&rsquo;s what the different elements in the image represent:</p>
+<ul>
+<li><strong>$\tilde{K}$</strong>: This is the original convex set $K$, &ldquo;lifted&rdquo; into a higher dimension. It&rsquo;s represented by the horizontal line segment.</li>
+<li><strong>$\text{cone}(\tilde{K})$</strong>: This is the convex cone generated by $\tilde{K}$. It&rsquo;s the shaded region.</li>
+<li><strong>$\tilde{x}$</strong>: This is a point outside the lifted set, corresponding to a point $x$ outside the original set $K$.</li>
+<li><strong>$v$</strong>: This is the projection of $\tilde{x}$ onto the lifted set $\tilde{K}$.</li>
+<li><strong>$w$</strong>: This is the projection of $\tilde{x}$ onto the cone, $\text{cone}(\tilde{K})$.</li>
+<li><strong>$\kappa \oplus 0$</strong>: This is the point $(\kappa, 0, \dots, 0)$ in the higher-dimensional space.</li>
+</ul>
+<p>The key insight is that the distance from a point to the original set $K$ is related to the distance from the lifted point to the cone $\text{cone}(\tilde{K})$. Specifically:
+$$
+\text{dist}(\tilde{x}, \text{cone}(\tilde{K})) \le \text{dist}(x, K) \le 2 \cdot \text{dist}(\tilde{x}, \text{cone}(\tilde{K}))
+$$
+This means that if we can drive the distance to the cone to zero, we can also drive the distance to the original set to zero. This lifting trick allows us to use the powerful machinery of conic duality to prove the equivalence.</p>
+<p>With this trick in hand, the equivalence is established:</p>
+<ul>
+<li><strong>From No-Regret to Approachability:</strong> A no-regret OLO algorithm can be used to solve an approachability problem by running it on the polar cone of the target set.</li>
+<li><strong>From Approachability to No-Regret:</strong> An approachability algorithm can be used to solve an OLO problem by constructing a Blackwell instance where the set to be approached is the polar cone of the conic hull of the OLO decision set.</li>
+</ul>
+<p>This deep connection shows that the geometric problem of steering an average payoff vector into a convex set is fundamentally the same as the algorithmic problem of minimizing regret in an online linear optimization setting. This equivalence is not just a theoretical curiosity; it has practical implications, such as the development of the first efficient algorithm for calibrated forecasting.</p>
+<p>In short, Blackwell&rsquo;s theorem provides the foundational geometric insight, while no-regret algorithms provide the concrete learning rules. The two are sides of the same coin, giving us a powerful lens to understand how to learn and adapt in a complex, uncertain world.</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>Abernethy, J., Bartlett, P. L., &amp; Hazan, E. (2011). Blackwell Approachability and No-Regret Learning are Equivalent. <em>JMLR: Workshop and Conference Proceedings, 19</em>, 27-46.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>Hannan, J. (1957). Approximation to Bayes risk in repeated play. Contributions to the Theory of Games, 3(2), 97-139.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
 
         </div>
     </div>
