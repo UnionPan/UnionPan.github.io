@@ -11,7 +11,7 @@
     <link rel="canonical" href="https://yunianpan.com/post/about_me/" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
     
-    <link rel="stylesheet" href="https://yunianpan.com/scss/style.min.bdfc41214cc1a8cd1b66e75ea61094e5fc36501e8aa0c63d2662d1a318cc3668.css">
+    <link rel="stylesheet" href="https://yunianpan.com/scss/style.min.302fb7504def0e08e50bd405824a87eddd06e78f01fa2da6761e4062eb0558ee.css">
     <meta property="og:url" content="https://yunianpan.com/post/about_me/">
   <meta property="og:site_name" content="union&#39;s blog">
   <meta property="og:title" content="About Me">
@@ -26,7 +26,7 @@
 
     
     
-    
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-P8CZD2GL8F"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -57,14 +57,15 @@
             });
         });
     </script>
-    
-</head><body>
+
+</head>
+<body>
         <div class="theme-toggle-container">
             <a id="theme-toggle" class="theme-toggle" href="#">
                 <img src="https://yunianpan.com/svg/sun.svg" alt="sun icon" class="theme-icon" />
             </a>
         </div>
-        
+
         
         <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
             <span class="hamburger-line"></span>
@@ -91,6 +92,14 @@
                                 <a href="/post/2023" class="submenu-link">2023</a>
                                 <a href="/post/2024" class="submenu-link">2024</a>
                                 <a href="/post/2025" class="submenu-link">2025</a>
+                            </div>
+                        </div>
+                        <div class="nav-item-container">
+                            <a href="#" class="nav-link projects-toggle" onclick="toggleProjectsMenu(event)">
+                                Projects <span class="dropdown-arrow">▼</span>
+                            </a>
+                            <div class="submenu" id="projects-submenu">
+                                <a href="https://app.yunianpan.com/" class="submenu-link" target="_blank" rel="noopener noreferrer">Option Desk</a>
                             </div>
                         </div>
                         <a href="/statement" class="nav-link ">Statement/CV</a>
@@ -180,8 +189,6 @@ What won&rsquo;t last much longer is that I&rsquo;m finishing my PhD at NYU Tand
     </section>
 </div>
 
-                <footer class="footer">
-</footer>
             </main>
         </div>
 
@@ -206,12 +213,12 @@ What won&rsquo;t last much longer is that I&rsquo;m finishing my PhD at NYU Tand
             document.addEventListener('DOMContentLoaded', function() {
                 
                 let theme = localStorage.getItem("theme");
-                
+
                 
                 if (!theme) {
                     theme = 'dark';
                 }
-                
+
                 setTheme(theme);
 
                 
@@ -222,12 +229,12 @@ What won&rsquo;t last much longer is that I&rsquo;m finishing my PhD at NYU Tand
                     setTheme(newTheme);
                 });
             });
-            
+
             
             document.getElementById('mobile-menu-toggle').addEventListener('click', function() {
                 const sidebar = document.getElementById('sidebar');
                 const button = this;
-                
+
                 sidebar.classList.toggle('open');
                 button.classList.toggle('active');
             });
@@ -235,10 +242,10 @@ What won&rsquo;t last much longer is that I&rsquo;m finishing my PhD at NYU Tand
             
             function toggleBlogMenu(event) {
                 event.preventDefault();
-                event.stopPropagation(); 
+                event.stopPropagation();
                 const submenu = document.getElementById('blog-submenu');
-                const arrow = document.querySelector('.dropdown-arrow');
-                
+                const arrow = event.currentTarget.querySelector('.dropdown-arrow');
+
                 if (submenu.classList.contains('open')) {
                     submenu.classList.remove('open');
                     arrow.style.transform = 'rotate(0deg)';
@@ -247,26 +254,45 @@ What won&rsquo;t last much longer is that I&rsquo;m finishing my PhD at NYU Tand
                     arrow.style.transform = 'rotate(180deg)';
                 }
             }
+
             
-            
-            document.addEventListener('click', function(event) {
-                const navContainer = document.querySelector('.nav-item-container');
-                const submenu = document.getElementById('blog-submenu');
-                const arrow = document.querySelector('.dropdown-arrow');
-                
-                if (!navContainer.contains(event.target) && submenu.classList.contains('open')) {
+            function toggleProjectsMenu(event) {
+                event.preventDefault();
+                event.stopPropagation();
+                const submenu = document.getElementById('projects-submenu');
+                const arrow = event.currentTarget.querySelector('.dropdown-arrow');
+
+                if (submenu.classList.contains('open')) {
                     submenu.classList.remove('open');
                     arrow.style.transform = 'rotate(0deg)';
+                } else {
+                    submenu.classList.add('open');
+                    arrow.style.transform = 'rotate(180deg)';
                 }
+            }
+
+            
+            document.addEventListener('click', function(event) {
+                const navContainers = document.querySelectorAll('.nav-item-container');
+
+                navContainers.forEach(container => {
+                    const submenu = container.querySelector('.submenu');
+                    const arrow = container.querySelector('.dropdown-arrow');
+
+                    if (!container.contains(event.target) && submenu.classList.contains('open')) {
+                        submenu.classList.remove('open');
+                        arrow.style.transform = 'rotate(0deg)';
+                    }
+                });
             });
 
             
             document.addEventListener('click', function(event) {
                 const sidebar = document.getElementById('sidebar');
                 const toggleButton = document.getElementById('mobile-menu-toggle');
-                
-                if (sidebar.classList.contains('open') && 
-                    !sidebar.contains(event.target) && 
+
+                if (sidebar.classList.contains('open') &&
+                    !sidebar.contains(event.target) &&
                     !toggleButton.contains(event.target)) {
                     sidebar.classList.remove('open');
                     toggleButton.classList.remove('active');
@@ -275,7 +301,7 @@ What won&rsquo;t last much longer is that I&rsquo;m finishing my PhD at NYU Tand
 
             
             document.querySelectorAll('.sidebar .nav-link, .sidebar .submenu-link').forEach(link => {
-                if (!link.classList.contains('blog-toggle')) {
+                if (!link.classList.contains('blog-toggle') && !link.classList.contains('projects-toggle')) {
                     link.addEventListener('click', function() {
                         const sidebar = document.getElementById('sidebar');
                         const toggleButton = document.getElementById('mobile-menu-toggle');
@@ -293,23 +319,23 @@ What won&rsquo;t last much longer is that I&rsquo;m finishing my PhD at NYU Tand
                 
                 const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
                 const isMac = /Mac|iPhone|iPod|iPad/i.test(navigator.userAgent);
-                
+
                 carousel.addEventListener('wheel', function(e) {
                     
                     if (isMobile) {
                         return;
                     }
-                    
+
                     
                     
                     const isTouchpad = isMac && (Math.abs(e.deltaX) > 0 || Math.abs(e.deltaY) < 50);
-                    
+
                     
                     if (isTouchpad && Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
                         
                         return;
                     }
-                    
+
                     
                     if (!isTouchpad && Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
                         e.preventDefault();
@@ -317,11 +343,10 @@ What won&rsquo;t last much longer is that I&rsquo;m finishing my PhD at NYU Tand
                     }
                 });
             }
-            
+
             
             addWheelScrolling('.posts-carousel');
             addWheelScrolling('.photos-carousel');
         </script>
     </body>
 </html>
-

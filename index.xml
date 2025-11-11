@@ -6,8 +6,15 @@
     <description>Recent content on union&#39;s blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 25 Aug 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 02 Nov 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://yunianpan.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Blackwell Approachability</title>
+      <link>https://yunianpan.com/post/2025/learning_in_games/</link>
+      <pubDate>Sun, 02 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>https://yunianpan.com/post/2025/learning_in_games/</guid>
+      <description>&lt;p&gt;Pretty much my whole PhD is about learning in games. I wouldn&amp;rsquo;t dare to say I mastered, but I&amp;rsquo;ve tried major algorithmic advancement in this field, maybe there is no way of distributing this but&lt;/p&gt;&#xA;&lt;h2 id=&#34;learning-in-games&#34;&gt;Learning in Games&lt;/h2&gt;</description>
+    </item>
     <item>
       <title>Reinforcement Learning with Human Feedback</title>
       <link>https://yunianpan.com/post/2025/rlhf/</link>
@@ -28,6 +35,20 @@
       <pubDate>Tue, 01 Jul 2025 00:00:00 +0000</pubDate>
       <guid>https://yunianpan.com/post/2025/mechanism_design/</guid>
       <description>&lt;p&gt;This past year I suffered a lot mentally and financially, my funding got paused and my girlfriend Sam (check out her &lt;a href=&#34;https://open.spotify.com/artist/3qo9BlnVduy6nW0pY1kmTQ&#34;&gt;spotify&lt;/a&gt;!) lost her boojee A.P.C. job. So I haven&amp;rsquo;t posted for a while. It&amp;rsquo;s really a leisure and effort to write stuff consistently (because wtf am I supposed to write?!!?). But the coding agents (Claude, Gemini etc..) really revolutionarized my efficiency, and shamelessly I have to admit that I use them a lot to &amp;ldquo;vibe code&amp;rdquo; and even do research, with sufficient human surveillance.&#xA;So hopefully, I will resume writing for my own sanity.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Contact</title>
+      <link>https://yunianpan.com/contact/</link>
+      <pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://yunianpan.com/contact/</guid>
+      <description>&lt;h3 id=&#34;phone&#34;&gt;Phone&lt;/h3&gt;&#xA;&lt;p&gt;&lt;strong&gt;+1 (646)-404-1857&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;email&#34;&gt;Email&lt;/h3&gt;&#xA;&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;mailto:pyn950@gmail.com&#34;&gt;pyn950@gmail.com&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Statement/CV</title>
+      <link>https://yunianpan.com/statement/</link>
+      <pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://yunianpan.com/statement/</guid>
+      <description>&lt;p&gt;I am a P.h.D. candidate at NYU Tandon. My dissertation focuses on the transient, macroscopic, and microscopic behaviors of multi-agent learning and interactions, which emerge from the complex systems accross various disciplines. My work primarily centers on the intersection of statistical reinforcement learning and applied game theory, where I try to quantify the uncertainties arise in decision-making processes and understand their efficiency. An application is the design of decentralized multi-radar communication algorithm that mitigates the mutual interference during the target detection.&lt;/p&gt;</description>
     </item>
     <item>
       <title>About Me</title>
@@ -105,20 +126,6 @@
       <pubDate>Wed, 16 Nov 2022 18:58:11 +0800</pubDate>
       <guid>https://yunianpan.com/post/2022/the_capacity_of_deception/</guid>
       <description>&lt;p&gt;This is pretty much scribed from Tor Lattimore&amp;rsquo;s Bandit Algorithms book,&lt;a href=&#34;https://tor-lattimore.com/downloads/book/book.pdf&#34;&gt;Bandit Algorithms&lt;/a&gt;. This book has been the most informational item for me in a while. There is a chapter about the foundations of information theory, which is simply entropy, but the story telling reminds me of deception.&#xA;Entropy, in plain words, is the measure of uncertainty for certain information; to communicate is to eliminate such uncertainty, to deceive, however, is to obscure certain information, hence to enforce such uncertainty. The duality has never been formalized as far as I know, because if you simply name the Shannon limit as the capacity of deception, you are doing anything innovative.&#xA;But, if you think from Shannon&amp;rsquo;s perspective, wasn&amp;rsquo;t he also just doing the same thing? (Sorry for quoting my advisor here.) Anyway here goes the story:&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title></title>
-      <link>https://yunianpan.com/contact/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://yunianpan.com/contact/</guid>
-      <description>&lt;h2&gt;&lt;/h2&gt;&#xA;&lt;h3 id=&#34;phone&#34;&gt;Phone&lt;/h3&gt;&#xA;&lt;p&gt;&lt;strong&gt;+1 (646)-404-1857&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;email&#34;&gt;Email&lt;/h3&gt;&#xA;&lt;p&gt;&lt;strong&gt;pyn950@.gmail.com&lt;/strong&gt;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title></title>
-      <link>https://yunianpan.com/statement/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://yunianpan.com/statement/</guid>
-      <description>&lt;p&gt;I am a P.h.D. candidate at NYU Tandon. My dissertation focuses on the transient, macroscopic, and microscopic behaviors of multi-agent learning and interactions, which emerge from the complex systems accross various disciplines. My work primarily centers on the intersection of statistical reinforcement learning and applied game theory, where I try to quantify the uncertainties arise in decision-making processes and understand their efficiency. An application is the design of decentralized multi-radar communication algorithm that mitigates the mutual interference during the target detection.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

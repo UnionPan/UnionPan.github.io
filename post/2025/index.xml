@@ -6,8 +6,15 @@
     <description>Recent content in 2025 on union&#39;s blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 25 Aug 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 02 Nov 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://yunianpan.com/post/2025/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Blackwell Approachability</title>
+      <link>https://yunianpan.com/post/2025/learning_in_games/</link>
+      <pubDate>Sun, 02 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>https://yunianpan.com/post/2025/learning_in_games/</guid>
+      <description>&lt;p&gt;Pretty much my whole PhD is about learning in games. I wouldn&amp;rsquo;t dare to say I mastered, but I&amp;rsquo;ve tried major algorithmic advancement in this field, maybe there is no way of distributing this but&lt;/p&gt;&#xA;&lt;h2 id=&#34;learning-in-games&#34;&gt;Learning in Games&lt;/h2&gt;</description>
+    </item>
     <item>
       <title>Reinforcement Learning with Human Feedback</title>
       <link>https://yunianpan.com/post/2025/rlhf/</link>

@@ -14,7 +14,7 @@ Umm, &hellip; truth is I don&rsquo;t even where to start with this.">
     <link rel="canonical" href="https://yunianpan.com/post/2024/what_are_sufficient_statistics/" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
     
-    <link rel="stylesheet" href="https://yunianpan.com/scss/style.min.bdfc41214cc1a8cd1b66e75ea61094e5fc36501e8aa0c63d2662d1a318cc3668.css">
+    <link rel="stylesheet" href="https://yunianpan.com/scss/style.min.302fb7504def0e08e50bd405824a87eddd06e78f01fa2da6761e4062eb0558ee.css">
     <meta property="og:url" content="https://yunianpan.com/post/2024/what_are_sufficient_statistics/">
   <meta property="og:site_name" content="union&#39;s blog">
   <meta property="og:title" content="What (on earth) is a Sufficient Statistic?">
@@ -43,7 +43,7 @@ Umm, &hellip; truth is I don&rsquo;t even where to start with this.">
     integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
     onload="renderMathInElement(document.body);"></script>
     
-    
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-P8CZD2GL8F"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -74,14 +74,15 @@ Umm, &hellip; truth is I don&rsquo;t even where to start with this.">
             });
         });
     </script>
-    
-</head><body>
+
+</head>
+<body>
         <div class="theme-toggle-container">
             <a id="theme-toggle" class="theme-toggle" href="#">
                 <img src="https://yunianpan.com/svg/sun.svg" alt="sun icon" class="theme-icon" />
             </a>
         </div>
-        
+
         
         <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
             <span class="hamburger-line"></span>
@@ -108,6 +109,14 @@ Umm, &hellip; truth is I don&rsquo;t even where to start with this.">
                                 <a href="/post/2023" class="submenu-link">2023</a>
                                 <a href="/post/2024" class="submenu-link">2024</a>
                                 <a href="/post/2025" class="submenu-link">2025</a>
+                            </div>
+                        </div>
+                        <div class="nav-item-container">
+                            <a href="#" class="nav-link projects-toggle" onclick="toggleProjectsMenu(event)">
+                                Projects <span class="dropdown-arrow">▼</span>
+                            </a>
+                            <div class="submenu" id="projects-submenu">
+                                <a href="https://app.yunianpan.com/" class="submenu-link" target="_blank" rel="noopener noreferrer">Option Desk</a>
                             </div>
                         </div>
                         <a href="/statement" class="nav-link ">Statement/CV</a>
@@ -171,20 +180,32 @@ Umm, &hellip; truth is I don&rsquo;t even where to start with this.">
 <div class="single-container">
     <div class="archive">
         
-        <div class="post-thumbnail-container">
-            <img src="https://yunianpan.com//images/post/2024/What_Are_Sufficient_Statistics/thumbnail.png" alt="What (on earth) is a Sufficient Statistic?" class="post-thumbnail-image">
+        
+        <div class="post-thumbnail-header">
+            <img src="https://yunianpan.com//images/post/2024/What_Are_Sufficient_Statistics/thumbnail.png" alt="What (on earth) is a Sufficient Statistic?" class="post-header-img">
         </div>
+        
+
         
         <h1 class="title is-1">What (on earth) is a Sufficient Statistic?</h1>
-        <hr class="title-content-separator">
+        <div class="post-date-info">
+            <time>April 28, 2024</time>
+        </div>
+
         
-        <div class="title subtitle heading is-6">
-            <div class="small-categories-container">
+        
+        <div class="post-categories-section">
+            <div class="category-separator"></div>
+            <div class="category-witty">
                 
-                        <a href="https://www.nobelprize.org/prizes/economic-sciences/2011/sargent/facts/">Thomas Sargent told me to avoid using this word</a>
-                    
+                    <a href="https://www.nobelprize.org/prizes/economic-sciences/2011/sargent/facts/" target="_blank" rel="noopener noreferrer">
+                        Thomas Sargent told me to avoid using this word
+                    </a>
+                
             </div>
         </div>
+        
+
         
         <div class="content article-content">
             <div class="toc-container">
@@ -294,6 +315,8 @@ $$</p>
 
         </div>
     </div>
+
+    
     <a href="#" id="scrollToTopButton">
         <svg t="1686753152588" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
             p-id="3988" width="48" height="48">
@@ -352,7 +375,8 @@ $$</p>
 </script>
 
 
-<div class="pp-container">
+
+    <div class="pp-container">
         <section class="pre-and-post">
             <div class="has-text-left">
                 
@@ -368,8 +392,6 @@ $$</p>
 
 </div>
 
-                <footer class="footer">
-</footer>
             </main>
         </div>
 
@@ -394,12 +416,12 @@ $$</p>
             document.addEventListener('DOMContentLoaded', function() {
                 
                 let theme = localStorage.getItem("theme");
-                
+
                 
                 if (!theme) {
                     theme = 'dark';
                 }
-                
+
                 setTheme(theme);
 
                 
@@ -410,12 +432,12 @@ $$</p>
                     setTheme(newTheme);
                 });
             });
-            
+
             
             document.getElementById('mobile-menu-toggle').addEventListener('click', function() {
                 const sidebar = document.getElementById('sidebar');
                 const button = this;
-                
+
                 sidebar.classList.toggle('open');
                 button.classList.toggle('active');
             });
@@ -423,10 +445,10 @@ $$</p>
             
             function toggleBlogMenu(event) {
                 event.preventDefault();
-                event.stopPropagation(); 
+                event.stopPropagation();
                 const submenu = document.getElementById('blog-submenu');
-                const arrow = document.querySelector('.dropdown-arrow');
-                
+                const arrow = event.currentTarget.querySelector('.dropdown-arrow');
+
                 if (submenu.classList.contains('open')) {
                     submenu.classList.remove('open');
                     arrow.style.transform = 'rotate(0deg)';
@@ -435,26 +457,45 @@ $$</p>
                     arrow.style.transform = 'rotate(180deg)';
                 }
             }
+
             
-            
-            document.addEventListener('click', function(event) {
-                const navContainer = document.querySelector('.nav-item-container');
-                const submenu = document.getElementById('blog-submenu');
-                const arrow = document.querySelector('.dropdown-arrow');
-                
-                if (!navContainer.contains(event.target) && submenu.classList.contains('open')) {
+            function toggleProjectsMenu(event) {
+                event.preventDefault();
+                event.stopPropagation();
+                const submenu = document.getElementById('projects-submenu');
+                const arrow = event.currentTarget.querySelector('.dropdown-arrow');
+
+                if (submenu.classList.contains('open')) {
                     submenu.classList.remove('open');
                     arrow.style.transform = 'rotate(0deg)';
+                } else {
+                    submenu.classList.add('open');
+                    arrow.style.transform = 'rotate(180deg)';
                 }
+            }
+
+            
+            document.addEventListener('click', function(event) {
+                const navContainers = document.querySelectorAll('.nav-item-container');
+
+                navContainers.forEach(container => {
+                    const submenu = container.querySelector('.submenu');
+                    const arrow = container.querySelector('.dropdown-arrow');
+
+                    if (!container.contains(event.target) && submenu.classList.contains('open')) {
+                        submenu.classList.remove('open');
+                        arrow.style.transform = 'rotate(0deg)';
+                    }
+                });
             });
 
             
             document.addEventListener('click', function(event) {
                 const sidebar = document.getElementById('sidebar');
                 const toggleButton = document.getElementById('mobile-menu-toggle');
-                
-                if (sidebar.classList.contains('open') && 
-                    !sidebar.contains(event.target) && 
+
+                if (sidebar.classList.contains('open') &&
+                    !sidebar.contains(event.target) &&
                     !toggleButton.contains(event.target)) {
                     sidebar.classList.remove('open');
                     toggleButton.classList.remove('active');
@@ -463,7 +504,7 @@ $$</p>
 
             
             document.querySelectorAll('.sidebar .nav-link, .sidebar .submenu-link').forEach(link => {
-                if (!link.classList.contains('blog-toggle')) {
+                if (!link.classList.contains('blog-toggle') && !link.classList.contains('projects-toggle')) {
                     link.addEventListener('click', function() {
                         const sidebar = document.getElementById('sidebar');
                         const toggleButton = document.getElementById('mobile-menu-toggle');
@@ -481,23 +522,23 @@ $$</p>
                 
                 const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
                 const isMac = /Mac|iPhone|iPod|iPad/i.test(navigator.userAgent);
-                
+
                 carousel.addEventListener('wheel', function(e) {
                     
                     if (isMobile) {
                         return;
                     }
-                    
+
                     
                     
                     const isTouchpad = isMac && (Math.abs(e.deltaX) > 0 || Math.abs(e.deltaY) < 50);
-                    
+
                     
                     if (isTouchpad && Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
                         
                         return;
                     }
-                    
+
                     
                     if (!isTouchpad && Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
                         e.preventDefault();
@@ -505,11 +546,10 @@ $$</p>
                     }
                 });
             }
-            
+
             
             addWheelScrolling('.posts-carousel');
             addWheelScrolling('.photos-carousel');
         </script>
     </body>
 </html>
-

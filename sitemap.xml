@@ -3,15 +3,18 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://yunianpan.com/post/2025/</loc>
-    <lastmod>2025-08-25T00:00:00+00:00</lastmod>
+    <lastmod>2025-11-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yunianpan.com/post/2025/learning_in_games/</loc>
+    <lastmod>2025-11-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://yunianpan.com/post/</loc>
-    <lastmod>2025-08-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://yunianpan.com/post/2025/rlhf/</loc>
-    <lastmod>2025-08-25T00:00:00+00:00</lastmod>
+    <lastmod>2025-11-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://yunianpan.com/</loc>
+    <lastmod>2025-11-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yunianpan.com/post/2025/rlhf/</loc>
     <lastmod>2025-08-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://yunianpan.com/photos/</loc>
@@ -19,6 +22,12 @@
   </url><url>
     <loc>https://yunianpan.com/post/2025/mechanism_design/</loc>
     <lastmod>2025-07-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yunianpan.com/contact/</loc>
+    <lastmod>2025-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yunianpan.com/statement/</loc>
+    <lastmod>2025-01-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://yunianpan.com/post/about_me/</loc>
     <lastmod>2024-08-26T20:18:54+03:00</lastmod>
@@ -64,10 +73,6 @@
   </url><url>
     <loc>https://yunianpan.com/post/2022/the_capacity_of_deception/</loc>
     <lastmod>2022-11-16T18:58:11+08:00</lastmod>
-  </url><url>
-    <loc>https://yunianpan.com/contact/</loc>
-  </url><url>
-    <loc>https://yunianpan.com/statement/</loc>
   </url><url>
     <loc>https://yunianpan.com/tags/</loc>
   </url>
