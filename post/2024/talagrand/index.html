@@ -22,7 +22,7 @@ Applying this concept to probability space, Talagrand was able to prove the foll
     <link href="https://fonts.googleapis.com/css2?family=Gentium+Plus:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
     
-    <link rel="stylesheet" href="https://yunianpan.com/scss/style.min.60c10b16a697cd396736f7247c4c3e1f0274fcc934b3e9676294f5d083926119.css">
+    <link rel="stylesheet" href="https://yunianpan.com/scss/style.min.ad3c4324be0f79486ebbf3c979aa052957ef74e8f90703ff53ec73d780e02b09.css">
     <meta property="og:url" content="https://yunianpan.com/post/2024/talagrand/">
   <meta property="og:site_name" content="union&#39;s blog">
   <meta property="og:title" content="Talagrand&#39;s Isoperimetry inequality">
@@ -40,18 +40,10 @@ Now we’ve seen significance of his contribution to the concentration of measur
   <meta name="twitter:description" content="This post is in celebration of Michel Talagrand winning Abel prize. Not to overly romanticize this but this is pretty much a come back story because back in the days of last century, “The type of mathematics I do was not fashionable at all when I started. It was considered inferior mathematics.” –Michel Talagrand.
 Now we’ve seen significance of his contribution to the concentration of measure, suprema of stochastic processes and spin glass, all partially owing to his celebrated isoperimetry inequality in product probability space. What is an isoperimetry inequality? It is a concept in mathematics, particularly in the field of geometry and geometric analysis, that compares the length (or perimeter) of a closed curve to the area of the region it encloses, establishing that among all shapes with the same perimeter, the circle has the maximum area. For example: $$ 4 \pi A \leq L^2 $$ where the equality holds if.f. the curve is a circle. In a more general sense, the isoperimetric inequality relates the volume of an $n$-dimensional domain to the surface area of its boundary, with the sphere in $n$-dimensional space providing the optimal (maximum volume for a given surface area) ratio. Applying this concept to probability space, Talagrand was able to prove the following:">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"
-    integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
 
-
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"
-    integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8"
-    crossorigin="anonymous"></script>
-
-
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
-    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
     
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-P8CZD2GL8F"></script>
@@ -79,17 +71,18 @@ Now we’ve seen significance of his contribution to the concentration of measur
             renderMathInElement(document.body, {
                 delimiters: [
                     { left: "$$", right: "$$", display: true },
+                    { left: "\\(", right: "\\)", display: false },
+                    { left: "\\[", right: "\\]", display: true },
                     { left: "$", right: "$", display: false }
                 ]
             });
         });
     </script>
 
-</head>
-<body>
+</head><body>
         <div class="theme-toggle-container">
             <a id="theme-toggle" class="theme-toggle" href="#">
-                <img src="https://yunianpan.com/svg/sun.svg" alt="sun icon" class="theme-icon" />
+                <img src="https://yunianpan.com//svg/sun.svg" alt="sun icon" class="theme-icon" />
             </a>
         </div>
 
@@ -140,48 +133,49 @@ Now we’ve seen significance of his contribution to the concentration of measur
                         </div>
                         <div class="social-icons">
                             
+                            
                             <a href="https://www.linkedin.com/in/unionpan/" title="Linkedin" class="social-link">
-                                <svg height="32px" width="32px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-    stroke-linecap="round" stroke-linejoin="round">
-    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-    <rect x="2" y="9" width="4" height="12"></rect>
-    <circle cx="4" cy="4" r="2"></circle>
-</svg>
+                                <svg height="32px" width="32px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                    <rect x="2" y="9" width="4" height="12"></rect>
+                                    <circle cx="4" cy="4" r="2"></circle>
+                                </svg>
                             </a>
+                            
+                            
                             
                             <a href="https://github.com/UnionPan" title="Github" class="social-link">
-                                <svg height="32px" width="32px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-    stroke-linecap="round" stroke-linejoin="round">
-    <path
-        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-    </path>
-</svg>
+                                <svg height="32px" width="32px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                                </svg>
                             </a>
+                            
+                            
                             
                             <a href="https://twitter.com/Union54572322" title="twitter" class="social-link">
-                                <svg height="32px" width="32px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-    stroke-linecap="round" stroke-linejoin="round">
-    <path
-        d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
-    </path>
-</svg>
+                                <svg height="32px" width="32px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                                </svg>
                             </a>
+                            
+                            
                             
                             <a href="https://www.facebook.com/yunian.pan/" title="Facebook" class="social-link">
-                                <svg height="32px" width="32px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-    stroke-linecap="round" stroke-linejoin="round">
-    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-</svg>
+                                <svg height="32px" width="32px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                                </svg>
                             </a>
                             
+                            
+                            
                             <a href="https://www.instagram.com/pyn_rodcutter/?hl=en" title="instagram" class="social-link">
-                                <svg height="32px" width="32px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-    stroke-linecap="round" stroke-linejoin="round">
-    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-    <line x1="17.5" y1="6.5" x2="17.5" y2="6.5"></line>
-</svg>
+                                <svg height="32px" width="32px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                    <line x1="17.5" y1="6.5" x2="17.5" y2="6.5"></line>
+                                </svg>
                             </a>
+                            
                             
                         </div>
                     </div>
@@ -190,21 +184,13 @@ Now we’ve seen significance of his contribution to the concentration of measur
             <main class="main-content">
 <div class="single-container">
     <div class="archive">
-        
-        
         <div class="post-thumbnail-header">
-            <img src="https://yunianpan.com//images/post/2024/Talagrand/thumbnail.webp" alt="Talagrand&#39;s Isoperimetry inequality" class="post-header-img">
+            <img src="/images/post/2024/Talagrand/thumbnail.webp" alt="Talagrand&#39;s Isoperimetry inequality" class="post-header-img">
         </div>
-        
-
-        
         <h1 class="title is-1">Talagrand&#39;s Isoperimetry inequality</h1>
         <div class="post-date-info">
             <time>March 26, 2024</time>
         </div>
-
-        
-        
         <div class="post-categories-section">
             <div class="category-separator"></div>
             <div class="category-witty">
@@ -213,9 +199,6 @@ Now we’ve seen significance of his contribution to the concentration of measur
                 
             </div>
         </div>
-        
-
-        
         <div class="content article-content">
             <div class="toc-container">
                 
@@ -373,8 +356,6 @@ $$</p>
 
         </div>
     </div>
-
-    
     <a href="#" id="scrollToTopButton">
         <svg t="1686753152588" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
             p-id="3988" width="48" height="48">
@@ -433,8 +414,7 @@ $$</p>
 </script>
 
 
-
-    <div class="pp-container">
+<div class="pp-container">
         <section class="pre-and-post">
             <div class="has-text-left">
                 
@@ -454,123 +434,63 @@ $$</p>
 </div>
 
             </main>
-        </div>
-
-        <script>
+        </div><script>
             
-            function setTheme(theme) {
-                let body = document.body;
-                let themeIcon = document.querySelector(".theme-icon");
-                if (theme === "dark") {
-                    body.classList.add("dark-mode");
-                    themeIcon.src = "https:\/\/yunianpan.com\/svg/moon.svg";
-                    themeIcon.alt = "moon icon";
-                } else {
-                    body.classList.remove("dark-mode");
-                    themeIcon.src = "https:\/\/yunianpan.com\/svg/sun.svg";
-                    themeIcon.alt = "sun icon";
-                }
-                localStorage.setItem("theme", theme);
+            const toggle = document.getElementById('theme-toggle');
+            const body = document.body;
+            const icon = toggle.querySelector('.theme-icon');
+
+            const currentTheme = localStorage.getItem('theme') || 'light';
+            if (currentTheme === 'dark') {
+                body.classList.add('dark-mode');
+                icon.src = 'https:\/\/yunianpan.com\//svg/moon.svg';
+                icon.alt = 'moon icon';
             }
 
-            
-            document.addEventListener('DOMContentLoaded', function() {
-                
-                let theme = localStorage.getItem("theme");
+            toggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                body.classList.toggle('dark-mode');
 
-                
-                if (!theme) {
-                    theme = 'dark';
+                if (body.classList.contains('dark-mode')) {
+                    icon.src = 'https:\/\/yunianpan.com\//svg/moon.svg';
+                    icon.alt = 'moon icon';
+                    localStorage.setItem('theme', 'dark');
+                } else {
+                    icon.src = 'https:\/\/yunianpan.com\//svg/sun.svg';
+                    icon.alt = 'sun icon';
+                    localStorage.setItem('theme', 'light');
                 }
-
-                setTheme(theme);
-
-                
-                document.getElementById("theme-toggle").addEventListener("click", function(e) {
-                    e.preventDefault();
-                    let currentTheme = localStorage.getItem("theme") || "light";
-                    let newTheme = currentTheme === "light" ? "dark" : "light";
-                    setTheme(newTheme);
-                });
-            });
-
-            
-            document.getElementById('mobile-menu-toggle').addEventListener('click', function() {
-                const sidebar = document.getElementById('sidebar');
-                const button = this;
-
-                sidebar.classList.toggle('open');
-                button.classList.toggle('active');
             });
 
             
             function toggleBlogMenu(event) {
                 event.preventDefault();
-                event.stopPropagation();
                 const submenu = document.getElementById('blog-submenu');
-                const arrow = event.currentTarget.querySelector('.dropdown-arrow');
-
-                if (submenu.classList.contains('open')) {
-                    submenu.classList.remove('open');
-                    arrow.style.transform = 'rotate(0deg)';
-                } else {
-                    submenu.classList.add('open');
-                    arrow.style.transform = 'rotate(180deg)';
-                }
+                submenu.classList.toggle('open');
             }
 
             
             function toggleProjectsMenu(event) {
                 event.preventDefault();
-                event.stopPropagation();
                 const submenu = document.getElementById('projects-submenu');
-                const arrow = event.currentTarget.querySelector('.dropdown-arrow');
-
-                if (submenu.classList.contains('open')) {
-                    submenu.classList.remove('open');
-                    arrow.style.transform = 'rotate(0deg)';
-                } else {
-                    submenu.classList.add('open');
-                    arrow.style.transform = 'rotate(180deg)';
-                }
+                submenu.classList.toggle('open');
             }
 
             
-            document.addEventListener('click', function(event) {
-                const navContainers = document.querySelectorAll('.nav-item-container');
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            const sidebar = document.getElementById('sidebar');
 
-                navContainers.forEach(container => {
-                    const submenu = container.querySelector('.submenu');
-                    const arrow = container.querySelector('.dropdown-arrow');
-
-                    if (!container.contains(event.target) && submenu.classList.contains('open')) {
-                        submenu.classList.remove('open');
-                        arrow.style.transform = 'rotate(0deg)';
-                    }
-                });
-            });
-
-            
-            document.addEventListener('click', function(event) {
-                const sidebar = document.getElementById('sidebar');
-                const toggleButton = document.getElementById('mobile-menu-toggle');
-
-                if (sidebar.classList.contains('open') &&
-                    !sidebar.contains(event.target) &&
-                    !toggleButton.contains(event.target)) {
-                    sidebar.classList.remove('open');
-                    toggleButton.classList.remove('active');
-                }
+            mobileMenuToggle.addEventListener('click', function() {
+                sidebar.classList.toggle('open');
+                mobileMenuToggle.classList.toggle('active');
             });
 
             
             document.querySelectorAll('.sidebar .nav-link, .sidebar .submenu-link').forEach(link => {
                 if (!link.classList.contains('blog-toggle') && !link.classList.contains('projects-toggle')) {
                     link.addEventListener('click', function() {
-                        const sidebar = document.getElementById('sidebar');
-                        const toggleButton = document.getElementById('mobile-menu-toggle');
                         sidebar.classList.remove('open');
-                        toggleButton.classList.remove('active');
+                        mobileMenuToggle.classList.remove('active');
                     });
                 }
             });
@@ -580,27 +500,20 @@ $$</p>
                 const carousel = document.querySelector(selector);
                 if (!carousel) return;
 
-                
                 const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
                 const isMac = /Mac|iPhone|iPod|iPad/i.test(navigator.userAgent);
 
                 carousel.addEventListener('wheel', function(e) {
-                    
                     if (isMobile) {
                         return;
                     }
 
-                    
-                    
                     const isTouchpad = isMac && (Math.abs(e.deltaX) > 0 || Math.abs(e.deltaY) < 50);
 
-                    
                     if (isTouchpad && Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
-                        
                         return;
                     }
 
-                    
                     if (!isTouchpad && Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
                         e.preventDefault();
                         carousel.scrollLeft += e.deltaY * 2;
@@ -608,9 +521,7 @@ $$</p>
                 });
             }
 
-            
             addWheelScrolling('.posts-carousel');
             addWheelScrolling('.photos-carousel');
-        </script>
-    </body>
+        </script></body>
 </html>

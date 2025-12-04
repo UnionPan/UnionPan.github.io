@@ -6,8 +6,15 @@
     <description>Recent content in 2025 on union&#39;s blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 02 Nov 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 03 Dec 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://yunianpan.com/post/2025/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hetson Model</title>
+      <link>https://yunianpan.com/post/2025/heston/</link>
+      <pubDate>Wed, 03 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>https://yunianpan.com/post/2025/heston/</guid>
+      <description>&lt;p&gt;Hetson models are fire&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Blackwell Approachability</title>
       <link>https://yunianpan.com/post/2025/learning_in_games/</link>

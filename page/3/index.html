@@ -10,9 +10,12 @@
         content="Regret has been lower bounded">
     <meta name="google-site-verification" content="leqKZ6ZyQGOq6f_hMMWU-dgFPt8qgZeyJj-ZfCjyz3I" />
     <link rel="canonical" href="http://localhost:1313/" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gentium+Plus:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
     
-    <link rel="stylesheet" href="http://localhost:1313/scss/style.min.d219076e6a58a1a9bf489d552e8108886cce44b8f0d418abcb98b926d68472de.css">
+    <link rel="stylesheet" href="http://localhost:1313/scss/style.min.2c15b782eb06af697fd9a4bf85abcf7ac363b02ee7c3a15cd994cd8837dc15c9.css">
     <meta property="og:url" content="http://localhost:1313/">
   <meta property="og:site_name" content="union&#39;s blog">
   <meta property="og:title" content="union&#39;s blog">
@@ -50,11 +53,10 @@
         });
     </script>
 
-</head>
-<body>
+</head><body>
         <div class="theme-toggle-container">
             <a id="theme-toggle" class="theme-toggle" href="#">
-                <img src="http://localhost:1313/svg/sun.svg" alt="sun icon" class="theme-icon" />
+                <img src="http://localhost:1313//svg/sun.svg" alt="sun icon" class="theme-icon" />
             </a>
         </div>
 
@@ -86,6 +88,15 @@
                                 <a href="/post/2025" class="submenu-link">2025</a>
                             </div>
                         </div>
+                        <div class="nav-item-container">
+                            <a href="#" class="nav-link projects-toggle" onclick="toggleProjectsMenu(event)">
+                                Stuff <span class="dropdown-arrow">▼</span>
+                            </a>
+                            <div class="submenu" id="projects-submenu">
+                                <a href="https://app.yunianpan.com/" class="submenu-link" target="_blank" rel="noopener noreferrer">Option Desk</a>
+                                <a href="https://simplegame.yunianpan.com/" class="submenu-link" target="_blank" rel="noopener noreferrer">SimpleGAME</a>
+                            </div>
+                        </div>
                         <a href="/statement" class="nav-link ">Statement/CV</a>
                         <a href="/contact" class="nav-link ">Contact</a>
                         <a href="/photos" class="nav-link ">Photos</a>
@@ -96,48 +107,9 @@
                         </div>
                         <div class="social-icons">
                             
-                            <a href="https://www.linkedin.com/in/unionpan/" title="Linkedin" class="social-link">
-                                <svg height="32px" width="32px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-    stroke-linecap="round" stroke-linejoin="round">
-    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-    <rect x="2" y="9" width="4" height="12"></rect>
-    <circle cx="4" cy="4" r="2"></circle>
-</svg>
-                            </a>
                             
-                            <a href="https://github.com/UnionPan" title="Github" class="social-link">
-                                <svg height="32px" width="32px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-    stroke-linecap="round" stroke-linejoin="round">
-    <path
-        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-    </path>
-</svg>
-                            </a>
                             
-                            <a href="https://twitter.com/Union54572322" title="twitter" class="social-link">
-                                <svg height="32px" width="32px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-    stroke-linecap="round" stroke-linejoin="round">
-    <path
-        d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
-    </path>
-</svg>
-                            </a>
                             
-                            <a href="https://www.facebook.com/yunian.pan/" title="Facebook" class="social-link">
-                                <svg height="32px" width="32px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-    stroke-linecap="round" stroke-linejoin="round">
-    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-</svg>
-                            </a>
-                            
-                            <a href="https://www.instagram.com/pyn_rodcutter/?hl=en" title="instagram" class="social-link">
-                                <svg height="32px" width="32px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-    stroke-linecap="round" stroke-linejoin="round">
-    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-    <line x1="17.5" y1="6.5" x2="17.5" y2="6.5"></line>
-</svg>
-                            </a>
                             
                         </div>
                     </div>
@@ -226,6 +198,29 @@
   <div class="single-container column is-centered">
     <div class="archive" id="post-container">
       <header class="post-header">
+        <h1 class="post-title hover-underline-animation"><a class="post-link" href="/post/2024/butterfly_effect/">The Lorenz dynamics and Butterfly Effect</a></h1>
+       
+       
+      </header>
+      <div class="post-content">
+        <div class="excerpt post-summary">
+          <p>Chaotic behavior can emerge even in simple dynamics such as replicator, and Rock-Paper-Scissor oscillators, depending on the game settings. To begin with, we first define what is chaos qualitatively: <em>&ldquo;Chaos can be described as long term, aperiodic behaviour that exhibits sensitive dependence on initial conditions. Sensitive dependence on initial conditions implies that nearby trajectories diverge exponentially fast over time.&rdquo;</em> Or, by Edward Lorenz, <em>when the present determines the future but the approximate present does not approximately determine the future.</em></p>
+        </div>
+        
+        <div class="post-time-container">
+          <span class="post-time"> 2024-04-08 </span>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</article>
+
+    
+        <article class="post">
+  <div class="single-container column is-centered">
+    <div class="archive" id="post-container">
+      <header class="post-header">
         <h1 class="post-title hover-underline-animation"><a class="post-link" href="/post/2024/talagrand/">Talagrand&#39;s Isoperimetry inequality</a></h1>
        
        
@@ -285,40 +280,6 @@ A natural question to ask is what are the hidden objectives being achieved along
 </article>
 
     
-        <article class="post">
-  <div class="single-container column is-centered">
-    <div class="archive" id="post-container">
-      <header class="post-header">
-        <h1 class="post-title hover-underline-animation"><a class="post-link" href="/post/2023/dueling_bandits/"> Some Notes on Dueling Bandits</a></h1>
-       
-       
-      </header>
-      <div class="post-content">
-        <div class="excerpt post-summary">
-          <p>The dueling bandit problem natrually fits the description of a variety of recommendation systems that require &lsquo;&rsquo;learning on the fly&rsquo;&rsquo;, yet have no explicit access to a
-&lsquo;&lsquo;reward&rsquo;&rsquo; model. Instead, the &lsquo;&lsquo;human&rsquo;&rsquo; feedback part takes the form of &lsquo;&lsquo;choices&rsquo;&rsquo;, &lsquo;&lsquo;votes&rsquo;&rsquo;, or some discrete forms.
-Hence, oftentimes a learning protocol proceeds at time steps \(t = 1, \ldots, T\):</p>
-<ul>
-<li>The algorithm chooses a pair of arms \( a_i, a_j \) from \(K\) available ones;</li>
-<li>The oracle/human feedback/nature reveals the winner arm \( a_i \), with probability \( P(a_i \succ a_j)\), \( P(a_i \prec a_j) = 1 - P(a_i \succ a_j) \)</li>
-</ul>
-<p>So the feedback is either \(a_i\) or \( a_j \), the preferences forms a matrix \(P \in \mathbb{R}^{K \times K}\) such that \( P + P^{\top} = I\) which defines the hidden information of the dueling bandit problem. The cumulative regret in the stochastic dueling bandit setting is:
-$$
-\mathcal{R}_T = \sum_{t=1}^T P( a^* \succ a^t_i ) + P( a^* \succ a^t_j )
-$$
-where \(a^* \) is usually the Condorcet winner, i.e., \( P( a^* \succ a_j) &gt; \frac{1}{2} \ \ \forall j \in [K], a_j \neq a^*\). Condorcet winner is a pretty straightforward idea, which might not exist in general cases. To see that, suppose there are three candidates: A, B, and C, and three voters with the following preferences:</p>
-        </div>
-        
-        <div class="post-time-container">
-          <span class="post-time"> 2023-10-11 </span>
-        </div>
-      </div>
-      
-    </div>
-  </div>
-</article>
-
-    
     <hr>
 <section class="pagination" >
     
@@ -337,106 +298,64 @@ where \(a^* \) is usually the Condorcet winner, i.e., \( P( a^* \succ a_j) &gt; 
 
 </div>
 
-                
             </main>
-        </div>
-
-        <script>
+        </div><script>
             
-            function setTheme(theme) {
-                let body = document.body;
-                let themeIcon = document.querySelector(".theme-icon");
-                if (theme === "dark") {
-                    body.classList.add("dark-mode");
-                    themeIcon.src = "http:\/\/localhost:1313\/svg/moon.svg";
-                    themeIcon.alt = "moon icon";
-                } else {
-                    body.classList.remove("dark-mode");
-                    themeIcon.src = "http:\/\/localhost:1313\/svg/sun.svg";
-                    themeIcon.alt = "sun icon";
-                }
-                localStorage.setItem("theme", theme);
+            const toggle = document.getElementById('theme-toggle');
+            const body = document.body;
+            const icon = toggle.querySelector('.theme-icon');
+
+            const currentTheme = localStorage.getItem('theme') || 'light';
+            if (currentTheme === 'dark') {
+                body.classList.add('dark-mode');
+                icon.src = 'http:\/\/localhost:1313\//svg/moon.svg';
+                icon.alt = 'moon icon';
             }
 
-            
-            document.addEventListener('DOMContentLoaded', function() {
-                
-                let theme = localStorage.getItem("theme");
+            toggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                body.classList.toggle('dark-mode');
 
-                
-                if (!theme) {
-                    theme = 'dark';
+                if (body.classList.contains('dark-mode')) {
+                    icon.src = 'http:\/\/localhost:1313\//svg/moon.svg';
+                    icon.alt = 'moon icon';
+                    localStorage.setItem('theme', 'dark');
+                } else {
+                    icon.src = 'http:\/\/localhost:1313\//svg/sun.svg';
+                    icon.alt = 'sun icon';
+                    localStorage.setItem('theme', 'light');
                 }
-
-                setTheme(theme);
-
-                
-                document.getElementById("theme-toggle").addEventListener("click", function(e) {
-                    e.preventDefault();
-                    let currentTheme = localStorage.getItem("theme") || "light";
-                    let newTheme = currentTheme === "light" ? "dark" : "light";
-                    setTheme(newTheme);
-                });
-            });
-
-            
-            document.getElementById('mobile-menu-toggle').addEventListener('click', function() {
-                const sidebar = document.getElementById('sidebar');
-                const button = this;
-
-                sidebar.classList.toggle('open');
-                button.classList.toggle('active');
             });
 
             
             function toggleBlogMenu(event) {
                 event.preventDefault();
-                event.stopPropagation(); 
                 const submenu = document.getElementById('blog-submenu');
-                const arrow = document.querySelector('.dropdown-arrow');
-
-                if (submenu.classList.contains('open')) {
-                    submenu.classList.remove('open');
-                    arrow.style.transform = 'rotate(0deg)';
-                } else {
-                    submenu.classList.add('open');
-                    arrow.style.transform = 'rotate(180deg)';
-                }
+                submenu.classList.toggle('open');
             }
 
             
-            document.addEventListener('click', function(event) {
-                const navContainer = document.querySelector('.nav-item-container');
-                const submenu = document.getElementById('blog-submenu');
-                const arrow = document.querySelector('.dropdown-arrow');
-
-                if (!navContainer.contains(event.target) && submenu.classList.contains('open')) {
-                    submenu.classList.remove('open');
-                    arrow.style.transform = 'rotate(0deg)';
-                }
-            });
+            function toggleProjectsMenu(event) {
+                event.preventDefault();
+                const submenu = document.getElementById('projects-submenu');
+                submenu.classList.toggle('open');
+            }
 
             
-            document.addEventListener('click', function(event) {
-                const sidebar = document.getElementById('sidebar');
-                const toggleButton = document.getElementById('mobile-menu-toggle');
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            const sidebar = document.getElementById('sidebar');
 
-                if (sidebar.classList.contains('open') &&
-                    !sidebar.contains(event.target) &&
-                    !toggleButton.contains(event.target)) {
-                    sidebar.classList.remove('open');
-                    toggleButton.classList.remove('active');
-                }
+            mobileMenuToggle.addEventListener('click', function() {
+                sidebar.classList.toggle('open');
+                mobileMenuToggle.classList.toggle('active');
             });
 
             
             document.querySelectorAll('.sidebar .nav-link, .sidebar .submenu-link').forEach(link => {
-                if (!link.classList.contains('blog-toggle')) {
+                if (!link.classList.contains('blog-toggle') && !link.classList.contains('projects-toggle')) {
                     link.addEventListener('click', function() {
-                        const sidebar = document.getElementById('sidebar');
-                        const toggleButton = document.getElementById('mobile-menu-toggle');
                         sidebar.classList.remove('open');
-                        toggleButton.classList.remove('active');
+                        mobileMenuToggle.classList.remove('active');
                     });
                 }
             });
@@ -446,27 +365,20 @@ where \(a^* \) is usually the Condorcet winner, i.e., \( P( a^* \succ a_j) &gt; 
                 const carousel = document.querySelector(selector);
                 if (!carousel) return;
 
-                
                 const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
                 const isMac = /Mac|iPhone|iPod|iPad/i.test(navigator.userAgent);
 
                 carousel.addEventListener('wheel', function(e) {
-                    
                     if (isMobile) {
                         return;
                     }
 
-                    
-                    
                     const isTouchpad = isMac && (Math.abs(e.deltaX) > 0 || Math.abs(e.deltaY) < 50);
 
-                    
                     if (isTouchpad && Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
-                        
                         return;
                     }
 
-                    
                     if (!isTouchpad && Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
                         e.preventDefault();
                         carousel.scrollLeft += e.deltaY * 2;
@@ -474,9 +386,7 @@ where \(a^* \) is usually the Condorcet winner, i.e., \( P( a^* \succ a_j) &gt; 
                 });
             }
 
-            
             addWheelScrolling('.posts-carousel');
             addWheelScrolling('.photos-carousel');
-        </script>
-    </body>
+        </script></body>
 </html>
