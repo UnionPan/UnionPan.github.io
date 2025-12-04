@@ -6,16 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>Blackwell Approachability | union&#39;s blog</title>
     <meta name="description"
-        content="Safe to say my PhD was all about learning in games. One of the most elegant concepts I encountered is Blackwell&rsquo;s Approachability theorem 1, a beautiful piece of mathematics that connects geometry, game theory, and the very essence of what it means by no-regret learning. While it has been known for a long time that approachability implies the existence of no-regret algorithms, the connection is much stronger: the two are, in a very strong sense, algorithmically equivalent.">
+        content="Pretty much all the work I did these years are related to learning in games. And one of the most important theorem that pulled me into this is Blackwell&rsquo;s Approachability theorem 1 (truth is I never really did anything on it because it does not imply much on computation). This theorem connects geometry, game theory, and the very essence of no-regret learning.
+Regarding this concept, my belief used to be that approachability implies the existence of no-regret algorithms. Turns out the connection is much stronger: the two are, in a very strong sense, algorithmically equivalent.">
     <meta name="google-site-verification" content="leqKZ6ZyQGOq6f_hMMWU-dgFPt8qgZeyJj-ZfCjyz3I" />
     <link rel="canonical" href="https://yunianpan.com/post/2025/learning_in_games/" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gentium+Plus:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
     
-    <link rel="stylesheet" href="https://yunianpan.com/scss/style.min.68ea290cc741787e63960863183945af12fd62d87d74775454fd7335d4bfa0a8.css">
+    <link rel="stylesheet" href="https://yunianpan.com/scss/style.min.60c10b16a697cd396736f7247c4c3e1f0274fcc934b3e9676294f5d083926119.css">
     <meta property="og:url" content="https://yunianpan.com/post/2025/learning_in_games/">
   <meta property="og:site_name" content="union&#39;s blog">
   <meta property="og:title" content="Blackwell Approachability">
-  <meta property="og:description" content="Safe to say my PhD was all about learning in games. One of the most elegant concepts I encountered is Blackwell’s Approachability theorem 1, a beautiful piece of mathematics that connects geometry, game theory, and the very essence of what it means by no-regret learning. While it has been known for a long time that approachability implies the existence of no-regret algorithms, the connection is much stronger: the two are, in a very strong sense, algorithmically equivalent.">
+  <meta property="og:description" content="Pretty much all the work I did these years are related to learning in games. And one of the most important theorem that pulled me into this is Blackwell’s Approachability theorem 1 (truth is I never really did anything on it because it does not imply much on computation). This theorem connects geometry, game theory, and the very essence of no-regret learning. Regarding this concept, my belief used to be that approachability implies the existence of no-regret algorithms. Turns out the connection is much stronger: the two are, in a very strong sense, algorithmically equivalent.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="post">
@@ -25,7 +29,7 @@
     
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Blackwell Approachability">
-  <meta name="twitter:description" content="Safe to say my PhD was all about learning in games. One of the most elegant concepts I encountered is Blackwell’s Approachability theorem 1, a beautiful piece of mathematics that connects geometry, game theory, and the very essence of what it means by no-regret learning. While it has been known for a long time that approachability implies the existence of no-regret algorithms, the connection is much stronger: the two are, in a very strong sense, algorithmically equivalent.">
+  <meta name="twitter:description" content="Pretty much all the work I did these years are related to learning in games. And one of the most important theorem that pulled me into this is Blackwell’s Approachability theorem 1 (truth is I never really did anything on it because it does not imply much on computation). This theorem connects geometry, game theory, and the very essence of no-regret learning. Regarding this concept, my belief used to be that approachability implies the existence of no-regret algorithms. Turns out the connection is much stronger: the two are, in a very strong sense, algorithmically equivalent.">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"
     integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
@@ -110,7 +114,7 @@
                         </div>
                         <div class="nav-item-container">
                             <a href="#" class="nav-link projects-toggle" onclick="toggleProjectsMenu(event)">
-                                Projects <span class="dropdown-arrow">▼</span>
+                                Stuff <span class="dropdown-arrow">▼</span>
                             </a>
                             <div class="submenu" id="projects-submenu">
                                 <a href="https://app.yunianpan.com/" class="submenu-link" target="_blank" rel="noopener noreferrer">Option Desk</a>
@@ -239,7 +243,8 @@
 
 </script>
             </div>
-            <p>Safe to say my PhD was all about learning in games. One of the most elegant concepts I encountered is Blackwell&rsquo;s Approachability theorem <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>, a beautiful piece of mathematics that connects geometry, game theory, and the very essence of what it means by no-regret learning. While it has been known for a long time that approachability implies the existence of no-regret algorithms, the connection is much stronger: the two are, in a very strong sense, algorithmically equivalent.</p>
+            <p>Pretty much all the work I did these years are related to learning in games. And one of the most important theorem that pulled me into this is Blackwell&rsquo;s Approachability theorem <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> (truth is I never really did anything on it because it does not imply much on computation). This theorem connects geometry, game theory, and the very essence of no-regret learning.
+Regarding this concept, my belief used to be that approachability implies the existence of no-regret algorithms. Turns out the connection is much stronger: the two are, in a very strong sense, algorithmically equivalent.</p>
 <p>At its heart, learning in games is about approaching equilibrium with iterative plays, which can be reduced to minimizing <strong>regret</strong><sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>—the difference between your actual payoff and what you could have had by choosing the best single action in hindsight. A good algorithm ensures your average payoff is as good as if you&rsquo;d known the best action from the start. This is the goal of <strong>Online Linear Optimization (OLO)</strong>, where a learner repeatedly chooses a point $x_t$ from a convex set $K$ and incurs a linear loss $\langle f_t, x_t \rangle$ for a sequence of loss vectors $f_t$. The regret is the difference between the total loss and the loss of the best single action in hindsight:
 $$
 \mathcal{R}_T = \sum_{t=1}^T \langle f_t, x_t \rangle - \min_{x \in K} \sum_{t=1}^T \langle f_t, x \rangle
@@ -269,14 +274,16 @@ Here, $\Pi_S(z)$ is the Euclidean projection of $z$ onto $S$.</p>
 $$
 \text{dist}(\tilde{x}, \text{cone}(\tilde{K})) \le \text{dist}(x, K) \le 2 \cdot \text{dist}(\tilde{x}, \text{cone}(\tilde{K}))
 $$
-This means that if we can drive the distance to the cone to zero, we can also drive the distance to the original set to zero. This lifting trick allows us to use the powerful machinery of conic duality to prove the equivalence.</p>
-<p>With this trick in hand, the equivalence is established:</p>
+This means that if we can drive the distance to the cone to zero, we can also drive the distance to the original set to zero.
+With this trick in hand, the equivalence is established:</p>
 <ul>
 <li><strong>From No-Regret to Approachability:</strong> A no-regret OLO algorithm can be used to solve an approachability problem by running it on the polar cone of the target set.</li>
 <li><strong>From Approachability to No-Regret:</strong> An approachability algorithm can be used to solve an OLO problem by constructing a Blackwell instance where the set to be approached is the polar cone of the conic hull of the OLO decision set.</li>
 </ul>
-<p>This deep connection shows that the geometric problem of steering an average payoff vector into a convex set is fundamentally the same as the algorithmic problem of minimizing regret in an online linear optimization setting. This equivalence is not just a theoretical curiosity; it has practical implications, such as the development of the first efficient algorithm for calibrated forecasting.</p>
-<p>In short, Blackwell&rsquo;s theorem provides the foundational geometric insight, while no-regret algorithms provide the concrete learning rules. The two are sides of the same coin, giving us a powerful lens to understand how to learn and adapt in a complex, uncertain world.</p>
+<p>The geometric problem of steering an average payoff vector into a convex set, is fundamentally the same as, the algorithmic problem of minimizing regret in an online linear optimization setting.</p>
+<p>So, given an approachable oracle algorithm $\mathcal{A}$, and a sequence of loss functions $f_1, \ldots, f_T$, the compact convex decision set $\mathcal{K} \subset \mathbb{R}^d$, one just needs to let the halfspace oracle $\mathcal{A}$ project the point, using the lifted payoff $u(\mathbf{x}, \mathbf{f}) : =  \frac{\langle\mathbf{f}, \mathbf{x} \rangle}{\kappa} \oplus - \mathbf{f}$, to the cone, and use the iterative projection as your OLO algorithm.
+In the same spirit, given an OLO algorithm $\mathcal{L}$, one gets the iterative projection $x_t$ in the cone $\mathcal{K}$ by querying from the algorithm.</p>
+<p>In short, Blackwell&rsquo;s approchability determines how regret is vanishing. These two are sides of the same coin.</p>
 <div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
