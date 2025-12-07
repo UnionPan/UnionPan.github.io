@@ -4,9 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <title>Hetson Model | union&#39;s blog</title>
+    <title>Stochastic Vol and Heston Model | union&#39;s blog</title>
     <meta name="description"
-        content="Hetson models are fire">
+        content="So it was not until 2025 that I developed some genuine interests in quant finance. I briefly had some reading in 2023/2024 but I always stopped at &ldquo;oh, here goes the Itô&rsquo;s lemma; there goes Feyman-Kac; Markowitz mean-variance formulation seems familar&rdquo;, never really dived into exotics and exchange rates, the real stuff people are playing around.
+Well, now since I really want a job, I need some practitioner&rsquo;s guide and I find it fascinating.">
     <meta name="google-site-verification" content="leqKZ6ZyQGOq6f_hMMWU-dgFPt8qgZeyJj-ZfCjyz3I" />
     <link rel="canonical" href="https://yunianpan.com/post/2025/heston/" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,18 +18,18 @@
     <link rel="stylesheet" href="https://yunianpan.com/scss/style.min.ad3c4324be0f79486ebbf3c979aa052957ef74e8f90703ff53ec73d780e02b09.css">
     <meta property="og:url" content="https://yunianpan.com/post/2025/heston/">
   <meta property="og:site_name" content="union&#39;s blog">
-  <meta property="og:title" content="Hetson Model">
-  <meta property="og:description" content="Hetson models are fire">
+  <meta property="og:title" content="Stochastic Vol and Heston Model">
+  <meta property="og:description" content="So it was not until 2025 that I developed some genuine interests in quant finance. I briefly had some reading in 2023/2024 but I always stopped at “oh, here goes the Itô’s lemma; there goes Feyman-Kac; Markowitz mean-variance formulation seems familar”, never really dived into exotics and exchange rates, the real stuff people are playing around. Well, now since I really want a job, I need some practitioner’s guide and I find it fascinating.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="post">
-    <meta property="article:published_time" content="2025-12-03T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-12-03T00:00:00+00:00">
+    <meta property="article:published_time" content="2025-12-05T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-12-05T00:00:00+00:00">
 
     
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Hetson Model">
-  <meta name="twitter:description" content="Hetson models are fire">
+  <meta name="twitter:title" content="Stochastic Vol and Heston Model">
+  <meta name="twitter:description" content="So it was not until 2025 that I developed some genuine interests in quant finance. I briefly had some reading in 2023/2024 but I always stopped at “oh, here goes the Itô’s lemma; there goes Feyman-Kac; Markowitz mean-variance formulation seems familar”, never really dived into exotics and exchange rates, the real stuff people are playing around. Well, now since I really want a job, I need some practitioner’s guide and I find it fascinating.">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
@@ -175,17 +176,19 @@
 <div class="single-container">
     <div class="archive">
         <div class="post-thumbnail-header">
-            <img src="/images/post/2025/Hetson/mad-man.png" alt="Hetson Model" class="post-header-img">
+            <img src="/images/post/2025/Hetson/mad-man.png" alt="Stochastic Vol and Heston Model" class="post-header-img">
         </div>
-        <h1 class="title is-1">Hetson Model</h1>
+        <h1 class="title is-1">Stochastic Vol and Heston Model</h1>
         <div class="post-date-info">
-            <time>December 3, 2025</time>
+            <time>December 5, 2025</time>
         </div>
         <div class="post-categories-section">
             <div class="category-separator"></div>
             <div class="category-witty">
                 
-                    I haven&#39;t watched the Big Short
+                    <a href="https://www.imdb.com/title/tt1596363/" target="_blank" rel="noopener noreferrer">
+                        I haven&#39;t even seen The Big Short
+                    </a>
                 
             </div>
         </div>
@@ -193,6 +196,11 @@
             <div class="toc-container">
                 
     <div class="post-toc">
+        
+            <aside>
+                <button id="tocButton" ><h4 id="contents" style="margin-left: 1vw;color:rgb(96, 134, 180);margin-bottom: 0;">CONTENTS</h4></button>
+                <div id="hide"><nav id="TableOfContents"></nav></div>
+            </aside>
         
     </div><script>
     
@@ -214,7 +222,68 @@
 
 </script>
             </div>
-            <p>Hetson models are fire</p>
+            <p>So it was not until 2025 that I developed some genuine interests in quant finance. I briefly had some reading in 2023/2024 but I always stopped at &ldquo;oh, here goes the Itô&rsquo;s lemma; there goes Feyman-Kac; Markowitz mean-variance formulation seems familar&rdquo;, never really dived into exotics and exchange rates, the real stuff people are playing around.
+Well, now since I really want a job, I need some <a href="http://www.hk.free.fr/Docs/The%20Volatility%20Surface%20-%20A%20Practitioner's%20Guide%20%5BJim%20Gatheral%5D.pdf">practitioner&rsquo;s guide</a> and I find it fascinating.</p>
+<p>As I read more (thanks to <a href="https://koppel.netlify.app/">Alec</a>), I started to gain some understanding that for portfolio management, you don&rsquo;t just buy and sell your basket of assets, $(X_t)_{t\geq 0}$, optimizing the coefficients; you do hedging, by buying and selling a whole bunch of derivatives of these underlying assets you are holding, say $ ( S^{(i)}_t )_{t\ge 0}$. The most fundamental one is Delta hedging, meaning that you make your portfolio valuation &ldquo;static&rdquo;, in a way that no matter how your underlying prices are fluctuating with the market, you always remain &ldquo;Delta neutral&rdquo;: $$\frac{\partial \Pi}{ \partial X} = 0 .$$ Note that this portfolio is not really static as it can still evolve with time (Theta), or the second derivative of price (Gamma), etc..
+My dear reader friend, if you&rsquo;re already in the field, you can either shut this post or keep entertaining yourself by scrolling my ridiculous understandings; if this is completely new to you, I suggest you further educate yourself later because this might be crap.</p>
+<p>Anyway so when I look at the option chain data, I wonder what hidden models, which we know a perfect one doesn&rsquo;t exist, generated those prices, for the same reason when you look at historical OHLCV. It turns out that one may assume that the stock prices are evolving according to some physical model ($\mathbb{P}$-measure), while the market option prices are evolving according to the underlying asset pricing mechanism which is already risk-neutral ($\mathbb{Q}$-measure).
+(Whoops sorry, did I just casually drop the Fundamental Theorem of Asset Pricing?)</p>
+<p>The simplistic shortcut understanding to this I guess is when you do risk-neutral pricing, (which everybody agrees,) you calibrate a $\mathbb{Q}$-measure, when you do risk forecasting, you use a $\mathbb{P}$-measure, people don&rsquo;t have to agree but they don&rsquo;t invest anything either.</p>
+<p>Now, the thing is when you look at an option chain you look at different strikes and maturity dates, and when you fit a Black-Sholes volitility parameter $\sigma_{BS} $ for these different instruments you always get different $\sigma$&rsquo;s. One thing to explain this is okay, there is a Brownian motion associated with the underlying in the $\mathbb{P}$-measure, but on top of that Brownian motion, there are some sort of random shocks that determines the actual derivative prices, which also connects to the actual trading volumes and frequencies. As trading activity fluctuates, so does volitility. Hence, as Wilmott<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> wrote down
+$$
+\begin{aligned}
+d S_{t} &amp; =\mu_{t} S_{t} d t+\sqrt{v_{t}} S_{t} d \mathrm{Z}_{1} \\ d v_{t} &amp; =\alpha \bigg(S_{t}, v_{t}, t\bigg) d t + \eta \beta\bigg(S_{t}, v_{t}, t \bigg) \sqrt{v_{t}} d \mathrm{Z}_{2}
+\end{aligned}
+$$
+with $ \langle dZ_1, dZ_2 \rangle = \rho dt$, this correlation gives a smile. When stock drops, people panic selling off, thus $\rho &lt; 0$, which yields the skew. Here $\alpha$ and $\beta$ are some generic functions of the underlying and vol and $t$. With this model, at least when you compare different maturity dates, you would naturally get two different volitilities. But what about the strike dimension? That lies in the correlation factor $\rho$ and this is left as a thought experiment :).
+An important concept that arises from this is the so-called local volitility $\sigma(K, T, S_0)$, which is basically $\sqrt{\mathbb{E}[v_T | S_T = K]}$, meaning what your terminal vol would look like when your terminal price lands on the strike. Some great people said that the <em>local_volitility</em> represents a unique diffusion induced distribution that is consistent with the risk-neutral density of the European option prices, there is a whole bunch of proofs but not the point of this post.</p>
+<p>If you plug in $\alpha = -\lambda (v_t - \bar{v}_t)$ and $\beta = 1$, you get Heston model:</p>
+<p>$$
+\begin{aligned}
+d S_{t} &amp; =\mu_{t} S_{t} d t+\sqrt{v_{t}} S_{t} d \mathrm{Z}_{1} \\ d v_{t} &amp; = \lambda ( \bar{v} - v_t ) d t + \eta \sqrt{ v_{t} } d \mathrm{Z}_{2}
+\end{aligned}
+$$</p>
+<p>Accordingly, the value function of the options at time $t$ are expressed under the $\mathbb{Q}$-measure:</p>
+<p>$$
+\begin{aligned} \frac{\partial V}{\partial t}+\frac{1}{2} v S^{2} \frac{\partial^{2} V}{\partial S^{2}}+\rho \eta v S \frac{\partial^{2} V}{\partial v \partial S}+\frac{1}{2} \eta^{2} v \frac{\partial^{2} V}{\partial v^{2}}  +r S \frac{\partial V}{\partial S}-r V  =\lambda(v-\bar{v}) \frac{\partial V}{\partial v}.
+\end{aligned}
+$$</p>
+<p>Define the future option payoff as $C(x, v, \tau)$ where $x = \log(F_{t,T}/K)$ is the money level at time, $v$ is the current volitility, $\tau = T-t$, then according to $V = e^{-r\tau} C$ you kill the $rV$ term and the messy $S^2 \partial^2 V / \partial S^2$.
+$$
+-\frac{\partial C}{\partial \tau}+\frac{1}{2} v C_{11}-\frac{1}{2} v C_{1}+\frac{1}{2} \eta^{2} v C_{22}+ \rho \eta v C_{12}-\lambda(v - \bar{v}) C_{2}=0. \tag{value}
+$$
+So Duffe, Pan, and Singleton (wierd name) in 2000 calculated:
+$$
+C(x, v, \tau)=K   \bigg\{e^{x} P_{1}(x, v, \tau)-P_{0}(x, v, \tau) \bigg\},
+$$
+which is essentially $S_T * P_1 - K * P_0$ just like the Black-Scholes formula. Now, if we substitute this expression back into (value) equation you obtain:
+$$
+\begin{array}{l}
+-\frac{\partial P_{j}}{\partial \tau}+\frac{1}{2} v \frac{\partial^{2} P_{j}}{\partial x^{2}}-\left(\frac{1}{2}-j\right) v \frac{\partial P_{j}}{\partial x}+\frac{1}{2} \eta^{2} v \frac{\partial^{2} P_{j}}{\partial v^{2}}+\rho \eta v \frac{\partial^{2} P_{j}}{\partial x \partial v} +\left(a-b_{j} v\right) \frac{\partial P_{j}}{\partial v}=0 ,
+\end{array}
+$$
+for $j = 0, 1$ where $ a = \lambda \bar{v}$ and $b_i = \lambda - j \rho \eta$, with boundary conditions:
+$$
+\begin{aligned} \lim_{\tau \rightarrow 0} P_{j}(x, v, \tau) &amp; =\bigg\{\begin{array}{l}1 \text{ if } x&gt;0 \\ 0 \text{ if } x \leq 0\end{array} ,  \\ &amp; :=\theta(x) .\end{aligned}
+$$
+Since the Fourier computation is a little bit too dirty we are going to skip here. Basically, the pseudo-probability takes the form of an integral of real valued-functions:
+$$
+P_{j}(x, v, \tau )=\frac{1}{2}+\frac{1}{\pi} \int_{0}^{\infty} d u \mathrm{Re} \bigg\{ \frac{\exp \bigg\{C_{j}(u, \tau) \bar{v}+D_{j}(u, \tau) v+i u x\bigg\}}{i u}\bigg\} ,
+$$
+with $C_j$ and $D_j$ being calculated from the characteristic root after taking some ansatz. There&rsquo;s no point to overwhelm ourselves with the actual formula, but the implication is that the Heston price can be pretty easily calculated. The caveat is that it&rsquo;s not super numerically stable at certain maturity and strikes because you are integrating some square root function can be multi-valued.</p>
+<p>Okay now we see the Heston price does not have anything to do with the drift $\mu$, because you were using a risk-neutral value function, implicitly already under $\mathbb{Q}$-measure. So after seeing the market price, we find a parameter set $(\lambda, \bar{v}, \eta, v_0, \rho)$, ($v_0$ since you are forward looking) that minimizes the mean square error:
+$$
+\min_{  (\lambda, \bar{v}, \eta, v_0, \rho) } \sum_{ i } ( \sigma_{Heston} ( K_i, T_i, ~) - \sigma_{ mkt } (K_i, T_i ) )^2  .
+$$
+There you go and start to imagine how many statistical/optimization methods can enter the play.</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>Wilmott, P. (2006). Paul Wilmott on Quantitative Finance. (Specifically the chapters on Stochastic Volatility).&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
 
         </div>
     </div>

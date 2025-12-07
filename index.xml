@@ -6,14 +6,14 @@
     <description>Recent content on union&#39;s blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 03 Dec 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 05 Dec 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://yunianpan.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Hetson Model</title>
+      <title>Stochastic Vol and Heston Model</title>
       <link>https://yunianpan.com/post/2025/heston/</link>
-      <pubDate>Wed, 03 Dec 2025 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 05 Dec 2025 00:00:00 +0000</pubDate>
       <guid>https://yunianpan.com/post/2025/heston/</guid>
-      <description>&lt;p&gt;Hetson models are fire&lt;/p&gt;</description>
+      <description>&lt;p&gt;So it was not until 2025 that I developed some genuine interests in quant finance. I briefly had some reading in 2023/2024 but I always stopped at &amp;ldquo;oh, here goes the Itô&amp;rsquo;s lemma; there goes Feyman-Kac; Markowitz mean-variance formulation seems familar&amp;rdquo;, never really dived into exotics and exchange rates, the real stuff people are playing around.&#xA;Well, now since I really want a job, I need some &lt;a href=&#34;http://www.hk.free.fr/Docs/The%20Volatility%20Surface%20-%20A%20Practitioner&#39;s%20Guide%20%5BJim%20Gatheral%5D.pdf&#34;&gt;practitioner&amp;rsquo;s guide&lt;/a&gt; and I find it fascinating.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Blackwell Approachability</title>
