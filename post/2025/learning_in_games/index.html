@@ -15,7 +15,7 @@ Regarding this concept, my belief used to be that approachability implies the ex
     <link href="https://fonts.googleapis.com/css2?family=Gentium+Plus:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
     
-    <link rel="stylesheet" href="https://yunianpan.com/scss/style.min.ad3c4324be0f79486ebbf3c979aa052957ef74e8f90703ff53ec73d780e02b09.css">
+    <link rel="stylesheet" href="https://yunianpan.com/scss/style.min.b5bd9f7cab9864dcaa2d7a8126d05c2c1b34962f565b3ba58caf1275da1b9e93.css">
     <meta property="og:url" content="https://yunianpan.com/post/2025/learning_in_games/">
   <meta property="og:site_name" content="union&#39;s blog">
   <meta property="og:title" content="Blackwell Approachability">
@@ -243,7 +243,9 @@ Here, $\Pi_S(z)$ is the Euclidean projection of $z$ onto $S$.</p>
 <p>The equivalence between approachability and no-regret learning is established through a pair of reductions. The key is to use the powerful tools of conic duality, which requires the set to be approached to be a cone.</p>
 <p>But what if our target set is a general convex set, not a cone? This is where a clever &ldquo;lifting trick&rdquo; comes in. We can embed any compact convex set $K$ into a higher-dimensional space to create a cone. Let $\kappa = \max_{x \in K} |x|$ be the &ldquo;norm&rdquo; of the set. We define a new &ldquo;lifted&rdquo; set $\tilde{K} = {\kappa} \times K$ in $\mathbb{R}^{d+1}$. The conic hull of this set, $\text{cone}(\tilde{K})$, is a cone.</p>
 <p>The image below illustrates this construction:</p>
-<p><img src="/images/post/2025/learning_in_games/bwfig.png" alt="Geometric interpretation of the lifting trick"></p>
+<p><figure>
+  <img src="/images/post/2025/learning_in_games/bwfig.png" alt="Geometric interpretation of the lifting trick" ><figcaption>Geometric interpretation of the lifting trick</figcaption></figure>
+</p>
 <p>Here&rsquo;s what the different elements in the image represent:</p>
 <ul>
 <li><strong>$\tilde{K}$</strong>: This is the original convex set $K$, &ldquo;lifted&rdquo; into a higher dimension. It&rsquo;s represented by the horizontal line segment.</li>

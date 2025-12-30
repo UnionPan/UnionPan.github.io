@@ -14,7 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Gentium+Plus:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
     
-    <link rel="stylesheet" href="https://yunianpan.com/scss/style.min.ad3c4324be0f79486ebbf3c979aa052957ef74e8f90703ff53ec73d780e02b09.css">
+    <link rel="stylesheet" href="https://yunianpan.com/scss/style.min.b5bd9f7cab9864dcaa2d7a8126d05c2c1b34962f565b3ba58caf1275da1b9e93.css">
     <meta property="og:url" content="https://yunianpan.com/post/2022/monge/">
   <meta property="og:site_name" content="union&#39;s blog">
   <meta property="og:title" content="Monge Partition">
@@ -281,7 +281,9 @@ $$
 </span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;data/New_York_City_Locations_Providing_Seasonal_Flu_Vaccinations.csv&#39;</span>)
 </span></span><span style="display:flex;"><span>g_sites <span style="color:#f92672">=</span> gpd<span style="color:#f92672">.</span>GeoDataFrame(v_sites, geometry<span style="color:#f92672">=</span>gpd<span style="color:#f92672">.</span>points_from_xy(v_sites<span style="color:#f92672">.</span>Longitude, v_sites<span style="color:#f92672">.</span>Latitude))
 </span></span><span style="display:flex;"><span>g_sites<span style="color:#f92672">.</span>head()
-</span></span></code></pre></div><p><img src="MongePartition_files/MongePartition_5_1.png" alt="png"></p>
+</span></span></code></pre></div><p><figure>
+  <img src="MongePartition_files/MongePartition_5_1.png" alt="png" ><figcaption>png</figcaption></figure>
+</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>joint_axes <span style="color:#f92672">=</span> seaborn<span style="color:#f92672">.</span>jointplot(
 </span></span><span style="display:flex;"><span>    x<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Longitude&#39;</span>, y<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Latitude&#39;</span>, data<span style="color:#f92672">=</span>v_sites, s<span style="color:#f92672">=</span><span style="color:#ae81ff">0.8</span>, height<span style="color:#f92672">=</span><span style="color:#ae81ff">15</span>
 </span></span><span style="display:flex;"><span>)
@@ -290,7 +292,9 @@ $$
 </span></span><span style="display:flex;"><span>    crs<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;EPSG:4326&#34;</span>,
 </span></span><span style="display:flex;"><span>    source<span style="color:#f92672">=</span>contextily<span style="color:#f92672">.</span>providers<span style="color:#f92672">.</span>CartoDB<span style="color:#f92672">.</span>PositronNoLabels
 </span></span><span style="display:flex;"><span>)
-</span></span></code></pre></div><p><img src="MongePartition_files/MongePartition_6_0.png" alt="png"></p>
+</span></span></code></pre></div><p><figure>
+  <img src="MongePartition_files/MongePartition_6_0.png" alt="png" ><figcaption>png</figcaption></figure>
+</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># For simplicity we assume that the capacity is index-irrelevant, assgining uniform mass to every site. </span>
 </span></span><span style="display:flex;"><span>site_pos <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>vstack([v_sites<span style="color:#f92672">.</span>Longitude, v_sites<span style="color:#f92672">.</span>Latitude])
 </span></span><span style="display:flex;"><span>site_measure <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;pos&#34;</span>: site_pos<span style="color:#f92672">.</span>T, <span style="color:#e6db74">&#34;cap&#34;</span>: (<span style="color:#ae81ff">1</span><span style="color:#f92672">/</span>len(site_pos[<span style="color:#ae81ff">0</span>])) <span style="color:#f92672">*</span> np<span style="color:#f92672">.</span>ones(len(site_pos[<span style="color:#ae81ff">0</span>]))}
@@ -337,7 +341,9 @@ $$</p>
 </span></span><span style="display:flex;"><span>    ax[<span style="color:#ae81ff">1</span>], crs<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;EPSG:4326&#34;</span>,
 </span></span><span style="display:flex;"><span>    source<span style="color:#f92672">=</span>contextily<span style="color:#f92672">.</span>providers<span style="color:#f92672">.</span>CartoDB<span style="color:#f92672">.</span>Positron
 </span></span><span style="display:flex;"><span>)
-</span></span></code></pre></div><p><img src="MongePartition_files/MongePartition_9_1.png" alt="png"></p>
+</span></span></code></pre></div><p><figure>
+  <img src="MongePartition_files/MongePartition_9_1.png" alt="png" ><figcaption>png</figcaption></figure>
+</p>
 <h4 id="what-about-the-real-density">What about the real density?</h4>
 <p>Now we have obtained the point locations, and we assigned uniform point masses to each of them representing the &lsquo;&lsquo;capacity&rsquo;&rsquo;, so we are done constructing the first discrete measure.</p>
 <p>Now what we need is the populational density of demand. Unfortunately even the Poisson type of point data is unavailable, as it has to be the dataset of spatial-tagged disease cases. So,
@@ -387,7 +393,9 @@ to get the demand density distribution, we approximate it from a NYC census data
 </span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>colorbar(im, fraction<span style="color:#f92672">=</span><span style="color:#ae81ff">0.035</span>, pad<span style="color:#f92672">=</span><span style="color:#ae81ff">0.04</span>)
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
-</span></span></code></pre></div><p><img src="MongePartition_files/MongePartition_13_0.png" alt="png"></p>
+</span></span></code></pre></div><p><figure>
+  <img src="MongePartition_files/MongePartition_13_0.png" alt="png" ><figcaption>png</figcaption></figure>
+</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>entire_pop <span style="color:#f92672">=</span> int(np<span style="color:#f92672">.</span>sum(blocks<span style="color:#f92672">.</span>TotalPop))
 </span></span><span style="display:flex;"><span>num_tracts <span style="color:#f92672">=</span> len(blocks<span style="color:#f92672">.</span>Longitude)
 </span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;The entire population in NYC is </span><span style="color:#e6db74">{}</span><span style="color:#e6db74">, censored in </span><span style="color:#e6db74">{}</span><span style="color:#e6db74"> tracts </span><span style="color:#ae81ff">\n</span><span style="color:#e6db74"> </span><span style="color:#ae81ff">\
@@ -447,7 +455,9 @@ Note that this demand estimation has some issues: first, it does not really make
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
-</span></span></code></pre></div><p><img src="MongePartition_files/MongePartition_19_0.png" alt="png"></p>
+</span></span></code></pre></div><p><figure>
+  <img src="MongePartition_files/MongePartition_19_0.png" alt="png" ><figcaption>png</figcaption></figure>
+</p>
 <h2 id="the-kantorovich-relaxation-and-dual">The Kantorovich Relaxation and Dual</h2>
 <p>It turns out the infinite dimensional problem can be solved by looking at its dual.</p>
 <p>Recall what we previously did is representing the transference plan $\mathrm{T}_{\#}$ as $\mathbf{A}$, where $\mathrm{T}_{\#}(x) = \sum_{x_s} x_s \mathbb{I}_{{ x \in A_s}}$.
@@ -524,7 +534,9 @@ $$</p>
 <p>Now we are at least ready to approach to the partition problem, with sites measure $\nu$, estimated density $\hat{\lambda}$, and shifted quadratic utility $u_s$.
 The first task is to calculate and plot $A_p$, it turns out that given a price $p$, the partition is just a set of adjacent polygons.</p>
 <p>We can plot that under no whatsoever assumptions about the demand density, i.e., population uniformly distributed, what the Voronoi-diagram looks like. But we have to develop some machinaries to calculate and display the polygons induced by the diagrams. The code from (<a href="https://gist.github.com/sunayana/a3a564058e97752f726ca65d56fab529">author: sunayana</a>) provides an implementation to obtain the weighted voronoi cells.</p>
-<p><img src="MongePartition_files/MongePartition_26_0.png" alt="png"></p>
+<p><figure>
+  <img src="MongePartition_files/MongePartition_26_0.png" alt="png" ><figcaption>png</figcaption></figure>
+</p>
 <p>I did not found particularly interesting things implementing the pricing algorithm but I blame my advisor for that, :)</p>
 
         </div>

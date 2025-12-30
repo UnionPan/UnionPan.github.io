@@ -15,7 +15,7 @@ So hopefully, I will resume writing for my own sanity.">
     <link href="https://fonts.googleapis.com/css2?family=Gentium+Plus:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
     
-    <link rel="stylesheet" href="https://yunianpan.com/scss/style.min.ad3c4324be0f79486ebbf3c979aa052957ef74e8f90703ff53ec73d780e02b09.css">
+    <link rel="stylesheet" href="https://yunianpan.com/scss/style.min.b5bd9f7cab9864dcaa2d7a8126d05c2c1b34962f565b3ba58caf1275da1b9e93.css">
     <meta property="og:url" content="https://yunianpan.com/post/2025/mechanism_design/">
   <meta property="og:site_name" content="union&#39;s blog">
   <meta property="og:title" content="Bayesian Holonic (Global) Games">
@@ -286,7 +286,9 @@ $$q = \Phi\left(\frac{np - \theta - \delta(1-q)}{\sqrt{np(1-p)}}\right)$$</p>
 $$\frac{\delta \phi\left(\frac{np - \theta - \delta(1-q)}{\sqrt{np(1-p)}}\right)}{\sqrt{np(1-p)}} &lt; 1$$</p>
 <p>where $\phi$ is the standard normal density. This is guaranteed when $\delta$ is sufficiently small relative to $\sqrt{np(1-p)}$.</p>
 <p><strong>Multiple equilibria</strong>: For large $\delta$, the system can exhibit bistability with equilibria near $q = 0$ and $q = 1$, separated by an unstable interior equilibrium. So the interpretation is, the more coupling between holons, the more chaotic it becomes. Below is kind of a relationship between $q$ and the prior $p$, the theoretical plot got twisted because at some of the $p$ the fixed point equations can&rsquo;t be solved.</p>
-<p><img src="/images/post/2025/mechanism_design/success_holon.png" alt=""></p>
+<p><figure>
+  <img src="/images/post/2025/mechanism_design/success_holon.png" alt="" ></figure>
+</p>
 <p>With a simple set up like this it&rsquo;s already not very computationally convenient for seeking the equilibrium, so you can imagine how hard it is for general Bayesian Nash equilibrium.</p>
 <p>The motivation of coming up with a system like this is still something I couldn&rsquo;t figure out, because what do I know.
 But we should call it what it is. LOL.</p>

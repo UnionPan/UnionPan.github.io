@@ -25,7 +25,7 @@ where \(a^* \) is usually the Condorcet winner, i.e., \( P( a^* \succ a_j) &gt; 
     <link href="https://fonts.googleapis.com/css2?family=Gentium+Plus:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
     
-    <link rel="stylesheet" href="https://yunianpan.com/scss/style.min.ad3c4324be0f79486ebbf3c979aa052957ef74e8f90703ff53ec73d780e02b09.css">
+    <link rel="stylesheet" href="https://yunianpan.com/scss/style.min.b5bd9f7cab9864dcaa2d7a8126d05c2c1b34962f565b3ba58caf1275da1b9e93.css">
     <meta property="og:url" content="https://yunianpan.com/post/2023/dueling_bandits/">
   <meta property="og:site_name" content="union&#39;s blog">
   <meta property="og:title" content=" Some Notes on Dueling Bandits">
@@ -330,8 +330,12 @@ Now we transform this example to fit in the dueling bandits context, we can have
 </table>
 <p>Apparently the existence of a Condorcet winner requires a row that is greater than \(0\). While in a lot of cases such a winner/solution concept might not be suitable, let&rsquo;s first dive into the algorithmic design of trying to find it when it exists.
 There are basically two styles of algorithms, asymmetric or symmetric:</p>
-<p><img src="/images/posts/asymalgo.png" alt=""></p>
-<p><img src="/images/posts/symmalgo.png" alt=""></p>
+<p><figure>
+  <img src="/images/posts/asymalgo.png" alt="" ></figure>
+</p>
+<p><figure>
+  <img src="/images/posts/symmalgo.png" alt="" ></figure>
+</p>
 <p>The asymmetric style conceptually separates two choices into choosing a reference arm and an exploration arm. The reference arm acts as a summary of historical pulls. Typical algorithms of this type includes IF, BtM, SAVAGE, Doubler, RUCB, MergeRUCB, RCS, and DTS. The exploration strategy is to maximize the efficiency of identifying the best arm.</p>
 <h3 id="interleaved-filter-if-and-beat-the-mean-btm">Interleaved Filter (IF) and Beat the Mean (BtM)</h3>
 <p>The very first two methods proposed are Interleaved Filter (IF) <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> and Beat the Mean (BtM) <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>. They all assume there is a total ordering of the arms, i.e., we can relabel the arms as \(a_1, \ldots, a_K\), such that \( p_{i,j} &gt; 0.5 \) for all \( i &lt; j\). Under this assumption the Condorcet winner is \(a_1\).</p>
