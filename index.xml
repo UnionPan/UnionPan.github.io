@@ -6,8 +6,15 @@
     <description>Recent content on union&#39;s blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 30 Dec 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 07 Jan 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://yunianpan.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Statement/CV</title>
+      <link>https://yunianpan.com/statement/</link>
+      <pubDate>Wed, 07 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://yunianpan.com/statement/</guid>
+      <description>&lt;p&gt;I am a Ph.D. candidate at NYU Tandon. My dissertation studies non-equilibrium mechanics of multi-agent learning. My work primarily centers on the intersection of statistical/reinforcement learning and algorithmic game theory. Recent applications include large language model (LLM) multi-agent security (jailbreaking analysis, agentic orchestration, fine-tuning, and red-teaming), data-driven market making and deep hedging under adversarial risk, and decentralized multi-radar interference mitigation.&lt;/p&gt;&#xA;&lt;h2 id=&#34;education&#34;&gt;Education&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Ph.D., NYU&lt;/strong&gt; in Electrical Engineering, 2021–2026&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Committee: Prof. Quanyan Zhu, Prof. Elza Erkip &amp;amp; Prof. Sundeep Rangan&lt;/li&gt;&#xA;&lt;li&gt;Thesis: &lt;em&gt;Variational Foundations of Multi-Agent Learning: A Unified Non-equilibrium Theory&lt;/em&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;M.Sc., NYU&lt;/strong&gt; in Electrical Engineering, 2018–2020&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Marty Supreme, Ramble Little</title>
       <link>https://yunianpan.com/post/2025/martysupreme/</link>
@@ -56,13 +63,6 @@
       <pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate>
       <guid>https://yunianpan.com/contact/</guid>
       <description>&lt;h3 id=&#34;phone&#34;&gt;Phone&lt;/h3&gt;&#xA;&lt;p&gt;&lt;strong&gt;+1 (646)-404-1857&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;email&#34;&gt;Email&lt;/h3&gt;&#xA;&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;mailto:pyn950@gmail.com&#34;&gt;pyn950@gmail.com&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Statement/CV</title>
-      <link>https://yunianpan.com/statement/</link>
-      <pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>https://yunianpan.com/statement/</guid>
-      <description>&lt;p&gt;I am a P.h.D. candidate at NYU Tandon. My dissertation focuses on the transient, macroscopic, and microscopic behaviors of multi-agent learning and interactions, which emerge from the complex systems accross various disciplines. My work primarily centers on the intersection of statistical reinforcement learning and applied game theory, where I try to quantify the uncertainties arise in decision-making processes and understand their efficiency. An application is the design of decentralized multi-radar communication algorithm that mitigates the mutual interference during the target detection.&lt;/p&gt;</description>
     </item>
     <item>
       <title>About Me</title>
