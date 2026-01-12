@@ -16,7 +16,7 @@ But, if you think from Shannon&rsquo;s perspective, wasn&rsquo;t he also just do
     <link href="https://fonts.googleapis.com/css2?family=Gentium+Plus:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
     
-    <link rel="stylesheet" href="https://yunianpan.com/scss/style.min.13dffcbf7781fde619431936af99d572a89508c22beffe9020f4e63d4df0d003.css">
+    <link rel="stylesheet" href="https://yunianpan.com/scss/style.min.0681c94b9dcbf8699198190122aed7e8fbf1909286c203aa4e2802572e09890d.css">
     <meta property="og:url" content="https://yunianpan.com/post/2022/the_capacity_of_deception/">
   <meta property="og:site_name" content="union&#39;s blog">
   <meta property="og:title" content="Capacity of Deception">
@@ -82,10 +82,14 @@ But, if you think from Shannon&rsquo;s perspective, wasn&rsquo;t he also just do
 
         
         <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
+            <svg class="compass-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" fill="currentColor" opacity="0.6"></polygon>
+            </svg>
         </button>
+
+        
+        <div class="menu-backdrop" id="menu-backdrop"></div>
 
         <div class="layout-container">
             <aside class="sidebar" id="sidebar">
@@ -101,12 +105,7 @@ But, if you think from Shannon&rsquo;s perspective, wasn&rsquo;t he also just do
                                 Blog <span class="dropdown-arrow">▼</span>
                             </a>
                             <div class="submenu" id="blog-submenu">
-                                <a href="/post/about_me" class="submenu-link">About Me</a>
-                                <a href="/post/2022" class="submenu-link">2022</a>
-                                <a href="/post/2023" class="submenu-link">2023</a>
-                                <a href="/post/2024" class="submenu-link">2024</a>
-                                <a href="/post/2025" class="submenu-link">2025</a>
-                            </div>
+                                <a href="/post/about_me" class="submenu-link">About Me</a><a href="https://yunianpan.com/post/2022/" class="submenu-link">2022</a><a href="https://yunianpan.com/post/2023/" class="submenu-link">2023</a><a href="https://yunianpan.com/post/2024/" class="submenu-link">2024</a><a href="https://yunianpan.com/post/2025/" class="submenu-link">2025</a><a href="https://yunianpan.com/post/2026/" class="submenu-link">2026</a></div>
                         </div>
                         <div class="nav-item-container">
                             <a href="#" class="nav-link projects-toggle" onclick="toggleProjectsMenu(event)">
@@ -444,10 +443,19 @@ Now, using Jensen&rsquo;s inequality we arrive at some elementry manipulation:</
             
             const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
             const sidebar = document.getElementById('sidebar');
+            const menuBackdrop = document.getElementById('menu-backdrop');
 
             mobileMenuToggle.addEventListener('click', function() {
                 sidebar.classList.toggle('open');
                 mobileMenuToggle.classList.toggle('active');
+                menuBackdrop.classList.toggle('open');
+            });
+
+            
+            menuBackdrop.addEventListener('click', function() {
+                sidebar.classList.remove('open');
+                mobileMenuToggle.classList.remove('active');
+                menuBackdrop.classList.remove('open');
             });
 
             
@@ -456,6 +464,7 @@ Now, using Jensen&rsquo;s inequality we arrive at some elementry manipulation:</
                     link.addEventListener('click', function() {
                         sidebar.classList.remove('open');
                         mobileMenuToggle.classList.remove('active');
+                        menuBackdrop.classList.remove('open');
                     });
                 }
             });
