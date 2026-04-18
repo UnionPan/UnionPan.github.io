@@ -14,7 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Gentium+Plus:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
     
-    <link rel="stylesheet" href="https://yunianpan.com/scss/style.min.0681c94b9dcbf8699198190122aed7e8fbf1909286c203aa4e2802572e09890d.css">
+    <link rel="stylesheet" href="https://yunianpan.com/scss/style.min.6ca8d4718f2be00103e6c55042281e336e3713a2a5428debbad02553d28b5528.css">
     <meta property="og:url" content="https://yunianpan.com/post/2022/monge/">
   <meta property="og:site_name" content="union&#39;s blog">
   <meta property="og:title" content="Monge Partition">
@@ -110,6 +110,7 @@
                             <div class="submenu" id="projects-submenu">
                                 <a href="https://app.yunianpan.com/" class="submenu-link" target="_blank" rel="noopener noreferrer">Option Desk</a>
                                 <a href="https://simplegame.yunianpan.com/" class="submenu-link" target="_blank" rel="noopener noreferrer">SimpleGAME</a>
+                                <a href="https://unionsrubik.yunianpan.com/" class="submenu-link" target="_blank" rel="noopener noreferrer">Rubik's Cube</a>
                             </div>
                         </div>
                         <a href="/statement" class="nav-link ">Statement/CV</a>
@@ -118,7 +119,7 @@
                     </nav>
                     <div class="sidebar-footer">
                         <div class="copyright">
-                            © 2022-2025 all rights reserved
+                            © 2022-2026 all rights reserved
                         </div>
                         <div class="social-icons">
                             
@@ -266,7 +267,7 @@ $$
 <h4 id="a-new-york-city-instance">A New York City Instance</h4>
 <p>Now construct the two densities needed for our problem.</p>
 <p>You can sort of downloaded the data from <a href="https://data.cityofnewyork.us/Health/New-York-City-Locations-Providing-Seasonal-Flu-Vac/w9ei-idxz/data">NYC Open Data</a>, which provides the locations of seasonal flu vaccinatiion sites. Let&rsquo;s take a look at the locations by visualize it through $\texttt{seaborn}$.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> geopandas <span style="color:#66d9ef">as</span> gpd
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> geopandas <span style="color:#66d9ef">as</span> gpd
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> pandas
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> pysal
@@ -283,7 +284,7 @@ $$
 </span></span></code></pre></div><p><figure>
   <img src="MongePartition_files/MongePartition_5_1.png" alt="png" ><figcaption>png</figcaption></figure>
 </p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>joint_axes <span style="color:#f92672">=</span> seaborn<span style="color:#f92672">.</span>jointplot(
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>joint_axes <span style="color:#f92672">=</span> seaborn<span style="color:#f92672">.</span>jointplot(
 </span></span><span style="display:flex;"><span>    x<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Longitude&#39;</span>, y<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Latitude&#39;</span>, data<span style="color:#f92672">=</span>v_sites, s<span style="color:#f92672">=</span><span style="color:#ae81ff">0.8</span>, height<span style="color:#f92672">=</span><span style="color:#ae81ff">15</span>
 </span></span><span style="display:flex;"><span>)
 </span></span><span style="display:flex;"><span>contextily<span style="color:#f92672">.</span>add_basemap(
@@ -294,7 +295,7 @@ $$
 </span></span></code></pre></div><p><figure>
   <img src="MongePartition_files/MongePartition_6_0.png" alt="png" ><figcaption>png</figcaption></figure>
 </p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># For simplicity we assume that the capacity is index-irrelevant, assgining uniform mass to every site. </span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># For simplicity we assume that the capacity is index-irrelevant, assgining uniform mass to every site. </span>
 </span></span><span style="display:flex;"><span>site_pos <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>vstack([v_sites<span style="color:#f92672">.</span>Longitude, v_sites<span style="color:#f92672">.</span>Latitude])
 </span></span><span style="display:flex;"><span>site_measure <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;pos&#34;</span>: site_pos<span style="color:#f92672">.</span>T, <span style="color:#e6db74">&#34;cap&#34;</span>: (<span style="color:#ae81ff">1</span><span style="color:#f92672">/</span>len(site_pos[<span style="color:#ae81ff">0</span>])) <span style="color:#f92672">*</span> np<span style="color:#f92672">.</span>ones(len(site_pos[<span style="color:#ae81ff">0</span>]))}
 </span></span></code></pre></div><h4 id="kernel-density-and-hexbin-plot-as-two-types-of-density-estimation">Kernel Density and Hexbin Plot as Two Types of Density Estimation</h4>
@@ -308,7 +309,7 @@ $$
 K(x, y) \propto \exp(- \frac{|x - y|^2}{2h^2})
 $$</p>
 <p>Obviously for the discrete measure we do not need this type of modeling, so it is just for illustration purpose. Later when we deal with diffusing measure we might need these density estimators.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>f, ax <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">25</span>, <span style="color:#ae81ff">18</span>))
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>ax[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>hexbin(
@@ -348,7 +349,7 @@ $$</p>
 <p>Now what we need is the populational density of demand. Unfortunately even the Poisson type of point data is unavailable, as it has to be the dataset of spatial-tagged disease cases. So,
 to get the demand density distribution, we approximate it from a NYC census data, downloaded from <a href="https://www.kaggle.com/muonneutrino/mapping-new-york-city-census-data/data">Kaggle Mapping New York City Census Data</a>. There are two files we can consider. The first one being the census block, which contains the exact locations of the blocks being censored, the block codes, county and state names. The second one contains the census tracts, the county, borough names and exact populations calculated for each block.</p>
 <p>Let&rsquo;s first merge the two pandas data frames to obtain the point data, each point contains all the information carried by the census tract statistics.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>blocks <span style="color:#f92672">=</span> pandas<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;data/census_block_loc.csv&#39;</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>blocks <span style="color:#f92672">=</span> pandas<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;data/census_block_loc.csv&#39;</span>)
 </span></span><span style="display:flex;"><span>census <span style="color:#f92672">=</span> pandas<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;data/nyc_census_tracts.csv&#39;</span>, index_col<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>)
 </span></span><span style="display:flex;"><span>blocks <span style="color:#f92672">=</span> blocks[blocks<span style="color:#f92672">.</span>County<span style="color:#f92672">.</span>isin(
 </span></span><span style="display:flex;"><span>    [<span style="color:#e6db74">&#39;Bronx&#39;</span>, <span style="color:#e6db74">&#39;Kings&#39;</span>, <span style="color:#e6db74">&#39;New York&#39;</span>, <span style="color:#e6db74">&#39;Queens&#39;</span>, <span style="color:#e6db74">&#39;Richmond&#39;</span>])]
@@ -359,7 +360,7 @@ to get the demand density distribution, we approximate it from a NYC census data
 </span></span><span style="display:flex;"><span>blocks<span style="color:#f92672">.</span>head()
 </span></span></code></pre></div><h4 id="start-from-populational-density">Start From Populational Density</h4>
 <p>We choose the total population as a number that labels the specific points with their associated populational density, so still they form a discrete point measure. But it is at least helpful to visualize the populational density through some colormap.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>latmin <span style="color:#f92672">=</span> <span style="color:#ae81ff">40.48</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>latmin <span style="color:#f92672">=</span> <span style="color:#ae81ff">40.48</span>
 </span></span><span style="display:flex;"><span>lonmin <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">74.28</span>
 </span></span><span style="display:flex;"><span>latmax <span style="color:#f92672">=</span> <span style="color:#ae81ff">40.93</span>
 </span></span><span style="display:flex;"><span>lonmax <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">73.65</span>
@@ -395,10 +396,10 @@ to get the demand density distribution, we approximate it from a NYC census data
 </span></span></code></pre></div><p><figure>
   <img src="MongePartition_files/MongePartition_13_0.png" alt="png" ><figcaption>png</figcaption></figure>
 </p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>entire_pop <span style="color:#f92672">=</span> int(np<span style="color:#f92672">.</span>sum(blocks<span style="color:#f92672">.</span>TotalPop))
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>entire_pop <span style="color:#f92672">=</span> int(np<span style="color:#f92672">.</span>sum(blocks<span style="color:#f92672">.</span>TotalPop))
 </span></span><span style="display:flex;"><span>num_tracts <span style="color:#f92672">=</span> len(blocks<span style="color:#f92672">.</span>Longitude)
 </span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;The entire population in NYC is </span><span style="color:#e6db74">{}</span><span style="color:#e6db74">, censored in </span><span style="color:#e6db74">{}</span><span style="color:#e6db74"> tracts </span><span style="color:#ae81ff">\n</span><span style="color:#e6db74"> </span><span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span><span style="color:#e6db74">        The city area is in the bounded box of longitudes [</span><span style="color:#e6db74">{}</span><span style="color:#e6db74"> </span><span style="color:#e6db74">{}</span><span style="color:#e6db74">] and latitudes [</span><span style="color:#e6db74">{}</span><span style="color:#e6db74"> </span><span style="color:#e6db74">{}</span><span style="color:#e6db74">]&#34;</span><span style="color:#f92672">.</span>
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        The city area is in the bounded box of longitudes [</span><span style="color:#e6db74">{}</span><span style="color:#e6db74"> </span><span style="color:#e6db74">{}</span><span style="color:#e6db74">] and latitudes [</span><span style="color:#e6db74">{}</span><span style="color:#e6db74"> </span><span style="color:#e6db74">{}</span><span style="color:#e6db74">]&#34;</span><span style="color:#f92672">.</span>
 </span></span><span style="display:flex;"><span>        format(entire_pop, num_tracts, lon_mts[<span style="color:#ae81ff">0</span>], 
 </span></span><span style="display:flex;"><span>        lon_mts[<span style="color:#ae81ff">1</span>], lat_mts[<span style="color:#ae81ff">0</span>], lat_mts[<span style="color:#ae81ff">1</span>]))
 </span></span></code></pre></div><pre><code>The entire population in NYC is 52551009, censored in 18053 tracts 
@@ -419,7 +420,7 @@ $$
 $$
 Note that this demand estimation has some issues: first, it does not really make sense to integrate over an infinite 2-D plane, however for our application it&rsquo;s sufficient as the tail will &lsquo;&lsquo;fade&rsquo;&rsquo; near the boundary; second, we have to consider the plausibility to use census data as a source of demand sampling.  But since now I don&rsquo;t have many choices :(,  I will briefly use this for illustration purposes. If there are spatial-tagged discease data poping up, maybe then we can perform some more accurate geospatial analysis.</p>
 <p>I am going to use the libary scipy Gaussian Kernel density estimation module to obtain the population density since it has the weighted implementation.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> scipy <span style="color:#f92672">import</span> stats
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> scipy <span style="color:#f92672">import</span> stats
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>points <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>stack([np<span style="color:#f92672">.</span>array(blocks<span style="color:#f92672">.</span>Longitude), np<span style="color:#f92672">.</span>array(blocks<span style="color:#f92672">.</span>Latitude)])
 </span></span><span style="display:flex;"><span>pops <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>array(blocks<span style="color:#f92672">.</span>TotalPop)
@@ -435,14 +436,14 @@ Note that this demand estimation has some issues: first, it does not really make
 </span></span></code></pre></div><pre><code>The kernel integration over the entire boundary is 0.9917503652964066
 </code></pre>
 <p>Just to verify the estimated density is close to the data by plotting the heatmap of kernel integration. It turns out the 2-loop integration is quite slow, (about 20 mins). What we finally will get is a [200, 200] matrix representing the populational density on the map.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>ker_vals <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>zeros((<span style="color:#ae81ff">200</span>, <span style="color:#ae81ff">200</span>))
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>ker_vals <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>zeros((<span style="color:#ae81ff">200</span>, <span style="color:#ae81ff">200</span>))
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> lat_val <span style="color:#f92672">in</span> lat_vals:
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> lon_val <span style="color:#f92672">in</span> lon_vals:
 </span></span><span style="display:flex;"><span>        lat_idx <span style="color:#f92672">=</span> int(np<span style="color:#f92672">.</span>rint((lat_val <span style="color:#f92672">-</span> latmin) <span style="color:#f92672">/</span> d_lat))
 </span></span><span style="display:flex;"><span>        lon_idx <span style="color:#f92672">=</span> int(np<span style="color:#f92672">.</span>rint((lon_val <span style="color:#f92672">-</span> lonmin) <span style="color:#f92672">/</span> d_lon))
 </span></span><span style="display:flex;"><span>        <span style="color:#75715e">#print(&#34;iter: lon {} lat {}&#34;.format(lat_idx, lon_idx))</span>
 </span></span><span style="display:flex;"><span>        ker_vals[lon_idx, lat_idx] <span style="color:#f92672">=</span> gkernel<span style="color:#f92672">.</span>integrate_box(low_bounds<span style="color:#f92672">=</span>[lon_val, lat_val], high_bounds<span style="color:#f92672">=</span>[lon_val<span style="color:#f92672">+</span>d_lon, lat_val<span style="color:#f92672">+</span>d_lat])
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>fig, ax <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">15</span>,<span style="color:#ae81ff">15</span>))
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>fig, ax <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">15</span>,<span style="color:#ae81ff">15</span>))
 </span></span><span style="display:flex;"><span>ax<span style="color:#f92672">.</span>set(xlim<span style="color:#f92672">=</span>lon_mts, ylim<span style="color:#f92672">=</span>lat_mts)
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#contextily.add_basemap(ax, crs=&#34;EPSG:4326&#34;, source=contextily.providers.CartoDB.Positron)</span>
 </span></span><span style="display:flex;"><span>im <span style="color:#f92672">=</span> ax<span style="color:#f92672">.</span>imshow(ker_vals<span style="color:#f92672">.</span>T, origin<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;lower&#39;</span>, cmap<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Purples&#39;</span>,

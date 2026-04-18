@@ -11,6 +11,7 @@ ES Thm. (Monotone sequence)
 
 For any positive integer
 $n$, any sequence of $n^2 &#43; 1$ distinct real numbers contains a monotone subsequence of length at least $n&#43;1$.
+
 This means that within any sufficiently long sequence, there is either an increasing subsequence or a decreasing subsequence of a certain minimum length.
 There&rsquo;s another version of the theorem statement coming from the 1935 paper by Paul Erdos and George Szekeres1, which concerns combinatorial geometry. It says:">
     <meta name="google-site-verification" content="leqKZ6ZyQGOq6f_hMMWU-dgFPt8qgZeyJj-ZfCjyz3I" />
@@ -20,7 +21,7 @@ There&rsquo;s another version of the theorem statement coming from the 1935 pape
     <link href="https://fonts.googleapis.com/css2?family=Gentium+Plus:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
     
-    <link rel="stylesheet" href="https://yunianpan.com/scss/style.min.0681c94b9dcbf8699198190122aed7e8fbf1909286c203aa4e2802572e09890d.css">
+    <link rel="stylesheet" href="https://yunianpan.com/scss/style.min.6ca8d4718f2be00103e6c55042281e336e3713a2a5428debbad02553d28b5528.css">
     <meta property="og:url" content="https://yunianpan.com/post/2023/erdos-szekeres/">
   <meta property="og:site_name" content="union&#39;s blog">
   <meta property="og:title" content="Erdos-Szekeres Theorem">
@@ -122,6 +123,7 @@ There’s another version of the theorem statement coming from the 1935 paper by
                             <div class="submenu" id="projects-submenu">
                                 <a href="https://app.yunianpan.com/" class="submenu-link" target="_blank" rel="noopener noreferrer">Option Desk</a>
                                 <a href="https://simplegame.yunianpan.com/" class="submenu-link" target="_blank" rel="noopener noreferrer">SimpleGAME</a>
+                                <a href="https://unionsrubik.yunianpan.com/" class="submenu-link" target="_blank" rel="noopener noreferrer">Rubik's Cube</a>
                             </div>
                         </div>
                         <a href="/statement" class="nav-link ">Statement/CV</a>
@@ -130,7 +132,7 @@ There’s another version of the theorem statement coming from the 1935 paper by
                     </nav>
                     <div class="sidebar-footer">
                         <div class="copyright">
-                            © 2022-2025 all rights reserved
+                            © 2022-2026 all rights reserved
                         </div>
                         <div class="social-icons">
                             
@@ -243,17 +245,20 @@ There’s another version of the theorem statement coming from the 1935 paper by
 <h5 id="es-thm-monotone-sequence">ES Thm. (Monotone sequence)</h5>
 <blockquote>
 <p>For any positive integer
-$n$, any sequence of $n^2 + 1$ distinct real numbers contains a monotone subsequence of length at least $n+1$.</p></blockquote>
+$n$, any sequence of $n^2 + 1$ distinct real numbers contains a monotone subsequence of length at least $n+1$.</p>
+</blockquote>
 <p>This means that within any sufficiently long sequence, there is either an increasing subsequence or a decreasing subsequence of a certain minimum length.</p>
 <p>There&rsquo;s another version of the theorem statement coming from the 1935 paper by Paul Erdos and George Szekeres<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>, which concerns combinatorial geometry. It says:</p>
 <h5 id="es-thm-combinatorial-geometry">ES Thm. (combinatorial geometry)</h5>
 <blockquote>
-<p>For every positive  integer $n$ among every $N=\binom{2 n-4}{n-2}+1 \sim 4^{n} / \sqrt{n}$ points $p_1, \ldots, p_N \in \mathbb{R}^2$, where $p_i = (x_i , y_i)$ and $x_1 &lt; x_2 &lt; \ldots &lt;  x_N$, there is a convex configuration or a concave configuation of at least $n$ points.</p></blockquote>
+<p>For every positive  integer $n$ among every $N=\binom{2 n-4}{n-2}+1 \sim 4^{n} / \sqrt{n}$ points $p_1, \ldots, p_N \in \mathbb{R}^2$, where $p_i = (x_i , y_i)$ and $x_1 &lt; x_2 &lt; \ldots &lt;  x_N$, there is a convex configuration or a concave configuation of at least $n$ points.</p>
+</blockquote>
 <p>This means that there are indices $i_1 &lt; \ldots &lt; i_n$ such that the slopes of the segments $p_{i_j} p_{i_{j+1}}, j = 1, \ldots, n-1$ are either all nondecreasing or all nonincreasing.</p>
 <p>These two statements can be traced back to Ramsey&rsquo;s theory.</p>
 <h5 id="ramsey-thm">Ramsey Thm.</h5>
 <blockquote>
-<p>For every $k,r,n \in \mathbb{N}$ there exists a number $N \in \mathbb{N}$ such that for every coloring of the $k$-tuples of the $[N]$ by $r$ colors there is a subset $T \subseteq [N]$ of size $n$ such that all $k$-tuples of elements of $T$ have the same color. The Ramsey number, $R^r_n (k)$ is the smallest such $N$.</p></blockquote>
+<p>For every $k,r,n \in \mathbb{N}$ there exists a number $N \in \mathbb{N}$ such that for every coloring of the $k$-tuples of the $[N]$ by $r$ colors there is a subset $T \subseteq [N]$ of size $n$ such that all $k$-tuples of elements of $T$ have the same color. The Ramsey number, $R^r_n (k)$ is the smallest such $N$.</p>
+</blockquote>
 <p>I might have lost you here already.  The connections between these three theorems are pretty vague to me at first. But let me make an analogy to clarify that ES theorem actually makes a special case of Ramsey theorem.</p>
 <p>First, Ramsey&rsquo;s theorem can be translated using graph theory language. Let&rsquo;s focus on the case where we are coloring pairs of points, so $k=2$. The theorem then says that if you take a complete graph $K_N$ with a large enough number of vertices $N$, and you color every edge with one of $r$ colors, you are guaranteed to find a complete subgraph $K_n$ (a clique of size $n$) where all edges have the same color.</p>
 <p>Let&rsquo;s see how this applies to the Monotone Sequence Theorem.</p>

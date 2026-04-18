@@ -23,7 +23,7 @@ $$">
     <link href="https://fonts.googleapis.com/css2?family=Gentium+Plus:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
     
-    <link rel="stylesheet" href="https://yunianpan.com/scss/style.min.0681c94b9dcbf8699198190122aed7e8fbf1909286c203aa4e2802572e09890d.css">
+    <link rel="stylesheet" href="https://yunianpan.com/scss/style.min.6ca8d4718f2be00103e6c55042281e336e3713a2a5428debbad02553d28b5528.css">
     <meta property="og:url" content="https://yunianpan.com/post/2022/nesterov/">
   <meta property="og:site_name" content="union&#39;s blog">
   <meta property="og:title" content="Nesterov">
@@ -123,6 +123,7 @@ $$ x_{k} \in x_{0} &#43; \operatorname{Span} \left \{f^{\prime} \left (x_{0} \ri
                             <div class="submenu" id="projects-submenu">
                                 <a href="https://app.yunianpan.com/" class="submenu-link" target="_blank" rel="noopener noreferrer">Option Desk</a>
                                 <a href="https://simplegame.yunianpan.com/" class="submenu-link" target="_blank" rel="noopener noreferrer">SimpleGAME</a>
+                                <a href="https://unionsrubik.yunianpan.com/" class="submenu-link" target="_blank" rel="noopener noreferrer">Rubik's Cube</a>
                             </div>
                         </div>
                         <a href="/statement" class="nav-link ">Statement/CV</a>
@@ -131,7 +132,7 @@ $$ x_{k} \in x_{0} &#43; \operatorname{Span} \left \{f^{\prime} \left (x_{0} \ri
                     </nav>
                     <div class="sidebar-footer">
                         <div class="copyright">
-                            © 2022-2025 all rights reserved
+                            © 2022-2026 all rights reserved
                         </div>
                         <div class="social-icons">
                             
@@ -257,7 +258,8 @@ $$
 \lambda_k \to 0
 $$</li>
 </ul>
-<p>So intead of minimizing the function itself, we minimize $\{\phi_k \}$ at each step, which is easier but also matches the lower bound because it is quadratic!</p></blockquote>
+<p>So intead of minimizing the function itself, we minimize $\{\phi_k \}$ at each step, which is easier but also matches the lower bound because it is quadratic!</p>
+</blockquote>
 <p>There are of course a bunch of alternative interpretations about this method, one of which I found quite intriguing was the dual perspective<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>, which views every accelerated gradient step as an optimal coupling of the primal and dual step.</p>
 <p>Another that I know of is <a href="https://arxiv.org/abs/1506.08187">Bubbeck&rsquo;s paper</a>. You will have to see the geometric interpretation for yourself, it basically says that two balls shrink is faster than one ball shrinks. Personally I find the youtube &lsquo;&lsquo;momentum videos&rsquo;&rsquo; not super helpful&hellip;</p>
 <div class="footnotes" role="doc-endnotes">

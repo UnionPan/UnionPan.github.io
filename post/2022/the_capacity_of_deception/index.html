@@ -16,7 +16,7 @@ But, if you think from Shannon&rsquo;s perspective, wasn&rsquo;t he also just do
     <link href="https://fonts.googleapis.com/css2?family=Gentium+Plus:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
     
-    <link rel="stylesheet" href="https://yunianpan.com/scss/style.min.0681c94b9dcbf8699198190122aed7e8fbf1909286c203aa4e2802572e09890d.css">
+    <link rel="stylesheet" href="https://yunianpan.com/scss/style.min.6ca8d4718f2be00103e6c55042281e336e3713a2a5428debbad02553d28b5528.css">
     <meta property="og:url" content="https://yunianpan.com/post/2022/the_capacity_of_deception/">
   <meta property="og:site_name" content="union&#39;s blog">
   <meta property="og:title" content="Capacity of Deception">
@@ -114,6 +114,7 @@ But, if you think from Shannon&rsquo;s perspective, wasn&rsquo;t he also just do
                             <div class="submenu" id="projects-submenu">
                                 <a href="https://app.yunianpan.com/" class="submenu-link" target="_blank" rel="noopener noreferrer">Option Desk</a>
                                 <a href="https://simplegame.yunianpan.com/" class="submenu-link" target="_blank" rel="noopener noreferrer">SimpleGAME</a>
+                                <a href="https://unionsrubik.yunianpan.com/" class="submenu-link" target="_blank" rel="noopener noreferrer">Rubik's Cube</a>
                             </div>
                         </div>
                         <a href="/statement" class="nav-link ">Statement/CV</a>
@@ -122,7 +123,7 @@ But, if you think from Shannon&rsquo;s perspective, wasn&rsquo;t he also just do
                     </nav>
                     <div class="sidebar-footer">
                         <div class="copyright">
-                            © 2022-2025 all rights reserved
+                            © 2022-2026 all rights reserved
                         </div>
                         <div class="social-icons">
                             
@@ -273,7 +274,8 @@ $P_X$ and $Q_X$ are pushforwards, i.e., they measure, say, $\forall \mathcal{I} 
 <h4 id="theorem-1">Theorem 1</h4>
 <blockquote>
 <p>Let $(\Omega, \mathcal{F})$ be a measurable space, also let $P$ and $Q$ be measures on this space. Then</p>
-<p>$$ D(P,Q) =  \begin{cases} \int \log(\frac{dP}{dQ}(\omega)) dP(\omega) ,\ \ &amp;\text{if} P \ll Q; \\\ \infty, \quad &amp;\text{otherwise}  \end{cases} \tag{1} $$</p></blockquote>
+<p>$$ D(P,Q) =  \begin{cases} \int \log(\frac{dP}{dQ}(\omega)) dP(\omega) ,\ \ &amp;\text{if} P \ll Q; \\\ \infty, \quad &amp;\text{otherwise}  \end{cases} \tag{1} $$</p>
+</blockquote>
 <p>When calculating the relative entropy the densities are always used. If $\lambda$ is a $\sigma$-finite measure dominating both $P$ and $Q$, let $p = \frac{dP}{d\lambda}$ and $q = \frac{dQ}{d\lambda}$, if $P \ll Q$, by chain rule we write</p>
 <p>$$
 D(P,Q) = \int p \log(\frac{p}{q}) d\lambda  \tag{2}
@@ -297,7 +299,8 @@ $$</p>
 <blockquote>
 <p>Let $P$ and $Q$ be probability measures on the same measurable spcae $(\Omega, \mathcal{F})$, and let $A \in \mathcal{F}$ be an arbitrary event. Then</p>
 <p>$$ P(A) + Q(A^c) \geq \frac{1}{2} \exp (-D(P,Q)) $$</p>
-<p>where $A^c = \Omega \backslash A$ is the complement of A.</p></blockquote>
+<p>where $A^c = \Omega \backslash A$ is the complement of A.</p>
+</blockquote>
 <h4 id="proof">Proof</h4>
 <p>For reals $a, b$, abbreviate $a \vee b: = \max\{ a, b\}$, and $a \wedge b := \min\{a,b\}$.
 If $D(P,Q) = \infty$, then the inequality holds trivially true. If it&rsquo;s not, then $P \ll Q$ by Theorem $1$. Let $\nu = P+Q$, and the Radon-Nikodym derivatives $p =\frac{ dP }{d\nu}$, $q =\frac{ dQ }{d\nu}$. By $(2)$, the relative entropy</p>

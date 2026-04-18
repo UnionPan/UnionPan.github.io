@@ -16,7 +16,7 @@ On the first level of thinking, when there&rsquo;s a lack of resource you attemp
     <link href="https://fonts.googleapis.com/css2?family=Gentium+Plus:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
     
-    <link rel="stylesheet" href="https://yunianpan.com/scss/style.min.0681c94b9dcbf8699198190122aed7e8fbf1909286c203aa4e2802572e09890d.css">
+    <link rel="stylesheet" href="https://yunianpan.com/scss/style.min.6ca8d4718f2be00103e6c55042281e336e3713a2a5428debbad02553d28b5528.css">
     <meta property="og:url" content="https://yunianpan.com/post/2023/wardrop_equilibirum/">
   <meta property="og:site_name" content="union&#39;s blog">
   <meta property="og:title" content="Wardrop Equilibrium">
@@ -114,6 +114,7 @@ On the first level of thinking, when there’s a lack of resource you attempt to
                             <div class="submenu" id="projects-submenu">
                                 <a href="https://app.yunianpan.com/" class="submenu-link" target="_blank" rel="noopener noreferrer">Option Desk</a>
                                 <a href="https://simplegame.yunianpan.com/" class="submenu-link" target="_blank" rel="noopener noreferrer">SimpleGAME</a>
+                                <a href="https://unionsrubik.yunianpan.com/" class="submenu-link" target="_blank" rel="noopener noreferrer">Rubik's Cube</a>
                             </div>
                         </div>
                         <a href="/statement" class="nav-link ">Statement/CV</a>
@@ -122,7 +123,7 @@ On the first level of thinking, when there’s a lack of resource you attempt to
                     </nav>
                     <div class="sidebar-footer">
                         <div class="copyright">
-                            © 2022-2025 all rights reserved
+                            © 2022-2026 all rights reserved
                         </div>
                         <div class="social-icons">
                             
@@ -246,22 +247,26 @@ For each OD pair \(w \in \mathcal{W}\), let \(m_w = m(\mathcal{X}_w) \) represen
 <p>Let \((\Omega, \mathcal{F}, \mathbb{P})\) be the probability space, \(l_e: \mathbb{R}_+ \times \Omega \to \mathbb{R}_+\) be the cost/latency functions, measuring the travel delay of the edge \(e \in \mathcal{E}\) determined by its edge flow \(q_e\) and a state variable \(\omega \in \Omega\) that is universal for the entire traffic network, e.g., \(\omega\) can represent the weather condition, road incidents or anything that affects the congestion level. Let \(l : \mathbb{R}^{|\mathcal{E}|}_{\geq 0} \times \Omega \mapsto \mathbb{R}^{|\mathcal{E}|}_+\) denote the vector-valued latency function.For an instance \(\omega \in \Omega\), the latency of path \(p\) is defined as \(\ell_p : = \sum_{e \in p} l_e (q_e, \omega ) = \Lambda^{\top}_p l (\Lambda \mu, \omega )\), which can be seen as a function of \(\mu\) and \(\omega\), written as \(\ell_p = \ell_p(\mu, \omega)\). We write the vector-valued path latency function as \(\ell : \Delta \times \Omega \mapsto \mathbb{R}^{|\mathcal{P}|}_+\). Each instance \(\omega\) determines a congestion game, captured by the tuple \(\mathcal{G}_c^{\omega} = ( \mathcal{G}, \mathcal{W}, \mathcal{X} , \mathcal{P}, \mathcal{\ell}(\cdot, \omega) )\). Each path flow profile \(\mu \in \Delta\) induces a probability measure associated with the positive random vector \(\ell(\mu, \cdot): \Omega \mapsto \mathbb{R}^{|\mathcal{P}|}_+\). The following assumption gives some realistic properties for the latency.</p>
 <h4 id="standing-assumption">Standing Assumption</h4>
 <blockquote>
-<p>For all \(e \in \mathcal{E}\), the latency functions \(l_e\) are \(\omega\)-measurable, for all \(\omega \in \Omega\), \(l_e\) are \(L_0\)-Lipschitz continuous and differentiable in \(q_e\) with \(\cfrac{ \partial l_e (q_e, \omega)}{\partial q_e} &gt; 0 \) for all \(q_e \geq 0\).</p></blockquote>
+<p>For all \(e \in \mathcal{E}\), the latency functions \(l_e\) are \(\omega\)-measurable, for all \(\omega \in \Omega\), \(l_e\) are \(L_0\)-Lipschitz continuous and differentiable in \(q_e\) with \(\cfrac{ \partial l_e (q_e, \omega)}{\partial q_e} &gt; 0 \) for all \(q_e \geq 0\).</p>
+</blockquote>
 <p>Now let&rsquo;s define and find the equilibria satisfying  of a deterministic game, i.e., when \(|\Omega|\) is a singleton. The first, as it turns out, coincides with the Nash Equilibrium.</p>
 <h4 id="definition-wardrop-equilibrium">Definition (Wardrop Equilibrium)</h4>
 <blockquote>
-<p>A path flow \(\mu \in \Delta\) is said to be a  Wardrop Equilibrium (WE) if \(\forall w \in \mathcal{W}\), \( \mu_p &gt; 0\) indicates \( \ell_p \leq \ell_{p^{\prime}}\) for all \(p^{\prime} \in \mathcal{P}_w\).</p></blockquote>
+<p>A path flow \(\mu \in \Delta\) is said to be a  Wardrop Equilibrium (WE) if \(\forall w \in \mathcal{W}\), \( \mu_p &gt; 0\) indicates \( \ell_p \leq \ell_{p^{\prime}}\) for all \(p^{\prime} \in \mathcal{P}_w\).</p>
+</blockquote>
 <p>The second, while not satisfying the incentive conditions, somehow concides with the Nash equilibrium in a &ldquo;regularized&rdquo; version of the game, where the utility for each individual player is a sum of the latency and a &ldquo;toll price&rdquo;.</p>
 <h4 id="definition-system-equilibrium">Definition (System Equilibrium)</h4>
 <blockquote>
-<p>A path flow \(\mu \in \Delta\) is said to be a system optimum if the aggregated latency \(S(\mu) := \sum_{e \in \mathcal{E}} q_e l_e \) is minimized.</p></blockquote>
+<p>A path flow \(\mu \in \Delta\) is said to be a system optimum if the aggregated latency \(S(\mu) := \sum_{e \in \mathcal{E}} q_e l_e \) is minimized.</p>
+</blockquote>
 <p>Wardrop equilibrium can be characterized by the minimization of an objective function called Beckmann potential, we end this post by proving it.</p>
 <h4 id="theorem">Theorem</h4>
 <blockquote>
 <p>A path flow \(\mu^* \in \Delta\) is a WE if and only if it minimizes the Beckmann potential:
 $$
 \min_{\mu \in \Delta} \Phi (\mu) := \sum_{e\in \mathcal{E}}\int_{0}^{(\Lambda \mu)_e} l_e (z) dz.
-$$</p></blockquote>
+$$</p>
+</blockquote>
 <h4 id="proof">Proof</h4>
 <p>We first write down the constraint \(\Delta\) as a set of inequalities and equalities,
 $$
