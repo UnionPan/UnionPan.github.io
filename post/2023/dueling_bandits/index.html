@@ -27,20 +27,20 @@ where \(a^* \) is usually the Condorcet winner, i.e., \( P( a^* \succ a_j) &gt; 
     
     <link rel="stylesheet" href="https://yunianpan.com/scss/style.min.6ca8d4718f2be00103e6c55042281e336e3713a2a5428debbad02553d28b5528.css">
     <meta property="og:url" content="https://yunianpan.com/post/2023/dueling_bandits/">
-  <meta property="og:site_name" content="union&#39;s blog">
-  <meta property="og:title" content=" Some Notes on Dueling Bandits">
-  <meta property="og:description" content="The dueling bandit problem natrually fits the description of a variety of recommendation systems that require ‘’learning on the fly’’, yet have no explicit access to a ‘‘reward’’ model. Instead, the ‘‘human’’ feedback part takes the form of ‘‘choices’’, ‘‘votes’’, or some discrete forms. Hence, oftentimes a learning protocol proceeds at time steps \(t = 1, \ldots, T\):
+	<meta property="og:site_name" content="union&#39;s blog">
+	<meta property="og:title" content=" Some Notes on Dueling Bandits">
+	<meta property="og:description" content="The dueling bandit problem natrually fits the description of a variety of recommendation systems that require ‘’learning on the fly’’, yet have no explicit access to a ‘‘reward’’ model. Instead, the ‘‘human’’ feedback part takes the form of ‘‘choices’’, ‘‘votes’’, or some discrete forms. Hence, oftentimes a learning protocol proceeds at time steps \(t = 1, \ldots, T\):
 The algorithm chooses a pair of arms \( a_i, a_j \) from \(K\) available ones; The oracle/human feedback/nature reveals the winner arm \( a_i \), with probability \( P(a_i \succ a_j)\), \( P(a_i \prec a_j) = 1 - P(a_i \succ a_j) \) So the feedback is either \(a_i\) or \( a_j \), the preferences forms a matrix \(P \in \mathbb{R}^{K \times K}\) such that \( P &#43; P^{\top} = I\) which defines the hidden information of the dueling bandit problem. The cumulative regret in the stochastic dueling bandit setting is: $$ \mathcal{R}_T = \sum_{t=1}^T P( a^* \succ a^t_i ) &#43; P( a^* \succ a^t_j ) $$ where \(a^* \) is usually the Condorcet winner, i.e., \( P( a^* \succ a_j) &gt; \frac{1}{2} \ \ \forall j \in [K], a_j \neq a^*\). Condorcet winner is a pretty straightforward idea, which might not exist in general cases. To see that, suppose there are three candidates: A, B, and C, and three voters with the following preferences:">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="post">
-    <meta property="article:published_time" content="2023-10-11T00:00:00+00:00">
-    <meta property="article:modified_time" content="2023-10-11T00:00:00+00:00">
+	<meta property="og:locale" content="en_us">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="post">
+		<meta property="article:published_time" content="2023-10-11T00:00:00+00:00">
+		<meta property="article:modified_time" content="2023-10-11T00:00:00+00:00">
 
     
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content=" Some Notes on Dueling Bandits">
-  <meta name="twitter:description" content="The dueling bandit problem natrually fits the description of a variety of recommendation systems that require ‘’learning on the fly’’, yet have no explicit access to a ‘‘reward’’ model. Instead, the ‘‘human’’ feedback part takes the form of ‘‘choices’’, ‘‘votes’’, or some discrete forms. Hence, oftentimes a learning protocol proceeds at time steps \(t = 1, \ldots, T\):
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content=" Some Notes on Dueling Bandits">
+	<meta name="twitter:description" content="The dueling bandit problem natrually fits the description of a variety of recommendation systems that require ‘’learning on the fly’’, yet have no explicit access to a ‘‘reward’’ model. Instead, the ‘‘human’’ feedback part takes the form of ‘‘choices’’, ‘‘votes’’, or some discrete forms. Hence, oftentimes a learning protocol proceeds at time steps \(t = 1, \ldots, T\):
 The algorithm chooses a pair of arms \( a_i, a_j \) from \(K\) available ones; The oracle/human feedback/nature reveals the winner arm \( a_i \), with probability \( P(a_i \succ a_j)\), \( P(a_i \prec a_j) = 1 - P(a_i \succ a_j) \) So the feedback is either \(a_i\) or \( a_j \), the preferences forms a matrix \(P \in \mathbb{R}^{K \times K}\) such that \( P &#43; P^{\top} = I\) which defines the hidden information of the dueling bandit problem. The cumulative regret in the stochastic dueling bandit setting is: $$ \mathcal{R}_T = \sum_{t=1}^T P( a^* \succ a^t_i ) &#43; P( a^* \succ a^t_j ) $$ where \(a^* \) is usually the Condorcet winner, i.e., \( P( a^* \succ a_j) &gt; \frac{1}{2} \ \ \forall j \in [K], a_j \neq a^*\). Condorcet winner is a pretty straightforward idea, which might not exist in general cases. To see that, suppose there are three candidates: A, B, and C, and three voters with the following preferences:">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
@@ -261,34 +261,34 @@ where \(a^* \) is usually the Condorcet winner, i.e., \( P( a^* \succ a_j) &gt; 
 <li>Voter 3: C &gt; A &gt; B</li>
 </ol>
 <table>
-  <thead>
-      <tr>
-          <th></th>
-          <th>Voter 1</th>
-          <th>Voter 2</th>
-          <th>Voter 3</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>A &gt; B</td>
-          <td>X</td>
-          <td></td>
-          <td>X</td>
-      </tr>
-      <tr>
-          <td>B &gt; C</td>
-          <td>X</td>
-          <td>X</td>
-          <td></td>
-      </tr>
-      <tr>
-          <td>C &gt; A</td>
-          <td></td>
-          <td>X</td>
-          <td>X</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th></th>
+					<th>Voter 1</th>
+					<th>Voter 2</th>
+					<th>Voter 3</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>A &gt; B</td>
+					<td>X</td>
+					<td></td>
+					<td>X</td>
+			</tr>
+			<tr>
+					<td>B &gt; C</td>
+					<td>X</td>
+					<td>X</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>C &gt; A</td>
+					<td></td>
+					<td>X</td>
+					<td>X</td>
+			</tr>
+	</tbody>
 </table>
 <p>In this example, let&rsquo;s check the pairwise comparisons:</p>
 <ol>
@@ -299,34 +299,34 @@ where \(a^* \) is usually the Condorcet winner, i.e., \( P( a^* \succ a_j) &gt; 
 <p>Since no candidate consistently beats all others in pairwise comparisons, there is no Condorcet winner in this example.
 Now we transform this example to fit in the dueling bandits context, we can have, for instance, a cyclic relation \(A \succ B \succ C \succ A \).</p>
 <table>
-  <thead>
-      <tr>
-          <th></th>
-          <th>A</th>
-          <th>B</th>
-          <th>C</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>A</td>
-          <td>0.5</td>
-          <td>0.7</td>
-          <td>0.2</td>
-      </tr>
-      <tr>
-          <td>B</td>
-          <td>0.3</td>
-          <td>0.5</td>
-          <td>0.6</td>
-      </tr>
-      <tr>
-          <td>C</td>
-          <td>0.8</td>
-          <td>0.4</td>
-          <td>0.5</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th></th>
+					<th>A</th>
+					<th>B</th>
+					<th>C</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>A</td>
+					<td>0.5</td>
+					<td>0.7</td>
+					<td>0.2</td>
+			</tr>
+			<tr>
+					<td>B</td>
+					<td>0.3</td>
+					<td>0.5</td>
+					<td>0.6</td>
+			</tr>
+			<tr>
+					<td>C</td>
+					<td>0.8</td>
+					<td>0.4</td>
+					<td>0.5</td>
+			</tr>
+	</tbody>
 </table>
 <p>Apparently the existence of a Condorcet winner requires a row that is greater than \(0\). While in a lot of cases such a winner/solution concept might not be suitable, let&rsquo;s first dive into the algorithmic design of trying to find it when it exists.
 There are basically two styles of algorithms, asymmetric or symmetric:</p>

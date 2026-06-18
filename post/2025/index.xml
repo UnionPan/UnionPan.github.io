@@ -1,47 +1,52 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>2025 on union&#39;s blog</title>
-    <link>https://yunianpan.com/post/2025/</link>
-    <description>Recent content in 2025 on union&#39;s blog</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <lastBuildDate>Tue, 30 Dec 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://yunianpan.com/post/2025/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Marty Supreme, Ramble Little</title>
-      <link>https://yunianpan.com/post/2025/martysupreme/</link>
-      <pubDate>Tue, 30 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>https://yunianpan.com/post/2025/martysupreme/</guid>
-      <description>&lt;p&gt;I had been excited for &lt;em&gt;Marty Supreme&lt;/em&gt; for over a month before I finally saw the movie. It all started with this dumb &lt;a href=&#34;https://www.youtube.com/watch?v=wakBARkxqls&#34;&gt;viral zoom skit&lt;/a&gt;. Digging further into advance screening sentiments, I had a biased prior belief that this movie, capitalized as &lt;em&gt;Dream Big&lt;/em&gt;, was way darker than it was commercially sold as; that this was beyond American dream, maybe about some money-hungry sociopath who&amp;rsquo;s chasing their aims at the cost of sacrificing and scamming their close ones, much like the &lt;em&gt;whiplash&lt;/em&gt; plot in spirit, or &lt;em&gt;uncut gems&lt;/em&gt;.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Stochastic Vol and Heston Model</title>
-      <link>https://yunianpan.com/post/2025/heston/</link>
-      <pubDate>Fri, 05 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>https://yunianpan.com/post/2025/heston/</guid>
-      <description>&lt;p&gt;So it was not until 2025 that I developed some genuine interests in quant finance. I briefly had some reading in 2023/2024 but I always stopped at &amp;ldquo;oh, here goes the Itô&amp;rsquo;s lemma; there goes Feyman-Kac; Markowitz mean-variance formulation seems familar&amp;rdquo;, never really dived into exotics and exchange rates, the real stuff people are playing around.&#xA;Well, now since I really want a job, I need some &lt;a href=&#34;http://www.hk.free.fr/Docs/The%20Volatility%20Surface%20-%20A%20Practitioner&#39;s%20Guide%20%5BJim%20Gatheral%5D.pdf&#34;&gt;practitioner&amp;rsquo;s guide&lt;/a&gt; and I find it fascinating.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Blackwell Approachability</title>
-      <link>https://yunianpan.com/post/2025/learning_in_games/</link>
-      <pubDate>Sun, 02 Nov 2025 00:00:00 +0000</pubDate>
-      <guid>https://yunianpan.com/post/2025/learning_in_games/</guid>
-      <description>&lt;p&gt;Pretty much all the work I did these years are related to learning in games. And one of the most important theorem that pulled me into this is Blackwell&amp;rsquo;s Approachability theorem &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; (truth is I never really did anything on it because it does not imply much on computation). This theorem connects geometry, game theory, and the very essence of no-regret learning.&#xA;Regarding this concept, my belief used to be that approachability implies the existence of no-regret algorithms. Turns out the connection is much stronger: the two are, in a very strong sense, algorithmically equivalent.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Reinforcement Learning with Human Feedback</title>
-      <link>https://yunianpan.com/post/2025/rlhf/</link>
-      <pubDate>Mon, 25 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>https://yunianpan.com/post/2025/rlhf/</guid>
-      <description>&lt;p&gt;I would love to think of the ICML 2023 conference in Honolulu as a pivotal event for my P.h.D. research. During that time I was kind of talking to Reagan and having the time of my life. I remember in the conference there was a workshop session named &lt;em&gt;sampling over discrete space&lt;/em&gt;. It felt serendipitous, like the universe was pointing me toward somewhere significant, much like how my brilliant colleague &lt;a href=&#34;https://taoli-nyu.github.io/&#34;&gt;Tao&lt;/a&gt; pointing to the bright future here haha&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Bayesian Holonic (Global) Games</title>
-      <link>https://yunianpan.com/post/2025/mechanism_design/</link>
-      <pubDate>Tue, 01 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>https://yunianpan.com/post/2025/mechanism_design/</guid>
-      <description>&lt;p&gt;This past year I suffered a lot mentally and financially, my funding got paused and my girlfriend Sam (check out her &lt;a href=&#34;https://open.spotify.com/artist/3qo9BlnVduy6nW0pY1kmTQ&#34;&gt;spotify&lt;/a&gt;!) lost her boojee A.P.C. job. So I haven&amp;rsquo;t posted for a while. It&amp;rsquo;s really a leisure and effort to write stuff consistently (because wtf am I supposed to write?!!?). But the coding agents (Claude, Gemini etc..) really revolutionarized my efficiency, and shamelessly I have to admit that I use them a lot to &amp;ldquo;vibe code&amp;rdquo; and even do research, with sufficient human surveillance.&#xA;So hopefully, I will resume writing for my own sanity.&lt;/p&gt;</description>
-    </item>
-  </channel>
+	<channel>
+		<title>2025 on union&#39;s blog</title>
+		<link>https://yunianpan.com/post/2025/</link>
+		<description>Recent content in 2025 on union&#39;s blog</description>
+		<generator>Hugo</generator>
+		<language>en-us</language>
+		
+		
+		
+		
+			<lastBuildDate>Tue, 30 Dec 2025 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://yunianpan.com/post/2025/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Marty Supreme, Ramble Little</title>
+				<link>https://yunianpan.com/post/2025/martysupreme/</link>
+				<pubDate>Tue, 30 Dec 2025 00:00:00 +0000</pubDate>
+				<guid>https://yunianpan.com/post/2025/martysupreme/</guid>
+				<description>&lt;p&gt;I had been excited for &lt;em&gt;Marty Supreme&lt;/em&gt; for over a month before I finally saw the movie. It all started with this dumb &lt;a href=&#34;https://www.youtube.com/watch?v=wakBARkxqls&#34;&gt;viral zoom skit&lt;/a&gt;. Digging further into advance screening sentiments, I had a biased prior belief that this movie, capitalized as &lt;em&gt;Dream Big&lt;/em&gt;, was way darker than it was commercially sold as; that this was beyond American dream, maybe about some money-hungry sociopath who&amp;rsquo;s chasing their aims at the cost of sacrificing and scamming their close ones, much like the &lt;em&gt;whiplash&lt;/em&gt; plot in spirit, or &lt;em&gt;uncut gems&lt;/em&gt;.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Stochastic Vol and Heston Model</title>
+				<link>https://yunianpan.com/post/2025/heston/</link>
+				<pubDate>Fri, 05 Dec 2025 00:00:00 +0000</pubDate>
+				<guid>https://yunianpan.com/post/2025/heston/</guid>
+				<description>&lt;p&gt;So it was not until 2025 that I developed some genuine interests in quant finance. I briefly had some reading in 2023/2024 but I always stopped at &amp;ldquo;oh, here goes the Itô&amp;rsquo;s lemma; there goes Feyman-Kac; Markowitz mean-variance formulation seems familar&amp;rdquo;, never really dived into exotics and exchange rates, the real stuff people are playing around.&#xA;Well, now since I really want a job, I need some &lt;a href=&#34;http://www.hk.free.fr/Docs/The%20Volatility%20Surface%20-%20A%20Practitioner&#39;s%20Guide%20%5BJim%20Gatheral%5D.pdf&#34;&gt;practitioner&amp;rsquo;s guide&lt;/a&gt; and I find it fascinating.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Blackwell Approachability</title>
+				<link>https://yunianpan.com/post/2025/learning_in_games/</link>
+				<pubDate>Sun, 02 Nov 2025 00:00:00 +0000</pubDate>
+				<guid>https://yunianpan.com/post/2025/learning_in_games/</guid>
+				<description>&lt;p&gt;Pretty much all the work I did these years are related to learning in games. And one of the most important theorem that pulled me into this is Blackwell&amp;rsquo;s Approachability theorem &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; (truth is I never really did anything on it because it does not imply much on computation). This theorem connects geometry, game theory, and the very essence of no-regret learning.&#xA;Regarding this concept, my belief used to be that approachability implies the existence of no-regret algorithms. Turns out the connection is much stronger: the two are, in a very strong sense, algorithmically equivalent.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Reinforcement Learning with Human Feedback</title>
+				<link>https://yunianpan.com/post/2025/rlhf/</link>
+				<pubDate>Mon, 25 Aug 2025 00:00:00 +0000</pubDate>
+				<guid>https://yunianpan.com/post/2025/rlhf/</guid>
+				<description>&lt;p&gt;I would love to think of the ICML 2023 conference in Honolulu as a pivotal event for my P.h.D. research. During that time I was kind of talking to Reagan and having the time of my life. I remember in the conference there was a workshop session named &lt;em&gt;sampling over discrete space&lt;/em&gt;. It felt serendipitous, like the universe was pointing me toward somewhere significant, much like how my brilliant colleague &lt;a href=&#34;https://taoli-nyu.github.io/&#34;&gt;Tao&lt;/a&gt; pointing to the bright future here haha&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Bayesian Holonic (Global) Games</title>
+				<link>https://yunianpan.com/post/2025/mechanism_design/</link>
+				<pubDate>Tue, 01 Jul 2025 00:00:00 +0000</pubDate>
+				<guid>https://yunianpan.com/post/2025/mechanism_design/</guid>
+				<description>&lt;p&gt;This past year I suffered a lot mentally and financially, my funding got paused and my girlfriend Sam (check out her &lt;a href=&#34;https://open.spotify.com/artist/3qo9BlnVduy6nW0pY1kmTQ&#34;&gt;spotify&lt;/a&gt;!) lost her boojee A.P.C. job. So I haven&amp;rsquo;t posted for a while. It&amp;rsquo;s really a leisure and effort to write stuff consistently (because wtf am I supposed to write?!!?). But the coding agents (Claude, Gemini etc..) really revolutionarized my efficiency, and shamelessly I have to admit that I use them a lot to &amp;ldquo;vibe code&amp;rdquo; and even do research, with sufficient human surveillance.&#xA;So hopefully, I will resume writing for my own sanity.&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>

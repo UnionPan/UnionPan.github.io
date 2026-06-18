@@ -25,20 +25,20 @@ A natural question to ask is what are the hidden objectives being achieved along
     
     <link rel="stylesheet" href="https://yunianpan.com/scss/style.min.6ca8d4718f2be00103e6c55042281e336e3713a2a5428debbad02553d28b5528.css">
     <meta property="og:url" content="https://yunianpan.com/post/2024/variational_perspective/">
-  <meta property="og:site_name" content="union&#39;s blog">
-  <meta property="og:title" content="A Variational Perspective On Gradient Descent">
-  <meta property="og:description" content="In this post I just want to share a simple and elegant idea from a Control System Letter paper written by Maxim Raginsky et al.1. This idea largely inspired my recent work on multi-agent learning in (monotone) games2, which I might devote another post to talk about if I happen to get some interesting results out of it.
+	<meta property="og:site_name" content="union&#39;s blog">
+	<meta property="og:title" content="A Variational Perspective On Gradient Descent">
+	<meta property="og:description" content="In this post I just want to share a simple and elegant idea from a Control System Letter paper written by Maxim Raginsky et al.1. This idea largely inspired my recent work on multi-agent learning in (monotone) games2, which I might devote another post to talk about if I happen to get some interesting results out of it.
 The idea starts from here: we all know that the archetype of solving convex optimization problem is through gradient descent: $$ x_{k&#43;1} = x_k - \nabla f(x_k), $$ which, in continuous time, corresponds to an autonomous dynamical system: $$ \dot{x} = - \nabla f (x) , \quad x(0) = x_0. $$ A natural question to ask is what are the hidden objectives being achieved along the gradient flow. This question was approached in a “inverse optimal control” fashion, i.e., given an autonomous dynamical system, identify the close-loop control and its corresponding optimal control problem. In this approach, the Fenchel-Young inequality played a crucial role to formulate the optimal control problem, as was extensively used in the variational principles introduced by Brezis and Ekeland3.">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="post">
-    <meta property="article:published_time" content="2024-02-11T00:00:00+00:00">
-    <meta property="article:modified_time" content="2024-02-11T00:00:00+00:00">
+	<meta property="og:locale" content="en_us">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="post">
+		<meta property="article:published_time" content="2024-02-11T00:00:00+00:00">
+		<meta property="article:modified_time" content="2024-02-11T00:00:00+00:00">
 
     
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="A Variational Perspective On Gradient Descent">
-  <meta name="twitter:description" content="In this post I just want to share a simple and elegant idea from a Control System Letter paper written by Maxim Raginsky et al.1. This idea largely inspired my recent work on multi-agent learning in (monotone) games2, which I might devote another post to talk about if I happen to get some interesting results out of it.
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="A Variational Perspective On Gradient Descent">
+	<meta name="twitter:description" content="In this post I just want to share a simple and elegant idea from a Control System Letter paper written by Maxim Raginsky et al.1. This idea largely inspired my recent work on multi-agent learning in (monotone) games2, which I might devote another post to talk about if I happen to get some interesting results out of it.
 The idea starts from here: we all know that the archetype of solving convex optimization problem is through gradient descent: $$ x_{k&#43;1} = x_k - \nabla f(x_k), $$ which, in continuous time, corresponds to an autonomous dynamical system: $$ \dot{x} = - \nabla f (x) , \quad x(0) = x_0. $$ A natural question to ask is what are the hidden objectives being achieved along the gradient flow. This question was approached in a “inverse optimal control” fashion, i.e., given an autonomous dynamical system, identify the close-loop control and its corresponding optimal control problem. In this approach, the Fenchel-Young inequality played a crucial role to formulate the optimal control problem, as was extensively used in the variational principles introduced by Brezis and Ekeland3.">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
